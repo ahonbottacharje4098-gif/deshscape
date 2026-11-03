@@ -85,7 +85,7 @@ export const destinations: Destination[] = [
     region: "Sylhet",
     district: "Sylhet",
     type: "Nature",
-    image: "https://upload.wikimedia.org/wikipedia/commons/c/cd/%E0%A6%9C%E0%A6%BE%E0%A6%AB%E0%A6%B2%E0%A6%82%2C_%E0%A6%B8%E0%A6%BF%E0%A6%B2%E0%A7%87%E0%A6%9F_%E0%A7%A6%E0%A7%A7.jpg",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Jaflong%2C%20Sylhet%2C%20Bangladesh.jpg",
     tag: "Nature retreat",
     shortDescription: "A scenic riverside landscape framed by green hills and flowing water.",
     description: "Jaflong is a well-known scenic area in the Sylhet region, appreciated for its river views and surrounding hills. The landscape and river conditions vary through the year.",
