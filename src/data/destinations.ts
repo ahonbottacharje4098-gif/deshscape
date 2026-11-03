@@ -452,6 +452,71 @@ export const destinations: Destination[] = [
     highlights: ["Coastal forest landscape", "Waterways and estuary scenery", "Nature and birdwatching"],
     travelNotes: ["Check local access and weather conditions before visiting.", "Use authorised local guides where required.", "Keep a safe distance from wildlife and leave no litter."]
   }
+  ,
+  {
+    slug: "tajhat-palace", name: "Tajhat Palace", region: "Rangpur Division", district: "Rangpur", type: "Heritage",
+    coordinates: [25.725, 89.275], image: "https://commons.wikimedia.org/wiki/Special:FilePath/Tajhat%20Palace%20Rangpur.jpg?width=1400",
+    tag: "A royal chapter", shortDescription: "A graceful historic palace known for its grand staircase and elegant architecture.",
+    description: "Tajhat Palace in Rangpur is a landmark of the region's architectural heritage. Its distinctive façade, broad grounds and museum make it a memorable cultural stop.",
+    highlights: ["Historic palace architecture", "Museum and heritage displays", "Landscaped grounds"],
+    travelNotes: ["Check museum opening hours before visiting.", "Respect the heritage site and its displays.", "Follow photography rules on site."]
+  },
+  {
+    slug: "kantajew-temple", name: "Kantajew Temple", region: "Rangpur Division", district: "Dinajpur", type: "Heritage",
+    coordinates: [25.655, 88.674], image: "https://commons.wikimedia.org/wiki/Special:FilePath/Kantajew%20Temple%20Dinajpur.jpg?width=1400",
+    tag: "Terracotta masterpiece", shortDescription: "An ornate terracotta Hindu temple celebrated for its intricate exterior artwork.",
+    description: "Kantajew Temple near Dinajpur is one of Bangladesh's best-known examples of terracotta temple architecture, with detailed panels depicting stories, figures and scenes from everyday life.",
+    highlights: ["Detailed terracotta ornamentation", "Historic temple architecture", "Cultural and religious heritage"],
+    travelNotes: ["Dress respectfully at this religious site.", "Avoid touching or damaging the terracotta panels.", "Check local access arrangements before travelling."]
+  },
+  {
+    slug: "chilmari-riverfront", name: "Chilmari Riverfront", region: "Rangpur Division", district: "Kurigram", type: "Rivers",
+    coordinates: [25.556, 89.671], image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1400&q=85",
+    tag: "Along the Brahmaputra", shortDescription: "A riverside landscape shaped by the broad Brahmaputra and the life of a historic river port.",
+    description: "Chilmari in Kurigram is closely associated with the Brahmaputra River and its river-port heritage. The surrounding chars and shifting waterways create a distinctive northern Bangladesh landscape.",
+    highlights: ["Brahmaputra river views", "River-port atmosphere", "Seasonal char landscapes"],
+    travelNotes: ["Check river and weather conditions before travelling.", "Use recognised boat services and follow safety guidance.", "Respect riverbank communities and keep the area clean."]
+  },
+  {
+    slug: "balashi-ghat", name: "Balashi Ghat", region: "Rangpur Division", district: "Gaibandha", type: "Rivers",
+    coordinates: [25.29, 89.69], image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1400&q=85",
+    tag: "River horizons", shortDescription: "An open riverfront destination with expansive views across the Jamuna.",
+    description: "Balashi Ghat in Gaibandha is a familiar riverside spot beside the Jamuna, where visitors can experience the scale of the river and the changing landscape of its banks.",
+    highlights: ["Wide Jamuna river views", "Open riverside scenery", "Local river culture"],
+    travelNotes: ["Check local transport and river conditions.", "Stay away from unstable river edges.", "Follow local safety advice."]
+  },
+  {
+    slug: "teesta-barrage", name: "Teesta Barrage", region: "Rangpur Division", district: "Nilphamari", type: "Rivers",
+    coordinates: [25.962, 89.0], image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1400&q=85",
+    tag: "Water and wide skies", shortDescription: "A notable river-control landmark set amid the broad Teesta landscape.",
+    description: "The Teesta Barrage at Dalia is a major water-management structure in the Teesta basin. Its surrounding river landscape and open skies make the area a recognisable destination in Nilphamari.",
+    highlights: ["Teesta river landscape", "Major water-management landmark", "Open countryside views"],
+    travelNotes: ["Observe the site from permitted public areas only.", "Never enter restricted infrastructure.", "Check local access conditions before visiting."]
+  },
+  {
+    slug: "tetulia-kanchenjunga-viewpoint", name: "Tetulia & Kanchenjunga Viewpoint", region: "Rangpur Division", district: "Panchagarh", type: "Nature",
+    coordinates: [26.49, 88.35], image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1400&q=85",
+    tag: "Himalayan horizons", shortDescription: "A peaceful northern landscape where clear-season skies can reveal distant Himalayan peaks.",
+    description: "Tetulia is the northernmost upazila of Bangladesh, known for its tea gardens, open countryside and occasional distant views of the Himalayan range, including Kanchenjunga on clear days.",
+    highlights: ["Seasonal distant mountain views", "Tea gardens and countryside", "Northernmost Bangladesh scenery"],
+    travelNotes: ["Distant peaks are visible only in suitable clear-weather conditions.", "Plan early-morning viewing and check forecasts.", "Respect tea garden property and local communities."]
+  },
+  {
+    slug: "golapgram-thakurgaon", name: "Shuk River & Rural Thakurgaon", region: "Rangpur Division", district: "Thakurgaon", type: "Nature",
+    coordinates: [26.03, 88.46], image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=85",
+    tag: "Quiet countryside", shortDescription: "A slower-paced rural landscape of river scenery, fields and northern Bengal village life.",
+    description: "Thakurgaon offers a quieter countryside experience in northwestern Bangladesh, with seasonal fields, village landscapes and waterways such as the Shuk River shaping the local scenery.",
+    highlights: ["Rural northern Bengal scenery", "Seasonal agricultural landscapes", "Local village life"],
+    travelNotes: ["Ask locally about accessible riverbank spots.", "Avoid private farmland without permission.", "Travel in daylight and respect local communities."]
+  },
+  {
+    slug: "tista-char-lalmonirhat", name: "Teesta River Char", region: "Rangpur Division", district: "Lalmonirhat", type: "Nature",
+    coordinates: [25.92, 89.45], image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=85",
+    tag: "Ever-changing river country", shortDescription: "A seasonal landscape of sandbars, river channels and wide-open skies along the Teesta.",
+    description: "The Teesta riverine areas of Lalmonirhat are shaped by shifting channels and chars. The scenery changes with the seasons and offers a glimpse of life along a dynamic northern river.",
+    highlights: ["Seasonal sandbar landscapes", "Teesta river views", "Riverine community life"],
+    travelNotes: ["Char access can change with water levels and weather.", "Use local guidance and safe transport.", "Do not approach unstable banks or fast-moving water."]
+  }
 
 ];
 
@@ -460,4 +525,4 @@ import { dhakaDivisionDestinations } from "./dhakaDivision";
 destinations.push(...dhakaDivisionDestinations);
 
 export const destinationTypes = ["All experiences", "Mountains", "Beaches", "Forests", "Rivers", "Nature", "Heritage"];
-export const destinationRegions = ["All regions", "Rangamati", "Cox's Bazar", "Sylhet", "Khulna", "Rajshahi Division", "Dhaka Division"];
+export const destinationRegions = ["All regions", "Rangamati", "Cox's Bazar", "Sylhet", "Khulna", "Rajshahi Division", "Dhaka Division", "Rangpur Division"];
