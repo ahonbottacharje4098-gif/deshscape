@@ -193,6 +193,79 @@ export const destinations: Destination[] = [
     highlights: ["River and hill scenery", "Seasonal clear-water views", "Photography and nature appreciation"],
     travelNotes: ["Check river conditions and local advice before visiting.", "Avoid deep or fast-moving water.", "Respect local communities and keep the riverbank clean."]
   },
+
+  {
+    slug: "patenga-beach", name: "Patenga Beach", region: "Chattogram Division", district: "Chattogram", type: "Beaches",
+    coordinates: [22.2354, 91.7911], image: "https://commons.wikimedia.org/wiki/Special:FilePath/Patenga%20sea%20beach%20001.jpg?width=1400",
+    tag: "Where river meets sea", shortDescription: "A lively shoreline where the Karnaphuli meets the Bay of Bengal.",
+    description: "Patenga Beach is a well-known coastal spot near the mouth of the Karnaphuli River, with broad sea views and a lively waterfront.",
+    highlights: ["Bay of Bengal shoreline", "Karnaphuli estuary views", "Evening coastal atmosphere"],
+    travelNotes: ["Follow beach safety notices.", "Check sea conditions before visiting.", "Keep the shoreline clean."]
+  },
+  {
+    slug: "nilachal-bandarban", name: "Nilachal", region: "Chattogram Division", district: "Bandarban", type: "Mountains",
+    coordinates: [22.1583, 92.1889], image: "https://commons.wikimedia.org/wiki/Special:FilePath/Nilachal%20bandarban.JPG?width=1400",
+    tag: "Above the clouds", shortDescription: "A hilltop viewpoint overlooking Bandarban's layered green hills.",
+    description: "Nilachal is a popular viewpoint near Bandarban town, known for wide views across the surrounding hills and valleys.",
+    highlights: ["Panoramic hill views", "Cloud and sunset scenery", "Views near Bandarban town"],
+    travelNotes: ["Use marked viewpoints.", "Hill roads can be slippery during rain.", "Respect local communities."]
+  },
+  {
+    slug: "alutila-cave", name: "Alutila Cave", region: "Chattogram Division", district: "Khagrachhari", type: "Nature",
+    coordinates: [23.089, 91.9544], image: "https://commons.wikimedia.org/wiki/Special:FilePath/Alutila%20cave.jpg?width=1400",
+    tag: "A natural wonder", shortDescription: "A natural cave set within the forested hills of Khagrachhari.",
+    description: "Alutila Cave, also known as Matai Hakor, is a natural cave in Matiranga, Khagrachhari.",
+    highlights: ["Natural cave landscape", "Forest-covered hill surroundings", "Khagrachhari scenery"],
+    travelNotes: ["Visit in daylight.", "Follow site staff guidance.", "Do not damage the cave or leave litter."]
+  },
+  {
+    slug: "muhuri-project", name: "Muhuri Project", region: "Chattogram Division", district: "Feni", type: "Rivers",
+    coordinates: [22.8365, 91.4535], image: "https://commons.wikimedia.org/wiki/Special:FilePath/Muhuri%20Project%20Feni.jpg?width=1400",
+    tag: "Water and wide horizons", shortDescription: "A broad water landscape shaped by rivers and embankments.",
+    description: "Muhuri Project is a major irrigation and water-control project in Feni, with an expansive reservoir landscape.",
+    highlights: ["Large reservoir", "River and countryside scenery", "Open landscapes"],
+    travelNotes: ["Stay clear of restricted infrastructure.", "Do not climb water-control structures.", "Follow local guidance."]
+  },
+  {
+    slug: "dalal-bazar-zamindar-bari", name: "Dalal Bazar Zamindar Bari", region: "Chattogram Division", district: "Lakshmipur", type: "Heritage",
+    coordinates: [22.9683, 90.8044], image: "https://commons.wikimedia.org/wiki/Special:FilePath/Dalal%20Bazar%20Jomidar%20Bari%2001.jpg?width=1400",
+    tag: "Stories in old walls", shortDescription: "A historic zamindar residence reflecting the area's architectural past.",
+    description: "Dalal Bazar Zamindar Bari is a historic landmark in Lakshmipur Sadar, offering a glimpse into the area's social and architectural history.",
+    highlights: ["Historic residence", "Traditional architectural details", "Local heritage"],
+    travelNotes: ["Confirm visitor access locally.", "Do not touch fragile structures.", "Respect residents."]
+  },
+  {
+    slug: "nijhum-dwip", name: "Nijhum Dwip", region: "Chattogram Division", district: "Noakhali", type: "Nature",
+    coordinates: [22.0636, 91.0107], image: "https://commons.wikimedia.org/wiki/Special:FilePath/Nijhum%20Dwip.jpg?width=1400",
+    tag: "Island of quiet", shortDescription: "An island landscape of coastal forest, tidal channels and birdlife.",
+    description: "Nijhum Dwip in Hatiya, Noakhali, is known for its coastal forest, wetlands and seasonal birdlife.",
+    highlights: ["Coastal island scenery", "Forest and wetland habitats", "Seasonal birdlife"],
+    travelNotes: ["Plan boat transfers with reliable local operators.", "Follow protected-area rules.", "Avoid disturbing wildlife."]
+  },
+  {
+    slug: "shalban-vihara", name: "Shalban Vihara", region: "Chattogram Division", district: "Cumilla", type: "Heritage",
+    coordinates: [23.4252, 91.1375], image: "https://commons.wikimedia.org/wiki/Special:FilePath/Shalban%20Vihara%20%28Mainamati%2CCumilla%29%20in%202022.03.jpg?width=1400",
+    tag: "Echoes of ancient Bengal", shortDescription: "An important archaeological monastery in the Mainamati heritage area.",
+    description: "Shalban Vihara is a major archaeological site in Mainamati, Cumilla, preserving important Buddhist heritage.",
+    highlights: ["Ancient monastery remains", "Mainamati archaeological landscape", "Nearby heritage museum"],
+    travelNotes: ["Stay on visitor paths.", "Do not climb ancient structures.", "Check opening arrangements."]
+  },
+  {
+    slug: "boro-station-molehead", name: "Boro Station Molehead", region: "Chattogram Division", district: "Chandpur", type: "Rivers",
+    coordinates: [23.229, 90.65], image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1400&q=85",
+    tag: "Where rivers meet", shortDescription: "A riverside viewpoint near the meeting of the Padma, Meghna and Dakatia.",
+    description: "Boro Station Molehead is a popular riverside gathering place in Chandpur town, near the confluence of the Padma, Meghna and Dakatia.",
+    highlights: ["River confluence views", "Riverside promenade", "Sunset and local river culture"],
+    travelNotes: ["Stay on the bank.", "Keep clear of boat traffic.", "Follow local safety advice."]
+  },
+  {
+    slug: "titas-river-brahmanbaria", name: "Titas River", region: "Chattogram Division", district: "Brahmanbaria", type: "Rivers",
+    coordinates: [23.9623, 91.1215], image: "https://commons.wikimedia.org/wiki/Special:FilePath/Titas%20River.jpg?width=1400",
+    tag: "Life along the river", shortDescription: "A scenic river closely connected with Brahmanbaria's history and daily life.",
+    description: "The Titas River flows through Brahmanbaria and is closely tied to local river culture, fishing and boat journeys.",
+    highlights: ["River and countryside views", "Traditional boats", "Local community life"],
+    travelNotes: ["Use recognised landing points.", "Follow boat safety guidance.", "Keep riverbanks clean."]
+  },
 ];
 
 import { dhakaDivisionDestinations } from "./dhakaDivision";
