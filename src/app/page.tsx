@@ -80,10 +80,10 @@ export default function Home() {
           <a className="nav-link" href="#destinations" onClick={() => setMenuOpen(false)}>Destinations</a>
           <a className="nav-link" href="#map" onClick={() => setMenuOpen(false)}>Explore map</a>
           <a className="nav-link" href="#stories" onClick={() => setMenuOpen(false)}>Stories</a>
-          <a className="nav-link mobile-only" href="#planner" onClick={() => setMenuOpen(false)}>Plan a trip</a>
+          <a className="nav-link mobile-only" href="/plan-trip" onClick={() => setMenuOpen(false)}>Plan a trip</a>
         </nav>
         <div className="header-actions">
-          <a className="plan-link" href="#planner">Plan a trip <ArrowUpRight size={15} /></a>
+          <a className="plan-link" href="/plan-trip">Plan a trip <ArrowUpRight size={15} /></a>
           <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu" aria-expanded={menuOpen}>
             {menuOpen ? <X /> : <Menu />}
           </button>
@@ -177,7 +177,7 @@ export default function Home() {
 
       <section className="planner-section section-wrap" id="planner">
         <div className="planner-card">
-          <div className="planner-text"><div className="eyebrow light"><span /> YOUR NEXT CHAPTER</div><h2>Good trips don't<br />happen by <em>accident.</em></h2><p>Tell us what you love. We'll help you find where to go next.</p><a className="button button-light" href="mailto:hello@deshscape.com?subject=Plan%20my%20trip">Let's plan a trip <ArrowRight size={17} /></a></div>
+          <div className="planner-text"><div className="eyebrow light"><span /> YOUR NEXT CHAPTER</div><h2>Good trips don't<br />happen by <em>accident.</em></h2><p>Tell us what you love. We'll help you find where to go next.</p><a className="button button-light" href="/plan-trip">Let's plan a trip <ArrowRight size={17} /></a></div>
           <div className="planner-art"><div className="orbit orbit-one" /><div className="orbit orbit-two" /><div className="orbit-center"><Compass size={52} strokeWidth={1} /></div><span className="orbit-label label-one">FIND</span><span className="orbit-label label-two">WANDER</span><span className="orbit-label label-three">DISCOVER</span></div>
         </div>
       </section>
@@ -185,7 +185,7 @@ export default function Home() {
       <section className="stories-section section-wrap" id="stories">
         <div className="section-heading"><div><div className="eyebrow"><span /> FIELD NOTES</div><h2>Stories from<br /><em>the road.</em></h2></div><a className="text-link heading-link" href="/journal">Read our journal <ArrowUpRight size={16} /></a></div>
         <div className="story-row"><div className="story-number">01</div><div className="story-title"><span>PEOPLE & CULTURE</span><h3>The rhythm of a river town</h3></div><p>Somewhere along the banks, life moves to a different rhythm. Discover the communities shaped by water.</p><a href="/journal" aria-label="Read story"><ArrowUpRight /></a></div>
-        <div className="story-row"><div className="story-number">02</div><div className="story-title"><span>HIDDEN BANGLADESH</span><h3>Beyond the tea gardens</h3></div><p>Follow the winding paths into the green heart of the northeast, where every turn reveals a new view.</p><a href="#planner" aria-label="Read story"><ArrowUpRight /></a></div>
+        <div className="story-row"><div className="story-number">02</div><div className="story-title"><span>HIDDEN BANGLADESH</span><h3>Beyond the tea gardens</h3></div><p>Follow the winding paths into the green heart of the northeast, where every turn reveals a new view.</p><a href="/journal" aria-label="Read story"><ArrowUpRight /></a></div>
       </section>
 
       <footer className="site-footer">
