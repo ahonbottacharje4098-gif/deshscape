@@ -59,7 +59,7 @@ export default function JournalPage() {
             <div><div className="eyebrow"><span /> FIELD NOTES & INSPIRATION</div><h2>Read, wander<br /><em>and discover.</em></h2></div>
             <span className="eyebrow">02 STORIES</span>
           </div>
-          <div className="destination-grid" style={{ gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gridAutoRows: "auto" }}>
+          <div className="journal-grid">
             {stories.map((story) => (
               <article key={story.number} style={{ background: "#faf9f5", color: "#202720", border: "1px solid #deded4" }}>
                 <div style={{ height: 270, backgroundImage: `url(${story.image})`, backgroundPosition: "center", backgroundSize: "cover" }} />
