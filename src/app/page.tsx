@@ -190,7 +190,7 @@ export default function Home() {
 
       <footer className="site-footer">
         <div className="footer-top"><a className="brand footer-brand" href="#"><span className="brand-mark"><Compass size={22} /></span><span className="brand-name">deshscape<span>.</span><small>THE ART OF DISCOVERY</small></span></a><p>Explore beyond the ordinary.<br />Discover Bangladesh, one journey at a time.</p><a className="back-top" href="#">BACK TO TOP <ArrowUpRight size={15} /></a></div>
-        <div className="footer-bottom"><span>© 2026 DESHSCAPE. MADE FOR THE CURIOUS.</span><div className="social-links"><a href="#" aria-label="Instagram"><Instagram size={17} /></a><a href="#" aria-label="Facebook"><Facebook size={17} /></a><a href="#" aria-label="YouTube"><Youtube size={17} /></a></div><span>INDEPENDENTLY INSPIRED BY BANGLADESH.</span></div>
+        <div className="footer-bottom"><span>© 2026 DESHSCAPE. MADE FOR THE CURIOUS.</span><a className="footer-contact-link" href="/contact">CONTACT <ArrowUpRight size={14} /></a><div className="social-links"><a href="#" aria-label="Instagram"><Instagram size={17} /></a><a href="#" aria-label="Facebook"><Facebook size={17} /></a><a href="#" aria-label="YouTube"><Youtube size={17} /></a></div><span>INDEPENDENTLY INSPIRED BY BANGLADESH.</span></div>
       </footer>
     </main>
   );
