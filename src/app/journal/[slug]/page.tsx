@@ -97,6 +97,10 @@ export default async function JournalStoryPage({ params }: Props) {
         <div className="header-actions"><Link className="plan-link" href="/plan-trip">Plan a trip <ArrowUpRight size={15} /></Link></div>
       </header>
 
+      <nav className="detail-breadcrumb journal-breadcrumb" aria-label="Breadcrumb">
+        <Link href="/">Home</Link><span>/</span><Link href="/journal">Journal</Link><span>/</span><span aria-current="page">{story.title}</span>
+      </nav>
+
       <section className="journal-article-hero">
         <div className="journal-article-cover" style={{ backgroundImage: `url("${story.image}")` }} />
         <div className="journal-article-shade" />
