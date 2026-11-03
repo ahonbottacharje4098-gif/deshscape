@@ -551,6 +551,63 @@ export const destinations: Destination[] = [
     travelNotes: ["Check river conditions and local weather before visiting.", "Avoid deep or fast-moving water.", "Respect local communities and keep the riverbank clean."]
   }
 
+  ,
+  {
+    slug: "jasimuddin-house", name: "Jasimuddin House", region: "Dhaka Division", district: "Faridpur", type: "Heritage",
+    coordinates: [23.607, 89.842], image: "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1400&q=85",
+    tag: "Literary heritage", shortDescription: "The ancestral home of Palli Kabi Jasimuddin, one of Bengal's celebrated rural poets.",
+    description: "Jasimuddin House, also known as Palli Kabi Jasimuddin's residence, is a cultural landmark in Faridpur associated with the poet's life and literary legacy. Confirm visitor access locally before planning a visit.",
+    highlights: ["Life and work of Palli Kabi Jasimuddin", "Rural literary heritage", "A cultural stop in Faridpur"],
+    travelNotes: ["Confirm opening and visitor access locally.", "Respect the residence and surrounding community.", "Avoid touching or moving historic objects."]
+  },
+  {
+    slug: "tungipara-mausoleum", name: "Bangabandhu Mausoleum Complex", region: "Dhaka Division", district: "Gopalganj", type: "Heritage",
+    coordinates: [22.899, 89.900], image: "https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=1400&q=85",
+    tag: "National history", shortDescription: "A memorial complex in Tungipara commemorating the life of Sheikh Mujibur Rahman.",
+    description: "The Bangabandhu Mausoleum Complex in Tungipara, Gopalganj, is a significant national memorial and place of historical remembrance. Visitors should observe the site's rules and maintain a respectful atmosphere.",
+    highlights: ["National memorial complex", "Historical exhibits and grounds", "A significant place in Bangladesh's history"],
+    travelNotes: ["Maintain a respectful atmosphere.", "Follow visitor and photography rules.", "Check public access arrangements before travelling."]
+  },
+  {
+    slug: "shakuni-lake", name: "Shakuni Lake", region: "Dhaka Division", district: "Madaripur", type: "Nature",
+    coordinates: [23.164, 90.198], image: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1400&q=85",
+    tag: "A calm urban escape", shortDescription: "A well-known lake and public recreation spot in Madaripur town.",
+    description: "Shakuni Lake is a familiar urban landmark in Madaripur, with waterside views and a public promenade atmosphere. It offers a simple local stop for a relaxed visit.",
+    highlights: ["Lake and waterside scenery", "Town recreation area", "Evening walks and photography"],
+    travelNotes: ["Use public access areas and follow local guidance.", "Keep the lakeside clean.", "Supervise children near the water."]
+  },
+  {
+    slug: "baliati-palace", name: "Baliati Palace", region: "Dhaka Division", district: "Manikganj", type: "Heritage",
+    coordinates: [23.858, 89.976], image: "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1400&q=85",
+    tag: "A zamindar-era landmark", shortDescription: "An expansive historic palace complex known for its courtyards and ornate architecture.",
+    description: "Baliati Palace in Saturia, Manikganj, is a major heritage site featuring several historic buildings and courtyards associated with the Baliati zamindar family.",
+    highlights: ["Historic palace buildings", "Architectural details and courtyards", "Museum and heritage grounds"],
+    travelNotes: ["Check museum opening hours before travelling.", "Stay on visitor paths and protect historic surfaces.", "Follow photography and site rules."]
+  },
+  {
+    slug: "idrakpur-fort", name: "Idrakpur Fort", region: "Dhaka Division", district: "Munshiganj", type: "Heritage",
+    coordinates: [23.542, 90.530], image: "https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=1400&q=85",
+    tag: "Mughal river defence", shortDescription: "A historic Mughal-era fort built to defend the river routes around Dhaka.",
+    description: "Idrakpur Fort in Munshiganj town is a seventeenth-century Mughal-era river fort traditionally associated with the defence of the region's waterways.",
+    highlights: ["Mughal-era fort architecture", "Historic river-defence heritage", "A key landmark in Munshiganj"],
+    travelNotes: ["Follow site access and visitor rules.", "Do not climb or damage historic structures.", "Respect nearby residents and public spaces."]
+  },
+  {
+    slug: "goalanda-ghat", name: "Goalanda Ghat", region: "Dhaka Division", district: "Rajbari", type: "Rivers",
+    coordinates: [23.783, 89.770], image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1400&q=85",
+    tag: "Gateway by the river", shortDescription: "A historic river landing associated with journeys across the Padma River.",
+    description: "Goalanda Ghat in Rajbari is a well-known river transport point at the Padma's edge, historically important as a gateway for river journeys and local trade.",
+    highlights: ["Padma riverfront views", "Historic river transport heritage", "Local river culture"],
+    travelNotes: ["Stay within designated public areas.", "Keep clear of ferry and boat operations.", "Follow river and weather safety guidance."]
+  },
+  {
+    slug: "atiya-mosque", name: "Atiya Mosque", region: "Dhaka Division", district: "Tangail", type: "Heritage",
+    coordinates: [24.248, 89.916], image: "https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=1400&q=85",
+    tag: "Sultanate-era architecture", shortDescription: "A historic mosque in Delduar known for its distinctive brickwork and terracotta ornament.",
+    description: "Atiya Mosque in Delduar, Tangail, is a notable historic mosque dating to the early seventeenth century. Its architectural features make it an important heritage landmark in the district.",
+    highlights: ["Historic mosque architecture", "Terracotta and brick details", "Religious and cultural heritage"],
+    travelNotes: ["Dress respectfully and observe prayer times.", "Follow local visitor guidance.", "Avoid touching or damaging historic surfaces."]
+  }
 ];
 
 import { dhakaDivisionDestinations } from "./dhakaDivision";
