@@ -394,3 +394,20 @@ button,input{font:inherit}
 .journal-empty button{display:inline-flex;align-items:center;gap:8px;margin-top:20px;padding:12px 16px;border:1px solid #9caa96;background:transparent;color:#183d32;font:700 9px 'DM Sans',sans-serif;letter-spacing:1px;cursor:pointer}
 @media(max-width:760px){.journal-tools{align-items:stretch;flex-direction:column}.journal-search{width:100%}.journal-filters{gap:7px}.journal-filter{padding:11px 12px;font-size:7px}}
 @media(max-width:420px){.journal-filters{display:grid;grid-template-columns:1fr 1fr}.journal-filter:first-child{grid-column:span 2}}
+
+
+/* Journal featured story and reading metadata */
+.journal-featured{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);min-height:350px;margin:30px 0 64px;background:#f8f7f1;border:1px solid #deded4}
+.journal-featured-image{position:relative;display:block;min-height:350px;background-position:center;background-size:cover;background-color:#dce6df}
+.journal-featured-image:after{content:"";position:absolute;inset:45% 0 0;background:linear-gradient(0deg,rgba(10,24,17,.38),transparent)}
+.journal-featured-label{position:absolute;z-index:1;top:18px;left:18px;padding:10px 13px;background:#f8f7f1;color:#183d32;font-size:8px;font-weight:700;letter-spacing:1.5px}
+.journal-featured-copy{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:38px 40px}
+.journal-featured-copy h3{margin:20px 0 14px;color:#183d32;font:400 clamp(31px,3.4vw,45px)/1.12 'Playfair Display',serif}
+.journal-featured-meta{display:flex;flex-wrap:wrap;gap:18px;color:#899387;font-size:10px}
+.journal-featured-meta span{display:inline-flex;align-items:center;gap:6px}
+.journal-featured-copy>p{margin:20px 0 0;color:#70776e;font-size:12px;line-height:1.9}
+.journal-featured-copy .journal-read-link{margin-top:24px}
+.journal-latest-heading{display:flex;align-items:end;justify-content:space-between;margin:0 0 18px}
+.journal-latest-heading h3{margin:10px 0 0;color:#183d32;font:400 clamp(29px,3vw,38px)/1.1 'Playfair Display',serif}
+@media(max-width:760px){.journal-featured{grid-template-columns:1fr;margin:24px 0 48px}.journal-featured-image{min-height:260px}.journal-featured-copy{padding:28px 24px}}
+@media(max-width:420px){.journal-featured-image{min-height:220px}.journal-featured-copy{padding:24px 19px}}
