@@ -496,3 +496,8 @@ button,input{font:inherit}
 .detail-breadcrumb>span[aria-current="page"]{color:#6f776d;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .journal-breadcrumb{padding-left:10.5%;padding-right:10.5%}
 @media(max-width:650px){.detail-breadcrumb{padding-left:7%;padding-right:7%;gap:8px;font-size:9px;min-height:40px}.journal-breadcrumb{padding-left:7%;padding-right:7%}}
+
+
+/* Destination share placement */
+.destination-share-wrap{padding-top:30px;padding-bottom:30px}
+.destination-share{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0}
