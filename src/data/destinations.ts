@@ -337,6 +337,71 @@ export const destinations: Destination[] = [
     description: "Jeshoreshwari Kali Temple in Satkhira is a historic religious site in Ishwaripur, Shyamnagar, known for its cultural and spiritual importance.",
     highlights: ["Historic temple setting", "Religious and cultural traditions", "Local heritage"],
     travelNotes: ["Respect worshippers and local customs.", "Check visitor access before travelling.", "Dress and behave respectfully."]
+  },
+
+  {
+    slug: "puthia-temple-complex", name: "Puthia Temple Complex", region: "Rajshahi Division", district: "Rajshahi", type: "Heritage",
+    coordinates: [24.3667, 88.8333], image: "https://commons.wikimedia.org/wiki/Special:FilePath/Puthia%20Rajbari.jpg?width=1400",
+    tag: "Palaces and temples", shortDescription: "A remarkable collection of historic temples and the grand Puthia Rajbari.",
+    description: "The Puthia Temple Complex in Rajshahi is known for its collection of historic Hindu temples and palatial buildings, reflecting the region's rich architectural heritage.",
+    highlights: ["Puthia Rajbari and temple architecture", "Terracotta details", "Historic village setting"],
+    travelNotes: ["Dress and behave respectfully at religious sites.", "Follow local visitor guidance.", "Avoid touching or damaging historic structures."]
+  },
+  {
+    slug: "mahasthangarh", name: "Mahasthangarh", region: "Rajshahi Division", district: "Bogura", type: "Heritage",
+    coordinates: [24.9617, 89.3433], image: "https://commons.wikimedia.org/wiki/Special:FilePath/Mahasthangarh%20Bogura.jpg?width=1400",
+    tag: "Ancient Pundranagara", shortDescription: "The remains of one of the earliest urban archaeological sites in Bangladesh.",
+    description: "Mahasthangarh in Bogura is an ancient fortified settlement associated with Pundranagara. Its archaeological remains offer an important window into the region's early history.",
+    highlights: ["Ancient fortified city remains", "Archaeological museum", "Historic Govinda Bhita area"],
+    travelNotes: ["Stay on marked visitor paths.", "Do not remove or disturb archaeological objects.", "Check museum hours before visiting."]
+  },
+  {
+    slug: "hardinge-bridge", name: "Hardinge Bridge", region: "Rajshahi Division", district: "Pabna", type: "Heritage",
+    coordinates: [24.071, 89.033], image: "https://commons.wikimedia.org/wiki/Special:FilePath/Hardinge%20Bridge%20Paksey.jpg?width=1400",
+    tag: "Engineering landmark", shortDescription: "A historic railway bridge spanning the Padma River near Paksey.",
+    description: "Hardinge Bridge near Paksey in Pabna is a landmark railway bridge across the Padma River and an important part of Bangladesh's transport history.",
+    highlights: ["Historic railway engineering", "Padma River landscape", "Nearby Lalon Shah Bridge views"],
+    travelNotes: ["View the bridge only from safe, publicly accessible locations.", "Never enter railway tracks or restricted infrastructure.", "Follow local safety notices."]
+  },
+  {
+    slug: "shahzadpur-rabindra-kachharibari", name: "Shahzadpur Rabindra Kachharibari", region: "Rajshahi Division", district: "Sirajganj", type: "Heritage",
+    coordinates: [24.164, 89.596], image: "https://commons.wikimedia.org/wiki/Special:FilePath/Shahzadpur%20Rabindra%20Kachharibari.jpg?width=1400",
+    tag: "Tagore's literary legacy", shortDescription: "A historic estate associated with Rabindranath Tagore's life and writing.",
+    description: "Rabindra Kachharibari in Shahzadpur, Sirajganj, is associated with Rabindranath Tagore and his time in the region. The site preserves an important part of Bengal's literary heritage.",
+    highlights: ["Tagore-related history", "Historic estate and museum", "Cultural heritage"],
+    travelNotes: ["Check opening hours before visiting.", "Follow museum rules and photography guidance.", "Treat the historic property with care."]
+  },
+  {
+    slug: "natore-rajbari", name: "Natore Rajbari", region: "Rajshahi Division", district: "Natore", type: "Heritage",
+    coordinates: [24.4205, 88.988], image: "https://commons.wikimedia.org/wiki/Special:FilePath/Natore%20Rajbari.jpg?width=1400",
+    tag: "Royal history", shortDescription: "A historic palace complex connected with Rani Bh भवani and Natore's zamindari heritage.",
+    description: "Natore Rajbari is a historic palace complex associated with the Natore royal family and the region's zamindari history.",
+    highlights: ["Historic palace grounds", "Architecture and local history", "Connection with Rani Bh भवani"],
+    travelNotes: ["Confirm which areas are open to visitors.", "Respect religious and heritage spaces.", "Follow local visitor instructions."]
+  },
+  {
+    slug: "somapura-mahavihara", name: "Somapura Mahavihara", region: "Rajshahi Division", district: "Naogaon", type: "Heritage",
+    coordinates: [25.031, 88.977], image: "https://commons.wikimedia.org/wiki/Special:FilePath/Somapura%20Mahavihara.jpg?width=1400",
+    tag: "UNESCO World Heritage", shortDescription: "The monumental remains of an ancient Buddhist monastery at Paharpur.",
+    description: "Somapura Mahavihara at Paharpur, Naogaon, is one of the most important archaeological sites in South Asia and a UNESCO World Heritage Site.",
+    highlights: ["Monumental Buddhist monastery remains", "Central shrine and terracotta plaques", "On-site museum"],
+    travelNotes: ["Stay on designated visitor paths.", "Do not climb or touch fragile remains.", "Check site and museum opening arrangements."]
+  },
+  {
+    slug: "nandail-dighi", name: "Nandail Dighi", region: "Rajshahi Division", district: "Joypurhat", type: "Nature",
+    coordinates: [25.096, 89.02], image: "https://commons.wikimedia.org/wiki/Special:FilePath/Nandail%20Dighi%20Joypurhat.jpg?width=1400",
+    tag: "Quiet waterside escape", shortDescription: "A historic large pond and peaceful local landmark in Joypurhat.",
+    description: "Nandail Dighi is a well-known historic waterbody in Joypurhat, valued for its local stories and calm rural surroundings.",
+    highlights: ["Historic dighi landscape", "Quiet waterside views", "Local history and folklore"],
+    travelNotes: ["Use public access areas and respect nearby residents.", "Do not enter the water where access is restricted.", "Keep the surroundings clean."]
+  },
+  {
+    slug: "choto-sona-mosque", name: "Choto Sona Mosque", region: "Rajshahi Division", district: "Chapainawabganj", type: "Heritage",
+    coordinates: [24.78, 88.278], image: "https://commons.wikimedia.org/wiki/Special:FilePath/Choto%20Sona%20Mosque.jpg?width=1400",
+    tag: "Sultanate-era masterpiece", shortDescription: "A celebrated fifteenth-century mosque near the historic Gaur region.",
+    description: "Choto Sona Mosque in Chapainawabganj is a notable Sultanate-era monument, admired for its stonework and richly decorated architectural details.",
+    highlights: ["Historic mosque architecture", "Stone and terracotta ornament", "Gaur-region heritage"],
+    travelNotes: ["Dress respectfully and observe prayer times.", "Follow site rules and visitor guidance.", "Avoid touching or damaging historic surfaces."]
   }
 
 ];
