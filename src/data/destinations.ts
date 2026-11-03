@@ -495,7 +495,7 @@ export const destinations: Destination[] = [
   },
   {
     slug: "tetulia-kanchenjunga-viewpoint", name: "Tetulia & Kanchenjunga Viewpoint", region: "Rangpur Division", district: "Panchagarh", type: "Nature",
-    coordinates: [26.49, 88.35], image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1400&q=85",
+    coordinates: [26.49, 88.35], image: "https://www.thedailystar.net/sites/default/files/images/2023/12/04/mostafa_shabuj_main.jpeg",
     tag: "Himalayan horizons", shortDescription: "A peaceful northern landscape where clear-season skies can reveal distant Himalayan peaks.",
     description: "Tetulia is the northernmost upazila of Bangladesh, known for its tea gardens, open countryside and occasional distant views of the Himalayan range, including Kanchenjunga on clear days.",
     highlights: ["Seasonal distant mountain views", "Tea gardens and countryside", "Northernmost Bangladesh scenery"],
@@ -503,7 +503,7 @@ export const destinations: Destination[] = [
   },
   {
     slug: "golapgram-thakurgaon", name: "Shuk River & Rural Thakurgaon", region: "Rangpur Division", district: "Thakurgaon", type: "Nature",
-    coordinates: [26.03, 88.46], image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=85",
+    coordinates: [26.03, 88.46], image: "https://cdn.risingbd.com/media/imgAll/2025October/Fishing-Thakurgaon-2510180623.jpg",
     tag: "Quiet countryside", shortDescription: "A slower-paced rural landscape of river scenery, fields and northern Bengal village life.",
     description: "Thakurgaon offers a quieter countryside experience in northwestern Bangladesh, with seasonal fields, village landscapes and waterways such as the Shuk River shaping the local scenery.",
     highlights: ["Rural northern Bengal scenery", "Seasonal agricultural landscapes", "Local village life"],
@@ -528,7 +528,7 @@ export const destinations: Destination[] = [
   },
   {
     slug: "lauchapra-picnic-spot", name: "Lauchapra Picnic Spot", region: "Mymensingh Division", district: "Jamalpur", type: "Nature",
-    coordinates: [25.073, 89.83], image: "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1400&q=85",
+    coordinates: [25.073, 89.83], image: "https://cdn.bd-pratidin.com/public/news_images/2026/01/26/1769449380-49e8ed7db45eb2de5250eed31d8b625d.jpg",
     tag: "Green hills and forest", shortDescription: "A nature retreat near the India border, with low hills, woodland and open views.",
     description: "Lauchapra in Bakshiganj, Jamalpur, is known for its green hillocks and forested surroundings. It offers a quiet countryside escape in the northern part of the division.",
     highlights: ["Green hill and woodland scenery", "Open countryside views", "Picnic and nature experiences"],
@@ -544,7 +544,7 @@ export const destinations: Destination[] = [
   },
   {
     slug: "birishiri-someshwari-river", name: "Birishiri & Someshwari River", region: "Mymensingh Division", district: "Netrokona", type: "Nature",
-    coordinates: [25.12, 90.67], image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1400&q=85",
+    coordinates: [25.12, 90.67], image: "https://www.thedailystar.net/sites/default/files/styles/big_1/public/images/2025/06/29/someswari_river_1.jpg?h=1b6b5d13",
     tag: "River and hill country", shortDescription: "A striking landscape of the Someshwari River, green hills and distinctive clay formations.",
     description: "Birishiri in Durgapur, Netrokona, is known for the scenic Someshwari River and nearby hills. The landscape and river colour can change with rainfall and season.",
     highlights: ["Someshwari River scenery", "Views of the Garo Hills", "Nearby cultural and natural attractions"],
@@ -570,7 +570,7 @@ export const destinations: Destination[] = [
   },
   {
     slug: "shakuni-lake", name: "Shakuni Lake", region: "Dhaka Division", district: "Madaripur", type: "Nature",
-    coordinates: [23.164, 90.198], image: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1400&q=85",
+    coordinates: [23.164, 90.198], image: "https://vitti.com.bd/media/images/8_byymeV5.2e16d0ba.fill-400x400_lglp11u.jpg",
     tag: "A calm urban escape", shortDescription: "A well-known lake and public recreation spot in Madaripur town.",
     description: "Shakuni Lake is a familiar urban landmark in Madaripur, with waterside views and a public promenade atmosphere. It offers a simple local stop for a relaxed visit.",
     highlights: ["Lake and waterside scenery", "Town recreation area", "Evening walks and photography"],
@@ -586,7 +586,7 @@ export const destinations: Destination[] = [
   },
   {
     slug: "idrakpur-fort", name: "Idrakpur Fort", region: "Dhaka Division", district: "Munshiganj", type: "Heritage",
-    coordinates: [23.542, 90.530], image: "https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=1400&q=85",
+    coordinates: [23.542, 90.530], image: "https://dailyasianage.com/library/152545669817699410988_f1d5e9dc26_b.jpg",
     tag: "Mughal river defence", shortDescription: "A historic Mughal-era fort built to defend the river routes around Dhaka.",
     description: "Idrakpur Fort in Munshiganj town is a seventeenth-century Mughal-era river fort traditionally associated with the defence of the region's waterways.",
     highlights: ["Mughal-era fort architecture", "Historic river-defence heritage", "A key landmark in Munshiganj"],
