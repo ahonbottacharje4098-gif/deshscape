@@ -62,7 +62,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       23.7625,
       90.3785
     ],
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/National%20Parliament%20of%20Bangladesh%2014.jpg?width=1400",
+    "image": "https://thereport.live/media/imgAll/2023May/shutterstock1073414594-20230911154952.jpg",
     "tag": "Heritage trail",
     "shortDescription": "A striking modernist landmark by architect Louis I. Kahn.",
     "description": "A striking modernist landmark by architect Louis I. Kahn. Explore this district attraction respectfully, and confirm access and local conditions before travelling.",
@@ -162,7 +162,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       24.095,
       90.405
     ],
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bhawal%20National%20Park%2001.jpg?width=1400",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/A%20Road%20of%20Bhawal%20Nationa%20Park%2C%20Gazipur.jpg",
     "tag": "Into the wild",
     "shortDescription": "A broad sal forest landscape north of Dhaka.",
     "description": "A broad sal forest landscape north of Dhaka. Explore this district attraction respectfully, and confirm access and local conditions before travelling.",
@@ -187,7 +187,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       24.2,
       90.43
     ],
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bird%27s%20Eye%20View%20of%20Bangabandhu%20Sheikh%20Mujib%20Safari%20Park.jpg?width=1400",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Dam%20at%20Bangabandhu%20Sheikh%20Mujib%20Safari%20Park%2C%20Gazipur.jpg",
     "tag": "Nature retreat",
     "shortDescription": "A managed wildlife park and nature attraction.",
     "description": "A managed wildlife park and nature attraction. Explore this district attraction respectfully, and confirm access and local conditions before travelling.",
@@ -212,7 +212,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       24.02,
       90.42
     ],
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Dighi%20lilabati%2C%20Nuhas%20Palli%20(1).jpg?width=1400",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lilabiti%20Dighi%20at%20Nuhash%20Polli.jpg",
     "tag": "Nature retreat",
     "shortDescription": "A creative countryside retreat associated with writer Humayun Ahmed.",
     "description": "A creative countryside retreat associated with writer Humayun Ahmed. Explore this district attraction respectfully, and confirm access and local conditions before travelling.",
@@ -287,7 +287,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       23.02,
       90.05
     ],
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%E0%A6%89%E0%A6%9C%E0%A6%BE%E0%A6%A8%E0%A6%BF%20%E0%A6%9C%E0%A6%AE%E0%A6%BF%E0%A6%A6%E0%A6%BE%E0%A6%B0%20%E0%A6%AC%E0%A6%BE%E0%A6%A1%E0%A6%BC%E0%A6%BF.jpg?width=1400",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%E0%A6%89%E0%A6%9C%E0%A6%BE%E0%A6%A8%E0%A7%80%20%E0%A6%9C%E0%A6%AE%E0%A6%BF%E0%A6%A6%E0%A6%BE%E0%A6%B0%20%E0%A6%AC%E0%A6%BE%E0%A6%A1%E0%A6%BC%E0%A6%BF%20%E0%A6%AE%E0%A7%81%E0%A6%95%E0%A6%B8%E0%A7%81%E0%A6%A6%E0%A6%AA%E0%A7%81%E0%A6%B0%20%E0%A6%97%E0%A7%8B%E0%A6%AA%E0%A6%BE%E0%A6%B2%E0%A6%97%E0%A6%9E%E0%A7%8D%E0%A6%9C.jpg",
     "tag": "Heritage trail",
     "shortDescription": "A historic estate associated with the district's zamindari past.",
     "description": "A historic estate associated with the district's zamindari past. Explore this district attraction respectfully, and confirm access and local conditions before travelling.",
@@ -487,7 +487,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       23.93,
       89.85
     ],
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Teota%20Zamindar%20Bari.jpg?width=1400",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Teota%20Zamindar%20Bari.jpg",
     "tag": "Heritage trail",
     "shortDescription": "A historic estate near the Jamuna river region.",
     "description": "A historic estate near the Jamuna river region. Explore this district attraction respectfully, and confirm access and local conditions before travelling.",
