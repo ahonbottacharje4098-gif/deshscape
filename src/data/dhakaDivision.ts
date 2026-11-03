@@ -137,7 +137,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       23.57,
       89.82
     ],
-    "image": "photo-1511818966892-d7d671e672a2",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%E0%A6%AC%E0%A6%BE%E0%A6%87%E0%A6%B6%E0%A6%B0%E0%A6%B6%E0%A6%BF_%E0%A6%9C%E0%A6%AE%E0%A6%BF%E0%A6%A6%E0%A6%BE%E0%A6%B0_%E0%A6%AC%E0%A6%BE%E0%A6%A1%E0%A6%BC%E0%A6%BF.png",
     "tag": "Heritage trail",
     "shortDescription": "A historic zamindar residence reflecting the area's past.",
     "description": "A historic zamindar residence reflecting the area's past. Explore this district attraction respectfully, and confirm access and local conditions before travelling.",
