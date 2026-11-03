@@ -87,7 +87,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       23.598,
       89.835
     ],
-    "image": "photo-1511818966892-d7d671e672a2",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%E0%A6%9C%E0%A6%B8%E0%A7%80%E0%A6%AE%20%E0%A6%89%E0%A6%A6%E0%A7%8D%E0%A6%A6%E0%A7%80%E0%A6%A8%E0%A7%87%E0%A6%B0%20%E0%A6%AC%E0%A6%BE%E0%A6%B8%E0%A6%AD%E0%A6%AC%E0%A6%A8.jpg?width=1400",
     "tag": "Heritage trail",
     "shortDescription": "A homestead connected with Palli Kabi Jasimuddin.",
     "description": "A homestead connected with Palli Kabi Jasimuddin. Explore this district attraction respectfully, and confirm access and local conditions before travelling.",
@@ -212,7 +212,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       24.02,
       90.42
     ],
-    "image": "photo-1470770841072-f978cf4d019e",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nuhas%20Palli%20(3).jpg?width=1400",
     "tag": "Nature retreat",
     "shortDescription": "A creative countryside retreat associated with writer Humayun Ahmed.",
     "description": "A creative countryside retreat associated with writer Humayun Ahmed. Explore this district attraction respectfully, and confirm access and local conditions before travelling.",
@@ -287,7 +287,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       23.02,
       90.05
     ],
-    "image": "photo-1511818966892-d7d671e672a2",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%E0%A6%89%E0%A6%9C%E0%A6%BE%E0%A6%A8%E0%A6%BF%20%E0%A6%9C%E0%A6%AE%E0%A6%BF%E0%A6%A6%E0%A6%BE%E0%A6%B0%20%E0%A6%AC%E0%A6%BE%E0%A6%A1%E0%A6%BC%E0%A6%BF.jpg?width=1400",
     "tag": "Heritage trail",
     "shortDescription": "A historic estate associated with the district's zamindari past.",
     "description": "A historic estate associated with the district's zamindari past. Explore this district attraction respectfully, and confirm access and local conditions before travelling.",
@@ -337,7 +337,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       24.25,
       90.95
     ],
-    "image": "photo-1511818966892-d7d671e672a2",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Egarosindur%20.jpg?width=1400",
     "tag": "Heritage trail",
     "shortDescription": "A historic settlement associated with archaeological remains.",
     "description": "A historic settlement associated with archaeological remains. Explore this district attraction respectfully, and confirm access and local conditions before travelling.",
@@ -387,7 +387,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       23.17,
       90.195
     ],
-    "image": "photo-1470770841072-f978cf4d019e",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Shokuni%20Lake%2001.jpg?width=1400",
     "tag": "Nature retreat",
     "shortDescription": "A peaceful lake and familiar town-side gathering place.",
     "description": "A peaceful lake and familiar town-side gathering place. Explore this district attraction respectfully, and confirm access and local conditions before travelling.",
@@ -487,7 +487,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       23.93,
       89.85
     ],
-    "image": "photo-1511818966892-d7d671e672a2",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Teota%20Zamindar%20Bari.jpg?width=1400",
     "tag": "Heritage trail",
     "shortDescription": "A historic estate near the Jamuna river region.",
     "description": "A historic estate near the Jamuna river region. Explore this district attraction respectfully, and confirm access and local conditions before travelling.",
@@ -562,7 +562,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       23.465,
       90.26
     ],
-    "image": "photo-1470770841072-f978cf4d019e",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Mawa%20Ghat%20Munshiganj%20Bangladesh.JPG?width=1400",
     "tag": "Riverside escape",
     "shortDescription": "A lively riverfront viewpoint on the Padma.",
     "description": "A lively riverfront viewpoint on the Padma. Explore this district attraction respectfully, and confirm access and local conditions before travelling.",
