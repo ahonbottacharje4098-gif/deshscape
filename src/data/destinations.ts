@@ -74,7 +74,7 @@ export const destinations: Destination[] = [
     region: "Khulna",
     district: "Khulna",
     type: "Forests",
-    image: "photo-1511497584788-876760111969",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/f5/Beauty_of_sundarban_04.jpg",
     tag: "World heritage",
     shortDescription: "A remarkable mangrove landscape shaped by rivers, tides and wildlife.",
     description: "The Sundarbans is the world's largest mangrove forest, shared by Bangladesh and India. The Bangladesh portion is a protected natural landscape of tidal waterways, mudflats and rich biodiversity.",
@@ -252,7 +252,7 @@ export const destinations: Destination[] = [
   },
   {
     slug: "boro-station-molehead", name: "Boro Station Molehead", region: "Chattogram Division", district: "Chandpur", type: "Rivers",
-    coordinates: [23.229, 90.65], image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1400&q=85",
+    coordinates: [23.229, 90.65], image: "https://colozai.com/images/boro-station-chandpur.webp",
     tag: "Where rivers meet", shortDescription: "A riverside viewpoint near the meeting of the Padma, Meghna and Dakatia.",
     description: "Boro Station Molehead is a popular riverside gathering place in Chandpur town, near the confluence of the Padma, Meghna and Dakatia.",
     highlights: ["River confluence views", "Riverside promenade", "Sunset and local river culture"],
@@ -471,7 +471,7 @@ export const destinations: Destination[] = [
   },
   {
     slug: "chilmari-riverfront", name: "Chilmari Riverfront", region: "Rangpur Division", district: "Kurigram", type: "Rivers",
-    coordinates: [25.556, 89.671], image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1400&q=85",
+    coordinates: [25.556, 89.671], image: "https://commons.wikimedia.org/wiki/Special:FilePath/Chilmari%20river%20port%2C%20Kurigram%2C%20Bangladesh.jpg?width=1400",
     tag: "Along the Brahmaputra", shortDescription: "A riverside landscape shaped by the broad Brahmaputra and the life of a historic river port.",
     description: "Chilmari in Kurigram is closely associated with the Brahmaputra River and its river-port heritage. The surrounding chars and shifting waterways create a distinctive northern Bangladesh landscape.",
     highlights: ["Brahmaputra river views", "River-port atmosphere", "Seasonal char landscapes"],
@@ -487,7 +487,7 @@ export const destinations: Destination[] = [
   },
   {
     slug: "teesta-barrage", name: "Teesta Barrage", region: "Rangpur Division", district: "Nilphamari", type: "Rivers",
-    coordinates: [25.962, 89.0], image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1400&q=85",
+    coordinates: [25.962, 89.0], image: "https://cdx.dhakamail.com/media/images/2022July/nilphamari-20220802085833.jpg",
     tag: "Water and wide skies", shortDescription: "A notable river-control landmark set amid the broad Teesta landscape.",
     description: "The Teesta Barrage at Dalia is a major water-management structure in the Teesta basin. Its surrounding river landscape and open skies make the area a recognisable destination in Nilphamari.",
     highlights: ["Teesta river landscape", "Major water-management landmark", "Open countryside views"],
@@ -511,7 +511,7 @@ export const destinations: Destination[] = [
   },
   {
     slug: "tista-char-lalmonirhat", name: "Teesta River Char", region: "Rangpur Division", district: "Lalmonirhat", type: "Nature",
-    coordinates: [25.92, 89.45], image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=85",
+    coordinates: [25.92, 89.45], image: "https://softwebsys.s3.us-east-1.amazonaws.com/uploads/1777305723973-salo_1658473505.webp",
     tag: "Ever-changing river country", shortDescription: "A seasonal landscape of sandbars, river channels and wide-open skies along the Teesta.",
     description: "The Teesta riverine areas of Lalmonirhat are shaped by shifting channels and chars. The scenery changes with the seasons and offers a glimpse of life along a dynamic northern river.",
     highlights: ["Seasonal sandbar landscapes", "Teesta river views", "Riverine community life"],
@@ -520,7 +520,7 @@ export const destinations: Destination[] = [
   ,
   {
     slug: "shoshi-lodge", name: "Shoshi Lodge", region: "Mymensingh Division", district: "Mymensingh", type: "Heritage",
-    coordinates: [24.753, 90.407], image: "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1400&q=85",
+    coordinates: [24.753, 90.407], image: "https://trippainter.com/wp-content/uploads/2021/01/shoshi-lodge-1.jpg",
     tag: "A royal-era landmark", shortDescription: "A historic residence in Mymensingh known for its distinctive architecture and gardens.",
     description: "Shoshi Lodge, also known as Mymensingh Rajbari, is a notable historic landmark in the city. Its architecture and grounds offer a glimpse into the region's past.",
     highlights: ["Historic residence and architecture", "Gardens and open grounds", "Local heritage and photography"],
@@ -536,7 +536,7 @@ export const destinations: Destination[] = [
   },
   {
     slug: "gajni-obokash-kendra", name: "Gajni অবকাশ কেন্দ্র", region: "Mymensingh Division", district: "Sherpur", type: "Nature",
-    coordinates: [25.18, 90.02], image: "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1400&q=85",
+    coordinates: [25.18, 90.02], image: "https://www.risingbd.com/media/imgAll/384971058.jpg",
     tag: "A forest-side escape", shortDescription: "A popular nature destination set among the green hills and forests of Sherpur.",
     description: "Gajni অবকাশ কেন্দ্র in Jhenaigati, Sherpur, is a well-known recreation area surrounded by the green landscape of the Garo Hills region.",
     highlights: ["Green hill and forest surroundings", "Scenic viewpoints", "Family-friendly outdoor recreation"],
@@ -554,7 +554,7 @@ export const destinations: Destination[] = [
   ,
   {
     slug: "jasimuddin-house", name: "Jasimuddin House", region: "Dhaka Division", district: "Faridpur", type: "Heritage",
-    coordinates: [23.607, 89.842], image: "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1400&q=85",
+    coordinates: [23.607, 89.842], image: "https://vromonprio.com/images/thumbnails/kabi-jasimuddins-house.webp",
     tag: "Literary heritage", shortDescription: "The ancestral home of Palli Kabi Jasimuddin, one of Bengal's celebrated rural poets.",
     description: "Jasimuddin House, also known as Palli Kabi Jasimuddin's residence, is a cultural landmark in Faridpur associated with the poet's life and literary legacy. Confirm visitor access locally before planning a visit.",
     highlights: ["Life and work of Palli Kabi Jasimuddin", "Rural literary heritage", "A cultural stop in Faridpur"],
@@ -562,7 +562,7 @@ export const destinations: Destination[] = [
   },
   {
     slug: "tungipara-mausoleum", name: "Bangabandhu Mausoleum Complex", region: "Dhaka Division", district: "Gopalganj", type: "Heritage",
-    coordinates: [22.899, 89.900], image: "https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=1400&q=85",
+    coordinates: [22.899, 89.900], image: "https://upload.wikimedia.org/wikipedia/commons/7/79/Tomb_of_Sheikh_Mujibur_Rahman%2C_Tungipara.jpg",
     tag: "National history", shortDescription: "A memorial complex in Tungipara commemorating the life of Sheikh Mujibur Rahman.",
     description: "The Bangabandhu Mausoleum Complex in Tungipara, Gopalganj, is a significant national memorial and place of historical remembrance. Visitors should observe the site's rules and maintain a respectful atmosphere.",
     highlights: ["National memorial complex", "Historical exhibits and grounds", "A significant place in Bangladesh's history"],
@@ -578,7 +578,7 @@ export const destinations: Destination[] = [
   },
   {
     slug: "baliati-palace", name: "Baliati Palace", region: "Dhaka Division", district: "Manikganj", type: "Heritage",
-    coordinates: [23.858, 89.976], image: "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1400&q=85",
+    coordinates: [23.858, 89.976], image: "https://upload.wikimedia.org/wikipedia/commons/5/54/Baliati_palace_02.jpg",
     tag: "A zamindar-era landmark", shortDescription: "An expansive historic palace complex known for its courtyards and ornate architecture.",
     description: "Baliati Palace in Saturia, Manikganj, is a major heritage site featuring several historic buildings and courtyards associated with the Baliati zamindar family.",
     highlights: ["Historic palace buildings", "Architectural details and courtyards", "Museum and heritage grounds"],
@@ -602,7 +602,7 @@ export const destinations: Destination[] = [
   },
   {
     slug: "atiya-mosque", name: "Atiya Mosque", region: "Dhaka Division", district: "Tangail", type: "Heritage",
-    coordinates: [24.248, 89.916], image: "https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=1400&q=85",
+    coordinates: [24.248, 89.916], image: "https://ecdn.dhakatribune.net/contents/cache/images/800x450x1/uploads/dten/2016/12/111-22.jpg",
     tag: "Sultanate-era architecture", shortDescription: "A historic mosque in Delduar known for its distinctive brickwork and terracotta ornament.",
     description: "Atiya Mosque in Delduar, Tangail, is a notable historic mosque dating to the early seventeenth century. Its architectural features make it an important heritage landmark in the district.",
     highlights: ["Historic mosque architecture", "Terracotta and brick details", "Religious and cultural heritage"],
