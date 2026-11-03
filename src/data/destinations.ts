@@ -479,7 +479,7 @@ export const destinations: Destination[] = [
   },
   {
     slug: "balashi-ghat", name: "Balashi Ghat", region: "Rangpur Division", district: "Gaibandha", type: "Rivers",
-    coordinates: [25.29, 89.69], image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1400&q=85",
+    coordinates: [25.29, 89.69], image: "https://commons.wikimedia.org/wiki/Special:FilePath/Balashighat.jpg?width=1400",
     tag: "River horizons", shortDescription: "An open riverfront destination with expansive views across the Jamuna.",
     description: "Balashi Ghat in Gaibandha is a familiar riverside spot beside the Jamuna, where visitors can experience the scale of the river and the changing landscape of its banks.",
     highlights: ["Wide Jamuna river views", "Open riverside scenery", "Local river culture"],
@@ -487,7 +487,7 @@ export const destinations: Destination[] = [
   },
   {
     slug: "teesta-barrage", name: "Teesta Barrage", region: "Rangpur Division", district: "Nilphamari", type: "Rivers",
-    coordinates: [25.962, 89.0], image: "https://cdx.dhakamail.com/media/images/2022July/nilphamari-20220802085833.jpg",
+    coordinates: [25.962, 89.0], image: "https://commons.wikimedia.org/wiki/Special:FilePath/Teesta%20Barrage%20Bangladesh.jpg?width=1400",
     tag: "Water and wide skies", shortDescription: "A notable river-control landmark set amid the broad Teesta landscape.",
     description: "The Teesta Barrage at Dalia is a major water-management structure in the Teesta basin. Its surrounding river landscape and open skies make the area a recognisable destination in Nilphamari.",
     highlights: ["Teesta river landscape", "Major water-management landmark", "Open countryside views"],
@@ -511,7 +511,7 @@ export const destinations: Destination[] = [
   },
   {
     slug: "tista-char-lalmonirhat", name: "Teesta River Char", region: "Rangpur Division", district: "Lalmonirhat", type: "Nature",
-    coordinates: [25.92, 89.45], image: "photo-1500530855697-b586d89ba3ee",
+    coordinates: [25.92, 89.45], image: "https://commons.wikimedia.org/wiki/Special:FilePath/Teesta%20River%20Lalmonirhat.jpg?width=1400",
     tag: "Ever-changing river country", shortDescription: "A seasonal landscape of sandbars, river channels and wide-open skies along the Teesta.",
     description: "The Teesta riverine areas of Lalmonirhat are shaped by shifting channels and chars. The scenery changes with the seasons and offers a glimpse of life along a dynamic northern river.",
     highlights: ["Seasonal sandbar landscapes", "Teesta river views", "Riverine community life"],
@@ -594,7 +594,7 @@ export const destinations: Destination[] = [
   },
   {
     slug: "goalanda-ghat", name: "Goalanda Ghat", region: "Dhaka Division", district: "Rajbari", type: "Rivers",
-    coordinates: [23.783, 89.770], image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1400&q=85",
+    coordinates: [23.783, 89.770], image: "https://commons.wikimedia.org/wiki/Special:FilePath/Desi%20Boat%20-%20River%20Padma%20-%20Rajbari-Dhaka%202015-05-29%201404.JPG?width=1400",
     tag: "Gateway by the river", shortDescription: "A historic river landing associated with journeys across the Padma River.",
     description: "Goalanda Ghat in Rajbari is a well-known river transport point at the Padma's edge, historically important as a gateway for river journeys and local trade.",
     highlights: ["Padma riverfront views", "Historic river transport heritage", "Local river culture"],
