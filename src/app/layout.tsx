@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   },
   description: siteDescription,
   applicationName: "Deshscape",
+  icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
   keywords: [
     "Bangladesh travel",
     "Bangladesh tourism",
