@@ -254,3 +254,15 @@ button,input{font:inherit}
 .leaflet-container{font-family:'DM Sans',sans-serif}
 @media(max-width:800px){.real-map-frame,.leaflet-bangladesh-map,.real-map-loading{min-height:480px;height:480px}}
 @media(max-width:600px){.real-map-frame,.leaflet-bangladesh-map,.real-map-loading{min-height:430px;height:430px}}
+
+
+/* Destination map search */
+
+.map-search-label{display:flex;align-items:center;gap:7px;margin:18px 22px 7px;color:#607765;font-size:9px;font-weight:700;letter-spacing:1.2px}
+.map-search-input{display:block;width:calc(100% - 44px);margin:0 22px 12px;padding:12px 13px;border:1px solid #d9e1d9;border-radius:2px;background:#fff;color:#244b3a;font:12px 'DM Sans',sans-serif;outline:none}
+.map-search-input:focus{border-color:#78927d;box-shadow:0 0 0 3px rgba(36,75,58,.08)}
+.map-search-results{max-height:210px;overflow:auto;margin:0 22px 12px;border:1px solid #e1e7df;background:#fff}
+.map-search-results button{display:flex;justify-content:space-between;align-items:center;gap:10px;width:100%;padding:9px 11px;border:0;border-bottom:1px solid #edf0eb;background:#fff;text-align:left;color:#244b3a;font:11px 'DM Sans',sans-serif;cursor:pointer}
+.map-search-results button:hover{background:#f2f5ef}
+.map-search-results small{color:#879184;font-size:9px}
+.map-search-results p{padding:10px;color:#778074;font-size:11px}
