@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowRight, ArrowUpRight, Compass, MapPin, Check, Info } fro
 import { destinations } from "@/data/destinations";
 import { destinationImageUrl } from "@/lib/destinationImage";
 import DestinationGallery from "@/components/DestinationGallery";
+import ShareDestination from "@/components/ShareDestination";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -90,6 +91,9 @@ export default async function DestinationPage({ params }: Props) {
       </section>
 
       <DestinationGallery image={destinationImageUrl(place.image, 1800)} title={place.name} />
+      <section className="section-wrap destination-share-wrap">
+        <ShareDestination title={place.name} />
+      </section>
 
       <section className="detail-travel section-wrap">
         <div className="eyebrow"><span /> TRAVEL NOTES</div>
