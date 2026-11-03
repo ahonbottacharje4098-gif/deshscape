@@ -3,32 +3,51 @@
 import { useMemo, useState } from "react";
 import {
   ArrowDown, ArrowRight, ArrowUpRight, Compass, MapPin, Menu, Search,
-  Sparkles, X, Mountain, Waves, Trees, Landmark, Footprints, Instagram,
-  Facebook, Youtube, ChevronDown
+  X, Mountain, Waves, Trees, Landmark, Instagram, Facebook, Youtube,
+  SlidersHorizontal, RotateCcw, ChevronDown
 } from "lucide-react";
-
-const destinations = [
-  { name: "Sajek Valley", region: "Rangamati, Chattogram", type: "Mountains", image: "photo-1500530855697-b586d89ba3ee", tag: "Mountain escape" },
-  { name: "Cox's Bazar", region: "Cox's Bazar, Chattogram", type: "Sea & beach", image: "photo-1500375592092-40eb2168fd21", tag: "Coastal wonder" },
-  { name: "Ratargul Swamp Forest", region: "Sylhet", type: "Forest", image: "photo-1441974231531-c6227db76b6e", tag: "Into the wild" },
-  { name: "Bichanakandi", region: "Sylhet", type: "Rivers", image: "photo-1470770841072-f978cf4d019e", tag: "Hidden gem" },
-  { name: "Sundarbans", region: "Khulna", type: "Forest", image: "photo-1511497584788-876760111969", tag: "World heritage" },
-  { name: "Jaflong", region: "Sylhet", type: "Nature", image: "photo-1472396961693-142e6e269027", tag: "Nature retreat" }
-];
+import { destinations, destinationRegions, destinationTypes } from "@/data/destinations";
 
 const categories = [
-  { label: "Mountains", icon: Mountain, count: "12 places" },
-  { label: "Beaches", icon: Waves, count: "08 places" },
-  { label: "Forests", icon: Trees, count: "15 places" },
-  { label: "Heritage", icon: Landmark, count: "24 places" }
+  { label: "Mountains", icon: Mountain, count: "Hill escapes" },
+  { label: "Beaches", icon: Waves, count: "Coastal places" },
+  { label: "Forests", icon: Trees, count: "Into the wild" },
+  { label: "Heritage", icon: Landmark, count: "Culture & history" }
 ];
 
 export default function Home() {
   const [query, setQuery] = useState("");
+  const [region, setRegion] = useState("All regions");
+  const [type, setType] = useState("All experiences");
+  const [sort, setSort] = useState("featured");
   const [menuOpen, setMenuOpen] = useState(false);
-  const filtered = useMemo(() => destinations.filter((place) =>
-    (place.name + " " + place.region + " " + place.type).toLowerCase().includes(query.toLowerCase())
-  ), [query]);
+
+  const filtered = useMemo(() => {
+    const normalized = query.trim().toLowerCase();
+    const result = destinations.filter((place) => {
+      const matchesQuery = !normalized || [
+        place.name, place.region, place.district, place.type, place.tag, place.shortDescription
+      ].join(" ").toLowerCase().includes(normalized);
+      const matchesRegion = region === "All regions" || place.region.includes(region);
+      const matchesType = type === "All experiences" || place.type === type;
+      return matchesQuery && matchesRegion && matchesType;
+    });
+    if (sort === "az") result.sort((a, b) => a.name.localeCompare(b.name));
+    if (sort === "za") result.sort((a, b) => b.name.localeCompare(a.name));
+    return result;
+  }, [query, region, type, sort]);
+
+  const resetFilters = () => {
+    setQuery("");
+    setRegion("All regions");
+    setType("All experiences");
+    setSort("featured");
+  };
+
+  const chooseCategory = (label: string) => {
+    setType(label === "Heritage" ? "All experiences" : label);
+    document.getElementById("destinations")?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <main>
@@ -38,15 +57,15 @@ export default function Home() {
           <span className="brand-name">deshscape<span>.</span><small>THE ART OF DISCOVERY</small></span>
         </a>
         <nav className={menuOpen ? "main-nav open" : "main-nav"}>
-          <a className="nav-link active" href="#">Discover</a>
-          <a className="nav-link" href="#destinations">Destinations</a>
-          <a className="nav-link" href="#map">Explore map</a>
-          <a className="nav-link" href="#stories">Stories</a>
-          <a className="nav-link mobile-only" href="#planner">Plan a trip</a>
+          <a className="nav-link active" href="#" onClick={() => setMenuOpen(false)}>Discover</a>
+          <a className="nav-link" href="#destinations" onClick={() => setMenuOpen(false)}>Destinations</a>
+          <a className="nav-link" href="#map" onClick={() => setMenuOpen(false)}>Explore map</a>
+          <a className="nav-link" href="#stories" onClick={() => setMenuOpen(false)}>Stories</a>
+          <a className="nav-link mobile-only" href="#planner" onClick={() => setMenuOpen(false)}>Plan a trip</a>
         </nav>
         <div className="header-actions">
           <a className="plan-link" href="#planner">Plan a trip <ArrowUpRight size={15} /></a>
-          <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
+          <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu" aria-expanded={menuOpen}>
             {menuOpen ? <X /> : <Menu />}
           </button>
         </div>
@@ -80,7 +99,7 @@ export default function Home() {
         </div>
         <div className="stats-row">
           <div><strong>64</strong><span>Districts to discover</span></div>
-          <div><strong>8</strong><spanUnique>Divisions across the land</spanUnique></div>
+          <div><strong>8</strong><span>Divisions across the land</span></div>
           <div><strong>∞</strong><span>Stories waiting to unfold</span></div>
           <div className="stats-note">A LITTLE COUNTRY.<br />A LOT TO EXPLORE.</div>
         </div>
@@ -92,21 +111,33 @@ export default function Home() {
             <div><div className="eyebrow"><span /> THE COLLECTION</div><h2>Places worth<br /><em>getting lost in.</em></h2></div>
             <a className="text-link heading-link" href="#map">Explore all destinations <ArrowUpRight size={16} /></a>
           </div>
-          <div className="search-box">
-            <Search size={19} />
-            <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search places, districts, experiences..." aria-label="Search destinations" />
-            <span>DISCOVER</span>
+
+          <div className="advanced-search">
+            <div className="search-box search-main">
+              <Search size={19} />
+              <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search places, districts, experiences..." aria-label="Search destinations" />
+              {query && <button className="clear-search" onClick={() => setQuery("")} aria-label="Clear search"><X size={16} /></button>}
+              <span>DISCOVER</span>
+            </div>
+            <div className="filter-row">
+              <label className="filter-control"><span>REGION</span><select value={region} onChange={(event) => setRegion(event.target.value)} aria-label="Filter by region">{destinationRegions.map((item) => <option key={item}>{item}</option>)}</select><ChevronDown size={14} /></label>
+              <label className="filter-control"><span>EXPERIENCE</span><select value={type} onChange={(event) => setType(event.target.value)} aria-label="Filter by experience">{destinationTypes.map((item) => <option key={item}>{item}</option>)}</select><ChevronDown size={14} /></label>
+              <label className="filter-control sort-control"><span>SORT BY</span><select value={sort} onChange={(event) => setSort(event.target.value)} aria-label="Sort destinations"><option value="featured">Featured</option><option value="az">Name: A–Z</option><option value="za">Name: Z–A</option></select><ChevronDown size={14} /></label>
+              <button className="reset-filters" onClick={resetFilters}><RotateCcw size={14} /> Reset filters</button>
+            </div>
+            <div className="results-line"><span><SlidersHorizontal size={14} /> Showing <strong>{filtered.length}</strong> of {destinations.length} destinations</span><span>{query || region !== "All regions" || type !== "All experiences" ? "FILTERS APPLIED" : "CURATED FOR THE CURIOUS"}</span></div>
           </div>
+
           <div className="destination-grid">
             {filtered.map((place, index) => (
-              <a className={index === 0 ? "destination-card featured" : "destination-card"} href="#planner" key={place.name}>
+              <a className={index === 0 && sort === "featured" ? "destination-card featured" : "destination-card"} href={`/destinations/${place.slug}`} key={place.slug}>
                 <div className="destination-image" style={{ backgroundImage: `url(https://images.unsplash.com/${place.image}?auto=format&fit=crop&w=1100&q=85)` }} />
                 <div className="destination-overlay" />
                 <span className="destination-tag">{place.tag}</span>
                 <div className="destination-info"><span><MapPin size={13} /> {place.region}</span><h3>{place.name}</h3><div className="card-bottom"><small>{place.type}</small><i><ArrowUpRight size={17} /></i></div></div>
               </a>
             ))}
-            {filtered.length === 0 && <p className="empty-state">No places found. Try another search.</p>}
+            {filtered.length === 0 && <div className="empty-state"><Search size={25} /><h3>No destinations found</h3><p>Try another keyword or reset your filters to explore all places.</p><button className="button button-dark" onClick={resetFilters}>Show all destinations <ArrowRight size={16} /></button></div>}
           </div>
         </div>
       </section>
@@ -115,7 +146,7 @@ export default function Home() {
         <div className="eyebrow"><span /> FIND YOUR KIND OF ESCAPE</div>
         <div className="category-heading"><h2>What moves <em>you?</em></h2><p>Every journey has a feeling. Find the landscape<br />that speaks your language.</p></div>
         <div className="category-grid">
-          {categories.map(({ label, icon: Icon, count }) => <a href="#destinations" className="category-item" key={label}><span className="category-icon"><Icon size={23} strokeWidth={1.5} /></span><span className="category-name">{label}</span><span className="category-count">{count}</span><ArrowUpRight className="category-arrow" size={17} /></a>)}
+          {categories.map(({ label, icon: Icon, count }) => <button type="button" onClick={() => chooseCategory(label)} className="category-item" key={label}><span className="category-icon"><Icon size={23} strokeWidth={1.5} /></span><span className="category-name">{label}</span><span className="category-count">{count}</span><ArrowUpRight className="category-arrow" size={17} /></button>)}
         </div>
       </section>
 
@@ -125,7 +156,7 @@ export default function Home() {
           <div className="eyebrow light"><span /> THE WHOLE COUNTRY, IN YOUR HANDS</div>
           <h2>64 districts.<br /><em>Endless</em> discoveries.</h2>
           <p>From the tea gardens of Sylhet to the shores of the south — explore Bangladesh district by district. Your map to somewhere wonderful.</p>
-          <a className="button button-outline" href="#planner">Explore the map <ArrowRight size={17} /></a>
+          <a className="button button-outline" href="#destinations">Explore destinations <ArrowRight size={17} /></a>
           <span className="map-caption">BANGLADESH — 8 DIVISIONS / 64 DISTRICTS</span>
         </div>
       </section>
