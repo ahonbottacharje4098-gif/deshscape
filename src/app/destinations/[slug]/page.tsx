@@ -38,7 +38,7 @@ export default async function DestinationPage({ params }: Props) {
       </header>
 
       <section className="detail-hero">
-        <div className="detail-hero-image" style={{ backgroundImage: `url(https://images.unsplash.com/${place.image}?auto=format&fit=crop&w=2200&q=90)` }} />
+        <div className="detail-hero-image" style={{ backgroundImage: `url(${place.image.startsWith("http") ? place.image : `https://images.unsplash.com/${place.image}?auto=format&fit=crop&w=2200&q=90`})` }} />
         <div className="detail-hero-shade" />
         <div className="detail-hero-content">
           <div className="eyebrow light"><span /> {place.tag.toUpperCase()}</div>
@@ -77,7 +77,7 @@ export default async function DestinationPage({ params }: Props) {
 
       {related.length > 0 && <section className="related-section section-wrap">
         <div className="section-heading"><div><div className="eyebrow"><span /> KEEP EXPLORING</div><h2>More places to<br /><em>fall for.</em></h2></div><Link className="text-link heading-link" href="/#destinations">All destinations <ArrowUpRight size={16} /></Link></div>
-        <div className="related-grid">{related.map((item) => <Link className="related-card" href={`/destinations/${item.slug}`} key={item.slug}><div className="related-image" style={{ backgroundImage: `url(https://images.unsplash.com/${item.image}?auto=format&fit=crop&w=900&q=85)` }} /><div><span>{item.region}</span><h3>{item.name}</h3></div><ArrowUpRight size={18} /></Link>)}</div>
+        <div className="related-grid">{related.map((item) => <Link className="related-card" href={`/destinations/${item.slug}`} key={item.slug}><div className="related-image" style={{ backgroundImage: `url(${item.image.startsWith("http") ? item.image : `https://images.unsplash.com/${item.image}?auto=format&fit=crop&w=900&q=85`})` }} /><div><span>{item.region}</span><h3>{item.name}</h3></div><ArrowUpRight size={18} /></Link>)}</div>
       </section>}
 
       <footer className="site-footer detail-footer">
