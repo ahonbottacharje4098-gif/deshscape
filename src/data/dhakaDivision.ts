@@ -62,7 +62,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       23.7625,
       90.3785
     ],
-    "image": "photo-1511818966892-d7d671e672a2",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/National%20Parliament%20of%20Bangladesh%2014.jpg?width=1400",
     "tag": "Heritage trail",
     "shortDescription": "A striking modernist landmark by architect Louis I. Kahn.",
     "description": "A striking modernist landmark by architect Louis I. Kahn. Explore this district attraction respectfully, and confirm access and local conditions before travelling.",
@@ -112,7 +112,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       23.59,
       89.79
     ],
-    "image": "photo-1511818966892-d7d671e672a2",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Mathurapur%20Deul.jpg?width=1400",
     "tag": "Heritage trail",
     "shortDescription": "A distinctive historic temple tower.",
     "description": "A distinctive historic temple tower. Explore this district attraction respectfully, and confirm access and local conditions before travelling.",
@@ -312,7 +312,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       24.33,
       90.94
     ],
-    "image": "photo-1470770841072-f978cf4d019e",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nikli%20Haor%20Ayon%201.jpg?width=1400",
     "tag": "Riverside escape",
     "shortDescription": "A wide seasonal wetland landscape and open-water experience.",
     "description": "A wide seasonal wetland landscape and open-water experience. Explore this district attraction respectfully, and confirm access and local conditions before travelling.",
@@ -362,7 +362,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       24.435,
       90.78
     ],
-    "image": "photo-1511818966892-d7d671e672a2",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sholakia%20Eidgah%20Maidan%2001.jpg?width=1400",
     "tag": "Heritage trail",
     "shortDescription": "A renowned historic Eid congregation ground.",
     "description": "A renowned historic Eid congregation ground. Explore this district attraction respectfully, and confirm access and local conditions before travelling.",
@@ -462,7 +462,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       23.85,
       89.98
     ],
-    "image": "photo-1511818966892-d7d671e672a2",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Baliati%20Zamindar%20Bari%2001.jpg?width=1400",
     "tag": "Heritage trail",
     "shortDescription": "An expansive historic palace complex with ornate architecture.",
     "description": "An expansive historic palace complex with ornate architecture. Explore this district attraction respectfully, and confirm access and local conditions before travelling.",
@@ -537,7 +537,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       23.55,
       90.53
     ],
-    "image": "photo-1511818966892-d7d671e672a2",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Edrakpor%20kella%20in%20Munshiganj%20(1).JPG?width=1400",
     "tag": "Heritage trail",
     "shortDescription": "A 17th-century Mughal fort near the town centre.",
     "description": "A 17th-century Mughal fort near the town centre. Explore this district attraction respectfully, and confirm access and local conditions before travelling.",
@@ -662,7 +662,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       23.66,
       90.62
     ],
-    "image": "photo-1511818966892-d7d671e672a2",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Corner%20view%20of%20Goaldi%20mosque%2C%20Sonargaon%2C%20Narayanganj.jpg?width=1400",
     "tag": "Heritage trail",
     "shortDescription": "A significant Sultanate-era mosque in Sonargaon.",
     "description": "A significant Sultanate-era mosque in Sonargaon. Explore this district attraction respectfully, and confirm access and local conditions before travelling.",
@@ -787,7 +787,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       23.78,
       89.76
     ],
-    "image": "photo-1470770841072-f978cf4d019e",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Boats%20in%20Padma%20River%20Daulatdia%20Ghat%20Rajbari%20Bangladesh.JPG?width=1400",
     "tag": "Riverside escape",
     "shortDescription": "A busy river terminal beside the Padma.",
     "description": "A busy river terminal beside the Padma. Explore this district attraction respectfully, and confirm access and local conditions before travelling.",
