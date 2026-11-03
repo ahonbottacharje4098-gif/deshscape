@@ -374,3 +374,23 @@ button,input{font:inherit}
  .journal-article-body{padding:55px 0 68px}
  .journal-article-body>p{font-size:13px}
 }
+
+
+/* Journal search and category filters */
+.journal-tools{display:flex;align-items:center;justify-content:space-between;gap:18px;margin:30px 0 20px}
+.journal-search{display:flex;align-items:center;gap:11px;width:min(360px,100%);height:48px;padding:0 15px;border:1px solid #d9ddd3;background:#faf9f5;color:#718073}
+.journal-search input{width:100%;border:0;outline:0;background:transparent;color:#183d32;font:12px 'DM Sans',sans-serif}
+.journal-search input::placeholder{color:#9a a397}
+.journal-search button{display:grid;place-items:center;border:0;background:transparent;color:#718073;cursor:pointer}
+.journal-filters{display:flex;flex-wrap:wrap;gap:8px}
+.journal-filter{padding:12px 15px;border:1px solid #d9ddd3;background:transparent;color:#718073;font:700 8px 'DM Sans',sans-serif;letter-spacing:1px;cursor:pointer;transition:all .2s}
+.journal-filter:hover,.journal-filter.active{border-color:#183d32;background:#183d32;color:#fff}
+.journal-filter:focus-visible,.journal-empty button:focus-visible,.journal-results-line button:focus-visible{outline:2px solid #a8794d;outline-offset:3px}
+.journal-results-line{display:flex;justify-content:space-between;align-items:center;margin:0 0 14px;color:#92998e;font-size:9px;letter-spacing:1.3px}
+.journal-results-line button{display:inline-flex;align-items:center;gap:6px;border:0;background:transparent;color:#718073;font:700 8px 'DM Sans',sans-serif;letter-spacing:1px;cursor:pointer}
+.journal-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:260px;padding:38px 20px;border:1px solid #deded4;background:#faf9f5;text-align:center;color:#8b988a}
+.journal-empty h3{margin:17px 0 7px;color:#183d32;font:400 27px 'Playfair Display',serif}
+.journal-empty p{margin:0;color:#7b8479;font-size:11px;line-height:1.8}
+.journal-empty button{display:inline-flex;align-items:center;gap:8px;margin-top:20px;padding:12px 16px;border:1px solid #9caa96;background:transparent;color:#183d32;font:700 9px 'DM Sans',sans-serif;letter-spacing:1px;cursor:pointer}
+@media(max-width:760px){.journal-tools{align-items:stretch;flex-direction:column}.journal-search{width:100%}.journal-filters{gap:7px}.journal-filter{padding:11px 12px;font-size:7px}}
+@media(max-width:420px){.journal-filters{display:grid;grid-template-columns:1fr 1fr}.journal-filter:first-child{grid-column:span 2}}
