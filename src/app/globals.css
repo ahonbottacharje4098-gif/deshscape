@@ -266,3 +266,6 @@ button,input{font:inherit}
 .map-search-results button:hover{background:#f2f5ef}
 .map-search-results small{color:#879184;font-size:9px}
 .map-search-results p{padding:10px;color:#778074;font-size:11px}
+
+/* Division tabs - responsive horizontal navigation */
+.division-tabs{display:flex;gap:8px;overflow-x:auto;padding:4px 1px 15px;margin:0 0 20px;border-bottom:1px solid #d8dbd1;scrollbar-width:thin;scrollbar-color:#a9b7a1 transparent}.division-tab{flex:0 0 auto;border:1px solid #d4d9cf;background:#f8f8f3;color:#647366;padding:12px 19px;font-size:11px;font-weight:600;cursor:pointer;transition:background .2s,color .2s}.division-tab:hover{border-color:#829787;color:var(--forest)}.division-tab.active{background:var(--forest);border-color:var(--forest);color:#fff}.division-tab:focus-visible{outline:2px solid #a8794d;outline-offset:3px}@media(max-width:650px){.division-tabs{gap:7px;margin-bottom:16px;padding-bottom:12px}.division-tab{padding:11px 15px;font-size:10px}}
