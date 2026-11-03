@@ -39,6 +39,10 @@ export default async function DestinationPage({ params }: Props) {
         <Link className="detail-back" href="/#destinations"><ArrowLeft size={15} /> All destinations</Link>
       </header>
 
+      <nav className="detail-breadcrumb" aria-label="Breadcrumb">
+        <Link href="/">Home</Link><span>/</span><Link href="/#destinations">Destinations</Link><span>/</span><span aria-current="page">{place.name}</span>
+      </nav>
+
       <section className="detail-hero">
         <div className="detail-hero-image" style={{ backgroundImage: `url(${destinationImageUrl(place.image, 2200)})` }} />
         <div className="detail-hero-shade" />
