@@ -61,14 +61,15 @@ export default function JournalPage() {
           </div>
           <div className="journal-grid">
             {stories.map((story) => (
-              <article key={story.number} style={{ background: "#faf9f5", color: "#202720", border: "1px solid #deded4" }}>
-                <div style={{ height: 270, backgroundImage: `url(${story.image})`, backgroundPosition: "center", backgroundSize: "cover" }} />
-                <div style={{ padding: "25px 27px 29px" }}>
+              <article key={story.number} className="journal-card">
+                <Link className="journal-card-image" href={`/journal/${story.number === "01" ? "river-town-rhythm" : "beyond-tea-gardens"}`} aria-label={`Read ${story.title}`} style={{ backgroundImage: `url(${story.image})` }} />
+                <div className="journal-card-copy">
                   <div className="eyebrow"><span /> {story.category}</div>
                   <h3 style={{ font: "30px/1.15 'Playfair Display',serif", color: "#183d32", margin: "17px 0 10px" }}>{story.title}</h3>
                   <div style={{ display: "flex", alignItems: "center", gap: 6, color: "#899387", fontSize: 10, marginBottom: 15 }}><MapPin size={13} /> {story.location}</div>
                   <p style={{ color: "#70776e", fontSize: 12, lineHeight: 1.9, margin: "0 0 18px" }}>{story.description}</p>
                   <div style={{ color: "#9caa96", fontSize: 9, letterSpacing: 1.1, textTransform: "uppercase" }}>{story.note}</div>
+                  <Link className="journal-read-link" href={`/journal/${story.number === "01" ? "river-town-rhythm" : "beyond-tea-gardens"}`}>READ STORY <ArrowUpRight size={15} /></Link>
                 </div>
               </article>
             ))}
