@@ -462,3 +462,11 @@ button,input{font:inherit}
 /* Journal article reading progress */
 .reading-progress-track{position:fixed;top:0;left:0;right:0;z-index:1200;height:3px;background:#183d3220;pointer-events:none}
 .reading-progress-fill{display:block;height:100%;background:#a8794d;transition:width .08s linear}
+
+
+/* Journal back-to-top control */
+.back-to-top-button{position:fixed;right:28px;bottom:28px;z-index:1100;display:flex;align-items:center;gap:9px;padding:13px 15px;border:1px solid #d4dbd0;background:#f8f7f1;color:#183d32;box-shadow:0 8px 25px #102c2518;font:700 8px 'DM Sans',sans-serif;letter-spacing:1.2px;cursor:pointer;animation:back-top-enter .2s ease-out}
+.back-to-top-button:hover{background:#183d32;color:#fff;border-color:#183d32}
+.back-to-top-button:focus-visible{outline:2px solid #a8794d;outline-offset:4px}
+@keyframes back-top-enter{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:600px){.back-to-top-button{right:15px;bottom:16px;padding:12px}.back-to-top-button span{display:none}}
