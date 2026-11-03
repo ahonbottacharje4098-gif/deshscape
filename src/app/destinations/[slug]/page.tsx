@@ -65,6 +65,21 @@ export default async function DestinationPage({ params }: Props) {
           <div className="detail-fact"><span>REGION</span><strong>{place.region}</strong></div>
           <div className="detail-fact"><span>DISTRICT</span><strong>{place.district}</strong></div>
           <div className="detail-fact"><span>EXPERIENCE</span><strong>{place.type}</strong></div>
+          {place.coordinates && (
+            <div className="detail-map-card">
+              <div className="detail-map-heading"><MapPin size={16} /><span>FIND THIS PLACE</span></div>
+              <p>See the location on an interactive OpenStreetMap.</p>
+              <a
+                className="detail-map-link"
+                href={`https://www.openstreetmap.org/?mlat=${place.coordinates[0]}&mlon=${place.coordinates[1]}#map=13/${place.coordinates[0]}/${place.coordinates[1]}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View on map <ArrowUpRight size={15} />
+              </a>
+              <small>{place.coordinates[0].toFixed(4)}, {place.coordinates[1].toFixed(4)}</small>
+            </div>
+          )}
           <div className="detail-note"><Info size={17} /><div><strong>Before you go</strong><p>Conditions, access and local guidance can change. Check current information before travelling.</p></div></div>
         </aside>
       </section>
