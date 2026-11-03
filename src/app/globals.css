@@ -487,3 +487,12 @@ button,input{font:inherit}
 .not-found-coordinate{position:relative;z-index:1;padding-top:20px;border-top:1px solid #ffffff30;color:#a8b7a9;font-size:8px;letter-spacing:1.7px}
 .not-found-page:after{content:"404";position:absolute;right:4%;top:50%;transform:translateY(-50%);color:#ffffff08;font:400 clamp(180px,34vw,440px)/1 'Playfair Display',serif;pointer-events:none}
 @media(max-width:600px){.not-found-page{padding:25px 7%}.not-found-content{padding:65px 0}.not-found-content h1{letter-spacing:-1px}.not-found-page:after{top:43%;right:-5%;font-size:55vw}}
+
+
+/* Breadcrumb navigation */
+.detail-breadcrumb{min-height:44px;padding:0 6.2%;display:flex;align-items:center;gap:11px;background:var(--paper);font-size:10px;color:#879085;letter-spacing:.15px}
+.detail-breadcrumb a{color:var(--forest);transition:color .2s}
+.detail-breadcrumb a:hover{color:#a8794d}
+.detail-breadcrumb>span[aria-current="page"]{color:#6f776d;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.journal-breadcrumb{padding-left:10.5%;padding-right:10.5%}
+@media(max-width:650px){.detail-breadcrumb{padding-left:7%;padding-right:7%;gap:8px;font-size:9px;min-height:40px}.journal-breadcrumb{padding-left:7%;padding-right:7%}}
