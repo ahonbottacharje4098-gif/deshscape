@@ -12,7 +12,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       23.7195,
       90.388
     ],
-    "image": "photo-1511818966892-d7d671e672a2",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lalbagh%20Fort%20Dhaka.jpg?width=1400",
     "tag": "Heritage trail",
     "shortDescription": "Historic Mughal fort complex in Old Dhaka.",
     "description": "Historic Mughal fort complex in Old Dhaka. Explore this district attraction respectfully, and confirm access and local conditions before travelling.",
@@ -37,7 +37,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       23.7088,
       90.4065
     ],
-    "image": "photo-1511818966892-d7d671e672a2",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ahsan%20Manzil%20Museum%2C%20Dhaka%2C%20Bangladesh.jpg?width=1400",
     "tag": "Heritage trail",
     "shortDescription": "A landmark pink palace beside the Buriganga River.",
     "description": "A landmark pink palace beside the Buriganga River. Explore this district attraction respectfully, and confirm access and local conditions before travelling.",
