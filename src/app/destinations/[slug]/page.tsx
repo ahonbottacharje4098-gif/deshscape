@@ -6,6 +6,7 @@ import { destinations } from "@/data/destinations";
 import { destinationImageUrl } from "@/lib/destinationImage";
 import DestinationGallery from "@/components/DestinationGallery";
 import ShareDestination from "@/components/ShareDestination";
+import SaveDestination from "@/components/SaveDestination";
 
 type Props = { params: Promise<{ slug: string }> };
 
