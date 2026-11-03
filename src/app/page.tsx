@@ -19,6 +19,7 @@ const divisionFor = (place: (typeof destinations)[number]) => {
   if (place.region.includes("Rajshahi")) return "Rajshahi";
   if (place.region.includes("Barishal")) return "Barishal";
   if (place.region.includes("Rangpur")) return "Rangpur";
+  if (place.region.includes("Mymensingh")) return "Mymensingh";
   return "";
 };
 
