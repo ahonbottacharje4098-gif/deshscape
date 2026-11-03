@@ -162,7 +162,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       24.095,
       90.405
     ],
-    "image": "photo-1441974231531-c6227db76b6e",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bhawal%20National%20Park%2001.jpg?width=1400",
     "tag": "Into the wild",
     "shortDescription": "A broad sal forest landscape north of Dhaka.",
     "description": "A broad sal forest landscape north of Dhaka. Explore this district attraction respectfully, and confirm access and local conditions before travelling.",
@@ -187,7 +187,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       24.2,
       90.43
     ],
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Aerial_view_of_Gazipur_Safari_Park.jpg?width=1400",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bird%27s%20Eye%20View%20of%20Bangabandhu%20Sheikh%20Mujib%20Safari%20Park.jpg?width=1400",
     "tag": "Nature retreat",
     "shortDescription": "A managed wildlife park and nature attraction.",
     "description": "A managed wildlife park and nature attraction. Explore this district attraction respectfully, and confirm access and local conditions before travelling.",
@@ -212,7 +212,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       24.02,
       90.42
     ],
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nuhas%20Palli%20(3).jpg?width=1400",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Dighi%20lilabati%2C%20Nuhas%20Palli%20(1).jpg?width=1400",
     "tag": "Nature retreat",
     "shortDescription": "A creative countryside retreat associated with writer Humayun Ahmed.",
     "description": "A creative countryside retreat associated with writer Humayun Ahmed. Explore this district attraction respectfully, and confirm access and local conditions before travelling.",
@@ -312,7 +312,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       24.33,
       90.94
     ],
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nikli%20Haor%20Ayon%201.jpg?width=1400",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Before%20the%20storm%20(49994435441).jpg?width=1400",
     "tag": "Riverside escape",
     "shortDescription": "A wide seasonal wetland landscape and open-water experience.",
     "description": "A wide seasonal wetland landscape and open-water experience. Explore this district attraction respectfully, and confirm access and local conditions before travelling.",
@@ -612,7 +612,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       23.65,
       90.6
     ],
-    "image": "photo-1511818966892-d7d671e672a2",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/400%20years%20old%201%20storey%20building%20in%20Panam%20City.jpg?width=1400",
     "tag": "Heritage trail",
     "shortDescription": "A historic street of merchant mansions in Sonargaon.",
     "description": "A historic street of merchant mansions in Sonargaon. Explore this district attraction respectfully, and confirm access and local conditions before travelling.",
@@ -662,7 +662,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       23.66,
       90.62
     ],
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Corner%20view%20of%20Goaldi%20mosque%2C%20Sonargaon%2C%20Narayanganj.jpg?width=1400",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Goaldi%20mosque%2C%20Sonargaon%2C%20Narayanganj.jpg?width=1400",
     "tag": "Heritage trail",
     "shortDescription": "A significant Sultanate-era mosque in Sonargaon.",
     "description": "A significant Sultanate-era mosque in Sonargaon. Explore this district attraction respectfully, and confirm access and local conditions before travelling.",
@@ -787,7 +787,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       23.78,
       89.76
     ],
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Boats%20in%20Padma%20River%20Daulatdia%20Ghat%20Rajbari%20Bangladesh.JPG?width=1400",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Boats%20in%20Padma%20River%20Daulatdia%20Ghat%20Rajbari%20Bangladesh%20(2).JPG?width=1400",
     "tag": "Riverside escape",
     "shortDescription": "A busy river terminal beside the Padma.",
     "description": "A busy river terminal beside the Padma. Explore this district attraction respectfully, and confirm access and local conditions before travelling.",
@@ -912,7 +912,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       24.25,
       89.92
     ],
-    "image": "photo-1511818966892-d7d671e672a2",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Atia%20Mosque%207.jpg?width=1400",
     "tag": "Heritage trail",
     "shortDescription": "A celebrated historic mosque with terracotta details.",
     "description": "A celebrated historic mosque with terracotta details. Explore this district attraction respectfully, and confirm access and local conditions before travelling.",
@@ -937,7 +937,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       24.62,
       90.05
     ],
-    "image": "photo-1441974231531-c6227db76b6e",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/A%20vast%20canopy%20coverage%20on%20the%20Madhupr%20National%20Forest.jpg?width=1400",
     "tag": "Into the wild",
     "shortDescription": "A protected forest landscape known for sal trees.",
     "description": "A protected forest landscape known for sal trees. Explore this district attraction respectfully, and confirm access and local conditions before travelling.",
