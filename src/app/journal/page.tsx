@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import { ArrowLeft, ArrowUpRight, Compass, MapPin, Search, X } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Compass, MapPin, Search, X, Clock3 } from "lucide-react";
 
 const stories = [
   {
@@ -12,7 +12,8 @@ const stories = [
     location: "Goalanda, Rajbari",
     description: "Along the Padma, the river shapes more than the landscape. It influences daily routines, local trade and the stories shared by people who live beside its changing waters.",
     image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1400&q=85",
-    note: "A closer look at life beside the Padma"
+    note: "A closer look at life beside the Padma",
+    readingTime: "4 MIN READ"
   },
   {
     number: "02",
@@ -21,7 +22,8 @@ const stories = [
     location: "Sylhet",
     description: "The green hills and winding paths of the northeast invite a slower kind of journey. Look beyond the familiar viewpoints and notice the small details that make this landscape special.",
     image: "https://images.unsplash.com/photo-1563911302283-d2bc129e7570?auto=format&fit=crop&w=1400&q=85",
-    note: "A field note from the green northeast"
+    note: "A field note from the green northeast",
+    readingTime: "5 MIN READ"
   }
 ];
 
@@ -36,6 +38,9 @@ export default function JournalPage() {
       return matchesCategory && matchesSearch;
     });
   }, [search, category]);
+  const showFeatured = !search.trim() && category === "ALL";
+  const visibleStories = showFeatured ? filteredStories.filter((story) => story.number !== "01") : filteredStories;
+  const featuredStory = stories[0];
 
   return (
     <main>
@@ -71,6 +76,20 @@ export default function JournalPage() {
             <div><div className="eyebrow"><span /> FIELD NOTES & INSPIRATION</div><h2>Read, wander<br /><em>and discover.</em></h2></div>
             <span className="eyebrow">02 STORIES</span>
           </div>
+          {showFeatured && (
+            <article className="journal-featured">
+              <Link className="journal-featured-image" href="/journal/river-town-rhythm" aria-label={`Read ${featuredStory.title}`} style={{ backgroundImage: `url(${featuredStory.image})` }}>
+                <span className="journal-featured-label">EDITOR'S PICK</span>
+              </Link>
+              <div className="journal-featured-copy">
+                <div className="eyebrow"><span /> FEATURED STORY · {featuredStory.category}</div>
+                <h3>{featuredStory.title}</h3>
+                <div className="journal-featured-meta"><span><MapPin size={13} /> {featuredStory.location}</span><span><Clock3 size={13} /> {featuredStory.readingTime}</span></div>
+                <p>{featuredStory.description}</p>
+                <Link className="journal-read-link" href="/journal/river-town-rhythm">READ FEATURED STORY <ArrowUpRight size={15} /></Link>
+              </div>
+            </article>
+          )}
           <div className="journal-tools">
             <label className="journal-search">
               <Search size={17} />
@@ -89,19 +108,20 @@ export default function JournalPage() {
               ))}
             </div>
           </div>
+          <div className="journal-latest-heading"><div><div className="eyebrow"><span /> {showFeatured ? "FRESH FROM THE JOURNAL" : "YOUR DISCOVERIES"}</div><h3>{showFeatured ? "Latest stories" : "Journal results"}</h3></div></div>
           <div className="journal-results-line">
-            <span>{filteredStories.length} {filteredStories.length === 1 ? "STORY" : "STORIES"} FOUND</span>
+            <span>{visibleStories.length} {visibleStories.length === 1 ? "STORY" : "STORIES"} FOUND</span>
             {(search || category !== "ALL") && <button type="button" onClick={() => { setSearch(""); setCategory("ALL"); }}>CLEAR FILTERS <X size={13} /></button>}
           </div>
-          {filteredStories.length > 0 ? (
+          {visibleStories.length > 0 ? (
             <div className="journal-grid">
-              {filteredStories.map((story) => (
+              {visibleStories.map((story) => (
                 <article key={story.number} className="journal-card">
                   <Link className="journal-card-image" href={`/journal/${story.number === "01" ? "river-town-rhythm" : "beyond-tea-gardens"}`} aria-label={`Read ${story.title}`} style={{ backgroundImage: `url(${story.image})` }} />
                   <div className="journal-card-copy">
                     <div className="eyebrow"><span /> {story.category}</div>
                     <h3 style={{ font: "30px/1.15 'Playfair Display',serif", color: "#183d32", margin: "17px 0 10px" }}>{story.title}</h3>
-                    <div style={{ display: "flex", alignItems: "center", gap: 6, color: "#899387", fontSize: 10, marginBottom: 15 }}><MapPin size={13} /> {story.location}</div>
+                    <div style={{ display: "flex", alignItems: "center", gap: 6, color: "#899387", fontSize: 10, marginBottom: 15 }}><MapPin size={13} /> {story.location}<span style={{ marginLeft: 10, display: "inline-flex", alignItems: "center", gap: 5 }}><Clock3 size={12} /> {story.readingTime}</span></div>
                     <p style={{ color: "#70776e", fontSize: 12, lineHeight: 1.9, margin: "0 0 18px" }}>{story.description}</p>
                     <div style={{ color: "#9caa96", fontSize: 9, letterSpacing: 1.1, textTransform: "uppercase" }}>{story.note}</div>
                     <Link className="journal-read-link" href={`/journal/${story.number === "01" ? "river-town-rhythm" : "beyond-tea-gardens"}`}>READ STORY <ArrowUpRight size={15} /></Link>
