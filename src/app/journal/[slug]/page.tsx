@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowUpRight, Compass, MapPin } from "lucide-react";
 import { destinations } from "@/data/destinations";
 import { destinationImageUrl } from "@/lib/destinationImage";
 import ShareStory from "@/components/ShareStory";
+import ReadingProgress from "@/components/ReadingProgress";
 
 type Story = {
   slug: string;
@@ -80,6 +81,7 @@ export default async function JournalStoryPage({ params }: Props) {
 
   return (
     <main className="journal-article-page">
+      <ReadingProgress />
       <header className="site-header">
         <Link className="brand" href="/" aria-label="Deshscape home">
           <span className="brand-mark"><Compass size={22} strokeWidth={1.7} /></span>
