@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import { destinations, destinationRegions, destinationTypes } from "@/data/destinations";
 import ExploreMap from "@/components/ExploreMap";
+import { destinationImageUrl } from "@/lib/destinationImage";
 
 const divisions = ["Dhaka", "Chattogram", "Rajshahi", "Khulna", "Barishal", "Sylhet", "Rangpur", "Mymensingh"] as const;
 
@@ -153,7 +154,7 @@ export default function Home() {
           <div className="destination-grid">
             {filtered.map((place, index) => (
               <a className={index === 0 && sort === "featured" ? "destination-card featured" : "destination-card"} href={`/destinations/${place.slug}`} key={place.slug}>
-                <div className="destination-image" style={{ backgroundImage: `url(${place.image.startsWith("http") ? place.image : `https://images.unsplash.com/${place.image}?auto=format&fit=crop&w=1100&q=85`})` }} />
+                <div className="destination-image" style={{ backgroundImage: `url(${destinationImageUrl(place.image, 1200)})` }} />
                 <div className="destination-overlay" />
                 <span className="destination-tag">{place.tag}</span>
                 <div className="destination-info"><span><MapPin size={13} /> {place.region}</span><h3>{place.name}</h3><div className="card-bottom"><small>{place.type}</small><i><ArrowUpRight size={17} /></i></div></div>
