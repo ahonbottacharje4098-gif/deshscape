@@ -470,3 +470,20 @@ button,input{font:inherit}
 .back-to-top-button:focus-visible{outline:2px solid #a8794d;outline-offset:4px}
 @keyframes back-top-enter{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 @media(max-width:600px){.back-to-top-button{right:15px;bottom:16px;padding:12px}.back-to-top-button span{display:none}}
+
+
+/* Custom not-found page */
+.not-found-page{position:relative;display:flex;min-height:100svh;flex-direction:column;justify-content:space-between;overflow:hidden;padding:32px 8%;background:#102c25;color:#f4f2eb}
+.not-found-brand{position:relative;z-index:1;align-self:flex-start;color:#f4f2eb}
+.not-found-brand .brand-mark{border-color:#71877a}
+.not-found-brand .brand-name small{color:#a8b7a9}
+.not-found-content{position:relative;z-index:1;width:min(680px,100%);padding:70px 0 85px}
+.not-found-code{color:#c5b79e;font-size:9px;font-weight:700;letter-spacing:2.4px}
+.not-found-content h1{margin:24px 0;font:400 clamp(52px,8vw,92px)/1.02 'Playfair Display',serif;letter-spacing:-2px}
+.not-found-content h1 em{color:#b7c5ad;font-weight:400}
+.not-found-content p{max-width:420px;color:#c2cec2;font-size:13px;line-height:2}
+.not-found-home{display:inline-flex;align-items:center;gap:12px;margin-top:24px;padding:15px 18px;background:#f4f2eb;color:#183d32;font-size:9px;font-weight:700;letter-spacing:1.3px;transition:gap .2s}
+.not-found-home:hover{gap:17px}
+.not-found-coordinate{position:relative;z-index:1;padding-top:20px;border-top:1px solid #ffffff30;color:#a8b7a9;font-size:8px;letter-spacing:1.7px}
+.not-found-page:after{content:"404";position:absolute;right:4%;top:50%;transform:translateY(-50%);color:#ffffff08;font:400 clamp(180px,34vw,440px)/1 'Playfair Display',serif;pointer-events:none}
+@media(max-width:600px){.not-found-page{padding:25px 7%}.not-found-content{padding:65px 0}.not-found-content h1{letter-spacing:-1px}.not-found-page:after{top:43%;right:-5%;font-size:55vw}}
