@@ -183,8 +183,8 @@ export default function Home() {
       </section>
 
       <section className="stories-section section-wrap" id="stories">
-        <div className="section-heading"><div><div className="eyebrow"><span /> FIELD NOTES</div><h2>Stories from<br /><em>the road.</em></h2></div><a className="text-link heading-link" href="mailto:hello@deshscape.com">Read our journal <ArrowUpRight size={16} /></a></div>
-        <div className="story-row"><div className="story-number">01</div><div className="story-title"><span>PEOPLE & CULTURE</span><h3>The rhythm of a river town</h3></div><p>Somewhere along the banks, life moves to a different rhythm. Discover the communities shaped by water.</p><a href="#planner" aria-label="Read story"><ArrowUpRight /></a></div>
+        <div className="section-heading"><div><div className="eyebrow"><span /> FIELD NOTES</div><h2>Stories from<br /><em>the road.</em></h2></div><a className="text-link heading-link" href="/journal">Read our journal <ArrowUpRight size={16} /></a></div>
+        <div className="story-row"><div className="story-number">01</div><div className="story-title"><span>PEOPLE & CULTURE</span><h3>The rhythm of a river town</h3></div><p>Somewhere along the banks, life moves to a different rhythm. Discover the communities shaped by water.</p><a href="/journal" aria-label="Read story"><ArrowUpRight /></a></div>
         <div className="story-row"><div className="story-number">02</div><div className="story-title"><span>HIDDEN BANGLADESH</span><h3>Beyond the tea gardens</h3></div><p>Follow the winding paths into the green heart of the northeast, where every turn reveals a new view.</p><a href="#planner" aria-label="Read story"><ArrowUpRight /></a></div>
       </section>
 
