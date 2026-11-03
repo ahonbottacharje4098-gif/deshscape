@@ -198,3 +198,45 @@ button,input{font:inherit}
 .related-footer{margin-top:0}
 @media(max-width:900px){.detail-content{gap:6%;padding-left:7%;padding-right:7%}.detail-aside{padding:22px}.filter-control{flex:1;min-width:145px}}
 @media(max-width:650px){.filter-row{display:grid;grid-template-columns:1fr 1fr}.filter-control,.sort-control{min-width:0;width:100%}.reset-filters{grid-column:1/-1;justify-content:flex-start}.results-line{align-items:flex-start;gap:10px}.results-line>span:last-child{display:none}.detail-header{padding:0 5%}.detail-back{font-size:10px}.detail-hero{height:600px;min-height:0}.detail-hero-content{left:7%;right:7%;top:48%}.detail-hero h1{font-size:58px}.detail-hero-content>p{font-size:12px}.detail-content{grid-template-columns:1fr;gap:35px;padding-top:75px;padding-bottom:70px}.detail-main h2{font-size:47px}.detail-aside{padding:23px}.travel-note-grid{grid-template-columns:1fr;gap:18px}.detail-travel{padding-top:65px;padding-bottom:70px}.related-section{padding-top:70px;padding-bottom:70px}.related-grid{grid-template-columns:1fr}.related-card{grid-template-columns:90px 1fr 20px;gap:12px}.related-image{height:75px}.related-card h3{font-size:18px}}
+
+
+/* Interactive Bangladesh discovery map */
+.explore-map-section{background:#e9ede5;padding:100px 0 28px;overflow:hidden}
+.explore-map-heading{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:38px}
+.explore-map-heading h2{font:clamp(44px,5.2vw,66px)/1.05 'Playfair Display',serif;color:var(--forest);letter-spacing:-2px;margin:20px 0 0}
+.explore-map-heading h2 em{font-weight:400;color:#91a18d}
+.explore-map-heading>p{max-width:350px;font-size:12px;line-height:2;color:#717b70;margin:0 0 5px}
+.explore-map-layout{max-width:1120px;margin:0 auto;padding:0 6.2%;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr);gap:22px;align-items:stretch}
+.map-canvas{min-height:610px;position:relative;overflow:hidden;background:#dce6df;border:1px solid #d1ddd3;isolation:isolate}
+.map-grid-lines{position:absolute;inset:0;opacity:.32;background-image:linear-gradient(rgba(84,120,105,.14) 1px,transparent 1px),linear-gradient(90deg,rgba(84,120,105,.14) 1px,transparent 1px);background-size:38px 38px}
+.bangladesh-shape{position:absolute;height:91%;width:70%;top:4%;left:14%;overflow:visible;filter:drop-shadow(7px 12px 5px rgba(35,65,49,.15))}
+.land-shadow{fill:#9eaf9d;opacity:.45;transform:translate(8px,10px)}
+.map-water-label{position:absolute;font-size:8px;letter-spacing:2px;color:#829d9a;font-weight:700}
+.water-north{top:8%;left:44%}.water-east{right:3%;top:44%;writing-mode:vertical-rl}
+.map-country-label{position:absolute;left:49%;top:49%;transform:translate(-50%,-50%) rotate(-12deg);font:clamp(18px,2vw,26px) 'Playfair Display',serif;letter-spacing:4px;color:#4f725b;opacity:.58;pointer-events:none}
+.map-pin{position:absolute;z-index:3;transform:translate(-50%,-50%);border:0;background:transparent;padding:0;display:flex;align-items:center;gap:5px;cursor:pointer;color:#244b3a}
+.map-pin-dot{width:29px;height:29px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:#f8f7ef;border:1px solid #769078;display:grid;place-items:center;box-shadow:0 3px 9px #1c3e2c30;transition:all .2s}
+.map-pin-dot svg{transform:rotate(45deg);width:13px;height:13px}
+.map-pin-label{font-size:9px;font-weight:700;white-space:nowrap;background:rgba(250,249,245,.88);padding:5px 7px;box-shadow:0 2px 8px #1c3e2c12}
+.map-pin.active .map-pin-dot,.map-pin:hover .map-pin-dot{background:var(--forest);color:#fff;transform:rotate(-45deg) scale(1.14)}
+.map-pin.active .map-pin-label{background:var(--forest);color:white}
+.map-legend{position:absolute;left:18px;bottom:17px;display:flex;align-items:center;gap:8px;font-size:8px;letter-spacing:1.4px;color:#607765;font-weight:700}
+.map-legend span{width:7px;height:7px;border-radius:50%;background:#a8794d}
+.map-compass{position:absolute;right:18px;bottom:15px;color:#54745f;display:flex;flex-direction:column;align-items:center;gap:0}
+.map-compass small{font-size:8px;font-weight:700}
+.map-place-panel{background:#f8f8f2;border:1px solid #dce1d7;display:flex;flex-direction:column;min-width:0}
+.map-panel-top{height:48px;display:flex;justify-content:space-between;align-items:center;padding:0 18px;color:#788779;font-size:8px;letter-spacing:1.2px;font-weight:700}
+.map-panel-top span:first-child{display:flex;align-items:center;gap:7px}
+.map-place-image{height:215px;background-position:center;background-size:cover;background-color:#9aab99}
+.map-place-details{padding:22px 23px 20px}
+.map-place-region{display:flex;align-items:center;gap:6px;color:#7d897b;font-size:9px}
+.map-place-details h3{font:31px/1.1 'Playfair Display',serif;color:var(--forest);margin:11px 0 5px}
+.map-place-type{font-size:8px;letter-spacing:1.3px;text-transform:uppercase;color:#a17b55}
+.map-place-details p{font-size:11px;line-height:1.9;color:#778074;margin:14px 0 18px}
+.map-place-link{display:inline-flex;align-items:center;gap:12px;font-size:10px;font-weight:700;color:var(--forest);border-bottom:1px solid #bdc8b8;padding-bottom:8px}
+.map-place-switcher{margin-top:auto;border-top:1px solid #e1e4dc;padding:13px 16px;display:flex;flex-wrap:wrap;gap:7px}
+.map-switch{border:1px solid #dce1d7;background:transparent;padding:7px 9px;color:#778275;font-size:8px;cursor:pointer}
+.map-switch.active,.map-switch:hover{background:var(--forest);border-color:var(--forest);color:#fff}
+.map-disclaimer{padding-top:17px;padding-bottom:0;text-align:right;font-size:8px;color:#879184;letter-spacing:.3px}
+@media(max-width:800px){.explore-map-layout{grid-template-columns:1fr}.map-canvas{min-height:560px}.map-place-panel{display:grid;grid-template-columns:40% 60%}.map-panel-top{grid-column:1/-1}.map-place-image{height:100%;min-height:230px}.map-place-details{padding:20px}.map-place-switcher{grid-column:1/-1}}
+@media(max-width:600px){.explore-map-section{padding-top:75px}.explore-map-heading{display:block}.explore-map-heading>p{margin-top:18px}.explore-map-layout{padding:0 5%;gap:13px}.map-canvas{min-height:450px}.bangladesh-shape{height:86%;width:83%;left:7%;top:5%}.map-pin-label{font-size:7px;padding:4px 5px}.map-pin-dot{width:25px;height:25px}.map-place-panel{display:flex}.map-place-image{height:185px;min-height:0}.map-place-details{padding:18px}.map-place-details h3{font-size:27px}.map-disclaimer{text-align:left;padding-top:13px;font-size:7px}}
