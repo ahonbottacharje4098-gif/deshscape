@@ -4,6 +4,7 @@ export type Destination = {
   region: string;
   district: string;
   type: string;
+  coordinates?: [number, number];
   image: string;
   tag: string;
   shortDescription: string;
@@ -93,5 +94,9 @@ export const destinations: Destination[] = [
   }
 ];
 
-export const destinationTypes = ["All experiences", "Mountains", "Beaches", "Forests", "Rivers", "Nature"];
-export const destinationRegions = ["All regions", "Rangamati", "Cox's Bazar", "Sylhet", "Khulna"];
+import { dhakaDivisionDestinations } from "./dhakaDivision";
+
+destinations.push(...dhakaDivisionDestinations);
+
+export const destinationTypes = ["All experiences", "Mountains", "Beaches", "Forests", "Rivers", "Nature", "Heritage"];
+export const destinationRegions = ["All regions", "Rangamati", "Cox's Bazar", "Sylhet", "Khulna", "Dhaka Division"];
