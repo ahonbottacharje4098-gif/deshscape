@@ -411,4 +411,4 @@ import { dhakaDivisionDestinations } from "./dhakaDivision";
 destinations.push(...dhakaDivisionDestinations);
 
 export const destinationTypes = ["All experiences", "Mountains", "Beaches", "Forests", "Rivers", "Nature", "Heritage"];
-export const destinationRegions = ["All regions", "Rangamati", "Cox's Bazar", "Sylhet", "Khulna", "Dhaka Division"];
+export const destinationRegions = ["All regions", "Rangamati", "Cox's Bazar", "Sylhet", "Khulna", "Rajshahi Division", "Dhaka Division"];
