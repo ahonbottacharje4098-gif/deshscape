@@ -20,12 +20,12 @@ export default function DestinationGallery({ image, title }: Props) {
         const params = new URLSearchParams({
           action: "query",
           generator: "search",
-          gsrsearch: `filetype:bitmap "${title}" Bangladesh`,
+          gsrsearch: title,
           gsrnamespace: "6",
-          gsrlimit: "12",
+          gsrlimit: "30",
           prop: "imageinfo",
           iiprop: "url",
-          iiurlwidth: "1400",
+          iiurlwidth: "1600",
           format: "json",
           origin: "*"
         });
@@ -35,10 +35,10 @@ export default function DestinationGallery({ image, title }: Props) {
         const pages = Object.values(data.query?.pages ?? []) as Array<{ imageinfo?: Array<{ thumburl?: string; url?: string; descriptionurl?: string; mime?: string }> }>;
         const found = pages
           .map((page) => page.imageinfo?.[0])
-          .filter((info): info is NonNullable<typeof info> => Boolean(info && (info.mime?.startsWith("image/jpeg") || info.mime?.startsWith("image/png") || info.mime?.startsWith("image/webp"))))
+          .filter((info): info is NonNullable<typeof info> => Boolean(info && (!info.mime || info.mime.startsWith("image/"))))
           .map((info) => ({ url: info.thumburl || info.url || "", sourceUrl: info.descriptionurl }))
           .filter((photo) => photo.url && photo.url !== image)
-          .slice(0, 5);
+          .filter((photo, index, all) => all.findIndex((item) => item.url === photo.url) === index)\n          .slice(0, 5);
         if (found.length) setPhotos([{ url: image }, ...found]);
       } catch (error) {
         if (!(error instanceof DOMException && error.name === "AbortError")) {
