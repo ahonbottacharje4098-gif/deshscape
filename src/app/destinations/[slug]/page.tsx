@@ -91,6 +91,28 @@ export default async function DestinationPage({ params }: Props) {
         <Link className="button button-dark" href="/#destinations">Explore more destinations <ArrowRight size={16} /></Link>
       </section>
 
+      <section className="detail-route section-wrap">
+        <div className="detail-route-copy">
+          <div className="eyebrow"><span /> HOW TO REACH</div>
+          <h2>Make your way to<br /><em>{place.name}.</em></h2>
+          <p>Plan a route from your starting point and review the available roads and travel options before setting out.</p>
+          <p className="detail-route-location"><MapPin size={15} /> {place.district}, Bangladesh</p>
+          <a
+            className="button button-dark detail-route-button"
+            href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(`${place.name}, ${place.district}, Bangladesh`)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Get directions <ArrowUpRight size={16} />
+          </a>
+          <small>Routes and travel times are provided by Google Maps and may change. Confirm local transport and access conditions before travelling.</small>
+        </div>
+        <div className="detail-route-art" aria-hidden="true">
+          <div className="detail-route-ring"><Compass size={58} strokeWidth={1} /></div>
+          <span>THE JOURNEY IS PART OF THE DISCOVERY</span>
+        </div>
+      </section>
+
       {related.length > 0 && <section className="related-section section-wrap">
         <div className="section-heading"><div><div className="eyebrow"><span /> KEEP EXPLORING</div><h2>More places to<br /><em>fall for.</em></h2></div><Link className="text-link heading-link" href="/#destinations">All destinations <ArrowUpRight size={16} /></Link></div>
         <div className="related-grid">{related.map((item) => <Link className="related-card" href={`/destinations/${item.slug}`} key={item.slug}><div className="related-image" style={{ backgroundImage: `url(${destinationImageUrl(item.image, 900)})` }} /><div><span>{item.region}</span><h3>{item.name}</h3></div><ArrowUpRight size={18} /></Link>)}</div>
