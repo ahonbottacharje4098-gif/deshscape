@@ -93,6 +93,7 @@ export default async function DestinationPage({ params }: Props) {
 
       <DestinationGallery image={destinationImageUrl(place.image, 1800)} title={place.name} />
       <section className="section-wrap destination-share-wrap">
+        <SaveDestination slug={place.slug} />
         <ShareDestination title={place.name} />
       </section>
 
