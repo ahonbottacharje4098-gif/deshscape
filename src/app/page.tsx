@@ -64,7 +64,7 @@ export default function Home() {
   };
 
   const chooseCategory = (label: string) => {
-    setType(label === "Heritage" ? "All experiences" : label);
+    setType(label);
     document.getElementById("destinations")?.scrollIntoView({ behavior: "smooth" });
   };
 
