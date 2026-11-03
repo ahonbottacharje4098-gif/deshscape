@@ -9,6 +9,16 @@ import {
 import { destinations, destinationRegions, destinationTypes } from "@/data/destinations";
 import ExploreMap from "@/components/ExploreMap";
 
+const divisions = ["Dhaka", "Chattogram", "Rajshahi", "Khulna", "Barishal", "Sylhet", "Rangpur", "Mymensingh"] as const;
+
+const divisionFor = (place: (typeof destinations)[number]) => {
+  if (place.region === "Dhaka Division") return "Dhaka";
+  if (place.region.includes("Chattogram") || place.region.includes("Cox's Bazar") || place.region.includes("Rangamati")) return "Chattogram";
+  if (place.region.includes("Sylhet")) return "Sylhet";
+  if (place.region.includes("Khulna")) return "Khulna";
+  return "";
+};
+
 const categories = [
   { label: "Mountains", icon: Mountain, count: "Hill escapes" },
   { label: "Beaches", icon: Waves, count: "Coastal places" },
@@ -18,6 +28,7 @@ const categories = [
 
 export default function Home() {
   const [query, setQuery] = useState("");
+  const [division, setDivision] = useState<(typeof divisions)[number]>("Dhaka");
   const [region, setRegion] = useState("All regions");
   const [type, setType] = useState("All experiences");
   const [sort, setSort] = useState("featured");
@@ -26,20 +37,22 @@ export default function Home() {
   const filtered = useMemo(() => {
     const normalized = query.trim().toLowerCase();
     const result = destinations.filter((place) => {
+      const matchesDivision = divisionFor(place) === division;
       const matchesQuery = !normalized || [
         place.name, place.region, place.district, place.type, place.tag, place.shortDescription
       ].join(" ").toLowerCase().includes(normalized);
       const matchesRegion = region === "All regions" || place.region.includes(region);
       const matchesType = type === "All experiences" || place.type === type;
-      return matchesQuery && matchesRegion && matchesType;
+      return matchesDivision && matchesQuery && matchesRegion && matchesType;
     });
     if (sort === "az") result.sort((a, b) => a.name.localeCompare(b.name));
     if (sort === "za") result.sort((a, b) => b.name.localeCompare(a.name));
     return result;
-  }, [query, region, type, sort]);
+  }, [query, division, region, type, sort]);
 
   const resetFilters = () => {
     setQuery("");
+    setDivision("Dhaka");
     setRegion("All regions");
     setType("All experiences");
     setSort("featured");
@@ -113,6 +126,10 @@ export default function Home() {
             <a className="text-link heading-link" href="#map">Explore all destinations <ArrowUpRight size={16} /></a>
           </div>
 
+          <div className="division-tabs" role="tablist" aria-label="Explore by division">
+            {divisions.map((item) => <button type="button" role="tab" aria-selected={division === item} className={division === item ? "division-tab active" : "division-tab"} key={item} onClick={() => { setDivision(item); setRegion("All regions"); }}>{item}</button>)}
+          </div>
+
           <div className="advanced-search">
             <div className="search-box search-main">
               <Search size={19} />
@@ -126,7 +143,7 @@ export default function Home() {
               <label className="filter-control sort-control"><span>SORT BY</span><select value={sort} onChange={(event) => setSort(event.target.value)} aria-label="Sort destinations"><option value="featured">Featured</option><option value="az">Name: A–Z</option><option value="za">Name: Z–A</option></select><ChevronDown size={14} /></label>
               <button className="reset-filters" onClick={resetFilters}><RotateCcw size={14} /> Reset filters</button>
             </div>
-            <div className="results-line"><span><SlidersHorizontal size={14} /> Showing <strong>{filtered.length}</strong> of {destinations.length} destinations</span><span>{query || region !== "All regions" || type !== "All experiences" ? "FILTERS APPLIED" : "CURATED FOR THE CURIOUS"}</span></div>
+            <div className="results-line"><span><SlidersHorizontal size={14} /> Showing <strong>{filtered.length}</strong> destinations in {division} Division</span><span>{query || region !== "All regions" || type !== "All experiences" ? "FILTERS APPLIED" : "CURATED FOR THE CURIOUS"}</span></div>
           </div>
 
           <div className="destination-grid">
@@ -138,7 +155,7 @@ export default function Home() {
                 <div className="destination-info"><span><MapPin size={13} /> {place.region}</span><h3>{place.name}</h3><div className="card-bottom"><small>{place.type}</small><i><ArrowUpRight size={17} /></i></div></div>
               </a>
             ))}
-            {filtered.length === 0 && <div className="empty-state"><Search size={25} /><h3>No destinations found</h3><p>Try another keyword or reset your filters to explore all places.</p><button className="button button-dark" onClick={resetFilters}>Show all destinations <ArrowRight size={16} /></button></div>}
+            {filtered.length === 0 && <div className="empty-state"><Search size={25} /><h3>{query || region !== "All regions" || type !== "All experiences" ? "No destinations found" : `${division} Division is coming soon`}</h3><p>{query || region !== "All regions" || type !== "All experiences" ? "Try another keyword or reset your filters." : "We are preparing destination guides for this division. Check back soon as the collection grows."}</p>{(query || region !== "All regions" || type !== "All experiences") && <button className="button button-dark" onClick={resetFilters}>Reset filters <ArrowRight size={16} /></button>}</div>}
           </div>
         </div>
       </section>
