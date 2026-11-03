@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import { ArrowUpRight, MapPin, LocateFixed, Search } from "lucide-react";
 import { destinations } from "@/data/destinations";
+import { destinationImageUrl } from "@/lib/destinationImage";
 
 const BangladeshLeafletMap = dynamic(() => import("@/components/BangladeshLeafletMap"), {
   ssr: false,
@@ -50,7 +51,7 @@ export default function ExploreMap() {
             </div>
           )}
           <div className="map-panel-top"><span><LocateFixed size={14} /> SELECTED DESTINATION</span><span>{mappedPlaces.findIndex((item) => item.slug === activeSlug) + 1} / {mappedPlaces.length}</span></div>
-          <div className="map-place-image" style={{ backgroundImage: `url(${active.image.startsWith("http") ? active.image : `https://images.unsplash.com/${active.image}?auto=format&fit=crop&w=900&q=85`})` }} />
+          <div className="map-place-image" style={{ backgroundImage: `url(${destinationImageUrl(active.image, 1000)})` }} />
           <div className="map-place-details">
             <span className="map-place-region"><MapPin size={13} /> {active.district}, {active.region}</span>
             <h3>{active.name}</h3>
