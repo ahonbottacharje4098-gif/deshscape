@@ -506,3 +506,39 @@ button,input{font:inherit}
 /* Save destination bookmark */
 .save-destination-button{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:1px solid #b9c5b7;background:transparent;color:var(--forest);padding:12px 16px;font-size:9px;font-weight:700;letter-spacing:1px;cursor:pointer;transition:background .2s,color .2s,border-color .2s;margin-bottom:18px}
 .save-destination-button:hover,.save-destination-button.is-saved{background:var(--forest);border-color:var(--forest);color:var(--cream)}
+
+
+/* My Places collection */
+.my-places-page{min-height:100vh;background:var(--paper)}
+.my-places-header{padding-left:8%;padding-right:8%}
+.my-places-hero{padding:88px 10.5% 76px;background:var(--forest-deep);color:#f4f2eb}
+.my-places-hero h1{margin:22px 0 15px;font:400 clamp(54px,7vw,86px)/1.02 'Playfair Display',serif;letter-spacing:-2px}
+.my-places-hero h1 em{color:#c5b79e}
+.my-places-hero>p{max-width:470px;color:#d0d9ce;font-size:13px;line-height:1.9}
+.my-places-count{display:inline-flex;align-items:center;gap:9px;margin-top:24px;padding-top:17px;border-top:1px solid #ffffff35;color:#d8dfd4;font-size:9px;letter-spacing:1.5px}
+.my-places-content{width:min(1120px,calc(100% - 48px));min-height:360px;margin:0 auto;padding:65px 0 75px}
+.my-places-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.my-place-card{display:grid;grid-template-columns: minmax(130px,.8fr) minmax(0,1.2fr);min-height:230px;border:1px solid #deded4;background:#faf9f5}
+.my-place-image{position:relative;display:block;min-height:230px;background-size:cover;background-position:center}
+.my-place-image:after{content:"";position:absolute;inset:45% 0 0;background:linear-gradient(0deg,#102c2555,transparent)}
+.my-place-image>span{position:absolute;z-index:1;left:12px;bottom:12px;color:#fff;font-size:8px;letter-spacing:1px;text-transform:uppercase}
+.my-place-copy{display:flex;flex-direction:column;align-items:flex-start;padding:21px 20px}
+.my-place-location{display:flex;align-items:center;gap:6px;color:#879185;font-size:9px}
+.my-place-copy h2{margin:13px 0 8px;color:var(--forest);font:400 25px/1.15 'Playfair Display',serif}
+.my-place-copy>p{margin:0;color:#7b8479;font-size:10px;line-height:1.7}
+.my-place-actions{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;margin-top:auto;padding-top:19px}
+.my-place-actions a,.my-place-actions button{display:inline-flex;align-items:center;gap:6px;color:var(--forest);font:700 8px 'DM Sans',sans-serif;letter-spacing:.8px;text-decoration:none}
+.my-place-actions button{border:0;background:transparent;color:#8b7164;cursor:pointer}
+.my-place-actions a:hover{gap:10px}
+.my-places-empty{display:flex;flex-direction:column;align-items:center;padding:45px 20px 60px;text-align:center}
+.my-places-empty-icon{display:grid;place-items:center;width:62px;height:62px;margin-bottom:28px;border:1px solid #cfd5ca;border-radius:50%;color:var(--forest)}
+.my-places-empty h2{margin:17px 0;color:var(--forest);font:400 clamp(38px,5vw,54px)/1.1 'Playfair Display',serif}
+.my-places-empty h2 em{color:#9caa96}
+.my-places-empty>p{max-width:410px;margin:0 0 23px;color:#7b8479;font-size:12px;line-height:1.9}
+.my-places-loading{text-align:center;color:#7b8479;padding:60px}
+.my-places-note{margin:35px 0 0;padding-top:18px;border-top:1px solid #deded4;color:#92998e;font-size:9px;line-height:1.7}
+.my-places-footer{padding:0 8% 25px}
+.my-places-footer .footer-bottom{display:flex;justify-content:space-between;align-items:center;gap:15px}
+.my-places-footer .footer-bottom a{display:inline-flex;align-items:center;gap:6px;color:var(--forest);font-size:8px;letter-spacing:1px}
+@media(max-width:850px){.my-places-grid{grid-template-columns:1fr}.my-places-hero{padding:72px 7% 65px}}
+@media(max-width:520px){.my-places-content{width:calc(100% - 32px);padding:42px 0 55px}.my-place-card{grid-template-columns:1fr}.my-place-image{min-height:210px}.my-place-copy{min-height:210px;padding:20px}.my-places-footer{padding:0 7% 22px}.my-places-footer .footer-bottom{align-items:flex-start;flex-direction:column}.my-places-hero h1{letter-spacing:-1px}}
