@@ -7,6 +7,7 @@ import {
   SlidersHorizontal, RotateCcw, ChevronDown
 } from "lucide-react";
 import { destinations, destinationRegions, destinationTypes } from "@/data/destinations";
+import ExploreMap from "@/components/ExploreMap";
 
 const categories = [
   { label: "Mountains", icon: Mountain, count: "Hill escapes" },
@@ -150,16 +151,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="map-feature" id="map">
-        <div className="map-photo" />
-        <div className="map-copy">
-          <div className="eyebrow light"><span /> THE WHOLE COUNTRY, IN YOUR HANDS</div>
-          <h2>64 districts.<br /><em>Endless</em> discoveries.</h2>
-          <p>From the tea gardens of Sylhet to the shores of the south — explore Bangladesh district by district. Your map to somewhere wonderful.</p>
-          <a className="button button-outline" href="#destinations">Explore destinations <ArrowRight size={17} /></a>
-          <span className="map-caption">BANGLADESH — 8 DIVISIONS / 64 DISTRICTS</span>
-        </div>
-      </section>
+      <ExploreMap />
 
       <section className="planner-section section-wrap" id="planner">
         <div className="planner-card">
