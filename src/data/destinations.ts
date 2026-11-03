@@ -94,16 +94,8 @@ export const destinations: Destination[] = [
     description: "Jaflong is a well-known scenic area in the Sylhet region, appreciated for its river views and surrounding hills. The landscape and river conditions vary through the year.",
     highlights: ["Riverside and hill scenery", "Views across the border landscape", "Local culture and regional food"],
     travelNotes: ["Respect marked boundaries and local guidance.", "Check weather and river conditions before your visit.", "Choose responsible local services and leave the area clean."]
-  }
-];
-
-import { dhakaDivisionDestinations } from "./dhakaDivision";
-
-destinations.push(...dhakaDivisionDestinations);
-
-export const destinationTypes = ["All experiences", "Mountains", "Beaches", "Forests", "Rivers", "Nature", "Heritage"];
-export const destinationRegions = ["All regions", "Rangamati", "Cox's Bazar", "Sylhet", "Khulna", "Dhaka Division"
-  {
+  },
+{
     slug: "lalakhal",
     name: "Lalakhal",
     region: "Sylhet",
@@ -202,3 +194,10 @@ export const destinationRegions = ["All regions", "Rangamati", "Cox's Bazar", "S
     travelNotes: ["Check river conditions and local advice before visiting.", "Avoid deep or fast-moving water.", "Respect local communities and keep the riverbank clean."]
   },
 ];
+
+import { dhakaDivisionDestinations } from "./dhakaDivision";
+
+destinations.push(...dhakaDivisionDestinations);
+
+export const destinationTypes = ["All experiences", "Mountains", "Beaches", "Forests", "Rivers", "Nature", "Heritage"];
+export const destinationRegions = ["All regions", "Rangamati", "Cox's Bazar", "Sylhet", "Khulna", "Dhaka Division"];
