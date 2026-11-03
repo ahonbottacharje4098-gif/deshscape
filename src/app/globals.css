@@ -457,3 +457,8 @@ button,input{font:inherit}
 .footer-contact-link:hover{color:#fff}
 @media(max-width:760px){.contact-header{padding:0 7%}.contact-hero{padding:78px 7% 85px}.contact-hero-mark{right:5%;width:125px;height:125px;opacity:.4}.contact-content{grid-template-columns:1fr;gap:42px;padding:65px 7% 75px}.contact-intro>p{max-width:480px}.contact-footer{padding:22px 7%;flex-wrap:wrap}}
 @media(max-width:500px){.contact-hero-mark{display:none}.contact-form-bottom{align-items:flex-start;flex-direction:column}.contact-form-bottom .button{width:100%;justify-content:space-between}.contact-footer{font-size:7px}}
+
+
+/* Journal article reading progress */
+.reading-progress-track{position:fixed;top:0;left:0;right:0;z-index:1200;height:3px;background:#183d3220;pointer-events:none}
+.reading-progress-fill{display:block;height:100%;background:#a8794d;transition:width .08s linear}
