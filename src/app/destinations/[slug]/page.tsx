@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, ArrowUpRight, Compass, MapPin, Check, Info } from "lucide-react";
 import { destinations } from "@/data/destinations";
 import { destinationImageUrl } from "@/lib/destinationImage";
+import DestinationGallery from "@/components/DestinationGallery";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -83,6 +84,8 @@ export default async function DestinationPage({ params }: Props) {
           <div className="detail-note"><Info size={17} /><div><strong>Before you go</strong><p>Conditions, access and local guidance can change. Check current information before travelling.</p></div></div>
         </aside>
       </section>
+
+      <DestinationGallery image={destinationImageUrl(place.image, 1800)} title={place.name} />
 
       <section className="detail-travel section-wrap">
         <div className="eyebrow"><span /> TRAVEL NOTES</div>
