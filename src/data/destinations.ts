@@ -535,7 +535,7 @@ export const destinations: Destination[] = [
     travelNotes: ["Check local access and road conditions before travelling.", "Stay on permitted paths and respect forest areas.", "Carry out all litter."]
   },
   {
-    slug: "gajni- অবকাশ-kendra", name: "Gajni অবকাশ কেন্দ্র", region: "Mymensingh Division", district: "Sherpur", type: "Nature",
+    slug: "gajni-obokash-kendra", name: "Gajni অবকাশ কেন্দ্র", region: "Mymensingh Division", district: "Sherpur", type: "Nature",
     coordinates: [25.18, 90.02], image: "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1400&q=85",
     tag: "A forest-side escape", shortDescription: "A popular nature destination set among the green hills and forests of Sherpur.",
     description: "Gajni অবকাশ কেন্দ্র in Jhenaigati, Sherpur, is a well-known recreation area surrounded by the green landscape of the Garo Hills region.",
