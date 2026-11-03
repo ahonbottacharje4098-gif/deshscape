@@ -402,6 +402,55 @@ export const destinations: Destination[] = [
     description: "Choto Sona Mosque in Chapainawabganj is a notable Sultanate-era monument, admired for its stonework and richly decorated architectural details.",
     highlights: ["Historic mosque architecture", "Stone and terracotta ornament", "Gaur-region heritage"],
     travelNotes: ["Dress respectfully and observe prayer times.", "Follow site rules and visitor guidance.", "Avoid touching or damaging historic surfaces."]
+  },
+
+  {
+    slug: "oxford-mission-church", name: "Oxford Mission Church", region: "Barishal Division", district: "Barishal", type: "Heritage",
+    coordinates: [22.701, 90.369], image: "https://commons.wikimedia.org/wiki/Special:FilePath/Oxford%20Mission%20Church%20Barisal.jpg?width=1400",
+    tag: "Architectural landmark", shortDescription: "A distinctive historic church known for its striking red-brick architecture and peaceful grounds.",
+    description: "The Oxford Mission Church, also known as Epiphany Church, is a landmark in Barishal city. Its distinctive architecture and long history make it an important part of the city's heritage.",
+    highlights: ["Distinctive red-brick architecture", "Historic church grounds", "A landmark of Barishal city"],
+    travelNotes: ["Respect worshippers and the quiet atmosphere.", "Confirm visitor access before entering.", "Follow photography and site guidance."]
+  },
+  {
+    slug: "monpura-island", name: "Monpura Island", region: "Barishal Division", district: "Bhola", type: "Nature",
+    coordinates: [22.296, 90.97], image: "https://commons.wikimedia.org/wiki/Special:FilePath/Monpura%20Island%20Bhola.jpg?width=1400",
+    tag: "Island escape", shortDescription: "A tranquil island destination with open coastal landscapes, waterways and rural life.",
+    description: "Monpura is an island upazila in Bhola, known for its coastal scenery, river channels and quiet rural atmosphere. The journey and landscape are shaped by tides and seasonal weather.",
+    highlights: ["Island and river scenery", "Coastal village life", "Open landscapes and birdlife"],
+    travelNotes: ["Plan ferry and boat connections ahead of time.", "Check weather, tide and transport updates.", "Respect local communities and coastal wildlife."]
+  },
+  {
+    slug: "bhimruli-floating-guava-market", name: "Bhimruli Floating Guava Market", region: "Barishal Division", district: "Jhalokathi", type: "Nature",
+    coordinates: [22.64, 90.17], image: "https://commons.wikimedia.org/wiki/Special:FilePath/Bhimruli%20floating%20guava%20market.jpg?width=1400",
+    tag: "Life on the canals", shortDescription: "A seasonal canal market where boats gather to trade locally grown guavas.",
+    description: "Bhimruli in Jhalokathi is known for its floating guava market, where farmers bring seasonal produce by boat through the canal network. The market is most active during the guava harvest season.",
+    highlights: ["Traditional boat-based market", "Seasonal guava harvest", "Canal-side rural scenery"],
+    travelNotes: ["Visit during the guava season for the liveliest market.", "Use local boat operators and follow safety advice.", "Ask before photographing people or private boats."]
+  },
+  {
+    slug: "kuakata-sea-beach", name: "Kuakata Sea Beach", region: "Barishal Division", district: "Patuakhali", type: "Beaches",
+    coordinates: [21.8167, 90.1167], image: "https://commons.wikimedia.org/wiki/Special:FilePath/Kuakata%20Sea%20Beach.jpg?width=1400",
+    tag: "Sunrise and sunset coast", shortDescription: "A broad sandy beach on the Bay of Bengal, famed for views over the open horizon.",
+    description: "Kuakata in Patuakhali is a popular coastal destination on the southern edge of Bangladesh. Its wide beach and open sea horizon make it a memorable place to experience the Bay of Bengal.",
+    highlights: ["Long sandy beach", "Sunrise and sunset views", "Nearby Rakhine cultural heritage"],
+    travelNotes: ["Follow beach safety notices and local guidance.", "Check weather and sea conditions before water activities.", "Keep the beach clean and avoid disturbing wildlife."]
+  },
+  {
+    slug: "rayerkathi-zamindar-bari", name: "Rayerkathi Zamindar Bari", region: "Barishal Division", district: "Pirojpur", type: "Heritage",
+    coordinates: [22.58, 89.97], image: "https://commons.wikimedia.org/wiki/Special:FilePath/Rayerkathi%20Zamindar%20Bari.jpg?width=1400",
+    tag: "A glimpse of zamindari history", shortDescription: "A historic estate associated with the zamindari heritage of Pirojpur.",
+    description: "Rayerkathi Zamindar Bari is a historic landmark in Pirojpur, associated with the area's zamindari-era history and traditional architecture.",
+    highlights: ["Historic estate setting", "Traditional architectural details", "Local history and heritage"],
+    travelNotes: ["Confirm public access with local sources before travelling.", "Respect residents and any active religious spaces.", "Do not damage old structures or remove materials."]
+  },
+  {
+    slug: "haringhata-forest", name: "Haringhata Forest", region: "Barishal Division", district: "Barguna", type: "Forests",
+    coordinates: [21.87, 89.97], image: "https://commons.wikimedia.org/wiki/Special:FilePath/Haringhata%20Forest%20Barguna.jpg?width=1400",
+    tag: "Coastal wilderness", shortDescription: "A coastal forest landscape of waterways, greenery and wildlife near the Bay of Bengal.",
+    description: "Haringhata Forest in Barguna is a coastal forest area near the Bay of Bengal, valued for its natural scenery, waterways and wildlife habitat.",
+    highlights: ["Coastal forest landscape", "Waterways and estuary scenery", "Nature and birdwatching"],
+    travelNotes: ["Check local access and weather conditions before visiting.", "Use authorised local guides where required.", "Keep a safe distance from wildlife and leave no litter."]
   }
 
 ];
