@@ -50,15 +50,24 @@ export default function ExploreMap() {
               {searchResults.length === 0 && <p>No matching places found.</p>}
             </div>
           )}
-          <div className="map-panel-top"><span><LocateFixed size={14} /> SELECTED DESTINATION</span><span>{mappedPlaces.findIndex((item) => item.slug === activeSlug) + 1} / {mappedPlaces.length}</span></div>
-          <div className="map-place-image" style={{ backgroundImage: `url(${destinationImageUrl(active.image, 1000)})` }} />
-          <div className="map-place-details">
-            <span className="map-place-region"><MapPin size={13} /> {active.district}, {active.region}</span>
-            <h3>{active.name}</h3>
-            <span className="map-place-type">{active.tag}</span>
-            <p>{active.shortDescription}</p>
-            <Link className="map-place-link" href={`/destinations/${active.slug}`}>Explore destination <ArrowUpRight size={16} /></Link>
-          </div>
+          {active ? (
+            <>
+              <div className="map-panel-top"><span><LocateFixed size={14} /> SELECTED DESTINATION</span><span>{mappedPlaces.findIndex((item) => item.slug === activeSlug) + 1} / {mappedPlaces.length}</span></div>
+              <div className="map-place-image" style={{ backgroundImage: `url(${destinationImageUrl(active.image, 1000)})` }} />
+              <div className="map-place-details">
+                <span className="map-place-region"><MapPin size={13} /> {active.district}, {active.region}</span>
+                <h3>{active.name}</h3>
+                <span className="map-place-type">{active.tag}</span>
+                <p>{active.shortDescription}</p>
+                <Link className="map-place-link" href={`/destinations/${active.slug}`}>Explore destination <ArrowUpRight size={16} /></Link>
+              </div>
+            </>
+          ) : (
+            <div className="map-place-details">
+              <h3>Map destinations coming soon</h3>
+              <p>There are no mapped destinations available right now. Please check back later.</p>
+            </div>
+          )}
           <div className="map-place-switcher">
             {searchResults.slice(0, 10).map((place) => (
               <button key={place.slug} type="button" className={activeSlug === place.slug ? "map-switch active" : "map-switch"} onClick={() => setActiveSlug(place.slug)}>{place.name}</button>
