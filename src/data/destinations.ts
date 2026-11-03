@@ -265,7 +265,80 @@ export const destinations: Destination[] = [
     description: "The Titas River flows through Brahmanbaria and is closely tied to local river culture, fishing and boat journeys.",
     highlights: ["River and countryside views", "Traditional boats", "Local community life"],
     travelNotes: ["Use recognised landing points.", "Follow boat safety guidance.", "Keep riverbanks clean."]
+  },,
+{
+    slug: "sixty-dome-mosque", name: "Sixty Dome Mosque", region: "Khulna Division", district: "Bagerhat", type: "Heritage",
+    coordinates: [22.6746, 89.735], image: "https://commons.wikimedia.org/wiki/Special:FilePath/Sixty%20Dome%20Mosque%20Bagerhat.jpg?width=1400",
+    tag: "UNESCO heritage", shortDescription: "A remarkable 15th-century mosque and landmark of the historic Mosque City of Bagerhat.",
+    description: "The Sixty Dome Mosque, also known as Shat Gombuj Masjid, is a celebrated historic mosque in Bagerhat associated with Khan Jahan Ali and the UNESCO-listed Historic Mosque City.",
+    highlights: ["Distinctive brick architecture", "Historic mosque complex", "UNESCO World Heritage setting"],
+    travelNotes: ["Dress respectfully when visiting.", "Follow site rules and visitor guidance.", "Avoid touching or damaging historic surfaces."]
   },
+  {
+    slug: "godkhali-flower-fields", name: "Godkhali Flower Fields", region: "Khulna Division", district: "Jashore", type: "Nature",
+    coordinates: [23.015, 89.22], image: "https://commons.wikimedia.org/wiki/Special:FilePath/Godkhali%20flower%20garden%20Jessore.jpg?width=1400",
+    tag: "A field of colours", shortDescription: "Colourful flower-growing fields in one of Bangladesh's best-known flower-producing areas.",
+    description: "Godkhali in Jashore is widely known for its flower cultivation. Seasonal fields and local flower markets offer a glimpse into the area's rural livelihoods.",
+    highlights: ["Seasonal flower fields", "Local flower markets", "Rural photography"],
+    travelNotes: ["Ask permission before entering private fields.", "Avoid picking flowers or damaging crops.", "Visit respectfully and keep the area clean."]
+  },
+  {
+    slug: "barobazar-sultanate-mosques", name: "Barobazar Sultanate Mosques", region: "Khulna Division", district: "Jhenaidah", type: "Heritage",
+    coordinates: [23.35, 89.15], image: "https://commons.wikimedia.org/wiki/Special:FilePath/Barobazar%20Jhenaidah%20mosque.jpg?width=1400",
+    tag: "Sultanate-era heritage", shortDescription: "A group of historic mosques and archaeological remains in the Barobazar area.",
+    description: "Barobazar in Jhenaidah is known for historic Sultanate-era mosque sites and archaeological remains that reflect the region's medieval history.",
+    highlights: ["Historic mosque architecture", "Archaeological heritage", "Rural cultural landscape"],
+    travelNotes: ["Treat religious sites with respect.", "Follow local access guidance.", "Do not disturb archaeological remains."]
+  },
+  {
+    slug: "shilaidaha-rabindra-kuthibari", name: "Shilaidaha Rabindra Kuthibari", region: "Khulna Division", district: "Kushtia", type: "Heritage",
+    coordinates: [23.9167, 89.35], image: "https://commons.wikimedia.org/wiki/Special:FilePath/Shilaidaha%20Kuthibari.jpg?width=1400",
+    tag: "Literary heritage", shortDescription: "The historic estate associated with Rabindranath Tagore's time in the region.",
+    description: "Shilaidaha Kuthibari in Kushtia is closely associated with Rabindranath Tagore and his literary work. The site preserves a significant chapter of Bengal's cultural history.",
+    highlights: ["Tagore-related history", "Historic residence and museum", "Quiet riverside surroundings"],
+    travelNotes: ["Check museum opening hours before travelling.", "Follow photography and visitor rules.", "Respect the heritage property."]
+  },
+  {
+    slug: "mujibnagar-memorial", name: "Mujibnagar Memorial", region: "Khulna Division", district: "Meherpur", type: "Heritage",
+    coordinates: [23.633, 88.85], image: "https://commons.wikimedia.org/wiki/Special:FilePath/Mujibnagar%20Memorial%20Complex.jpg?width=1400",
+    tag: "A defining moment in history", shortDescription: "A national memorial marking the oath-taking of Bangladesh's first government in 1971.",
+    description: "Mujibnagar Memorial in Meherpur commemorates the historic oath-taking of Bangladesh's provisional government on 17 April 1971.",
+    highlights: ["Bangladesh Liberation War history", "Memorial architecture", "Educational heritage visit"],
+    travelNotes: ["Maintain a respectful atmosphere.", "Follow site rules and guidance.", "Allow time to explore the memorial grounds."]
+  },
+  {
+    slug: "carew-sugar-mills", name: "Carew & Co. Sugar Mills", region: "Khulna Division", district: "Chuadanga", type: "Heritage",
+    coordinates: [23.60, 88.77], image: "https://commons.wikimedia.org/wiki/Special:FilePath/Carew%20and%20Company%20Sugar%20Mills.jpg?width=1400",
+    tag: "Industrial heritage", shortDescription: "A historic sugar mill complex in Darshana with a distinctive industrial legacy.",
+    description: "Carew & Co. in Darshana, Chuadanga, is a longstanding sugar-industry landmark. Visitors should confirm whether any public viewing or guided access is permitted.",
+    highlights: ["Industrial history", "Historic mill setting", "Darshana's local heritage"],
+    travelNotes: ["This is an operational industrial site; do not enter restricted areas.", "Confirm public access in advance.", "Follow all staff instructions."]
+  },
+  {
+    slug: "siddheshwari-math", name: "Siddheshwari Math", region: "Khulna Division", district: "Magura", type: "Heritage",
+    coordinates: [23.49, 89.42], image: "https://commons.wikimedia.org/wiki/Special:FilePath/Siddheshwari%20Math%20Magura.jpg?width=1400",
+    tag: "Local heritage", shortDescription: "A historic religious site connected with Magura's cultural landscape.",
+    description: "Siddheshwari Math is a recognised heritage and religious site in Magura, offering a glimpse into the district's local history and traditions.",
+    highlights: ["Religious and cultural heritage", "Historic architecture", "Local traditions"],
+    travelNotes: ["Visit respectfully and observe local customs.", "Confirm access with local sources.", "Keep the premises clean."]
+  },
+  {
+    slug: "sm-sultan-memorial-museum", name: "S. M. Sultan Memorial Museum", region: "Khulna Division", district: "Narail", type: "Heritage",
+    coordinates: [23.17, 89.50], image: "https://commons.wikimedia.org/wiki/Special:FilePath/SM%20Sultan%20Memorial%20Museum%20Narail.jpg?width=1400",
+    tag: "Art and culture", shortDescription: "A museum celebrating the life and work of celebrated Bangladeshi artist S. M. Sultan.",
+    description: "The S. M. Sultan Memorial Museum in Narail honours the artist's life and work and is an important cultural stop in the district.",
+    highlights: ["S. M. Sultan's artistic legacy", "Art and cultural exhibits", "Chitra River surroundings"],
+    travelNotes: ["Check opening hours before visiting.", "Follow museum photography rules.", "Treat artworks and displays carefully."]
+  },
+  {
+    slug: "jeshoreshwari-kali-temple", name: "Jeshoreshwari Kali Temple", region: "Khulna Division", district: "Satkhira", type: "Heritage",
+    coordinates: [22.55, 89.17], image: "https://commons.wikimedia.org/wiki/Special:FilePath/Jeshoreshwari%20Kali%20Temple.jpg?width=1400",
+    tag: "Sacred heritage", shortDescription: "A historic Hindu temple in Ishwaripur, Shyamnagar, with deep regional significance.",
+    description: "Jeshoreshwari Kali Temple in Satkhira is a historic religious site in Ishwaripur, Shyamnagar, known for its cultural and spiritual importance.",
+    highlights: ["Historic temple setting", "Religious and cultural traditions", "Local heritage"],
+    travelNotes: ["Respect worshippers and local customs.", "Check visitor access before travelling.", "Dress and behave respectfully."]
+  }
+
 ];
 
 import { dhakaDivisionDestinations } from "./dhakaDivision";
