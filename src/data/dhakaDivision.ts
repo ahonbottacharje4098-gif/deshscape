@@ -412,7 +412,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       23.12,
       90.16
     ],
-    "image": "photo-1511818966892-d7d671e672a2",
+    "image": "https://www.bssnews.net/bangla/assets/news_photos/2025/10/09/image-242361-1760013280.jpg",
     "tag": "Heritage trail",
     "shortDescription": "A remnant of the region's indigo-era history.",
     "description": "A remnant of the region's indigo-era history. Explore this district attraction respectfully, and confirm access and local conditions before travelling.",
@@ -512,7 +512,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       23.82,
       90.02
     ],
-    "image": "photo-1511818966892-d7d671e672a2",
+    "image": "https://res.cloudinary.com/dqmmlwqig/image/upload/v1754995534/dhankora-jamidar-bari_vkclam.jpg",
     "tag": "Heritage trail",
     "shortDescription": "A lesser-known historic zamindar residence.",
     "description": "A lesser-known historic zamindar residence. Explore this district attraction respectfully, and confirm access and local conditions before travelling.",
@@ -587,7 +587,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       23.52,
       90.4
     ],
-    "image": "photo-1511818966892-d7d671e672a2",
+    "image": "https://cdn.jagonews24.com/media/imgAllNew/BG/2019November/munshi-3-20210303173215.jpg",
     "tag": "Heritage trail",
     "shortDescription": "An archaeological site connected with ancient Buddhist heritage.",
     "description": "An archaeological site connected with ancient Buddhist heritage. Explore this district attraction respectfully, and confirm access and local conditions before travelling.",
@@ -712,7 +712,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       23.98,
       90.72
     ],
-    "image": "photo-1470770841072-f978cf4d019e",
+    "image": "https://d34vm3j4h7f97z.cloudfront.net/optimized/3X/2/d/2dff9d7fb3fe797a941d7ee938170f4bd06fbb10_2_690x388.jpeg",
     "tag": "Nature retreat",
     "shortDescription": "A recreational park in the Narsingdi area.",
     "description": "A recreational park in the Narsingdi area. Explore this district attraction respectfully, and confirm access and local conditions before travelling.",
@@ -837,7 +837,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       23.43,
       90.26
     ],
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sheikh%20Hasina%20inaugurates%20Padma%20Bridge%20at%20Jajira%20end%20Shariatpur%202022-06-25%20%28PID-0022478%29.jpg",
+    "image": "https://www.bssnews.net/assets/news_photos/2022/06/22/image-67932-1655886017.jpg",
     "tag": "Riverside escape",
     "shortDescription": "A viewpoint near the Jajira side of the Padma Bridge.",
     "description": "A viewpoint near the Jajira side of the Padma Bridge. Explore this district attraction respectfully, and confirm access and local conditions before travelling.",
@@ -862,7 +862,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       23.25,
       90.35
     ],
-    "image": "photo-1470770841072-f978cf4d019e",
+    "image": "https://vromonprio.com/images/gallery/mohisar-digumbori-dighi-6780ffb41590c.webp",
     "tag": "Nature retreat",
     "shortDescription": "A historic waterbody surrounded by local stories.",
     "description": "A historic waterbody surrounded by local stories. Explore this district attraction respectfully, and confirm access and local conditions before travelling.",
@@ -887,7 +887,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       23.22,
       90.43
     ],
-    "image": "photo-1511818966892-d7d671e672a2",
+    "image": "https://colozai.com/images/rudrakar-moth-shariatpur.webp",
     "tag": "Heritage trail",
     "shortDescription": "A historic religious structure in the district.",
     "description": "A historic religious structure in the district. Explore this district attraction respectfully, and confirm access and local conditions before travelling.",
