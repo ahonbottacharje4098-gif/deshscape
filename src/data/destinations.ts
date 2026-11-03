@@ -265,7 +265,7 @@ export const destinations: Destination[] = [
     description: "The Titas River flows through Brahmanbaria and is closely tied to local river culture, fishing and boat journeys.",
     highlights: ["River and countryside views", "Traditional boats", "Local community life"],
     travelNotes: ["Use recognised landing points.", "Follow boat safety guidance.", "Keep riverbanks clean."]
-  },,
+  },
 {
     slug: "sixty-dome-mosque", name: "Sixty Dome Mosque", region: "Khulna Division", district: "Bagerhat", type: "Heritage",
     coordinates: [22.6746, 89.735], image: "https://commons.wikimedia.org/wiki/Special:FilePath/Sixty%20Dome%20Mosque%20Bagerhat.jpg?width=1400",
