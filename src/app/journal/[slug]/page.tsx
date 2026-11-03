@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight, Compass, MapPin } from "lucide-react";
+import { destinations } from "@/data/destinations";
+import { destinationImageUrl } from "@/lib/destinationImage";
 
 type Story = {
   slug: string;
@@ -68,6 +70,13 @@ export default async function JournalStoryPage({ params }: Props) {
   const story = stories.find((item) => item.slug === slug);
   if (!story) notFound();
 
+  const relatedSlugs = story.slug === "river-town-rhythm"
+    ? ["goalanda-ghat", "hardinge-bridge"]
+    : ["jaflong", "ratargul-swamp-forest", "lalakhal"];
+  const relatedPlaces = relatedSlugs
+    .map((relatedSlug) => destinations.find((place) => place.slug === relatedSlug))
+    .filter((place) => place !== undefined);
+
   return (
     <main className="journal-article-page">
       <header className="site-header">
@@ -105,6 +114,27 @@ export default async function JournalStoryPage({ params }: Props) {
         </aside>
         <Link className="journal-article-explore" href="/#destinations">DISCOVER DESTINATIONS <ArrowUpRight size={16} /></Link>
       </article>
+
+      {relatedPlaces.length > 0 && (
+        <section className="related-section section-wrap journal-related-section">
+          <div className="section-heading">
+            <div>
+              <div className="eyebrow"><span /> CONTINUE THE JOURNEY</div>
+              <h2>Explore places<br /><em>in the story.</em></h2>
+            </div>
+            <Link className="text-link heading-link" href="/#destinations">All destinations <ArrowUpRight size={16} /></Link>
+          </div>
+          <div className="related-grid">
+            {relatedPlaces.map((place) => (
+              <Link className="related-card" href={`/destinations/${place.slug}`} key={place.slug}>
+                <div className="related-image" style={{ backgroundImage: `url(${destinationImageUrl(place.image, 900)})` }} />
+                <div><span>{place.region}</span><h3>{place.name}</h3></div>
+                <ArrowUpRight size={18} />
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
 
       <footer className="site-footer">
         <div className="footer-top">
