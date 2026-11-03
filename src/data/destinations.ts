@@ -517,6 +517,39 @@ export const destinations: Destination[] = [
     highlights: ["Seasonal sandbar landscapes", "Teesta river views", "Riverine community life"],
     travelNotes: ["Char access can change with water levels and weather.", "Use local guidance and safe transport.", "Do not approach unstable banks or fast-moving water."]
   }
+  ,
+  {
+    slug: "shoshi-lodge", name: "Shoshi Lodge", region: "Mymensingh Division", district: "Mymensingh", type: "Heritage",
+    coordinates: [24.753, 90.407], image: "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1400&q=85",
+    tag: "A royal-era landmark", shortDescription: "A historic residence in Mymensingh known for its distinctive architecture and gardens.",
+    description: "Shoshi Lodge, also known as Mymensingh Rajbari, is a notable historic landmark in the city. Its architecture and grounds offer a glimpse into the region's past.",
+    highlights: ["Historic residence and architecture", "Gardens and open grounds", "Local heritage and photography"],
+    travelNotes: ["Confirm current visitor access before travelling.", "Respect the site and any restricted areas.", "Be considerate of nearby residents."]
+  },
+  {
+    slug: "lauchapra-picnic-spot", name: "Lauchapra Picnic Spot", region: "Mymensingh Division", district: "Jamalpur", type: "Nature",
+    coordinates: [25.073, 89.83], image: "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1400&q=85",
+    tag: "Green hills and forest", shortDescription: "A nature retreat near the India border, with low hills, woodland and open views.",
+    description: "Lauchapra in Bakshiganj, Jamalpur, is known for its green hillocks and forested surroundings. It offers a quiet countryside escape in the northern part of the division.",
+    highlights: ["Green hill and woodland scenery", "Open countryside views", "Picnic and nature experiences"],
+    travelNotes: ["Check local access and road conditions before travelling.", "Stay on permitted paths and respect forest areas.", "Carry out all litter."]
+  },
+  {
+    slug: "gajni- অবকাশ-kendra", name: "Gajni অবকাশ কেন্দ্র", region: "Mymensingh Division", district: "Sherpur", type: "Nature",
+    coordinates: [25.18, 90.02], image: "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1400&q=85",
+    tag: "A forest-side escape", shortDescription: "A popular nature destination set among the green hills and forests of Sherpur.",
+    description: "Gajni অবকাশ কেন্দ্র in Jhenaigati, Sherpur, is a well-known recreation area surrounded by the green landscape of the Garo Hills region.",
+    highlights: ["Green hill and forest surroundings", "Scenic viewpoints", "Family-friendly outdoor recreation"],
+    travelNotes: ["Check current access and facilities locally.", "Use designated visitor areas.", "Respect local communities and keep the surroundings clean."]
+  },
+  {
+    slug: "birishiri-someshwari-river", name: "Birishiri & Someshwari River", region: "Mymensingh Division", district: "Netrokona", type: "Nature",
+    coordinates: [25.12, 90.67], image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1400&q=85",
+    tag: "River and hill country", shortDescription: "A striking landscape of the Someshwari River, green hills and distinctive clay formations.",
+    description: "Birishiri in Durgapur, Netrokona, is known for the scenic Someshwari River and nearby hills. The landscape and river colour can change with rainfall and season.",
+    highlights: ["Someshwari River scenery", "Views of the Garo Hills", "Nearby cultural and natural attractions"],
+    travelNotes: ["Check river conditions and local weather before visiting.", "Avoid deep or fast-moving water.", "Respect local communities and keep the riverbank clean."]
+  }
 
 ];
 
@@ -525,4 +558,4 @@ import { dhakaDivisionDestinations } from "./dhakaDivision";
 destinations.push(...dhakaDivisionDestinations);
 
 export const destinationTypes = ["All experiences", "Mountains", "Beaches", "Forests", "Rivers", "Nature", "Heritage"];
-export const destinationRegions = ["All regions", "Rangamati", "Cox's Bazar", "Sylhet", "Khulna", "Rajshahi Division", "Dhaka Division", "Rangpur Division"];
+export const destinationRegions = ["All regions", "Rangamati", "Cox's Bazar", "Sylhet", "Khulna", "Rajshahi Division", "Dhaka Division", "Rangpur Division", "Mymensingh Division"];
