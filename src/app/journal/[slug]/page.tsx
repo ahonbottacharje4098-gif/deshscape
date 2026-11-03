@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight, Compass, MapPin } from "lucide-react";
 import { destinations } from "@/data/destinations";
 import { destinationImageUrl } from "@/lib/destinationImage";
+import ShareStory from "@/components/ShareStory";
 
 type Story = {
   slug: string;
@@ -112,6 +113,7 @@ export default async function JournalStoryPage({ params }: Props) {
           <Compass size={20} />
           <div><strong>Explore thoughtfully</strong><span>These stories are editorial inspiration, not live travel updates. Confirm local conditions and access before visiting.</span></div>
         </aside>
+        <ShareStory title={story.title} />
         <Link className="journal-article-explore" href="/#destinations">DISCOVER DESTINATIONS <ArrowUpRight size={16} /></Link>
       </article>
 
