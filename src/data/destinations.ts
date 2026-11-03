@@ -511,7 +511,7 @@ export const destinations: Destination[] = [
   },
   {
     slug: "tista-char-lalmonirhat", name: "Teesta River Char", region: "Rangpur Division", district: "Lalmonirhat", type: "Nature",
-    coordinates: [25.92, 89.45], image: "https://softwebsys.s3.us-east-1.amazonaws.com/uploads/1777305723973-salo_1658473505.webp",
+    coordinates: [25.92, 89.45], image: "photo-1500530855697-b586d89ba3ee",
     tag: "Ever-changing river country", shortDescription: "A seasonal landscape of sandbars, river channels and wide-open skies along the Teesta.",
     description: "The Teesta riverine areas of Lalmonirhat are shaped by shifting channels and chars. The scenery changes with the seasons and offers a glimpse of life along a dynamic northern river.",
     highlights: ["Seasonal sandbar landscapes", "Teesta river views", "Riverine community life"],
