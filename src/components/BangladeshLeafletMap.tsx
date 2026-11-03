@@ -3,22 +3,7 @@
 import { CircleMarker, MapContainer, Popup, TileLayer, ZoomControl } from "react-leaflet";
 import Link from "next/link";
 import type { LatLngExpression } from "leaflet";
-
-type Place = {
-  slug: string;
-  name: string;
-  area: string;
-  position: LatLngExpression;
-};
-
-const places: Place[] = [
-  { slug: "sajek-valley", name: "Sajek Valley", area: "Rangamati", position: [23.381, 92.294] },
-  { slug: "cox-s-bazar", name: "Cox's Bazar", area: "Chattogram", position: [21.427, 91.971] },
-  { slug: "ratargul-swamp-forest", name: "Ratargul Swamp Forest", area: "Sylhet", position: [25.002, 91.982] },
-  { slug: "bichanakandi", name: "Bichanakandi", area: "Sylhet", position: [25.176, 91.850] },
-  { slug: "sundarbans", name: "Sundarbans", area: "Khulna", position: [22.438, 89.592] },
-  { slug: "jaflong", name: "Jaflong", area: "Sylhet", position: [25.163, 92.017] }
-];
+import { destinations } from "@/data/destinations";
 
 type Props = {
   activeSlug: string;
@@ -26,6 +11,8 @@ type Props = {
 };
 
 export default function BangladeshLeafletMap({ activeSlug, onSelect }: Props) {
+  const places = destinations.filter((place) => place.coordinates);
+
   return (
     <MapContainer
       center={[23.75, 90.35]}
@@ -44,10 +31,11 @@ export default function BangladeshLeafletMap({ activeSlug, onSelect }: Props) {
       <ZoomControl position="topright" />
       {places.map((place) => {
         const active = activeSlug === place.slug;
+        const position: LatLngExpression = place.coordinates!;
         return (
           <CircleMarker
             key={place.slug}
-            center={place.position}
+            center={position}
             radius={active ? 10 : 7}
             pathOptions={{
               color: "#f8f7ef",
@@ -60,7 +48,7 @@ export default function BangladeshLeafletMap({ activeSlug, onSelect }: Props) {
             <Popup>
               <div className="leaflet-place-popup">
                 <strong>{place.name}</strong>
-                <span>{place.area}, Bangladesh</span>
+                <span>{place.district}, Bangladesh</span>
                 <Link href={`/destinations/${place.slug}`}>Explore destination ↗</Link>
               </div>
             </Popup>
