@@ -240,3 +240,17 @@ button,input{font:inherit}
 .map-disclaimer{padding-top:17px;padding-bottom:0;text-align:right;font-size:8px;color:#879184;letter-spacing:.3px}
 @media(max-width:800px){.explore-map-layout{grid-template-columns:1fr}.map-canvas{min-height:560px}.map-place-panel{display:grid;grid-template-columns:40% 60%}.map-panel-top{grid-column:1/-1}.map-place-image{height:100%;min-height:230px}.map-place-details{padding:20px}.map-place-switcher{grid-column:1/-1}}
 @media(max-width:600px){.explore-map-section{padding-top:75px}.explore-map-heading{display:block}.explore-map-heading>p{margin-top:18px}.explore-map-layout{padding:0 5%;gap:13px}.map-canvas{min-height:450px}.bangladesh-shape{height:86%;width:83%;left:7%;top:5%}.map-pin-label{font-size:7px;padding:4px 5px}.map-pin-dot{width:25px;height:25px}.map-place-panel{display:flex}.map-place-image{height:185px;min-height:0}.map-place-details{padding:18px}.map-place-details h3{font-size:27px}.map-disclaimer{text-align:left;padding-top:13px;font-size:7px}}
+
+
+/* Real Leaflet map */
+.real-map-frame{position:relative;min-width:0;min-height:610px;background:#dce6df;border:1px solid #d1ddd3;overflow:hidden}
+.leaflet-bangladesh-map{width:100%;height:610px;z-index:1;background:#dce6df}
+.real-map-caption{position:absolute;z-index:400;left:14px;bottom:14px;padding:8px 10px;background:rgba(248,248,242,.92);color:#526b59;font-size:8px;letter-spacing:1.2px;font-weight:700;pointer-events:none}
+.real-map-loading{height:610px;display:grid;place-items:center;color:#607765;font-size:12px}
+.leaflet-place-popup{display:flex;flex-direction:column;gap:5px;min-width:145px;color:#244b3a;font-family:'DM Sans',sans-serif}
+.leaflet-place-popup strong{font:17px 'Playfair Display',serif}
+.leaflet-place-popup span{font-size:11px;color:#778074}
+.leaflet-place-popup a{font-size:11px;font-weight:700;color:#244b3a;margin-top:4px}
+.leaflet-container{font-family:'DM Sans',sans-serif}
+@media(max-width:800px){.real-map-frame,.leaflet-bangladesh-map,.real-map-loading{min-height:480px;height:480px}}
+@media(max-width:600px){.real-map-frame,.leaflet-bangladesh-map,.real-map-loading{min-height:430px;height:430px}}
