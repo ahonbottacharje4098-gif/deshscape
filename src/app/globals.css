@@ -380,7 +380,7 @@ button,input{font:inherit}
 .journal-tools{display:flex;align-items:center;justify-content:space-between;gap:18px;margin:30px 0 20px}
 .journal-search{display:flex;align-items:center;gap:11px;width:min(360px,100%);height:48px;padding:0 15px;border:1px solid #d9ddd3;background:#faf9f5;color:#718073}
 .journal-search input{width:100%;border:0;outline:0;background:transparent;color:#183d32;font:12px 'DM Sans',sans-serif}
-.journal-search input::placeholder{color:#9a a397}
+.journal-search input::placeholder{color:#9aa397}
 .journal-search button{display:grid;place-items:center;border:0;background:transparent;color:#718073;cursor:pointer}
 .journal-filters{display:flex;flex-wrap:wrap;gap:8px}
 .journal-filter{padding:12px 15px;border:1px solid #d9ddd3;background:transparent;color:#718073;font:700 8px 'DM Sans',sans-serif;letter-spacing:1px;cursor:pointer;transition:all .2s}
