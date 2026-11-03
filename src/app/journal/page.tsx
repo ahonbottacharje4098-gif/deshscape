@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowLeft, ArrowUpRight, Compass, MapPin } from "lucide-react";
+import { useMemo, useState } from "react";
+import { ArrowLeft, ArrowUpRight, Compass, MapPin, Search, X } from "lucide-react";
 
 const stories = [
   {
@@ -25,6 +26,17 @@ const stories = [
 ];
 
 export default function JournalPage() {
+  const [search, setSearch] = useState("");
+  const [category, setCategory] = useState("ALL");
+  const filteredStories = useMemo(() => {
+    const query = search.trim().toLowerCase();
+    return stories.filter((story) => {
+      const matchesCategory = category === "ALL" || story.category === category;
+      const matchesSearch = !query || [story.title, story.location, story.description, story.category].some((value) => value.toLowerCase().includes(query));
+      return matchesCategory && matchesSearch;
+    });
+  }, [search, category]);
+
   return (
     <main>
       <header className="site-header">
@@ -59,21 +71,52 @@ export default function JournalPage() {
             <div><div className="eyebrow"><span /> FIELD NOTES & INSPIRATION</div><h2>Read, wander<br /><em>and discover.</em></h2></div>
             <span className="eyebrow">02 STORIES</span>
           </div>
-          <div className="journal-grid">
-            {stories.map((story) => (
-              <article key={story.number} className="journal-card">
-                <Link className="journal-card-image" href={`/journal/${story.number === "01" ? "river-town-rhythm" : "beyond-tea-gardens"}`} aria-label={`Read ${story.title}`} style={{ backgroundImage: `url(${story.image})` }} />
-                <div className="journal-card-copy">
-                  <div className="eyebrow"><span /> {story.category}</div>
-                  <h3 style={{ font: "30px/1.15 'Playfair Display',serif", color: "#183d32", margin: "17px 0 10px" }}>{story.title}</h3>
-                  <div style={{ display: "flex", alignItems: "center", gap: 6, color: "#899387", fontSize: 10, marginBottom: 15 }}><MapPin size={13} /> {story.location}</div>
-                  <p style={{ color: "#70776e", fontSize: 12, lineHeight: 1.9, margin: "0 0 18px" }}>{story.description}</p>
-                  <div style={{ color: "#9caa96", fontSize: 9, letterSpacing: 1.1, textTransform: "uppercase" }}>{story.note}</div>
-                  <Link className="journal-read-link" href={`/journal/${story.number === "01" ? "river-town-rhythm" : "beyond-tea-gardens"}`}>READ STORY <ArrowUpRight size={15} /></Link>
-                </div>
-              </article>
-            ))}
+          <div className="journal-tools">
+            <label className="journal-search">
+              <Search size={17} />
+              <input
+                type="search"
+                value={search}
+                onChange={(event) => setSearch(event.target.value)}
+                placeholder="Search stories, places..."
+                aria-label="Search journal stories"
+              />
+              {search && <button type="button" onClick={() => setSearch("")} aria-label="Clear search"><X size={16} /></button>}
+            </label>
+            <div className="journal-filters" aria-label="Filter stories by category">
+              {["ALL", "PEOPLE & CULTURE", "HIDDEN BANGLADESH"].map((item) => (
+                <button key={item} type="button" className={category === item ? "journal-filter active" : "journal-filter"} onClick={() => setCategory(item)} aria-pressed={category === item}>{item}</button>
+              ))}
+            </div>
           </div>
+          <div className="journal-results-line">
+            <span>{filteredStories.length} {filteredStories.length === 1 ? "STORY" : "STORIES"} FOUND</span>
+            {(search || category !== "ALL") && <button type="button" onClick={() => { setSearch(""); setCategory("ALL"); }}>CLEAR FILTERS <X size={13} /></button>}
+          </div>
+          {filteredStories.length > 0 ? (
+            <div className="journal-grid">
+              {filteredStories.map((story) => (
+                <article key={story.number} className="journal-card">
+                  <Link className="journal-card-image" href={`/journal/${story.number === "01" ? "river-town-rhythm" : "beyond-tea-gardens"}`} aria-label={`Read ${story.title}`} style={{ backgroundImage: `url(${story.image})` }} />
+                  <div className="journal-card-copy">
+                    <div className="eyebrow"><span /> {story.category}</div>
+                    <h3 style={{ font: "30px/1.15 'Playfair Display',serif", color: "#183d32", margin: "17px 0 10px" }}>{story.title}</h3>
+                    <div style={{ display: "flex", alignItems: "center", gap: 6, color: "#899387", fontSize: 10, marginBottom: 15 }}><MapPin size={13} /> {story.location}</div>
+                    <p style={{ color: "#70776e", fontSize: 12, lineHeight: 1.9, margin: "0 0 18px" }}>{story.description}</p>
+                    <div style={{ color: "#9caa96", fontSize: 9, letterSpacing: 1.1, textTransform: "uppercase" }}>{story.note}</div>
+                    <Link className="journal-read-link" href={`/journal/${story.number === "01" ? "river-town-rhythm" : "beyond-tea-gardens"}`}>READ STORY <ArrowUpRight size={15} /></Link>
+                  </div>
+                </article>
+              ))}
+            </div>
+          ) : (
+            <div className="journal-empty">
+              <Compass size={30} strokeWidth={1.2} />
+              <h3>No stories found</h3>
+              <p>Try another keyword or choose a different category.</p>
+              <button type="button" onClick={() => { setSearch(""); setCategory("ALL"); }}>Show all stories <ArrowUpRight size={15} /></button>
+            </div>
+          )}
           <p style={{ color: "#7d847b", fontSize: 10, lineHeight: 1.8, marginTop: 22 }}>These are introductory editorial stories. Destination-specific travel details should always be checked locally before a visit.</p>
         </div>
       </section>
