@@ -4,6 +4,9 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, ArrowUpRight, Bookmark, Compass, MapPin, Trash2 } from "lucide-react";
 import { destinations } from "@/data/destinations";
+import { dhakaDivisionDestinations } from "@/data/dhakaDivision";
+
+const allDestinations = [...destinations, ...dhakaDivisionDestinations];
 import { destinationImageUrl } from "@/lib/destinationImage";
 
 const STORAGE_KEY = "deshscape-saved-destinations";
@@ -28,7 +31,7 @@ export default function MyPlacesPage() {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
   }
 
-  const savedPlaces = destinations.filter((place) => savedSlugs.includes(place.slug));
+  const savedPlaces = allDestinations.filter((place) => savedSlugs.includes(place.slug));
 
   return (
     <main className="my-places-page">
