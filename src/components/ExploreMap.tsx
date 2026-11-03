@@ -50,7 +50,7 @@ export default function ExploreMap() {
             </div>
           )}
           <div className="map-panel-top"><span><LocateFixed size={14} /> SELECTED DESTINATION</span><span>{mappedPlaces.findIndex((item) => item.slug === activeSlug) + 1} / {mappedPlaces.length}</span></div>
-          <div className="map-place-image" style={{ backgroundImage: `url(https://images.unsplash.com/${active.image}?auto=format&fit=crop&w=900&q=85)` }} />
+          <div className="map-place-image" style={{ backgroundImage: `url(${active.image.startsWith("http") ? active.image : `https://images.unsplash.com/${active.image}?auto=format&fit=crop&w=900&q=85`})` }} />
           <div className="map-place-details">
             <span className="map-place-region"><MapPin size={13} /> {active.district}, {active.region}</span>
             <h3>{active.name}</h3>
