@@ -411,3 +411,15 @@ button,input{font:inherit}
 .journal-latest-heading h3{margin:10px 0 0;color:#183d32;font:400 clamp(29px,3vw,38px)/1.1 'Playfair Display',serif}
 @media(max-width:760px){.journal-featured{grid-template-columns:1fr;margin:24px 0 48px}.journal-featured-image{min-height:260px}.journal-featured-copy{padding:28px 24px}}
 @media(max-width:420px){.journal-featured-image{min-height:220px}.journal-featured-copy{padding:24px 19px}}
+
+
+/* Journal story sharing */
+.journal-share{display:flex;align-items:center;justify-content:space-between;gap:18px;margin:34px 0 28px;padding:20px 0;border-top:1px solid #deded4;border-bottom:1px solid #deded4}
+.journal-share-label{color:#899387;font-size:9px;font-weight:700;letter-spacing:1.4px}
+.journal-share-actions{display:flex;flex-wrap:wrap;gap:9px}
+.journal-share-button{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:42px;padding:0 15px;border:1px solid #cfd5ca;background:transparent;color:#183d32;font:700 9px 'DM Sans',sans-serif;letter-spacing:1px;cursor:pointer;transition:all .2s}
+.journal-share-button:hover{border-color:#183d32;background:#edf0e9}
+.journal-share-primary{border-color:#183d32;background:#183d32;color:#fff}
+.journal-share-primary:hover{background:#294f42;color:#fff}
+.journal-share-button:focus-visible{outline:2px solid #a8794d;outline-offset:3px}
+@media(max-width:520px){.journal-share{align-items:flex-start;flex-direction:column}.journal-share-actions{width:100%}.journal-share-button{flex:1}}
