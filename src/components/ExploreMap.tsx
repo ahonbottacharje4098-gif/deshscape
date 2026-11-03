@@ -13,7 +13,7 @@ const BangladeshLeafletMap = dynamic(() => import("@/components/BangladeshLeafle
 
 export default function ExploreMap() {
   const mappedPlaces = useMemo(() => destinations.filter((place) => place.coordinates), []);
-  const [activeSlug, setActiveSlug] = useState("sajek-valley");
+  const [activeSlug, setActiveSlug] = useState("lalbagh-fort");
   const [mapSearch, setMapSearch] = useState("");
   const active = destinations.find((place) => place.slug === activeSlug) ?? mappedPlaces[0];
   const searchResults = mappedPlaces.filter((place) =>
