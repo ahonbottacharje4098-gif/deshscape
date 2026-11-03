@@ -237,7 +237,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       22.9,
       89.995
     ],
-    "image": "photo-1511818966892-d7d671e672a2",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Entrance%20to%20Mausoleum%20of%20Bangabandhu%20Sheikh%20Mujibur%20Rahman.jpg",
     "tag": "Heritage trail",
     "shortDescription": "A national memorial complex in Tungipara.",
     "description": "A national memorial complex in Tungipara. Explore this district attraction respectfully, and confirm access and local conditions before travelling.",
@@ -262,7 +262,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       23.03,
       89.92
     ],
-    "image": "photo-1511818966892-d7d671e672a2",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Orakandi%20Mela%20Gopalganj%20Bangladesh%20%28DSC00369%29.jpg",
     "tag": "Heritage trail",
     "shortDescription": "A religious and cultural heritage site in Orakandi.",
     "description": "A religious and cultural heritage site in Orakandi. Explore this district attraction respectfully, and confirm access and local conditions before travelling.",
@@ -637,7 +637,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       23.65,
       90.59
     ],
-    "image": "photo-1511818966892-d7d671e672a2",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Folk%20Art%20%26%20Craft%20Museum%2C%20Sonargaon.jpg",
     "tag": "Heritage trail",
     "shortDescription": "A museum celebrating Bangladesh's folk art and craft traditions.",
     "description": "A museum celebrating Bangladesh's folk art and craft traditions. Explore this district attraction respectfully, and confirm access and local conditions before travelling.",
@@ -687,7 +687,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       24.09,
       90.95
     ],
-    "image": "photo-1511818966892-d7d671e672a2",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Wari-Bateswar%20Open%20Air%20Museum%2001.jpg",
     "tag": "Heritage trail",
     "shortDescription": "An archaeological landscape linked to early historic Bengal.",
     "description": "An archaeological landscape linked to early historic Bengal. Explore this district attraction respectfully, and confirm access and local conditions before travelling.",
@@ -762,7 +762,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       23.75,
       89.77
     ],
-    "image": "photo-1470770841072-f978cf4d019e",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Fish%20Vendor%20-%20River%20Padma%20-%20Goalanda%20Ghat%20-%20Rajbari%202015-05-29%201371.JPG",
     "tag": "Riverside escape",
     "shortDescription": "A well-known river junction and historic transport point.",
     "description": "A well-known river junction and historic transport point. Explore this district attraction respectfully, and confirm access and local conditions before travelling.",
@@ -837,7 +837,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       23.43,
       90.26
     ],
-    "image": "photo-1470770841072-f978cf4d019e",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sheikh%20Hasina%20inaugurates%20Padma%20Bridge%20at%20Jajira%20end%20Shariatpur%202022-06-25%20%28PID-0022478%29.jpg",
     "tag": "Riverside escape",
     "shortDescription": "A viewpoint near the Jajira side of the Padma Bridge.",
     "description": "A viewpoint near the Jajira side of the Padma Bridge. Explore this district attraction respectfully, and confirm access and local conditions before travelling.",
@@ -962,7 +962,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       24.68,
       89.97
     ],
-    "image": "photo-1511818966892-d7d671e672a2",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Back%20view%20of%20Nawab%20villa%2C%20Dhanbari%2C%20Tangail.jpg",
     "tag": "Heritage trail",
     "shortDescription": "A historic palace complex in Dhanbari.",
     "description": "A historic palace complex in Dhanbari. Explore this district attraction respectfully, and confirm access and local conditions before travelling.",
