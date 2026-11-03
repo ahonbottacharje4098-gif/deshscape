@@ -187,7 +187,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       24.2,
       90.43
     ],
-    "image": "photo-1470770841072-f978cf4d019e",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Aerial%20view%20of%20Gazipur%20Safari%20Park.jpg?width=1400",
     "tag": "Nature retreat",
     "shortDescription": "A managed wildlife park and nature attraction.",
     "description": "A managed wildlife park and nature attraction. Explore this district attraction respectfully, and confirm access and local conditions before travelling.",
