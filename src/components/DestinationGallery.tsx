@@ -38,7 +38,8 @@ export default function DestinationGallery({ image, title }: Props) {
           .filter((info): info is NonNullable<typeof info> => Boolean(info && (!info.mime || info.mime.startsWith("image/"))))
           .map((info) => ({ url: info.thumburl || info.url || "", sourceUrl: info.descriptionurl }))
           .filter((photo) => photo.url && photo.url !== image)
-          .filter((photo, index, all) => all.findIndex((item) => item.url === photo.url) === index)\n          .slice(0, 5);
+          .filter((photo, index, all) => all.findIndex((item) => item.url === photo.url) === index)
+          .slice(0, 5);
         if (found.length) setPhotos([{ url: image }, ...found]);
       } catch (error) {
         if (!(error instanceof DOMException && error.name === "AbortError")) {
