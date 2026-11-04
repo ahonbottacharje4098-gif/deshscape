@@ -39,8 +39,8 @@ function BangladeshMapViewport() {
     ];
 
     map.fitBounds(countryBounds, {
-      padding: [12, 12],
-      maxZoom: 8,
+      padding: [8, 8],
+      maxZoom: 8.5,
       animate: false
     });
   }, [map]);
@@ -77,7 +77,7 @@ export default function BangladeshLeafletMap({ activeSlug, onSelect }: Props) {
     <MapContainer
       center={[23.75, 90.35]}
       zoom={7}
-      minZoom={6}
+      minZoom={6.5}
       maxZoom={15}
       scrollWheelZoom
       zoomControl={false}
@@ -87,11 +87,12 @@ export default function BangladeshLeafletMap({ activeSlug, onSelect }: Props) {
       <BangladeshMapViewport />
       <TileLayer
         attribution='Tiles &copy; <a href="https://www.esri.com/">Esri</a> — Sources: Esri, USGS, NOAA'
-        url="https://server.arcgisonline.com/ArcGIS/rest/services/Elevation/World_Hillshade/MapServer/tile/{z}/{y}/{x}"
+        url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
       />
       {divisionBoundaries && (
         <GeoJSON
           data={divisionBoundaries}
+          pane="overlayPane"
           style={(feature) => {
             const properties = (feature?.properties ?? {}) as DivisionProperties;
             const name = properties.adm1_en ?? properties.ADM1_EN ?? properties.name ?? "";
@@ -126,6 +127,7 @@ export default function BangladeshLeafletMap({ activeSlug, onSelect }: Props) {
         return (
           <CircleMarker
             key={place.slug}
+            pane="markerPane"
             center={position}
             radius={active ? 10 : 7}
             pathOptions={{
