@@ -614,5 +614,8 @@ import { dhakaDivisionDestinations } from "./dhakaDivision";
 
 destinations.push(...dhakaDivisionDestinations);
 
+// Single shared catalogue used across discovery, maps, planning and saved places.
+export const allDestinations: Destination[] = destinations;
+
 export const destinationTypes = ["All experiences", "Mountains", "Beaches", "Forests", "Rivers", "Nature", "Heritage"];
 export const destinationRegions = ["All regions", "Rangamati", "Cox's Bazar", "Chattogram Division", "Sylhet", "Khulna", "Rajshahi Division", "Dhaka Division", "Barishal Division", "Rangpur Division", "Mymensingh Division"];
