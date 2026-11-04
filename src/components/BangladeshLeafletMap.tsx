@@ -1,9 +1,10 @@
 "use client";
 
-import { CircleMarker, MapContainer, Popup, TileLayer, ZoomControl, useMap } from "react-leaflet";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { CircleMarker, GeoJSON, MapContainer, Popup, TileLayer, ZoomControl, useMap } from "react-leaflet";
 import Link from "next/link";
 import type { LatLngExpression } from "leaflet";
+import type { Feature, FeatureCollection, Geometry } from "geojson";
 import { destinations } from "@/data/destinations";
 
 type Props = {
@@ -15,7 +16,6 @@ function BangladeshMapViewport() {
   const map = useMap();
 
   useEffect(() => {
-    // Frame Bangladesh on first load instead of relying on a broad world-scale view.
     const countryBounds: [[number, number], [number, number]] = [
       [20.55, 88.0],
       [26.65, 92.7]
@@ -33,6 +33,28 @@ function BangladeshMapViewport() {
 
 export default function BangladeshLeafletMap({ activeSlug, onSelect }: Props) {
   const places = destinations.filter((place) => place.coordinates);
+  const [countryBoundary, setCountryBoundary] = useState<FeatureCollection | Feature<Geometry> | null>(null);
+
+  useEffect(() => {
+    const controller = new AbortController();
+
+    fetch(
+      "https://services.arcgis.com/Sf0q24s0oDKgX14j/ArcGIS/rest/services/Map_of_BANGLADESH/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=geojson",
+      { signal: controller.signal }
+    )
+      .then((response) => {
+        if (!response.ok) throw new Error("Bangladesh boundary could not be loaded");
+        return response.json();
+      })
+      .then((data: FeatureCollection | Feature<Geometry>) => setCountryBoundary(data))
+      .catch((error: unknown) => {
+        if (error instanceof Error && error.name !== "AbortError") {
+          console.error("Bangladesh map boundary:", error);
+        }
+      });
+
+    return () => controller.abort();
+  }, []);
 
   return (
     <MapContainer
@@ -43,13 +65,25 @@ export default function BangladeshLeafletMap({ activeSlug, onSelect }: Props) {
       scrollWheelZoom
       zoomControl={false}
       className="leaflet-bangladesh-map"
-      aria-label="Interactive map of Bangladesh"
+      aria-label="Interactive map highlighting Bangladesh"
     >
       <BangladeshMapViewport />
       <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        attribution='&copy; <a href="https://carto.com/attributions">CARTO</a>'
+        url="https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png"
       />
+      {countryBoundary && (
+        <GeoJSON
+          data={countryBoundary}
+          style={{
+            color: "#173f2d",
+            weight: 3,
+            opacity: 1,
+            fillColor: "#6f9b78",
+            fillOpacity: 0.48
+          }}
+        />
+      )}
       <ZoomControl position="topright" />
       {places.map((place) => {
         const active = activeSlug === place.slug;
