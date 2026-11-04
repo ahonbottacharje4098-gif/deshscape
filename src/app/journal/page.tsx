@@ -26,6 +26,39 @@ const stories = [
     image: "https://images.unsplash.com/photo-1563911302283-d2bc129e7570?auto=format&fit=crop&w=1400&q=85",
     note: "A field note from the green northeast",
     readingTime: "5 MIN READ"
+  },
+  {
+    number: "03",
+    slug: "stone-stories-of-kantajew",
+    category: "ART & HERITAGE",
+    title: "Stone stories of Kantajew",
+    location: "Dinajpur",
+    description: "Intricate terracotta panels turn a historic temple into an open-air gallery of craft, belief and everyday scenes from another time.",
+    image: "https://images.unsplash.com/photo-1606293926075-69a00db7562f?auto=format&fit=crop&w=1400&q=85",
+    note: "An architectural field note from the north",
+    readingTime: "4 MIN READ"
+  },
+  {
+    number: "04",
+    slug: "a-quiet-world-in-ratargul",
+    category: "HIDDEN BANGLADESH",
+    title: "A quiet world in Ratargul",
+    location: "Sylhet",
+    description: "In the freshwater swamp forest, water and woodland meet. The experience changes with the season, light and level of the water.",
+    image: "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1400&q=85",
+    note: "A gentle introduction to a living wetland",
+    readingTime: "5 MIN READ"
+  },
+  {
+    number: "05",
+    slug: "courtyards-and-memory-at-baliati",
+    category: "ART & HERITAGE",
+    title: "Courtyards and memory at Baliati",
+    location: "Manikganj",
+    description: "The old palace complex offers a glimpse into the region's architectural past through its courtyards, façades and layered history.",
+    image: "https://images.unsplash.com/photo-1590123732197-e707a7d1a2b2?auto=format&fit=crop&w=1400&q=85",
+    note: "A heritage walk through historic courtyards",
+    readingTime: "4 MIN READ"
   }
 ];
 
@@ -105,7 +138,7 @@ export default function JournalPage() {
               {search && <button type="button" onClick={() => setSearch("")} aria-label="Clear search"><X size={16} /></button>}
             </label>
             <div className="journal-filters" aria-label="Filter stories by category">
-              {["ALL", "PEOPLE & CULTURE", "HIDDEN BANGLADESH"].map((item) => (
+              {["ALL", "PEOPLE & CULTURE", "HIDDEN BANGLADESH", "ART & HERITAGE"].map((item) => (
                 <button key={item} type="button" className={category === item ? "journal-filter active" : "journal-filter"} onClick={() => setCategory(item)} aria-pressed={category === item}>{item}</button>
               ))}
             </div>
