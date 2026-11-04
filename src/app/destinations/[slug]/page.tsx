@@ -18,9 +18,24 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const place = allDestinations.find((item) => item.slug === slug);
   if (!place) return { title: "Destination not found | Deshscape" };
+  const canonicalUrl = `https://deshscape.vercel.app/destinations/${place.slug}`;
   return {
     title: `${place.name} | Deshscape`,
-    description: place.shortDescription
+    description: place.shortDescription,
+    alternates: { canonical: canonicalUrl },
+    openGraph: {
+      type: "website",
+      url: canonicalUrl,
+      title: `${place.name} | Deshscape`,
+      description: place.shortDescription,
+      images: [{ url: destinationImageUrl(place.image, 1200), alt: place.name }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${place.name} | Deshscape`,
+      description: place.shortDescription,
+      images: [destinationImageUrl(place.image, 1200)],
+    },
   };
 }
 
@@ -30,9 +45,35 @@ export default async function DestinationPage({ params }: Props) {
   if (!place) notFound();
 
   const related = allDestinations.filter((item) => item.slug !== place.slug && item.type === place.type).slice(0, 2);
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "TouristAttraction",
+    name: place.name,
+    description: place.shortDescription,
+    url: `https://deshscape.vercel.app/destinations/${place.slug}`,
+    image: destinationImageUrl(place.image, 1200),
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: place.district,
+      addressRegion: place.region,
+      addressCountry: "BD",
+    },
+    ...(place.coordinates ? {
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: place.coordinates[0],
+        longitude: place.coordinates[1],
+      },
+    } : {}),
+    isAccessibleForFree: true,
+  };
 
   return (
     <main className="detail-page">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }}
+      />
       <header className="site-header detail-header">
         <Link className="brand" href="/">
           <span className="brand-mark"><Compass size={22} strokeWidth={1.7} /></span>
