@@ -25,8 +25,12 @@ export default function TripPlannerPage() {
       belongsToDivision(place.region, division) &&
       (experience === "Any experience" || place.type === experience)
     );
-    return matches.slice(0, 6);
-  }, [division, experience]);
+    const suggestionLimit =
+      duration === "1–2 days" ? 3 :
+      duration === "3–4 days" ? 5 : 6;
+
+    return matches.slice(0, suggestionLimit);
+  }, [division, experience, duration]);
 
   const tripSummary = [
     "My Deshscape trip ideas",
