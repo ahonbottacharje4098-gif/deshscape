@@ -113,7 +113,25 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const story = stories.find((item) => item.slug === slug);
   if (!story) return { title: "Story not found | Deshscape" };
-  return { title: `${story.title} | Deshscape Journal`, description: story.intro };
+  const canonicalUrl = `https://deshscape.vercel.app/journal/${story.slug}`;
+  return {
+    title: `${story.title} | Deshscape Journal`,
+    description: story.intro,
+    alternates: { canonical: canonicalUrl },
+    openGraph: {
+      type: "article",
+      url: canonicalUrl,
+      title: `${story.title} | Deshscape Journal`,
+      description: story.intro,
+      images: [{ url: story.image, alt: story.title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${story.title} | Deshscape Journal`,
+      description: story.intro,
+      images: [story.image],
+    },
+  };
 }
 
 export default async function JournalStoryPage({ params }: Props) {
@@ -130,9 +148,28 @@ export default async function JournalStoryPage({ params }: Props) {
   const relatedPlaces = relatedSlugs
     .map((relatedSlug) => destinations.find((place) => place.slug === relatedSlug))
     .filter((place) => place !== undefined);
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: story.title,
+    description: story.intro,
+    image: story.image,
+    articleSection: story.category,
+    mainEntityOfPage: `https://deshscape.vercel.app/journal/${story.slug}`,
+    author: { "@type": "Organization", name: "Deshscape" },
+    publisher: { "@type": "Organization", name: "Deshscape" },
+    contentLocation: {
+      "@type": "Place",
+      name: `${story.location}, Bangladesh`,
+    },
+  };
 
   return (
     <main className="journal-article-page">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }}
+      />
       <ReadingProgress />
       <BackToTop />
       <header className="site-header">
