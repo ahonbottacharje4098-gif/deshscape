@@ -45,6 +45,7 @@ export default function BangladeshLeafletMap({ activeSlug, onSelect }: Props) {
       className="leaflet-bangladesh-map"
       aria-label="Interactive map of Bangladesh"
     >
+      <BangladeshMapViewport />
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
