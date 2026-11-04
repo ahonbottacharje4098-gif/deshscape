@@ -93,7 +93,12 @@ export async function POST(request: Request) {
     });
 
     if (!emailResponse.ok) {
-      return NextResponse.json({ error: "Your message could not be sent. Please try again." }, { status: 502 });
+      const providerMessage = (await emailResponse.text()).replace(/[\\r\\n]+/g, " ").slice(0, 240);
+      console.error("EmailJS send failed:", emailResponse.status, providerMessage);
+      return NextResponse.json(
+        { error: `Email service error (HTTP ${emailResponse.status})${providerMessage ? `: ${providerMessage}` : ""}` },
+        { status: 502 }
+      );
     }
 
     return NextResponse.json({ ok: true });
