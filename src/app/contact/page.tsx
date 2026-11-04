@@ -17,6 +17,7 @@ export default function ContactPage() {
   const [turnstileToken, setTurnstileToken] = useState("");
   const [widgetVersion, setWidgetVersion] = useState(0);
   const [sendState, setSendState] = useState<SendState>("idle");
+  const [sendError, setSendError] = useState("");
 
   const ready = Boolean(name.trim() && email.trim() && subject.trim() && message.trim() && turnstileToken && turnstileSiteKey);
 
@@ -24,6 +25,7 @@ export default function ContactPage() {
     event.preventDefault();
     if (!ready || sendState === "sending") return;
 
+    setSendError("");
     setSendState("sending");
     try {
       const response = await fetch("/api/contact", {
@@ -39,7 +41,8 @@ export default function ContactPage() {
         }),
       });
 
-      if (!response.ok) throw new Error("Contact request failed");
+      const result = (await response.json().catch(() => ({}))) as { error?: string };
+      if (!response.ok) throw new Error(result.error || `Request failed (HTTP ${response.status})`);
       setSendState("success");
       setName("");
       setEmail("");
@@ -48,7 +51,8 @@ export default function ContactPage() {
       setWebsite("");
       setTurnstileToken("");
       setWidgetVersion((version) => version + 1);
-    } catch {
+    } catch (error) {
+      setSendError(error instanceof Error ? error.message : "Please try again.");
       setSendState("error");
       setTurnstileToken("");
       setWidgetVersion((version) => version + 1);
@@ -102,7 +106,7 @@ export default function ContactPage() {
           )}
           <div className="contact-form-bottom"><span>All fields are required</span><button className="button button-dark" type="submit" disabled={!ready || sendState === "sending"}>{sendState === "sending" ? "Sending..." : "Send message"}{sendState === "sending" ? <LoaderCircle size={16} className="contact-spinner" /> : <ArrowUpRight size={16} />}</button></div>
           {sendState === "success" && <p className="contact-success" role="status"><Check size={15} /> Your message has been sent. Thank you for reaching out!</p>}
-          {sendState === "error" && <p className="contact-error" role="alert">Your message could not be sent or verified. Please complete the security check and try again.</p>}
+          {sendState === "error" && <p className="contact-error" role="alert">{sendError || "Your message could not be sent. Please try again."}</p>}
         </form>
       </section>
 
