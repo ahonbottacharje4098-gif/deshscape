@@ -1,32 +1,62 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowLeft, ArrowUpRight, Check, Clipboard, Compass, Mail, MessageCircle } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Check, Compass, LoaderCircle, Mail, MessageCircle } from "lucide-react";
+
+type SendState = "idle" | "sending" | "success" | "error";
+
+const emailJsConfig = {
+  serviceId: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+  templateId: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+  publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
+};
 
 export default function ContactPage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
-  const [copied, setCopied] = useState(false);
+  const [sendState, setSendState] = useState<SendState>("idle");
 
-  const copyMessage = async () => {
-    const content = `Deshscape contact message
-Name: ${name}
-Email: ${email}
-Subject: ${subject}
+  const ready = Boolean(name.trim() && email.trim() && subject.trim() && message.trim());
 
-${message}`;
+  const sendMessage = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (!ready || sendState === "sending") return;
+
+    if (!emailJsConfig.serviceId || !emailJsConfig.templateId || !emailJsConfig.publicKey) {
+      setSendState("error");
+      return;
+    }
+
+    setSendState("sending");
     try {
-      await navigator.clipboard.writeText(content);
-      setCopied(true);
-      window.setTimeout(() => setCopied(false), 2400);
+      const response = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          service_id: emailJsConfig.serviceId,
+          template_id: emailJsConfig.templateId,
+          user_id: emailJsConfig.publicKey,
+          template_params: {
+            from_name: name.trim(),
+            reply_to: email.trim(),
+            subject: subject.trim(),
+            message: message.trim(),
+          },
+        }),
+      });
+
+      if (!response.ok) throw new Error("Email service rejected the request");
+      setSendState("success");
+      setName("");
+      setEmail("");
+      setSubject("");
+      setMessage("");
     } catch {
-      setCopied(false);
+      setSendState("error");
     }
   };
-
-  const ready = name.trim() && email.trim() && subject.trim() && message.trim();
 
   return (
     <main className="contact-page">
@@ -49,17 +79,18 @@ ${message}`;
         <div className="contact-intro">
           <div className="eyebrow"><span /> WRITE TO US</div>
           <h2>Start a<br /><em>conversation.</em></h2>
-          <p>Use the form to put your thoughts together. When you're ready, copy the message and send it through your preferred email or messaging app.</p>
-          <div className="contact-note"><Mail size={18} /><span><strong>No message is sent automatically.</strong><small>This demo form keeps your message in this browser session only. It does not submit to a server.</small></span></div>
+          <p>Share your thoughts with the Deshscape team. Fill in the form and send your message directly.</p>
+          <div className="contact-note"><Mail size={18} /><span><strong>Your message goes to the site owner.</strong><small>Please avoid including passwords, payment details, or other sensitive information.</small></span></div>
         </div>
 
-        <form className="contact-form" onSubmit={(event) => { event.preventDefault(); if (ready) void copyMessage(); }}>
-          <label>Your name<input value={name} onChange={(event) => setName(event.target.value)} placeholder="How should we call you?" required /></label>
-          <label>Email address<input type="email" value={email} onChange={(event) => setEmail(event.target.value)} placeholder="you@example.com" required /></label>
-          <label>Subject<input value={subject} onChange={(event) => setSubject(event.target.value)} placeholder="What's on your mind?" required /></label>
-          <label>Your message<textarea value={message} onChange={(event) => setMessage(event.target.value)} placeholder="Tell us a little more..." rows={6} required /></label>
-          <div className="contact-form-bottom"><span>All fields are required</span><button className="button button-dark" type="submit" disabled={!ready}><>{copied ? "Message copied" : "Copy message"}{copied ? <Check size={16} /> : <Clipboard size={16} />}</></button></div>
-          {copied && <p className="contact-success" role="status"><Check size={15} /> Your message is copied. You can now paste it into an email or message.</p>}
+        <form className="contact-form" onSubmit={sendMessage}>
+          <label>Your name<input value={name} onChange={(event) => setName(event.target.value)} placeholder="How should we call you?" maxLength={80} autoComplete="name" required /></label>
+          <label>Email address<input type="email" value={email} onChange={(event) => setEmail(event.target.value)} placeholder="you@example.com" maxLength={254} autoComplete="email" required /></label>
+          <label>Subject<input value={subject} onChange={(event) => setSubject(event.target.value)} placeholder="What's on your mind?" maxLength={120} required /></label>
+          <label>Your message<textarea value={message} onChange={(event) => setMessage(event.target.value)} placeholder="Tell us a little more..." rows={6} maxLength={4000} required /></label>
+          <div className="contact-form-bottom"><span>All fields are required</span><button className="button button-dark" type="submit" disabled={!ready || sendState === "sending"}>{sendState === "sending" ? "Sending..." : "Send message"}{sendState === "sending" ? <LoaderCircle size={16} className="contact-spinner" /> : <ArrowUpRight size={16} />}</button></div>
+          {sendState === "success" && <p className="contact-success" role="status"><Check size={15} /> Your message has been sent. Thank you for reaching out!</p>}
+          {sendState === "error" && <p className="contact-error" role="alert">{emailJsConfig.serviceId && emailJsConfig.templateId && emailJsConfig.publicKey ? "Your message could not be sent. Please try again in a moment." : "Email service setup is incomplete. Add the three EmailJS environment variables in your project and redeploy."}</p>}
         </form>
       </section>
 
