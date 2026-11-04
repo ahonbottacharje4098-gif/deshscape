@@ -6,6 +6,7 @@ const siteDescription =
   "Discover Bangladesh, one journey at a time. Explore destinations, culture, nature and travel stories from across the country.";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://deshscape-ccznp5kl3-deshscape.vercel.app"),
   title: {
     default: "Deshscape — Explore Beyond the Ordinary",
     template: "%s | Deshscape",
