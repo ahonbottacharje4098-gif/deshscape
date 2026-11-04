@@ -1,6 +1,7 @@
 "use client";
 
-import { CircleMarker, MapContainer, Popup, TileLayer, ZoomControl } from "react-leaflet";
+import { CircleMarker, MapContainer, Popup, TileLayer, ZoomControl, useMap } from "react-leaflet";
+import { useEffect } from "react";
 import Link from "next/link";
 import type { LatLngExpression } from "leaflet";
 import { destinations } from "@/data/destinations";
@@ -9,6 +10,26 @@ type Props = {
   activeSlug: string;
   onSelect: (slug: string) => void;
 };
+
+function BangladeshMapViewport() {
+  const map = useMap();
+
+  useEffect(() => {
+    // Frame Bangladesh on first load instead of relying on a broad world-scale view.
+    const countryBounds: [[number, number], [number, number]] = [
+      [20.55, 88.0],
+      [26.65, 92.7]
+    ];
+
+    map.fitBounds(countryBounds, {
+      padding: [28, 28],
+      maxZoom: 7,
+      animate: false
+    });
+  }, [map]);
+
+  return null;
+}
 
 export default function BangladeshLeafletMap({ activeSlug, onSelect }: Props) {
   const places = destinations.filter((place) => place.coordinates);
