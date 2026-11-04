@@ -542,3 +542,42 @@ button,input{font:inherit}
 .my-places-footer .footer-bottom a{display:inline-flex;align-items:center;gap:6px;color:var(--forest);font-size:8px;letter-spacing:1px}
 @media(max-width:850px){.my-places-grid{grid-template-columns:1fr}.my-places-hero{padding:72px 7% 65px}}
 @media(max-width:520px){.my-places-content{width:calc(100% - 32px);padding:42px 0 55px}.my-place-card{grid-template-columns:1fr}.my-place-image{min-height:210px}.my-place-copy{min-height:210px;padding:20px}.my-places-footer{padding:0 7% 22px}.my-places-footer .footer-bottom{align-items:flex-start;flex-direction:column}.my-places-hero h1{letter-spacing:-1px}}
+
+
+/* Small-screen and keyboard-accessibility refinements */
+:where(a,button,input,select,textarea,[tabindex]):focus-visible{
+  outline:2px solid #a8794d;
+  outline-offset:3px;
+}
+@media(max-width:380px){
+  .site-header{padding-left:4%;padding-right:4%}
+  .brand-mark{width:34px;height:34px}
+  .brand-name{font-size:17px}
+  .hero{height:620px}
+  .hero-content{left:6%;right:6%}
+  .hero h1{font-size:clamp(49px,14vw,56px);letter-spacing:-1.8px}
+  .hero-copy{font-size:11px;line-height:1.8}
+  .section-wrap{padding-left:5%;padding-right:5%}
+  .intro h2,.section-heading h2,.category-heading h2{font-size:clamp(37px,11vw,43px);letter-spacing:-1.6px}
+  .stats-row{gap:7px}
+  .stats-row strong{font-size:29px}
+  .stats-row span{font-size:7px}
+  .destination-grid{grid-auto-rows:185px;gap:8px}
+  .destination-card.featured{min-height:220px}
+  .destination-info h3{font-size:18px}
+  .destination-info>span,.card-bottom small{font-size:8px}
+  .destination-info{left:10px;right:10px;bottom:10px}
+  .destination-tag{font-size:7px;padding:6px 7px}
+  .filter-row{grid-template-columns:1fr}
+  .filter-control,.sort-control{min-height:46px}
+  .category-grid{grid-template-columns:1fr}
+  .category-item{padding:16px 5px}
+  .map-canvas{min-height:380px}
+  .real-map-frame,.leaflet-bangladesh-map,.real-map-loading{height:380px;min-height:380px}
+  .map-place-details h3{font-size:24px}
+  .planner-text h2{font-size:38px}
+  .story-row{grid-template-columns:24px minmax(0,1fr) 28px;gap:8px}
+  .story-title h3{font-size:17px}
+  .footer-top{gap:16px}
+  .footer-bottom{font-size:6px;letter-spacing:.8px}
+}
