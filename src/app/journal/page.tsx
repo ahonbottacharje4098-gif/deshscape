@@ -65,16 +65,14 @@ const stories = [
 export default function JournalPage() {
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("ALL");
-  const filteredStories = useMemo(() => {
-    const query = search.trim().toLowerCase();
-    return stories.filter((story) => {
-      const matchesCategory = category === "ALL" || story.category === category;
-      const matchesSearch = !query || [story.title, story.location, story.description, story.category].some((value) => value.toLowerCase().includes(query));
-      return matchesCategory && matchesSearch;
-    });
-  }, [search, category]);
-  const showFeatured = !search.trim() && category === "ALL";
-  const visibleStories = showFeatured ? filteredStories.filter((story) => story.number !== "01") : filteredStories;
+  const query = search.trim().toLowerCase();
+  const showFeatured = query.length === 0 && category === "ALL";
+  const filteredStories = stories.filter((story) => {
+    const matchesCategory = category === "ALL" || story.category === category;
+    const matchesSearch = query.length === 0 || [story.title, story.location, story.description, story.category].some((value) => value.toLowerCase().includes(query));
+    return matchesCategory && matchesSearch;
+  });
+  const visibleStories = showFeatured ? stories.slice(1) : filteredStories;
   const featuredStory = stories[0];
 
   return (
@@ -139,7 +137,7 @@ export default function JournalPage() {
             </label>
             <div className="journal-filters" aria-label="Filter stories by category">
               {["ALL", "PEOPLE & CULTURE", "HIDDEN BANGLADESH", "ART & HERITAGE"].map((item) => (
-                <button key={item} type="button" className={category === item ? "journal-filter active" : "journal-filter"} onClick={() => setCategory(item)} aria-pressed={category === item}>{item}</button>
+                <button key={item} type="button" className={category === item ? "journal-filter active" : "journal-filter"} onClick={() => { setCategory(item); if (item === "ALL") setSearch(""); }} aria-pressed={category === item}>{item}</button>
               ))}
             </div>
           </div>
