@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { allDestinations } from "@/data/destinations";
 
-const siteUrl = "https://deshscape-ccznp5kl3-deshscape.vercel.app";
+const siteUrl = "https://deshscape.vercel.app";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = ["", "/journal", "/plan-trip", "/contact"].map((route) => ({
