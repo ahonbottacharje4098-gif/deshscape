@@ -76,11 +76,14 @@ export default function BangladeshLeafletMap({ activeSlug, onSelect }: Props) {
         <GeoJSON
           data={countryBoundary}
           style={{
-            color: "#173f2d",
-            weight: 3,
+            className: "bangladesh-country-glow",
+            color: "#d6ad72",
+            weight: 3.5,
             opacity: 1,
-            fillColor: "#6f9b78",
-            fillOpacity: 0.48
+            fillColor: "#397b5b",
+            fillOpacity: 0.3,
+            lineCap: "round",
+            lineJoin: "round"
           }}
         />
       )}
