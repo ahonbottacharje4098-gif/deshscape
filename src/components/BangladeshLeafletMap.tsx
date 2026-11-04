@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { CircleMarker, GeoJSON, MapContainer, Popup, TileLayer, ZoomControl, useMap } from "react-leaflet";
+import { CircleMarker, GeoJSON, MapContainer, Popup, TileLayer, Tooltip, ZoomControl, useMap } from "react-leaflet";
 import Link from "next/link";
 import type { LatLngExpression } from "leaflet";
 import type { Feature, FeatureCollection, Geometry } from "geojson";
@@ -10,6 +10,23 @@ import { destinations } from "@/data/destinations";
 type Props = {
   activeSlug: string;
   onSelect: (slug: string) => void;
+};
+
+type DivisionProperties = {
+  adm1_en?: string;
+  ADM1_EN?: string;
+  name?: string;
+};
+
+const divisionColors: Record<string, string> = {
+  Rangpur: "#eadba9",
+  Rajshahi: "#c9c8a7",
+  Mymensingh: "#a8c2b3",
+  Sylhet: "#e6c9c5",
+  Dhaka: "#b7d0d0",
+  Khulna: "#d5b9c2",
+  Barishal: "#ead6a1",
+  Chattogram: "#b5d1ad"
 };
 
 function BangladeshMapViewport() {
@@ -22,7 +39,7 @@ function BangladeshMapViewport() {
     ];
 
     map.fitBounds(countryBounds, {
-      padding: [28, 28],
+      padding: [24, 24],
       maxZoom: 7,
       animate: false
     });
@@ -33,23 +50,23 @@ function BangladeshMapViewport() {
 
 export default function BangladeshLeafletMap({ activeSlug, onSelect }: Props) {
   const places = destinations.filter((place) => place.coordinates);
-  const [countryBoundary, setCountryBoundary] = useState<FeatureCollection | Feature<Geometry> | null>(null);
+  const [divisionBoundaries, setDivisionBoundaries] = useState<FeatureCollection | Feature<Geometry> | null>(null);
 
   useEffect(() => {
     const controller = new AbortController();
 
     fetch(
-      "https://services.arcgis.com/Sf0q24s0oDKgX14j/ArcGIS/rest/services/Map_of_BANGLADESH/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=geojson",
+      "https://gis.dghs.gov.bd/server/rest/services/Hosted/bgd_admbnda_adm1_bbs_20201113/FeatureServer/0/query?where=1%3D1&outFields=adm1_en&outSR=4326&f=geojson",
       { signal: controller.signal }
     )
       .then((response) => {
-        if (!response.ok) throw new Error("Bangladesh boundary could not be loaded");
+        if (!response.ok) throw new Error("Bangladesh division boundaries could not be loaded");
         return response.json();
       })
-      .then((data: FeatureCollection | Feature<Geometry>) => setCountryBoundary(data))
+      .then((data: FeatureCollection | Feature<Geometry>) => setDivisionBoundaries(data))
       .catch((error: unknown) => {
         if (error instanceof Error && error.name !== "AbortError") {
-          console.error("Bangladesh map boundary:", error);
+          console.error("Bangladesh division map:", error);
         }
       });
 
@@ -65,25 +82,40 @@ export default function BangladeshLeafletMap({ activeSlug, onSelect }: Props) {
       scrollWheelZoom
       zoomControl={false}
       className="leaflet-bangladesh-map"
-      aria-label="Interactive map highlighting Bangladesh"
+      aria-label="Interactive map of the eight divisions of Bangladesh"
     >
       <BangladeshMapViewport />
       <TileLayer
-        attribution='&copy; <a href="https://carto.com/attributions">CARTO</a>'
+        attribution='&copy; OpenStreetMap contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
         url="https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png"
       />
-      {countryBoundary && (
+      {divisionBoundaries && (
         <GeoJSON
-          data={countryBoundary}
-          style={{
-            className: "bangladesh-country-glow",
-            color: "#d6ad72",
-            weight: 3.5,
-            opacity: 1,
-            fillColor: "#397b5b",
-            fillOpacity: 0.3,
-            lineCap: "round",
-            lineJoin: "round"
+          data={divisionBoundaries}
+          style={(feature) => {
+            const properties = (feature?.properties ?? {}) as DivisionProperties;
+            const name = properties.adm1_en ?? properties.ADM1_EN ?? properties.name ?? "";
+            return {
+              color: "#82958a",
+              weight: 1.35,
+              opacity: 0.9,
+              fillColor: divisionColors[name] ?? "#d7dfd1",
+              fillOpacity: 0.78,
+              lineCap: "round",
+              lineJoin: "round"
+            };
+          }}
+          onEachFeature={(feature, layer) => {
+            const properties = (feature.properties ?? {}) as DivisionProperties;
+            const name = properties.adm1_en ?? properties.ADM1_EN ?? properties.name;
+            if (name) {
+              layer.bindTooltip(name, {
+                permanent: true,
+                direction: "center",
+                className: "division-map-label",
+                opacity: 0.9
+              });
+            }
           }}
         />
       )}
@@ -97,7 +129,7 @@ export default function BangladeshLeafletMap({ activeSlug, onSelect }: Props) {
             center={position}
             radius={active ? 10 : 7}
             pathOptions={{
-              color: "#f8f7ef",
+              color: "#fffdf5",
               weight: 3,
               fillColor: active ? "#b77b4d" : "#244b3a",
               fillOpacity: 1
