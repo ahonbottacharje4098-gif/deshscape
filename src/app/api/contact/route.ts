@@ -11,6 +11,43 @@ type ContactPayload = {
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+// Best-effort per-instance protection: 5 submissions per IP in a rolling 10-minute window.
+// For consistent limits across serverless instances, use a shared Redis-backed store.
+const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000;
+const RATE_LIMIT_MAX = 5;
+const submissionAttempts = new Map<string, number[]>();
+
+function checkRateLimit(ip: string, now = Date.now()) {
+  const recentAttempts = (submissionAttempts.get(ip) ?? []).filter(
+    (timestamp) => now - timestamp < RATE_LIMIT_WINDOW_MS
+  );
+
+  if (recentAttempts.length >= RATE_LIMIT_MAX) {
+    submissionAttempts.set(ip, recentAttempts);
+    return {
+      allowed: false,
+      retryAfterSeconds: Math.max(
+        1,
+        Math.ceil((RATE_LIMIT_WINDOW_MS - (now - recentAttempts[0])) / 1000)
+      ),
+    };
+  }
+
+  recentAttempts.push(now);
+  submissionAttempts.set(ip, recentAttempts);
+
+  if (submissionAttempts.size > 5000) {
+    for (const [key, timestamps] of submissionAttempts) {
+      const active = timestamps.filter((timestamp) => now - timestamp < RATE_LIMIT_WINDOW_MS);
+      if (active.length) submissionAttempts.set(key, active);
+      else submissionAttempts.delete(key);
+    }
+  }
+
+  return { allowed: true, retryAfterSeconds: 0 };
+}
+
+
 export async function POST(request: Request) {
   try {
     const body = (await request.json()) as ContactPayload;
@@ -23,6 +60,22 @@ export async function POST(request: Request) {
     // Quietly accept honeypot submissions without forwarding them.
     if (body.website?.trim()) {
       return NextResponse.json({ ok: true });
+    }
+
+    const clientIp =
+      request.headers.get("x-real-ip")?.trim() ||
+      request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+      "unknown";
+    const rateLimit = checkRateLimit(clientIp);
+
+    if (!rateLimit.allowed) {
+      return NextResponse.json(
+        { error: "Too many messages sent. Please wait a few minutes before trying again." },
+        {
+          status: 429,
+          headers: { "Retry-After": String(rateLimit.retryAfterSeconds) },
+        }
+      );
     }
 
     if (
