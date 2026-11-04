@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { ArrowRight, ArrowUpRight, Compass, Copy, MapPin, Sparkles } from "lucide-react";
-import { destinations } from "@/data/destinations";
+import { allDestinations } from "@/data/destinations";
 import { destinationImageUrl } from "@/lib/destinationImage";
 
 const divisions = ["Any division", "Dhaka", "Chattogram", "Sylhet", "Khulna", "Rajshahi", "Barishal", "Rangpur", "Mymensingh"];
@@ -21,7 +21,7 @@ export default function TripPlannerPage() {
   const [copied, setCopied] = useState(false);
 
   const suggestions = useMemo(() => {
-    const matches = destinations.filter((place) =>
+    const matches = allDestinations.filter((place) =>
       belongsToDivision(place.region, division) &&
       (experience === "Any experience" || place.type === experience)
     );
