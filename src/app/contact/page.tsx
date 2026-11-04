@@ -2,59 +2,56 @@
 
 import { useState } from "react";
 import { ArrowLeft, ArrowUpRight, Check, Compass, LoaderCircle, Mail, MessageCircle } from "lucide-react";
+import TurnstileWidget from "@/components/TurnstileWidget";
 
 type SendState = "idle" | "sending" | "success" | "error";
 
-const emailJsConfig = {
-  serviceId: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-  templateId: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-  publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
-};
+const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
 export default function ContactPage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
+  const [website, setWebsite] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState("");
+  const [widgetVersion, setWidgetVersion] = useState(0);
   const [sendState, setSendState] = useState<SendState>("idle");
 
-  const ready = Boolean(name.trim() && email.trim() && subject.trim() && message.trim());
+  const ready = Boolean(name.trim() && email.trim() && subject.trim() && message.trim() && turnstileToken && turnstileSiteKey);
 
   const sendMessage = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (!ready || sendState === "sending") return;
 
-    if (!emailJsConfig.serviceId || !emailJsConfig.templateId || !emailJsConfig.publicKey) {
-      setSendState("error");
-      return;
-    }
-
     setSendState("sending");
     try {
-      const response = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          service_id: emailJsConfig.serviceId,
-          template_id: emailJsConfig.templateId,
-          user_id: emailJsConfig.publicKey,
-          template_params: {
-            from_name: name.trim(),
-            reply_to: email.trim(),
-            subject: subject.trim(),
-            message: message.trim(),
-          },
+          name: name.trim(),
+          email: email.trim(),
+          subject: subject.trim(),
+          message: message.trim(),
+          website,
+          turnstileToken,
         }),
       });
 
-      if (!response.ok) throw new Error("Email service rejected the request");
+      if (!response.ok) throw new Error("Contact request failed");
       setSendState("success");
       setName("");
       setEmail("");
       setSubject("");
       setMessage("");
+      setWebsite("");
+      setTurnstileToken("");
+      setWidgetVersion((version) => version + 1);
     } catch {
       setSendState("error");
+      setTurnstileToken("");
+      setWidgetVersion((version) => version + 1);
     }
   };
 
@@ -88,9 +85,24 @@ export default function ContactPage() {
           <label>Email address<input type="email" value={email} onChange={(event) => setEmail(event.target.value)} placeholder="you@example.com" maxLength={254} autoComplete="email" required /></label>
           <label>Subject<input value={subject} onChange={(event) => setSubject(event.target.value)} placeholder="What's on your mind?" maxLength={120} required /></label>
           <label>Your message<textarea value={message} onChange={(event) => setMessage(event.target.value)} placeholder="Tell us a little more..." rows={6} maxLength={4000} required /></label>
+          <div aria-hidden="true" style={{ position: "absolute", left: "-10000px", width: 1, height: 1, overflow: "hidden" }}>
+            <label>Leave this field empty<input name="website" tabIndex={-1} autoComplete="off" value={website} onChange={(event) => setWebsite(event.target.value)} /></label>
+          </div>
+          {turnstileSiteKey ? (
+            <div className="contact-verification">
+              <TurnstileWidget
+                key={widgetVersion}
+                siteKey={turnstileSiteKey}
+                onVerify={setTurnstileToken}
+                onExpire={() => setTurnstileToken("")}
+              />
+            </div>
+          ) : (
+            <p className="contact-error" role="alert">Security verification is not configured yet. Please try again later.</p>
+          )}
           <div className="contact-form-bottom"><span>All fields are required</span><button className="button button-dark" type="submit" disabled={!ready || sendState === "sending"}>{sendState === "sending" ? "Sending..." : "Send message"}{sendState === "sending" ? <LoaderCircle size={16} className="contact-spinner" /> : <ArrowUpRight size={16} />}</button></div>
           {sendState === "success" && <p className="contact-success" role="status"><Check size={15} /> Your message has been sent. Thank you for reaching out!</p>}
-          {sendState === "error" && <p className="contact-error" role="alert">{emailJsConfig.serviceId && emailJsConfig.templateId && emailJsConfig.publicKey ? "Your message could not be sent. Please try again in a moment." : "Email service setup is incomplete. Add the three EmailJS environment variables in your project and redeploy."}</p>}
+          {sendState === "error" && <p className="contact-error" role="alert">Your message could not be sent or verified. Please complete the security check and try again.</p>}
         </form>
       </section>
 
