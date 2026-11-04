@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { ArrowUpRight, MapPin, LocateFixed, Search } from "lucide-react";
-import { destinations } from "@/data/destinations";
+import { allDestinations } from "@/data/destinations";
 import { destinationImageUrl } from "@/lib/destinationImage";
 
 const BangladeshLeafletMap = dynamic(() => import("@/components/BangladeshLeafletMap"), {
@@ -13,7 +13,7 @@ const BangladeshLeafletMap = dynamic(() => import("@/components/BangladeshLeafle
 });
 
 export default function ExploreMap() {
-  const mappedPlaces = useMemo(() => destinations.filter((place) => place?.coordinates), []);
+  const mappedPlaces = useMemo(() => allDestinations.filter((place) => place?.coordinates), []);
   const [activeSlug, setActiveSlug] = useState("lalbagh-fort");
   const [mapSearch, setMapSearch] = useState("");
   const active = mappedPlaces.find((place) => place.slug === activeSlug) ?? mappedPlaces[0];
