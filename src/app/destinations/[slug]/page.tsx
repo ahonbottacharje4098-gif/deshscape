@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, ArrowUpRight, Compass, MapPin, Check, Info } from "lucide-react";
-import { destinations } from "@/data/destinations";
+import { allDestinations } from "@/data/destinations";
 import { destinationImageUrl } from "@/lib/destinationImage";
 import DestinationGallery from "@/components/DestinationGallery";
 import ShareDestination from "@/components/ShareDestination";
@@ -11,12 +11,12 @@ import SaveDestination from "@/components/SaveDestination";
 type Props = { params: Promise<{ slug: string }> };
 
 export function generateStaticParams() {
-  return destinations.map((place) => ({ slug: place.slug }));
+  return allDestinations.map((place) => ({ slug: place.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const place = destinations.find((item) => item.slug === slug);
+  const place = allDestinations.find((item) => item.slug === slug);
   if (!place) return { title: "Destination not found | Deshscape" };
   return {
     title: `${place.name} | Deshscape`,
@@ -29,7 +29,7 @@ export default async function DestinationPage({ params }: Props) {
   const place = destinations.find((item) => item.slug === slug);
   if (!place) notFound();
 
-  const related = destinations.filter((item) => item.slug !== place.slug && item.type === place.type).slice(0, 2);
+  const related = allDestinations.filter((item) => item.slug !== place.slug && item.type === place.type).slice(0, 2);
 
   return (
     <main className="detail-page">
