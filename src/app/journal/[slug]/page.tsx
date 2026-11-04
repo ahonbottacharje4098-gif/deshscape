@@ -52,6 +52,54 @@ const stories: Story[] = [
       "Weather and access can vary by season and location. Check local conditions before travelling, and leave the landscape as you found it."
     ],
     note: "A field note from the green northeast"
+  }  ,
+  {
+    slug: "stone-stories-of-kantajew",
+    number: "03",
+    category: "ART & HERITAGE",
+    title: "Stone stories of Kantajew",
+    location: "Dinajpur",
+    image: "https://images.unsplash.com/photo-1606293926075-69a00db7562f?auto=format&fit=crop&w=2000&q=85",
+    intro: "At Kantajew Temple, the outer walls invite a closer look. Their terracotta decoration makes the historic building feel like a record of artistic skill, stories and life in Bengal.",
+    paragraphs: [
+      "The temple is widely recognised for its elaborate terracotta surface. Rather than treating the building as a single distant view, take time to notice how the panels, patterns and repeated details create a richly textured whole.",
+      "Architectural heritage is best experienced with patience. Observe the craftsmanship from the visitor areas, and remember that the structure is both a historic monument and a place with cultural and religious meaning.",
+      "A visit can also be an opportunity to learn about the wider history of Dinajpur. Local interpretation and reliable site information can add context that photographs alone cannot provide.",
+      "Opening arrangements and visitor access may change. Check current local guidance before travelling, dress respectfully and avoid touching or damaging the historic surfaces."
+    ],
+    note: "An architectural field note from the north"
+  },
+  {
+    slug: "a-quiet-world-in-ratargul",
+    number: "04",
+    category: "HIDDEN BANGLADESH",
+    title: "A quiet world in Ratargul",
+    location: "Sylhet",
+    image: "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=2000&q=85",
+    intro: "Ratargul is known for its freshwater swamp forest, where trees and waterways shape a landscape that feels closely connected to the rhythm of the seasons.",
+    paragraphs: [
+      "The character of a swamp forest changes with the water. Seasonal levels influence how the landscape appears, which routes are accessible and what visitors can observe from permitted areas.",
+      "A thoughtful visit is about appreciating the ecosystem rather than rushing through it. Notice the relationship between the trees, water and surrounding wetland environment, while keeping noise and disturbance to a minimum.",
+      "Local guidance matters in a wetland. Use authorised routes and boat services where applicable, follow safety instructions and avoid entering sensitive areas or disturbing wildlife.",
+      "Before setting out, check weather, water conditions and current access arrangements with reliable local sources. Take all rubbish back with you and leave the forest as undisturbed as possible."
+    ],
+    note: "A gentle introduction to a living wetland"
+  },
+  {
+    slug: "courtyards-and-memory-at-baliati",
+    number: "05",
+    category: "ART & HERITAGE",
+    title: "Courtyards and memory at Baliati",
+    location: "Manikganj",
+    image: "https://images.unsplash.com/photo-1590123732197-e707a7d1a2b2?auto=format&fit=crop&w=2000&q=85",
+    intro: "Baliati Palace is a heritage complex whose courtyards and historic façades offer a window into the architectural and social history of the region.",
+    paragraphs: [
+      "The scale of a palace complex is often easiest to understand by moving slowly through its open spaces. Courtyards, entrances and repeated architectural details help visitors read the relationship between the buildings.",
+      "Historic places are more than backdrops. They carry memories of the people who built, used and maintained them, and they deserve care from everyone who visits.",
+      "Look closely at the craftsmanship without touching fragile surfaces. Follow marked visitor routes, respect any restricted spaces and give other visitors room to experience the site.",
+      "Museum hours, maintenance and public access can change. Confirm current arrangements before travelling and follow the site's photography and preservation rules."
+    ],
+    note: "A heritage walk through historic courtyards"
   }
 ];
 
@@ -75,7 +123,10 @@ export default async function JournalStoryPage({ params }: Props) {
 
   const relatedSlugs = story.slug === "river-town-rhythm"
     ? ["goalanda-ghat", "hardinge-bridge"]
-    : ["jaflong", "ratargul-swamp-forest", "lalakhal"];
+    : story.slug === "beyond-tea-gardens" ? ["jaflong", "ratargul-swamp-forest", "lalakhal"]
+    : story.slug === "stone-stories-of-kantajew" ? ["kantajew-temple", "tajhat-palace"]
+    : story.slug === "a-quiet-world-in-ratargul" ? ["ratargul-swamp-forest", "lalakhal", "jaflong"]
+    : ["baliati-palace", "idrakpur-fort"];
   const relatedPlaces = relatedSlugs
     .map((relatedSlug) => destinations.find((place) => place.slug === relatedSlug))
     .filter((place) => place !== undefined);
