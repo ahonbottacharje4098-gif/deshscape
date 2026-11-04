@@ -6,13 +6,13 @@ import {
   X, Mountain, Waves, Trees, Landmark, Instagram, Facebook, Youtube,
   SlidersHorizontal, RotateCcw, ChevronDown
 } from "lucide-react";
-import { destinations, destinationRegions, destinationTypes } from "@/data/destinations";
+import { allDestinations, destinationRegions, destinationTypes } from "@/data/destinations";
 import ExploreMap from "@/components/ExploreMap";
 import { destinationImageUrl } from "@/lib/destinationImage";
 
 const divisions = ["Dhaka", "Chattogram", "Rajshahi", "Khulna", "Barishal", "Sylhet", "Rangpur", "Mymensingh"] as const;
 
-const divisionFor = (place: (typeof destinations)[number]) => {
+const divisionFor = (place: (typeof allDestinations)[number]) => {
   if (place.region === "Dhaka Division") return "Dhaka";
   if (place.region.includes("Chattogram") || place.region.includes("Cox's Bazar") || place.region.includes("Rangamati")) return "Chattogram";
   if (place.region.includes("Sylhet")) return "Sylhet";
@@ -41,7 +41,7 @@ export default function Home() {
 
   const filtered = useMemo(() => {
     const normalized = query.trim().toLowerCase();
-    const result = destinations.filter((place) => {
+    const result = allDestinations.filter((place) => {
       const matchesDivision = divisionFor(place) === division;
       const matchesQuery = !normalized || [
         place.name, place.region, place.district, place.type, place.tag, place.shortDescription
