@@ -153,7 +153,7 @@ export default function Home() {
 
           <div className="destination-grid">
             {filtered.map((place, index) => (
-              <a className={index === 0 && sort === "featured" ? "destination-card featured" : "destination-card"} href={`/destinations/${place.slug}`} key={place.slug}>
+              <a className={index === 0 && sort === "featured" ? "destination-card featured" : "destination-card"} href={`/destinations/${place.slug}`} key={place.slug} aria-label={`Explore ${place.name} in ${place.district}`} title={`Explore ${place.name}`}>
                 <div className="destination-image" style={{ backgroundImage: `url(${destinationImageUrl(place.image, 1200)})` }} />
                 <div className="destination-overlay" />
                 <span className="destination-tag">{place.tag}</span>
