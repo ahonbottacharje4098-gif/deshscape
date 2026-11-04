@@ -5,6 +5,28 @@ import "./globals.css";
 const siteDescription =
   "Discover Bangladesh, one journey at a time. Explore destinations, culture, nature and travel stories from across the country.";
 
+const siteStructuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://deshscape.vercel.app/#organization",
+      name: "Deshscape",
+      url: "https://deshscape.vercel.app/",
+      description: siteDescription,
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://deshscape.vercel.app/#website",
+      name: "Deshscape",
+      url: "https://deshscape.vercel.app/",
+      description: siteDescription,
+      publisher: { "@id": "https://deshscape.vercel.app/#organization" },
+      inLanguage: "en",
+    },
+  ],
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://deshscape.vercel.app"),
   title: {
@@ -64,7 +86,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteStructuredData) }}
+        />
+        {children}
+      </body>
     </html>
   );
 }
