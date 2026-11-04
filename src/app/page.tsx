@@ -39,6 +39,14 @@ export default function Home() {
   const [sort, setSort] = useState("featured");
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const availableRegions = useMemo(() => {
+    const regions = allDestinations
+      .filter((place) => divisionFor(place) === division)
+      .map((place) => place.region.trim())
+      .filter(Boolean);
+    return ["All regions", ...Array.from(new Set(regions)).sort((a, b) => a.localeCompare(b))];
+  }, [division]);
+
   const filtered = useMemo(() => {
     const normalized = query.trim().toLowerCase();
     const result = allDestinations.filter((place) => {
@@ -46,7 +54,7 @@ export default function Home() {
       const matchesQuery = !normalized || [
         place.name, place.region, place.district, place.type, place.tag, place.shortDescription
       ].join(" ").toLowerCase().includes(normalized);
-      const matchesRegion = region === "All regions" || place.region.includes(region);
+      const matchesRegion = region === "All regions" || place.region.trim() === region;
       const matchesType = type === "All experiences" || place.type === type;
       return matchesDivision && matchesQuery && matchesRegion && matchesType;
     });
@@ -65,6 +73,8 @@ export default function Home() {
 
   const chooseCategory = (label: string) => {
     setType(label);
+    setRegion("All regions");
+    setQuery("");
     document.getElementById("destinations")?.scrollIntoView({ behavior: "smooth" });
   };
 
@@ -143,7 +153,7 @@ export default function Home() {
               <span>DISCOVER</span>
             </div>
             <div className="filter-row">
-              <label className="filter-control"><span>REGION</span><select value={region} onChange={(event) => setRegion(event.target.value)} aria-label="Filter by region">{destinationRegions.map((item) => <option key={item}>{item}</option>)}</select><ChevronDown size={14} /></label>
+              <label className="filter-control"><span>REGION</span><select value={region} onChange={(event) => setRegion(event.target.value)} aria-label={`Filter by region in ${division} Division`}>{availableRegions.map((item) => <option key={item} value={item}>{item}</option>)}</select><ChevronDown size={14} /></label>
               <label className="filter-control"><span>EXPERIENCE</span><select value={type} onChange={(event) => setType(event.target.value)} aria-label="Filter by experience">{destinationTypes.map((item) => <option key={item}>{item}</option>)}</select><ChevronDown size={14} /></label>
               <label className="filter-control sort-control"><span>SORT BY</span><select value={sort} onChange={(event) => setSort(event.target.value)} aria-label="Sort destinations"><option value="featured">Featured</option><option value="az">Name: A–Z</option><option value="za">Name: Z–A</option></select><ChevronDown size={14} /></label>
               <button className="reset-filters" onClick={resetFilters}><RotateCcw size={14} /> Reset filters</button>
