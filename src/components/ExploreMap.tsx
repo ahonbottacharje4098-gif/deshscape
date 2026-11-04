@@ -75,7 +75,7 @@ export default function ExploreMap() {
           </div>
         </aside>
       </div>
-      <div className="map-disclaimer section-wrap">Map tiles © OpenStreetMap contributors. Pins are approximate attraction-area markers, not turn-by-turn navigation. Verify exact locations and access locally.</div>
+      <div className="map-disclaimer section-wrap">Map imagery © Esri, Maxar, Earthstar Geographics and other contributors. Pins are approximate attraction-area markers, not turn-by-turn navigation. Verify exact locations and access locally.</div>
     </section>
   );
 }
