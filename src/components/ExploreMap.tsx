@@ -34,7 +34,7 @@ export default function ExploreMap() {
       <div className="explore-map-layout">
         <div className="real-map-frame">
           <BangladeshLeafletMap activeSlug={activeSlug} onSelect={setActiveSlug} />
-          <div className="real-map-caption">LIVE MAP DATA · OPENSTREETMAP</div>
+          <div className="real-map-caption">BANGLADESH · 8 ADMINISTRATIVE DIVISIONS</div>
         </div>
 
         <aside className="map-place-panel">
