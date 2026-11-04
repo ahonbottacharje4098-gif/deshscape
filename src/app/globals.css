@@ -628,3 +628,17 @@ button,input{font:inherit}
 @media(prefers-reduced-motion:reduce){
   .destination-image{will-change:auto}
 }
+
+
+/* Subtle animated highlight for Bangladesh on the Explore map */
+.bangladesh-country-glow{
+  filter:drop-shadow(0 0 5px rgba(214,173,114,.55)) drop-shadow(0 0 13px rgba(57,123,91,.28));
+  animation:bangladesh-map-pulse 4.5s ease-in-out infinite;
+}
+@keyframes bangladesh-map-pulse{
+  0%,100%{opacity:.88}
+  50%{opacity:1}
+}
+@media(prefers-reduced-motion:reduce){
+  .bangladesh-country-glow{animation:none}
+}
