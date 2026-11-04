@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function DestinationPage({ params }: Props) {
   const { slug } = await params;
-  const place = destinations.find((item) => item.slug === slug);
+  const place = allDestinations.find((item) => item.slug === slug);
   if (!place) notFound();
 
   const related = allDestinations.filter((item) => item.slug !== place.slug && item.type === place.type).slice(0, 2);
