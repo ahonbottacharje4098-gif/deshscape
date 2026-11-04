@@ -668,3 +668,54 @@ button,input{font:inherit}
   background:rgba(250,249,245,.96);
   border-color:#d6ded4;
 }
+
+
+/* Refined terrain-map presentation */
+.real-map-frame{
+  background:linear-gradient(145deg,#dce9d8 0%,#b9d5c9 48%,#9fc9d2 100%);
+  border:1px solid #c4d4c6;
+  box-shadow:0 16px 38px rgba(29,61,45,.12);
+  border-radius:3px;
+}
+.leaflet-bangladesh-map{
+  background:linear-gradient(155deg,#d9e8d5 0%,#a9d1d2 58%,#78b7c6 100%);
+}
+.leaflet-bangladesh-map .leaflet-tile{
+  filter:saturate(1.08) contrast(1.04) brightness(1.02);
+}
+.leaflet-bangladesh-map .leaflet-marker-pane{
+  z-index:650!important;
+}
+.leaflet-bangladesh-map .leaflet-overlay-pane{
+  z-index:450;
+}
+.leaflet-bangladesh-map .leaflet-control-zoom{
+  border:1px solid rgba(255,255,255,.8)!important;
+  border-radius:8px!important;
+  overflow:hidden;
+  box-shadow:0 4px 14px rgba(25,55,40,.2)!important;
+}
+.leaflet-bangladesh-map .leaflet-control-zoom a{
+  width:34px!important;
+  height:34px!important;
+  line-height:34px!important;
+  font-size:19px!important;
+  background:#fbfaf4!important;
+  color:#214b39!important;
+  border-bottom:1px solid #dce4d9!important;
+}
+.leaflet-bangladesh-map .leaflet-control-zoom a:hover{
+  background:#e9f0e6!important;
+}
+.leaflet-bangladesh-map .leaflet-popup-content-wrapper{
+  border-radius:9px;
+  box-shadow:0 8px 24px rgba(25,55,40,.2);
+}
+.leaflet-bangladesh-map .leaflet-popup-content{
+  margin:13px 16px;
+}
+.real-map-caption{
+  border:1px solid rgba(218,228,215,.9);
+  border-radius:4px;
+  box-shadow:0 3px 12px rgba(25,55,40,.12);
+}
