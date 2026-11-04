@@ -39,8 +39,8 @@ function BangladeshMapViewport() {
     ];
 
     map.fitBounds(countryBounds, {
-      padding: [24, 24],
-      maxZoom: 7,
+      padding: [12, 12],
+      maxZoom: 8,
       animate: false
     });
   }, [map]);
@@ -86,8 +86,8 @@ export default function BangladeshLeafletMap({ activeSlug, onSelect }: Props) {
     >
       <BangladeshMapViewport />
       <TileLayer
-        attribution='&copy; OpenStreetMap contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
-        url="https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png"
+        attribution='Tiles &copy; <a href="https://www.esri.com/">Esri</a> — Sources: Esri, USGS, NOAA'
+        url="https://server.arcgisonline.com/ArcGIS/rest/services/Elevation/World_Hillshade/MapServer/tile/{z}/{y}/{x}"
       />
       {divisionBoundaries && (
         <GeoJSON
