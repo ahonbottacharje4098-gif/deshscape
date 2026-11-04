@@ -70,8 +70,9 @@ export async function POST(request: Request) {
     const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
     const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
     const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+    const privateKey = process.env.EMAILJS_PRIVATE_KEY;
 
-    if (!serviceId || !templateId || !publicKey) {
+    if (!serviceId || !templateId || !publicKey || !privateKey) {
       return NextResponse.json({ error: "Email service is not configured." }, { status: 503 });
     }
 
@@ -82,6 +83,7 @@ export async function POST(request: Request) {
         service_id: serviceId,
         template_id: templateId,
         user_id: publicKey,
+        accessToken: privateKey,
         template_params: {
           from_name: name,
           reply_to: email,
