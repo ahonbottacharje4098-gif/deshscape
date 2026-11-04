@@ -7,6 +7,7 @@ import { ArrowLeft, ArrowUpRight, Compass, MapPin, Search, X, Clock3 } from "luc
 const stories = [
   {
     number: "01",
+    slug: "river-town-rhythm",
     category: "PEOPLE & CULTURE",
     title: "The rhythm of a river town",
     location: "Goalanda, Rajbari",
@@ -17,6 +18,7 @@ const stories = [
   },
   {
     number: "02",
+    slug: "beyond-tea-gardens",
     category: "HIDDEN BANGLADESH",
     title: "Beyond the tea gardens",
     location: "Sylhet",
@@ -74,7 +76,7 @@ export default function JournalPage() {
         <div className="section-wrap">
           <div className="section-heading">
             <div><div className="eyebrow"><span /> FIELD NOTES & INSPIRATION</div><h2>Read, wander<br /><em>and discover.</em></h2></div>
-            <span className="eyebrow">02 STORIES</span>
+            <span className="eyebrow">05 STORIES</span>
           </div>
           {showFeatured && (
             <article className="journal-featured">
@@ -117,14 +119,14 @@ export default function JournalPage() {
             <div className="journal-grid">
               {visibleStories.map((story) => (
                 <article key={story.number} className="journal-card">
-                  <Link className="journal-card-image" href={`/journal/${story.number === "01" ? "river-town-rhythm" : "beyond-tea-gardens"}`} aria-label={`Read ${story.title}`} style={{ backgroundImage: `url(${story.image})` }} />
+                  <Link className="journal-card-image" href={`/journal/${story.slug}`} aria-label={`Read ${story.title}`} style={{ backgroundImage: `url(${story.image})` }} />
                   <div className="journal-card-copy">
                     <div className="eyebrow"><span /> {story.category}</div>
                     <h3 style={{ font: "30px/1.15 'Playfair Display',serif", color: "#183d32", margin: "17px 0 10px" }}>{story.title}</h3>
                     <div style={{ display: "flex", alignItems: "center", gap: 6, color: "#899387", fontSize: 10, marginBottom: 15 }}><MapPin size={13} /> {story.location}<span style={{ marginLeft: 10, display: "inline-flex", alignItems: "center", gap: 5 }}><Clock3 size={12} /> {story.readingTime}</span></div>
                     <p style={{ color: "#70776e", fontSize: 12, lineHeight: 1.9, margin: "0 0 18px" }}>{story.description}</p>
                     <div style={{ color: "#9caa96", fontSize: 9, letterSpacing: 1.1, textTransform: "uppercase" }}>{story.note}</div>
-                    <Link className="journal-read-link" href={`/journal/${story.number === "01" ? "river-town-rhythm" : "beyond-tea-gardens"}`}>READ STORY <ArrowUpRight size={15} /></Link>
+                    <Link className="journal-read-link" href={`/journal/${story.slug}`}>READ STORY <ArrowUpRight size={15} /></Link>
                   </div>
                 </article>
               ))}
