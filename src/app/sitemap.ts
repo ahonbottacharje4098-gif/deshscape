@@ -16,7 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  const journalRoutes = ["river-town-rhythm", "beyond-tea-gardens"].map((slug) => ({
+  const journalRoutes = ["river-town-rhythm", "beyond-tea-gardens", "stone-stories-of-kantajew", "a-quiet-world-in-ratargul", "courtyards-and-memory-at-baliati"].map((slug) => ({
     url: `${siteUrl}/journal/${slug}`,
     changeFrequency: "monthly" as const,
     priority: 0.6,
