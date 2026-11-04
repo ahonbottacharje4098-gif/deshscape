@@ -3,10 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, ArrowUpRight, Bookmark, Compass, MapPin, Trash2 } from "lucide-react";
-import { destinations } from "@/data/destinations";
-import { dhakaDivisionDestinations } from "@/data/dhakaDivision";
-
-const allDestinations = [...destinations, ...dhakaDivisionDestinations];
+import { allDestinations } from "@/data/destinations";
 import { destinationImageUrl } from "@/lib/destinationImage";
 
 const STORAGE_KEY = "deshscape-saved-destinations";
