@@ -642,3 +642,29 @@ button,input{font:inherit}
 @media(prefers-reduced-motion:reduce){
   .bangladesh-country-glow{animation:none}
 }
+
+
+/* Clean atlas-style division labels for the Bangladesh map */
+.division-map-label{
+  background:rgba(250,248,237,.34)!important;
+  border:0!important;
+  box-shadow:none!important;
+  color:#43594c!important;
+  font:600 10px 'DM Sans',sans-serif!important;
+  letter-spacing:.15px;
+  text-shadow:0 1px 2px rgba(255,255,255,.8);
+  padding:2px 4px!important;
+}
+.division-map-label:before{display:none!important}
+.leaflet-overlay-pane path.leaflet-interactive{
+  transition:fill-opacity .2s ease,stroke-width .2s ease;
+}
+.leaflet-overlay-pane path.leaflet-interactive:hover{
+  fill-opacity:.92;
+  stroke-width:2.2px;
+}
+.leaflet-container .leaflet-control-zoom a{
+  color:#244b3a;
+  background:rgba(250,249,245,.96);
+  border-color:#d6ded4;
+}
