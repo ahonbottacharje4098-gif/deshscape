@@ -92,7 +92,7 @@ export default function ContactPage() {
           <label>{t("Subject")}<input value={subject} onChange={(event) => setSubject(event.target.value)} placeholder={t("What's on your mind?")} maxLength={120} required /></label>
           <label>{t("Your message")}<textarea value={message} onChange={(event) => setMessage(event.target.value)} placeholder={t("Tell us a little more...")} rows={6} maxLength={4000} required /></label>
           <div aria-hidden="true" style={{ position: "absolute", left: "-10000px", width: 1, height: 1, overflow: "hidden" }}>
-            <label>Leave this field empty<input name="website" tabIndex={-1} autoComplete="off" value={website} onChange={(event) => setWebsite(event.target.value)} /></label>
+            <label>{t("Leave this field empty")}<input name="website" tabIndex={-1} autoComplete="off" value={website} onChange={(event) => setWebsite(event.target.value)} /></label>
           </div>
           {turnstileSiteKey ? (
             <div className="contact-verification">
@@ -104,7 +104,7 @@ export default function ContactPage() {
               />
             </div>
           ) : (
-            <p className="contact-error" role="alert">Security verification is not configured yet. Please try again later.</p>
+            <p className="contact-error" role="alert">{t("Security verification is not configured yet. Please try again later.")}</p>
           )}
           <div className="contact-form-bottom"><span>{t("All fields are required")}</span><button className="button button-dark" type="submit" disabled={!ready || sendState === "sending"}>{sendState === "sending" ? t("Sending...") : t("Send message")}{sendState === "sending" ? <LoaderCircle size={16} className="contact-spinner" /> : <ArrowUpRight size={16} />}</button></div>
           {sendState === "success" && <p className="contact-success" role="status"><Check size={15} /> {t("Your message has been sent. Thank you for reaching out!")}</p>}
