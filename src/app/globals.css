@@ -727,3 +727,16 @@ button,input{font:inherit}
 /* Bengali typography: keep the editorial serif for headings and use a clear UI sans for body copy. */
 html[lang="bn"] body{font-family:"Hind Siliguri","DM Sans",sans-serif}
 html[lang="bn"] h1,html[lang="bn"] h2,html[lang="bn"] h3,html[lang="bn"] h4{font-family:"Noto Serif Bengali","Playfair Display",serif}
+
+
+/* Deshscape bilingual typography and language control */
+html[lang="bn"] body{font-family:"Hind Siliguri","DM Sans",sans-serif;letter-spacing:0}
+html[lang="bn"] h1,html[lang="bn"] h2,html[lang="bn"] h3,html[lang="bn"] h4,html[lang="bn"] .brand-name,html[lang="bn"] .category-name{font-family:"Noto Serif Bengali","Playfair Display",serif;letter-spacing:0}
+html[lang="bn"] .hero h1,html[lang="bn"] .intro h2,html[lang="bn"] .section-heading h2,html[lang="bn"] .category-heading h2,html[lang="bn"] .map-copy h2,html[lang="bn"] .planner-text h2{line-height:1.35;letter-spacing:0}
+html[lang="bn"] .eyebrow,html[lang="bn"] .hero-bottom,html[lang="bn"] .stats-note,html[lang="bn"] .destination-tag,html[lang="bn"] .footer-bottom{letter-spacing:.15px}
+.language-switcher{position:fixed;top:96px;right:24px;z-index:1300;display:flex;align-items:center;gap:8px;padding:9px 12px;border:1px solid #d9dfd5;background:rgba(250,249,245,.94);color:#183d32;box-shadow:0 5px 18px rgba(16,44,37,.12);backdrop-filter:blur(12px);font:600 11px "DM Sans",sans-serif}
+.language-switcher button{border:0;background:transparent;color:#758275;padding:2px 1px;font:600 11px "DM Sans",sans-serif;cursor:pointer}
+.language-switcher button[aria-pressed="true"]{color:#183d32;font-weight:800}
+.language-switcher button:focus-visible{outline:2px solid #a8794d;outline-offset:3px}
+html[lang="bn"] .language-switcher button:last-child{font-family:"Hind Siliguri",sans-serif;font-size:13px}
+@media(max-width:650px){.language-switcher{top:91px;right:12px;padding:8px 10px}}
