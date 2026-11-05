@@ -7,6 +7,7 @@ import { destinationImageUrl } from "@/lib/destinationImage";
 import DestinationGallery from "@/components/DestinationGallery";
 import ShareDestination from "@/components/ShareDestination";
 import SaveDestination from "@/components/SaveDestination";
+import AutoTranslate from "@/components/AutoTranslate";
 
 type Props = { params: Promise<{ slug: string }> };
 
