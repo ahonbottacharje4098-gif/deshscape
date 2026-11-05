@@ -85,7 +85,7 @@ export default function Home() {
       <header className="site-header">
         <a className="brand" href="/" aria-label="Deshscape home">
           <span className="brand-mark"><Compass size={22} strokeWidth={1.7} /></span>
-          <span className="brand-name">deshscape<span>.</span><small>THE ART OF DISCOVERY</small></span>
+          <span className="brand-name">deshscape<span>.</span><small>{t("THE ART OF DISCOVERY")}</small></span>
         </a>
         <nav className={menuOpen ? "main-nav open" : "main-nav"}>
           <a className="nav-link active" href="#top" onClick={() => setMenuOpen(false)}>{t("Discover")}</a>
@@ -201,7 +201,7 @@ export default function Home() {
       </section>
 
       <footer className="site-footer">
-        <div className="footer-top"><a className="brand footer-brand" href="/"><span className="brand-mark"><Compass size={22} /></span><span className="brand-name">deshscape<span>.</span><small>THE ART OF DISCOVERY</small></span></a><p>{t("Explore beyond the ordinary.")}<br />{t("Discover Bangladesh, one journey at a time.")}</p><a className="back-top" href="#top">{t("BACK TO TOP")} <ArrowUpRight size={15} /></a></div>
+        <div className="footer-top"><a className="brand footer-brand" href="/"><span className="brand-mark"><Compass size={22} /></span><span className="brand-name">deshscape<span>.</span><small>{t("THE ART OF DISCOVERY")}</small></span></a><p>{t("Explore beyond the ordinary.")}<br />{t("Discover Bangladesh, one journey at a time.")}</p><a className="back-top" href="#top">{t("BACK TO TOP")} <ArrowUpRight size={15} /></a></div>
         <div className="footer-bottom"><span>{t("© 2026 DESHSCAPE. MADE FOR THE CURIOUS.")}</span><a className="footer-contact-link" href="/contact">{t("CONTACT")} <ArrowUpRight size={14} /></a><span>{t("INDEPENDENTLY INSPIRED BY BANGLADESH.")}</span></div>
       </footer>
     </main>
