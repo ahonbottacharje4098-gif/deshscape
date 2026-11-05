@@ -387,7 +387,7 @@ export const messages: Record<string, string> = {
   "Do not litter, feed wildlife or damage plants.": "আবর্জনা ফেলবেন না, বন্যপ্রাণীকে খাবার দেবেন না বা গাছপালা নষ্ট করবেন না।",
   "Check local weather and river conditions before travelling.": "ভ্রমণের আগে স্থানীয় আবহাওয়া ও নদীর অবস্থা যাচাই করুন।",
   "Avoid deep or fast-moving water and follow local safety advice.": "গভীর বা দ্রুত স্রোতের পানি এড়িয়ে চলুন এবং স্থানীয় নিরাপত্তা পরামর্শ মেনে চলুন।",
-  "Wear footwear suitable for wet and uneven surfaces.": "ভেজা ও অসমতল পথে চলার উপযোগী জুতা পরুন।"
+  "Wear footwear suitable for wet and uneven surfaces.": "ভেজা ও অসমতল পথে চলার উপযোগী জুতা পরুন।",
   "Choose website language": "ওয়েবসাইটের ভাষা নির্বাচন করুন"
 };
 
