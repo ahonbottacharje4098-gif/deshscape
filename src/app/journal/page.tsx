@@ -63,7 +63,8 @@ const stories = [
   }
 ];
 
-export default function JournalPage() {\n  const { t } = useLanguage();
+export default function JournalPage() {
+  const { t } = useLanguage();
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("ALL");
   const query = search.trim().toLowerCase();
