@@ -298,7 +298,26 @@ export const messages: Record<string, string> = {
   "Explore": "ঘুরে দেখুন",
   "in": "অবস্থিত",
   "Division is coming soon": "বিভাগের তথ্য শিগগিরই আসছে",
-  "Clear filters": "ফিল্টার মুছুন"
+  "Clear filters": "ফিল্টার মুছুন",
+
+  "Interactive map of the eight divisions of Bangladesh": "বাংলাদেশের আট বিভাগের ইন্টার‌্যাকটিভ মানচিত্র",
+  "MOMENTS & MEMORIES": "মুহূর্ত ও স্মৃতি",
+  "A visual journey": "চোখে দেখা এক ভ্রমণ",
+  "through": "জুড়ে",
+  "PHOTOS": "টি ছবি",
+  "View photo": "ছবি দেখুন",
+  "of": "এর",
+  "VIEW PHOTO": "ছবি দেখুন",
+  "Discovering more photographs…": "আরও ছবি খোঁজা হচ্ছে…",
+  "A glimpse of": "এক ঝলকে",
+  "Photos from Wikimedia Commons where available.": "যেখানে পাওয়া গেছে, Wikimedia Commons থেকে ছবি নেওয়া হয়েছে।",
+  "photo viewer": "ছবি দেখার গ্যালারি",
+  "Close photo viewer": "ছবির গ্যালারি বন্ধ করুন",
+  "Previous photo": "আগের ছবি",
+  "Next photo": "পরের ছবি",
+  "photo": "ছবি",
+  "PHOTO SOURCE": "ছবির উৎস",
+  "Loading the map of Bangladesh…": "বাংলাদেশের মানচিত্র লোড হচ্ছে…"
 };
 
 export function translate(text: string, language: Language): string {
