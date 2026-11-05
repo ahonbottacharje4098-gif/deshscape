@@ -76,7 +76,8 @@ export default function JournalPage() {
   const featuredStory = stories[0];
 
   return (
-    <main id="top">
+    <main id="main-content" tabIndex={-1}>
+      <span id="top" />
       <header className="site-header">
         <Link className="brand" href="/" aria-label="Deshscape home">
           <span className="brand-mark"><Compass size={22} strokeWidth={1.7} /></span>

@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { allDestinations } from "@/data/destinations";
-import { stories } from "@/app/journal/[slug]/page";
+import { stories } from "@/data/journalStories";
 
 const siteUrl = "https://deshscape.vercel.app";
 

@@ -69,7 +69,7 @@ export default async function DestinationPage({ params }: Props) {
   };
 
   return (
-    <main className="detail-page">
+    <main id="main-content" tabIndex={-1} className="detail-page">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }}
