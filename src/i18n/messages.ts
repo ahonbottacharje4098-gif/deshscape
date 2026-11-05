@@ -46,10 +46,7 @@ export const messages: Record<string, string> = {
   "Bangladesh": "বাংলাদেশ",
   "FILTERS APPLIED": "ফিল্টার চালু",
   "CURATED FOR THE CURIOUS": "কৌতূহলী ভ্রমণপিপাসুদের জন্য",
-  "No destinations found": "কোনো গন্তব্য পাওয়া যায়নি",
-  "Try another keyword or reset your filters.": "অন্য শব্দ দিয়ে খুঁজুন অথবা ফিল্টার মুছে ফেলুন।",
   "is coming soon": "বিভাগের তথ্য শিগগিরই আসছে",
-  "We are preparing destination guides for this division. Check back soon as the collection grows.": "এই বিভাগের ভ্রমণ গাইড তৈরি করা হচ্ছে। নতুন গন্তব্য যুক্ত হলে আবার দেখে নিন।",
   "FIND YOUR KIND OF ESCAPE": "আপনার পছন্দের ভ্রমণ খুঁজুন",
   "What moves": "কোন অভিজ্ঞতা",
   "you?": "আপনাকে টানে?",
@@ -166,7 +163,6 @@ export const messages: Record<string, string> = {
   "FEATURED STORY": "বিশেষ গল্প",
   "Search stories, places...": "গল্প বা জায়গা খুঁজুন...",
   "Search journal stories": "জার্নালের গল্প খুঁজুন",
-  "Clear search": "অনুসন্ধান মুছুন",
   "FRESH FROM THE JOURNAL": "জার্নালের নতুন গল্প",
   "YOUR DISCOVERIES": "আপনার আবিষ্কার",
   "Latest stories": "সাম্প্রতিক গল্প",
@@ -294,6 +290,15 @@ export const messages: Record<string, string> = {
   "Historic places are more than backdrops. They carry memories of the people who built, used and maintained them, and they deserve care from everyone who visits.": "ঐতিহাসিক স্থান শুধু ছবির পটভূমি নয়। এগুলো নির্মাতা, ব্যবহারকারী ও রক্ষণাবেক্ষণকারীদের স্মৃতি বহন করে; তাই প্রত্যেক দর্শনার্থীর কাছ থেকে যত্ন প্রত্যাশা করে।",
   "Look closely at the craftsmanship without touching fragile surfaces. Follow marked visitor routes, respect any restricted spaces and give other visitors room to experience the site.": "ভঙ্গুর পৃষ্ঠ স্পর্শ না করে কাছ থেকে কারুকাজ দেখুন। চিহ্নিত দর্শনার্থী পথ অনুসরণ করুন, নিষিদ্ধ এলাকার প্রতি সম্মান দেখান এবং অন্যদেরও জায়গাটি উপভোগের সুযোগ দিন।",
   "Museum hours, maintenance and public access can change. Confirm current arrangements before travelling and follow the site's photography and preservation rules.": "জাদুঘরের সময়সূচি, রক্ষণাবেক্ষণ ও জনসাধারণের প্রবেশের নিয়ম বদলাতে পারে। ভ্রমণের আগে বর্তমান ব্যবস্থা নিশ্চিত করুন এবং ছবি তোলা ও সংরক্ষণসংক্রান্ত নিয়ম মেনে চলুন।"
+
+  "Toggle menu": "মেনু খুলুন",
+  "Filter by region in": "এই বিভাগের অঞ্চল বাছাই করুন:",
+  "Filter by experience": "অভিজ্ঞতা অনুযায়ী বাছাই করুন",
+  "Sort destinations": "গন্তব্য সাজান",
+  "Explore": "ঘুরে দেখুন",
+  "in": "অবস্থিত",
+  "Division is coming soon": "বিভাগের তথ্য শিগগিরই আসছে",
+  "Clear filters": "ফিল্টার মুছুন"
 };
 
 export function translate(text: string, language: Language): string {
