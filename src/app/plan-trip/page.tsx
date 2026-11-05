@@ -57,7 +57,7 @@ export default function TripPlannerPage() {
   return (
     <main className="trip-planner-page">
       <header className="site-header">
-        <a className="brand" href="/" aria-label="Deshscape home"><span className="brand-mark"><Compass size={22} strokeWidth={1.7} /></span><span className="brand-name">deshscape<span>.</span><small>THE ART OF DISCOVERY</small></span></a>
+        <a className="brand" href="/" aria-label="Deshscape home"><span className="brand-mark"><Compass size={22} strokeWidth={1.7} /></span><span className="brand-name">deshscape<span>.</span><small>{t("THE ART OF DISCOVERY")}</small></span></a>
         <nav className="main-nav"><a className="nav-link" href="/">{t("Discover")}</a><a className="nav-link" href="/#destinations">{t("Destinations")}</a><a className="nav-link" href="/journal">{t("Journal")}</a></nav>
         <div className="header-actions"><a className="plan-link" href="/#destinations">{t("Explore places")} <ArrowUpRight size={15} /></a></div>
       </header>
@@ -81,7 +81,7 @@ export default function TripPlannerPage() {
         <div className="trip-copy-panel"><div><span className="eyebrow"><span /> {t("TAKE YOUR IDEAS WITH YOU")}</span><h3>{t("Keep your shortlist handy.")}</h3><p>{t("Copy your selected preferences and suggestions as a simple planning note.")}</p></div><button className="button button-dark" type="button" onClick={copyPlan}><Copy size={15} /> {copied ? t("Copied to clipboard") : t("Copy my trip ideas")}</button></div>
         <p className="trip-note">{t("These are inspiration suggestions, not a confirmed itinerary or booking. Check local access, weather, transport and opening information before travelling.")}</p>
       </section>
-      <footer className="site-footer"><div className="footer-top"><a className="brand footer-brand" href="/"><span className="brand-mark"><Compass size={22} /></span><span className="brand-name">deshscape<span>.</span><small>THE ART OF DISCOVERY</small></span></a><p>{t("Explore beyond the ordinary.")}<br />{t("Discover Bangladesh, one journey at a time.")}</p><a className="back-top" href="#top">{t("BACK TO TOP")} <ArrowUpRight size={15} /></a></div><div className="footer-bottom"><span>{t("© 2026 DESHSCAPE. MADE FOR THE CURIOUS.")}</span><span>{t("INDEPENDENTLY INSPIRED BY BANGLADESH.")}</span></div></footer>
+      <footer className="site-footer"><div className="footer-top"><a className="brand footer-brand" href="/"><span className="brand-mark"><Compass size={22} /></span><span className="brand-name">deshscape<span>.</span><small>{t("THE ART OF DISCOVERY")}</small></span></a><p>{t("Explore beyond the ordinary.")}<br />{t("Discover Bangladesh, one journey at a time.")}</p><a className="back-top" href="#top">{t("BACK TO TOP")} <ArrowUpRight size={15} /></a></div><div className="footer-bottom"><span>{t("© 2026 DESHSCAPE. MADE FOR THE CURIOUS.")}</span><span>{t("INDEPENDENTLY INSPIRED BY BANGLADESH.")}</span></div></footer>
     </main>
   );
 }
