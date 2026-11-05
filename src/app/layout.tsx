@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "leaflet/dist/leaflet.css";
 import "./globals.css";
+import { LanguageProvider } from "@/components/LanguageProvider";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 const siteDescription =
   "Discover Bangladesh, one journey at a time. Explore destinations, culture, nature and travel stories from across the country.";
@@ -89,13 +91,16 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body>
+        <LanguageProvider>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(siteStructuredData) }}
         />
         {children}
+          <LanguageSwitcher />
+        </LanguageProvider>
       </body>
     </html>
   );
