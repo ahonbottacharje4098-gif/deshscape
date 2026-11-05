@@ -6,7 +6,8 @@ import { useLanguage } from "@/components/LanguageProvider";
 
 type Props = { title: string };
 
-export default function ShareStory({ title }: Props) {\n  const { t } = useLanguage();
+export default function ShareStory({ title }: Props) {
+  const { t } = useLanguage();
   const [copied, setCopied] = useState(false);
 
   async function copyLink() {
