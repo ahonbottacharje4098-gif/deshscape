@@ -41,7 +41,7 @@ export default function TripPlannerPage() {
     `Suggestion set: ${suggestionSet}`,
     "",
     "Suggested destinations:",
-    ...suggestions.map((place, index) => `${index + 1}. ${place.name} — ${place.region}`)
+    ...suggestions.map((place, index) => `${index + 1}. ${t(place.name)} — ${t(place.region)}`)
   ].join("\n");
 
   async function copyPlan() {
@@ -77,7 +77,7 @@ export default function TripPlannerPage() {
           <label><span>{t("HOW MANY IDEAS?")}</span><select value={suggestionSet} onChange={e => setSuggestionSet(e.target.value)}><option>All matches (up to 6)</option><option>A few (3)</option><option>A handful (5)</option></select></label>
         </div>
         <div className="trip-results-heading"><div><span className="eyebrow"><span /> YOUR STARTING POINT</span><h2><Sparkles size={19} /> Places to consider</h2></div><span>{suggestions.length} SUGGESTIONS</span></div>
-        {suggestions.length ? <div className="trip-suggestion-grid">{suggestions.map(place => <a className="trip-suggestion" href={`/destinations/${place.slug}`} key={place.slug}><div className="trip-suggestion-image" style={{backgroundImage:`url(${destinationImageUrl(place.image, 900)})`}} /><div className="trip-suggestion-copy"><span>{t(place.type)} · {t(place.district)}</span><h3>{place.name}</h3><p>{t(place.shortDescription)}</p><b>{t("Explore destination")} <ArrowUpRight size={15} /></b></div></a>)}</div> : <div className="trip-empty"><MapPin size={25} /><h3>{t("No matching places just yet")}</h3><p>{t("Try another division or choose “Any experience” to see more ideas.")}</p></div>}
+        {suggestions.length ? <div className="trip-suggestion-grid">{suggestions.map(place => <a className="trip-suggestion" href={`/destinations/${place.slug}`} key={place.slug}><div className="trip-suggestion-image" style={{backgroundImage:`url(${destinationImageUrl(place.image, 900)})`}} /><div className="trip-suggestion-copy"><span>{t(place.type)} · {t(place.district)}</span><h3>{t(place.name)}</h3><p>{t(place.shortDescription)}</p><b>{t("Explore destination")} <ArrowUpRight size={15} /></b></div></a>)}</div> : <div className="trip-empty"><MapPin size={25} /><h3>{t("No matching places just yet")}</h3><p>{t("Try another division or choose “Any experience” to see more ideas.")}</p></div>}
         <div className="trip-copy-panel"><div><span className="eyebrow"><span /> {t("TAKE YOUR IDEAS WITH YOU")}</span><h3>{t("Keep your shortlist handy.")}</h3><p>{t("Copy your selected preferences and suggestions as a simple planning note.")}</p></div><button className="button button-dark" type="button" onClick={copyPlan}><Copy size={15} /> {copied ? t("Copied to clipboard") : t("Copy my trip ideas")}</button></div>
         <p className="trip-note">{t("These are inspiration suggestions, not a confirmed itinerary or booking. Check local access, weather, transport and opening information before travelling.")}</p>
       </section>
