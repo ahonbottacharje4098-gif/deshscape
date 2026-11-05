@@ -13,7 +13,8 @@ const BangladeshLeafletMap = dynamic(() => import("@/components/BangladeshLeafle
   loading: () => <div className="real-map-loading">Loading the map of Bangladesh…</div>
 });
 
-export default function ExploreMap() {\n  const { t } = useLanguage();
+export default function ExploreMap() {
+  const { t } = useLanguage();
   const mappedPlaces = useMemo(() => allDestinations.filter((place) => place?.coordinates), []);
   const [activeSlug, setActiveSlug] = useState("lalbagh-fort");
   const [mapSearch, setMapSearch] = useState("");
