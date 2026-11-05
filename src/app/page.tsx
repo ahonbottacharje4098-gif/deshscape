@@ -3,14 +3,14 @@
 import { useMemo, useState } from "react";
 import {
   ArrowDown, ArrowRight, ArrowUpRight, Compass, MapPin, Menu, Search,
-  X, Mountain, Waves, Trees, Landmark, Instagram, Facebook, Youtube,
+  X, Mountain, Waves, Trees, Landmark,
   SlidersHorizontal, RotateCcw, ChevronDown
 } from "lucide-react";
 import { allDestinations, destinationRegions, destinationTypes } from "@/data/destinations";
 import ExploreMap from "@/components/ExploreMap";
 import { destinationImageUrl } from "@/lib/destinationImage";
 
-const divisions = ["Dhaka", "Chattogram", "Rajshahi", "Khulna", "Barishal", "Sylhet", "Rangpur", "Mymensingh"] as const;
+const divisions = ["All divisions", "Dhaka", "Chattogram", "Rajshahi", "Khulna", "Barishal", "Sylhet", "Rangpur", "Mymensingh"] as const;
 
 const divisionFor = (place: (typeof allDestinations)[number]) => {
   if (place.region === "Dhaka Division") return "Dhaka";
@@ -33,7 +33,7 @@ const categories = [
 
 export default function Home() {
   const [query, setQuery] = useState("");
-  const [division, setDivision] = useState<(typeof divisions)[number]>("Dhaka");
+  const [division, setDivision] = useState<(typeof divisions)[number]>("All divisions");
   const [region, setRegion] = useState("All regions");
   const [type, setType] = useState("All experiences");
   const [sort, setSort] = useState("featured");
@@ -41,7 +41,7 @@ export default function Home() {
 
   const availableRegions = useMemo(() => {
     const regions = allDestinations
-      .filter((place) => divisionFor(place) === division)
+      .filter((place) => division === "All divisions" || divisionFor(place) === division)
       .map((place) => place.region.trim())
       .filter(Boolean);
     return ["All regions", ...Array.from(new Set(regions)).sort((a, b) => a.localeCompare(b))];
@@ -50,7 +50,7 @@ export default function Home() {
   const filtered = useMemo(() => {
     const normalized = query.trim().toLowerCase();
     const result = allDestinations.filter((place) => {
-      const matchesDivision = divisionFor(place) === division;
+      const matchesDivision = division === "All divisions" || divisionFor(place) === division;
       const matchesQuery = !normalized || [
         place.name, place.region, place.district, place.type, place.tag, place.shortDescription
       ].join(" ").toLowerCase().includes(normalized);
@@ -65,7 +65,7 @@ export default function Home() {
 
   const resetFilters = () => {
     setQuery("");
-    setDivision("Dhaka");
+    setDivision("All divisions");
     setRegion("All regions");
     setType("All experiences");
     setSort("featured");
@@ -79,14 +79,14 @@ export default function Home() {
   };
 
   return (
-    <main>
+    <main id="top">
       <header className="site-header">
-        <a className="brand" href="#" aria-label="Deshscape home">
+        <a className="brand" href="/" aria-label="Deshscape home">
           <span className="brand-mark"><Compass size={22} strokeWidth={1.7} /></span>
           <span className="brand-name">deshscape<span>.</span><small>THE ART OF DISCOVERY</small></span>
         </a>
         <nav className={menuOpen ? "main-nav open" : "main-nav"}>
-          <a className="nav-link active" href="#" onClick={() => setMenuOpen(false)}>Discover</a>
+          <a className="nav-link active" href="#top" onClick={() => setMenuOpen(false)}>Discover</a>
           <a className="nav-link" href="#destinations" onClick={() => setMenuOpen(false)}>Destinations</a>
           <a className="nav-link" href="#map" onClick={() => setMenuOpen(false)}>Explore map</a>
           <a className="nav-link" href="#stories" onClick={() => setMenuOpen(false)}>Stories</a>
@@ -158,7 +158,7 @@ export default function Home() {
               <label className="filter-control sort-control"><span>SORT BY</span><select value={sort} onChange={(event) => setSort(event.target.value)} aria-label="Sort destinations"><option value="featured">Featured</option><option value="az">Name: A–Z</option><option value="za">Name: Z–A</option></select><ChevronDown size={14} /></label>
               <button className="reset-filters" onClick={resetFilters}><RotateCcw size={14} /> Reset filters</button>
             </div>
-            <div className="results-line"><span><SlidersHorizontal size={14} /> Showing <strong>{filtered.length}</strong> destinations in {division} Division</span><span>{query || region !== "All regions" || type !== "All experiences" ? "FILTERS APPLIED" : "CURATED FOR THE CURIOUS"}</span></div>
+            <div className="results-line"><span><SlidersHorizontal size={14} /> Showing <strong>{filtered.length}</strong> destinations across {division === "All divisions" ? "Bangladesh" : `${division} Division`}</span><span>{query || region !== "All regions" || type !== "All experiences" ? "FILTERS APPLIED" : "CURATED FOR THE CURIOUS"}</span></div>
           </div>
 
           <div className="destination-grid">
@@ -194,13 +194,13 @@ export default function Home() {
 
       <section className="stories-section section-wrap" id="stories">
         <div className="section-heading"><div><div className="eyebrow"><span /> FIELD NOTES</div><h2>Stories from<br /><em>the road.</em></h2></div><a className="text-link heading-link" href="/journal">Read our journal <ArrowUpRight size={16} /></a></div>
-        <div className="story-row"><div className="story-number">01</div><div className="story-title"><span>PEOPLE & CULTURE</span><h3>The rhythm of a river town</h3></div><p>Somewhere along the banks, life moves to a different rhythm. Discover the communities shaped by water.</p><a href="/journal" aria-label="Read story"><ArrowUpRight /></a></div>
-        <div className="story-row"><div className="story-number">02</div><div className="story-title"><span>HIDDEN BANGLADESH</span><h3>Beyond the tea gardens</h3></div><p>Follow the winding paths into the green heart of the northeast, where every turn reveals a new view.</p><a href="/journal" aria-label="Read story"><ArrowUpRight /></a></div>
+        <div className="story-row"><div className="story-number">01</div><div className="story-title"><span>PEOPLE & CULTURE</span><h3>The rhythm of a river town</h3></div><p>Somewhere along the banks, life moves to a different rhythm. Discover the communities shaped by water.</p><a href="/journal/river-town-rhythm" aria-label="Read The rhythm of a river town"><ArrowUpRight /></a></div>
+        <div className="story-row"><div className="story-number">02</div><div className="story-title"><span>HIDDEN BANGLADESH</span><h3>Beyond the tea gardens</h3></div><p>Follow the winding paths into the green heart of the northeast, where every turn reveals a new view.</p><a href="/journal/beyond-tea-gardens" aria-label="Read Beyond the tea gardens"><ArrowUpRight /></a></div>
       </section>
 
       <footer className="site-footer">
-        <div className="footer-top"><a className="brand footer-brand" href="#"><span className="brand-mark"><Compass size={22} /></span><span className="brand-name">deshscape<span>.</span><small>THE ART OF DISCOVERY</small></span></a><p>Explore beyond the ordinary.<br />Discover Bangladesh, one journey at a time.</p><a className="back-top" href="#">BACK TO TOP <ArrowUpRight size={15} /></a></div>
-        <div className="footer-bottom"><span>© 2026 DESHSCAPE. MADE FOR THE CURIOUS.</span><a className="footer-contact-link" href="/contact">CONTACT <ArrowUpRight size={14} /></a><div className="social-links"><a href="#" aria-label="Instagram"><Instagram size={17} /></a><a href="#" aria-label="Facebook"><Facebook size={17} /></a><a href="#" aria-label="YouTube"><Youtube size={17} /></a></div><span>INDEPENDENTLY INSPIRED BY BANGLADESH.</span></div>
+        <div className="footer-top"><a className="brand footer-brand" href="/"><span className="brand-mark"><Compass size={22} /></span><span className="brand-name">deshscape<span>.</span><small>THE ART OF DISCOVERY</small></span></a><p>Explore beyond the ordinary.<br />Discover Bangladesh, one journey at a time.</p><a className="back-top" href="#top">BACK TO TOP <ArrowUpRight size={15} /></a></div>
+        <div className="footer-bottom"><span>© 2026 DESHSCAPE. MADE FOR THE CURIOUS.</span><a className="footer-contact-link" href="/contact">CONTACT <ArrowUpRight size={14} /></a><span>INDEPENDENTLY INSPIRED BY BANGLADESH.</span></div>
       </footer>
     </main>
   );
