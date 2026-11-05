@@ -54,7 +54,7 @@ export default function Home() {
     const result = allDestinations.filter((place) => {
       const matchesDivision = division === "All divisions" || divisionFor(place) === division;
       const matchesQuery = !normalized || [
-        place.name, place.region, place.district, place.type, place.tag, place.shortDescription
+        place.name, t(place.name), place.region, t(place.region), place.district, t(place.district), place.type, t(place.type), place.tag, t(place.tag), place.shortDescription, t(place.shortDescription)
       ].join(" ").toLowerCase().includes(normalized);
       const matchesRegion = region === "All regions" || place.region.trim() === region;
       const matchesType = type === "All experiences" || place.type === type;
@@ -63,7 +63,7 @@ export default function Home() {
     if (sort === "az") result.sort((a, b) => a.name.localeCompare(b.name));
     if (sort === "za") result.sort((a, b) => b.name.localeCompare(a.name));
     return result;
-  }, [query, division, region, type, sort]);
+  }, [query, division, region, type, sort, t]);
 
   const resetFilters = () => {
     setQuery("");
@@ -92,11 +92,11 @@ export default function Home() {
           <a className="nav-link" href="#destinations" onClick={() => setMenuOpen(false)}>{t("Destinations")}</a>
           <a className="nav-link" href="#map" onClick={() => setMenuOpen(false)}>{t("Explore map")}</a>
           <a className="nav-link" href="#stories" onClick={() => setMenuOpen(false)}>{t("Stories")}</a>
-          <a className="nav-link mobile-only" href="/plan-trip" onClick={() => setMenuOpen(false)}>Plan a trip</a>
+          <a className="nav-link mobile-only" href="/plan-trip" onClick={() => setMenuOpen(false)}>{t("Plan a trip")}</a>
         </nav>
         <div className="header-actions">
           <a className="plan-link" href="/plan-trip">{t("Plan a trip")} <ArrowUpRight size={15} /></a>
-          <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu" aria-expanded={menuOpen}>
+          <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label={t("Toggle menu")} aria-expanded={menuOpen}>
             {menuOpen ? <X /> : <Menu />}
           </button>
         </div>
@@ -151,34 +151,34 @@ export default function Home() {
             <div className="search-box search-main">
               <Search size={19} />
               <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={t("Search places, districts, experiences...")} aria-label={t("Search destinations")} />
-              {query && <button className="clear-search" onClick={() => setQuery("")} aria-label="Clear search"><X size={16} /></button>}
+              {query && <button className="clear-search" onClick={() => setQuery("")} aria-label={t("Clear search")}><X size={16} /></button>}
               <span>{t("DISCOVER")}</span>
             </div>
             <div className="filter-row">
-              <label className="filter-control"><span>{t("REGION")}</span><select value={region} onChange={(event) => setRegion(event.target.value)} aria-label={`Filter by region in ${division} Division`}>{availableRegions.map((item) => <option key={item} value={item}>{t(item)}</option>)}</select><ChevronDown size={14} /></label>
-              <label className="filter-control"><span>{t("EXPERIENCE")}</span><select value={type} onChange={(event) => setType(event.target.value)} aria-label="Filter by experience">{destinationTypes.map((item) => <option key={item}>{item}</option>)}</select><ChevronDown size={14} /></label>
-              <label className="filter-control sort-control"><span>{t("SORT BY")}</span><select value={sort} onChange={(event) => setSort(event.target.value)} aria-label="Sort destinations"><option value="featured">{t("Featured")}</option><option value="az">{t("Name: A–Z")}</option><option value="za">{t("Name: Z–A")}</option></select><ChevronDown size={14} /></label>
-              <button className="reset-filters" onClick={resetFilters}><RotateCcw size={14} /> Reset filters</button>
+              <label className="filter-control"><span>{t("REGION")}</span><select value={region} onChange={(event) => setRegion(event.target.value)} aria-label={`${t("Filter by region in")} ${t(division)} ${t("Division")}`}>{availableRegions.map((item) => <option key={item} value={item}>{t(item)}</option>)}</select><ChevronDown size={14} /></label>
+              <label className="filter-control"><span>{t("EXPERIENCE")}</span><select value={type} onChange={(event) => setType(event.target.value)} aria-label={t("Filter by experience")}>{destinationTypes.map((item) => <option key={item}>{t(item)}</option>)}</select><ChevronDown size={14} /></label>
+              <label className="filter-control sort-control"><span>{t("SORT BY")}</span><select value={sort} onChange={(event) => setSort(event.target.value)} aria-label={t("Sort destinations")}><option value="featured">{t("Featured")}</option><option value="az">{t("Name: A–Z")}</option><option value="za">{t("Name: Z–A")}</option></select><ChevronDown size={14} /></label>
+              <button className="reset-filters" onClick={resetFilters}><RotateCcw size={14} /> {t("Reset filters")}</button>
             </div>
-            <div className="results-line"><span><SlidersHorizontal size={14} /> Showing <strong>{filtered.length}</strong> destinations across {division === "All divisions" ? "Bangladesh" : `${division} Division`}</span><span>{query || region !== "All regions" || type !== "All experiences" ? "FILTERS APPLIED" : "CURATED FOR THE CURIOUS"}</span></div>
+            <div className="results-line"><span><SlidersHorizontal size={14} /> {t("Showing")} <strong>{filtered.length}</strong> {t("destinations across")} {division === "All divisions" ? t("Bangladesh") : `${t(division)} ${t("Division")}`}</span><span>{query || region !== "All regions" || type !== "All experiences" ? t("FILTERS APPLIED") : t("CURATED FOR THE CURIOUS")}</span></div>
           </div>
 
           <div className="destination-grid">
             {filtered.map((place, index) => (
-              <a className={index === 0 && sort === "featured" ? "destination-card featured" : "destination-card"} href={`/destinations/${place.slug}`} key={place.slug} aria-label={`Explore ${place.name} in ${place.district}`} title={`Explore ${place.name}`}>
+              <a className={index === 0 && sort === "featured" ? "destination-card featured" : "destination-card"} href={`/destinations/${place.slug}`} key={place.slug} aria-label={`${t("Explore")} ${t(place.name)} ${t("in")} ${t(place.district)}`} title={`${t("Explore")} ${t(place.name)}`}>
                 <div className="destination-image" style={{ backgroundImage: `url(${destinationImageUrl(place.image, 1200)})` }} />
                 <div className="destination-overlay" />
                 <span className="destination-tag">{t(place.tag)}</span>
-                <div className="destination-info"><span><MapPin size={13} /> {place.region}</span><h3>{place.name}</h3><div className="card-bottom"><small>{t(place.type)}</small><i><ArrowUpRight size={17} /></i></div></div>
+                <div className="destination-info"><span><MapPin size={13} /> {t(place.region)}</span><h3>{t(place.name)}</h3><div className="card-bottom"><small>{t(place.type)}</small><i><ArrowUpRight size={17} /></i></div></div>
               </a>
             ))}
-            {filtered.length === 0 && <div className="empty-state"><Search size={25} /><h3>{query || region !== "All regions" || type !== "All experiences" ? "No destinations found" : `${division} Division is coming soon`}</h3><p>{query || region !== "All regions" || type !== "All experiences" ? "Try another keyword or reset your filters." : "We are preparing destination guides for this division. Check back soon as the collection grows."}</p>{(query || region !== "All regions" || type !== "All experiences") && <button className="button button-dark" onClick={resetFilters}>Reset filters <ArrowRight size={16} /></button>}</div>}
+            {filtered.length === 0 && <div className="empty-state"><Search size={25} /><h3>{query || region !== "All regions" || type !== "All experiences" ? t("No destinations found") : `${t(division)} ${t("Division is coming soon")}`}</h3><p>{query || region !== "All regions" || type !== "All experiences" ? t("Try another keyword or reset your filters.") : t("We are preparing destination guides for this division. Check back soon as the collection grows.")}</p>{(query || region !== "All regions" || type !== "All experiences") && <button className="button button-dark" onClick={resetFilters}>{t("Reset filters")} <ArrowRight size={16} /></button>}</div>}
           </div>
         </div>
       </section>
 
       <section className="categories-section section-wrap">
-        <div className="eyebrow"><span /> FIND YOUR KIND OF ESCAPE</div>
+        <div className="eyebrow"><span /> {t("FIND YOUR KIND OF ESCAPE")}</div>
         <div className="category-heading"><h2>{t("What moves")} <em>{t("you?")}</em></h2><p>{t("Every journey has a feeling. Find the landscape")}<br />{t("that speaks your language.")}</p></div>
         <div className="category-grid">
           {categories.map(({ label, icon: Icon, count }) => <button type="button" onClick={() => chooseCategory(label)} className="category-item" key={label}><span className="category-icon"><Icon size={23} strokeWidth={1.5} /></span><span className="category-name">{t(label)}</span><span className="category-count">{t(count)}</span><ArrowUpRight className="category-arrow" size={17} /></button>)}
@@ -190,14 +190,14 @@ export default function Home() {
       <section className="planner-section section-wrap" id="planner">
         <div className="planner-card">
           <div className="planner-text"><div className="eyebrow light"><span /> {t("YOUR NEXT CHAPTER")}</div><h2>{t("Good trips don't")}<br />{t("happen by")} <em>{t("accident.")}</em></h2><p>{t("Tell us what you love. We'll help you find where to go next.")}</p><a className="button button-light" href="/plan-trip">{t("Let's plan a trip")} <ArrowRight size={17} /></a></div>
-          <div className="planner-art"><div className="orbit orbit-one" /><div className="orbit orbit-two" /><div className="orbit-center"><Compass size={52} strokeWidth={1} /></div><span className="orbit-label label-one">{t("FIND")}</span><span className="orbit-label label-two">{t("WANDER")}</span><span className="orbit-label label-three">DISCOVER</span></div>
+          <div className="planner-art"><div className="orbit orbit-one" /><div className="orbit orbit-two" /><div className="orbit-center"><Compass size={52} strokeWidth={1} /></div><span className="orbit-label label-one">{t("FIND")}</span><span className="orbit-label label-two">{t("WANDER")}</span><span className="orbit-label label-three">{t("DISCOVER")}</span></div>
         </div>
       </section>
 
       <section className="stories-section section-wrap" id="stories">
         <div className="section-heading"><div><div className="eyebrow"><span /> FIELD NOTES</div><h2>{t("Stories from")}<br /><em>{t("the road.")}</em></h2></div><a className="text-link heading-link" href="/journal">{t("Read our journal")} <ArrowUpRight size={16} /></a></div>
-        <div className="story-row"><div className="story-number">01</div><div className="story-title"><span>{t("PEOPLE & CULTURE")}</span><h3>{t("The rhythm of a river town")}</h3></div><p>{t("Somewhere along the banks, life moves to a different rhythm. Discover the communities shaped by water.")}</p><a href="/journal/river-town-rhythm" aria-label="Read The rhythm of a river town"><ArrowUpRight /></a></div>
-        <div className="story-row"><div className="story-number">02</div><div className="story-title"><span>{t("HIDDEN BANGLADESH")}</span><h3>{t("Beyond the tea gardens")}</h3></div><p>{t("Follow the winding paths into the green heart of the northeast, where every turn reveals a new view.")}</p><a href="/journal/beyond-tea-gardens" aria-label="Read Beyond the tea gardens"><ArrowUpRight /></a></div>
+        <div className="story-row"><div className="story-number">01</div><div className="story-title"><span>{t("PEOPLE & CULTURE")}</span><h3>{t("The rhythm of a river town")}</h3></div><p>{t("Somewhere along the banks, life moves to a different rhythm. Discover the communities shaped by water.")}</p><a href="/journal/river-town-rhythm" aria-label={t("Read The rhythm of a river town")}><ArrowUpRight /></a></div>
+        <div className="story-row"><div className="story-number">02</div><div className="story-title"><span>{t("HIDDEN BANGLADESH")}</span><h3>{t("Beyond the tea gardens")}</h3></div><p>{t("Follow the winding paths into the green heart of the northeast, where every turn reveals a new view.")}</p><a href="/journal/beyond-tea-gardens" aria-label={t("Read Beyond the tea gardens")}><ArrowUpRight /></a></div>
       </section>
 
       <footer className="site-footer">
