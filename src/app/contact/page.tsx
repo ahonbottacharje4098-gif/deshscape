@@ -66,7 +66,7 @@ export default function ContactPage() {
       <header className="contact-header">
         <a className="brand" href="/" aria-label="Deshscape home">
           <span className="brand-mark"><Compass size={22} strokeWidth={1.7} /></span>
-          <span className="brand-name">deshscape<span>.</span><small>THE ART OF DISCOVERY</small></span>
+          <span className="brand-name">deshscape<span>.</span><small>{t("THE ART OF DISCOVERY")}</small></span>
         </a>
         <a className="contact-home-link" href="/"><ArrowLeft size={15} /> {t("BACK TO DISCOVER")}</a>
       </header>
