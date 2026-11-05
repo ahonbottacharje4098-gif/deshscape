@@ -2,11 +2,13 @@
 
 import { useEffect, useState } from "react";
 import { Expand, X, Image as ImageIcon, ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
+import { useLanguage } from "@/components/LanguageProvider";
 
 type GalleryPhoto = { url: string; sourceUrl?: string };
 type Props = { image: string; title: string };
 
 export default function DestinationGallery({ image, title }: Props) {
+  const { t } = useLanguage();
   const [photos, setPhotos] = useState<GalleryPhoto[]>([{ url: image }]);
   const [activeIndex, setActiveIndex] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
@@ -66,10 +68,10 @@ export default function DestinationGallery({ image, title }: Props) {
       <section className="destination-gallery section-wrap">
         <div className="destination-gallery-heading">
           <div>
-            <div className="eyebrow"><span /> MOMENTS &amp; MEMORIES</div>
-            <h2>A visual journey<br /><em>through {title}.</em></h2>
+            <div className="eyebrow"><span /> {t("MOMENTS & MEMORIES")}</div>
+            <h2>{t("A visual journey")}<br /><em>{t("through")} {t(title)}.</em></h2>
           </div>
-          <span className="gallery-count">{String(photos.length).padStart(2, "0")} PHOTOS <ImageIcon size={15} /></span>
+          <span className="gallery-count">{String(photos.length).padStart(2, "0")} {t("PHOTOS")} <ImageIcon size={15} /></span>
         </div>
         <div className="gallery-photo-grid">
           {photos.map((photo, index) => (
@@ -78,25 +80,25 @@ export default function DestinationGallery({ image, title }: Props) {
               className={`gallery-photo ${index === 0 ? "gallery-photo-featured" : ""}`}
               key={photo.url}
               onClick={() => openPhoto(index)}
-              aria-label={`View photo ${index + 1} of ${title}`}
+              aria-label={`${t("View photo")} ${index + 1} ${t("of")} ${t(title)}`}
             >
               <span className="gallery-photo-image" style={{ backgroundImage: `url("${photo.url}")` }} />
-              <span className="gallery-photo-action"><Expand size={14} /> VIEW PHOTO</span>
-              {photo.sourceUrl && <a className="gallery-photo-source" href={photo.sourceUrl} target="_blank" rel="noopener noreferrer" onClick={(event) => event.stopPropagation()} aria-label="View photo source"><ExternalLink size={13} /></a>}
+              <span className="gallery-photo-action"><Expand size={14} /> {t("VIEW PHOTO")}</span>
+              {photo.sourceUrl && <a className="gallery-photo-source" href={photo.sourceUrl} target="_blank" rel="noopener noreferrer" onClick={(event) => event.stopPropagation()} aria-label={t("View photo source")}><ExternalLink size={13} /></a>}
             </button>
           ))}
         </div>
-        <p className="gallery-caption">{isLoading ? "Discovering more photographs…" : `A glimpse of ${title}, Bangladesh. Photos from Wikimedia Commons where available.`}</p>
+        <p className="gallery-caption">{isLoading ? t("Discovering more photographs…") : t("A glimpse of") + " " + t(title) + ", " + t("Bangladesh") + ". " + t("Photos from Wikimedia Commons where available.")}</p>
       </section>
 
       {isOpen && (
-        <div className="gallery-lightbox" role="dialog" aria-modal="true" aria-label={`${title} photo viewer`} onClick={() => setIsOpen(false)}>
-          <button type="button" className="gallery-close" onClick={() => setIsOpen(false)} aria-label="Close photo viewer"><X size={24} /></button>
-          {photos.length > 1 && <button type="button" className="gallery-nav gallery-nav-prev" onClick={(event) => { event.stopPropagation(); showPrevious(); }} aria-label="Previous photo"><ChevronLeft size={28} /></button>}
-          <img src={photos[activeIndex].url} alt={`${title} — photo ${activeIndex + 1}`} onClick={(event) => event.stopPropagation()} />
-          {photos.length > 1 && <button type="button" className="gallery-nav gallery-nav-next" onClick={(event) => { event.stopPropagation(); showNext(); }} aria-label="Next photo"><ChevronRight size={28} /></button>}
+        <div className="gallery-lightbox" role="dialog" aria-modal="true" aria-label={`${t(title)} ${t("photo viewer")}`} onClick={() => setIsOpen(false)}>
+          <button type="button" className="gallery-close" onClick={() => setIsOpen(false)} aria-label={t("Close photo viewer")}><X size={24} /></button>
+          {photos.length > 1 && <button type="button" className="gallery-nav gallery-nav-prev" onClick={(event) => { event.stopPropagation(); showPrevious(); }} aria-label={t("Previous photo")}><ChevronLeft size={28} /></button>}
+          <img src={photos[activeIndex].url} alt={`${t(title)} — ${t("photo")} ${activeIndex + 1}`} onClick={(event) => event.stopPropagation()} />
+          {photos.length > 1 && <button type="button" className="gallery-nav gallery-nav-next" onClick={(event) => { event.stopPropagation(); showNext(); }} aria-label={t("Next photo")}><ChevronRight size={28} /></button>}
           <span className="gallery-lightbox-caption">{title} · {String(activeIndex + 1).padStart(2, "0")} / {String(photos.length).padStart(2, "0")}</span>
-          {photos[activeIndex].sourceUrl && <a className="gallery-lightbox-source" href={photos[activeIndex].sourceUrl} target="_blank" rel="noopener noreferrer" onClick={(event) => event.stopPropagation()}>PHOTO SOURCE <ExternalLink size={12} /></a>}
+          {photos[activeIndex].sourceUrl && <a className="gallery-lightbox-source" href={photos[activeIndex].sourceUrl} target="_blank" rel="noopener noreferrer" onClick={(event) => event.stopPropagation()}>{t("PHOTO SOURCE")} <ExternalLink size={12} /></a>}
         </div>
       )}
     </>
