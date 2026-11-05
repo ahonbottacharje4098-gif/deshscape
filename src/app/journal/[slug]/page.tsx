@@ -171,6 +171,7 @@ export default async function JournalStoryPage({ params }: Props) {
   };
 
   return (
+    <AutoTranslate>
     <main className="journal-article-page">
       <script
         type="application/ld+json"
@@ -249,5 +250,6 @@ export default async function JournalStoryPage({ params }: Props) {
         <div className="footer-bottom"><span>© 2026 DESHSCAPE. MADE FOR THE CURIOUS.</span><span>INDEPENDENTLY INSPIRED BY BANGLADESH.</span></div>
       </footer>
     </main>
+    </AutoTranslate>
   );
 }
