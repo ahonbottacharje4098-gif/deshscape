@@ -17,7 +17,7 @@ function belongsToDivision(region: string, division: string) {
 export default function TripPlannerPage() {
   const [division, setDivision] = useState("Any division");
   const [experience, setExperience] = useState("Any experience");
-  const [duration, setDuration] = useState("Any duration");
+  const [suggestionSet, setSuggestionSet] = useState("All matches (up to 6)");
   const [copied, setCopied] = useState(false);
 
   const suggestions = useMemo(() => {
@@ -26,17 +26,17 @@ export default function TripPlannerPage() {
       (experience === "Any experience" || place.type === experience)
     );
     const suggestionLimit =
-      duration === "1–2 days" ? 3 :
-      duration === "3–4 days" ? 5 : 6;
+      suggestionSet === "A few (3)" ? 3 :
+      suggestionSet === "A handful (5)" ? 5 : 6;
 
     return matches.slice(0, suggestionLimit);
-  }, [division, experience, duration]);
+  }, [division, experience, suggestionSet]);
 
   const tripSummary = [
     "My Deshscape trip ideas",
     `Division: ${division}`,
     `Experience: ${experience}`,
-    `Duration: ${duration}`,
+    `Suggestion set: ${suggestionSet}`,
     "",
     "Suggested destinations:",
     ...suggestions.map((place, index) => `${index + 1}. ${place.name} — ${place.region}`)
@@ -72,7 +72,7 @@ export default function TripPlannerPage() {
         <div className="trip-controls">
           <label><span>WHERE IN BANGLADESH?</span><select value={division} onChange={e => setDivision(e.target.value)}>{divisions.map(item => <option key={item}>{item}</option>)}</select></label>
           <label><span>WHAT FEELS RIGHT?</span><select value={experience} onChange={e => setExperience(e.target.value)}>{experiences.map(item => <option key={item}>{item}</option>)}</select></label>
-          <label><span>HOW MUCH TIME?</span><select value={duration} onChange={e => setDuration(e.target.value)}><option>Any duration</option><option>1–2 days</option><option>3–4 days</option><option>5+ days</option></select></label>
+          <label><span>HOW MANY IDEAS?</span><select value={suggestionSet} onChange={e => setSuggestionSet(e.target.value)}><option>All matches (up to 6)</option><option>A few (3)</option><option>A handful (5)</option></select></label>
         </div>
         <div className="trip-results-heading"><div><span className="eyebrow"><span /> YOUR STARTING POINT</span><h2><Sparkles size={19} /> Places to consider</h2></div><span>{suggestions.length} SUGGESTIONS</span></div>
         {suggestions.length ? <div className="trip-suggestion-grid">{suggestions.map(place => <a className="trip-suggestion" href={`/destinations/${place.slug}`} key={place.slug}><div className="trip-suggestion-image" style={{backgroundImage:`url(${destinationImageUrl(place.image, 900)})`}} /><div className="trip-suggestion-copy"><span>{place.type} · {place.district}</span><h3>{place.name}</h3><p>{place.shortDescription}</p><b>Explore destination <ArrowUpRight size={15} /></b></div></a>)}</div> : <div className="trip-empty"><MapPin size={25} /><h3>No matching places just yet</h3><p>Try another division or choose “Any experience” to see more ideas.</p></div>}
@@ -83,3 +83,4 @@ export default function TripPlannerPage() {
     </main>
   );
 }
+
