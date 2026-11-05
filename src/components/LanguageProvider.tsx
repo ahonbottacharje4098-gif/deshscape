@@ -17,8 +17,12 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const [languageReady, setLanguageReady] = useState(false);
 
   useEffect(() => {
-    const saved = window.localStorage.getItem("deshscape-language");
-    if (saved === "bn" || saved === "en") setLanguageState(saved);
+    try {
+      const saved = window.localStorage.getItem("deshscape-language");
+      if (saved === "bn" || saved === "en") setLanguageState(saved);
+    } catch {
+      // Keep English as the default when browser storage is unavailable.
+    }
     setLanguageReady(true);
   }, []);
 
@@ -26,7 +30,11 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     if (!languageReady) return;
     document.documentElement.lang = language;
     document.documentElement.dataset.language = language;
-    window.localStorage.setItem("deshscape-language", language);
+    try {
+      window.localStorage.setItem("deshscape-language", language);
+    } catch {
+      // The selected language still applies for the current session.
+    }
   }, [language, languageReady]);
 
   const value = useMemo<LanguageContextValue>(() => ({
