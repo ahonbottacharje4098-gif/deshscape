@@ -726,12 +726,12 @@ button,input{font:inherit}
 
 /* Bengali typography: use Anek Bangla for expressive headings and Hind Siliguri for readable body copy. */
 html[lang="bn"] body{font-family:"Hind Siliguri","DM Sans",sans-serif}
-html[lang="bn"] h1,html[lang="bn"] h2,html[lang="bn"] h3,html[lang="bn"] h4{font-family:"Anek Bangla","Playfair Display",serif}
+html[lang="bn"] h1,html[lang="bn"] h2,html[lang="bn"] h3,html[lang="bn"] h4{font-family:"Anek Bangla","Hind Siliguri",sans-serif}
 
 
 /* Deshscape bilingual typography and language control */
 html[lang="bn"] body{font-family:"Hind Siliguri","DM Sans",sans-serif;letter-spacing:0}
-html[lang="bn"] h1,html[lang="bn"] h2,html[lang="bn"] h3,html[lang="bn"] h4,html[lang="bn"] .brand-name,html[lang="bn"] .category-name{font-family:"Anek Bangla","Playfair Display",serif;letter-spacing:0}
+html[lang="bn"] h1,html[lang="bn"] h2,html[lang="bn"] h3,html[lang="bn"] h4,html[lang="bn"] .brand-name,html[lang="bn"] .category-name{font-family:"Anek Bangla","Hind Siliguri",sans-serif;letter-spacing:0}
 html[lang="bn"] .hero h1,html[lang="bn"] .intro h2,html[lang="bn"] .section-heading h2,html[lang="bn"] .category-heading h2,html[lang="bn"] .map-copy h2,html[lang="bn"] .planner-text h2{line-height:1.35;letter-spacing:0}
 html[lang="bn"] .eyebrow,html[lang="bn"] .hero-bottom,html[lang="bn"] .stats-note,html[lang="bn"] .destination-tag,html[lang="bn"] .footer-bottom{letter-spacing:.15px}
 .language-switcher{position:fixed;top:96px;right:24px;z-index:1300;display:flex;align-items:center;gap:8px;padding:9px 12px;border:1px solid #d9dfd5;background:rgba(250,249,245,.94);color:#183d32;box-shadow:0 5px 18px rgba(16,44,37,.12);backdrop-filter:blur(12px);font:600 11px "DM Sans",sans-serif}
