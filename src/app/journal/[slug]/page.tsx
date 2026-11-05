@@ -202,9 +202,9 @@ export default async function JournalStoryPage({ params }: Props) {
         <div className="journal-article-hero-copy">
           <Link className="journal-back-link" href="/journal"><ArrowLeft size={14} /> BACK TO JOURNAL</Link>
           <div className="eyebrow light"><span /> {story.category}</div>
-          <span className="journal-article-number">{t("FIELD NOTE")} {story.number}</span>
+          <span className="journal-article-number">{"FIELD NOTE"} {story.number}</span>
           <h1>{story.title}<span>.</span></h1>
-          <p><MapPin size={15} /> {story.location}, Bangladesh <span className="journal-reading-time">· {readingMinutes} {t("MIN READ")}</span></p>
+          <p><MapPin size={15} /> {story.location}, Bangladesh <span className="journal-reading-time">· {readingMinutes} {"MIN READ"}</span></p>
         </div>
       </section>
 
