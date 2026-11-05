@@ -1097,6 +1097,8 @@ export const messages: Record<string, string> = {
   "Shariatpur": "শরীয়তপুর",
 
   "Follow photography and site rules.": "ছবি তোলা ও স্থানটির নিয়মকানুন মেনে চলুন।",
+  "Article reading progress": "নিবন্ধ পড়ার অগ্রগতি",
+  "Security verification": "নিরাপত্তা যাচাই",
 };
 
 export function translate(text: string, language: Language): string {
