@@ -149,7 +149,7 @@ export default async function JournalStoryPage({ params }: Props) {
   const relatedPlaces = relatedSlugs
     .map((relatedSlug) => destinations.find((place) => place.slug === relatedSlug))
     .filter((place) => place !== undefined);
-  const articleWordCount = [story.intro, ...story.paragraphs].join(" ").trim().split(/\\s+/).length;
+  const articleWordCount = [story.intro, ...story.paragraphs].join(" ").trim().split(/\s+/).length;
   const readingMinutes = Math.max(1, Math.ceil(articleWordCount / 200));
   const structuredData = {
     "@context": "https://schema.org",
