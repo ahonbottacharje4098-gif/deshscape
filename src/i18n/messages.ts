@@ -161,8 +161,6 @@ export const messages: Record<string, string> = {
   "and discover.": "আর আবিষ্কার করুন।",
   "EDITOR'S PICK": "সম্পাদকের পছন্দ",
   "FEATURED STORY": "বিশেষ গল্প",
-  "Search stories, places...": "গল্প বা জায়গা খুঁজুন...",
-  "Search journal stories": "জার্নালের গল্প খুঁজুন",
   "FRESH FROM THE JOURNAL": "জার্নালের নতুন গল্প",
   "YOUR DISCOVERIES": "আপনার আবিষ্কার",
   "Latest stories": "সাম্প্রতিক গল্প",
@@ -239,7 +237,6 @@ export const messages: Record<string, string> = {
   "Plan a route from your starting point and review the available roads and travel options before setting out.": "আপনার যাত্রার স্থান থেকে পথ পরিকল্পনা করুন এবং রওনা হওয়ার আগে রাস্তা ও যাতায়াতের বিকল্পগুলো দেখে নিন।",
   "Routes and travel times are provided by Google Maps and may change. Confirm local transport and access conditions before travelling.": "পথ ও যাত্রার সময় Google Maps থেকে দেওয়া হয় এবং পরিবর্তিত হতে পারে। ভ্রমণের আগে স্থানীয় পরিবহন ও প্রবেশের অবস্থা নিশ্চিত করুন।",
   "THE JOURNEY IS PART OF THE DISCOVERY": "যাত্রাটিও আবিষ্কারের অংশ",
-  "KEEP EXPLORING": "ঘুরে দেখা চালিয়ে যান",
   "More places to": "আরও কিছু জায়গা",
   "fall for.": "ভালো লাগবে।",
   "DISCOVER DESTINATIONS": "গন্তব্য আবিষ্কার করুন",
@@ -317,7 +314,17 @@ export const messages: Record<string, string> = {
   "Next photo": "পরের ছবি",
   "photo": "ছবি",
   "PHOTO SOURCE": "ছবির উৎস",
-  "Loading the map of Bangladesh…": "বাংলাদেশের মানচিত্র লোড হচ্ছে…"
+  "Loading the map of Bangladesh…": "বাংলাদেশের মানচিত্র লোড হচ্ছে…",
+
+  "No stories found": "কোনো গল্প পাওয়া যায়নি",
+  "Try another keyword or choose a different category.": "অন্য শব্দ দিয়ে খুঁজুন অথবা অন্য বিভাগ বেছে নিন।",
+  "Show all stories": "সব গল্প দেখুন",
+  "These are introductory editorial stories. Destination-specific travel details should always be checked locally before a visit.": "এগুলো প্রাথমিক সম্পাদকীয় গল্প। কোনো গন্তব্যে যাওয়ার আগে সেখানকার ভ্রমণসংক্রান্ত তথ্য স্থানীয়ভাবে যাচাই করে নিন।",
+  "Every place has": "প্রতিটি জায়গারই আছে",
+  "story.": "একটি গল্প।",
+  "Find a destination and start planning your next discovery.": "একটি গন্তব্য বেছে নিন এবং পরবর্তী আবিষ্কারের পরিকল্পনা শুরু করুন।",
+  "Explore Bangladesh": "বাংলাদেশ ঘুরে দেখুন",
+  "Filter stories by category": "বিভাগ অনুযায়ী গল্প বাছাই করুন",
 };
 
 export function translate(text: string, language: Language): string {
