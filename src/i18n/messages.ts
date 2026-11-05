@@ -548,6 +548,35 @@ export const messages: Record<string, string> = {
   "Mughal river defence": "মুঘল আমলের নদী প্রতিরক্ষা",
   "Gateway by the river": "নদীর পাশের প্রবেশদ্বার",
   "Sultanate-era architecture": "সুলতানি আমলের স্থাপত্য"
+
+  // Bengali translations added after the interface coverage audit.
+  "Search destinations": "গন্তব্য খুঁজুন",
+  "Clear search": "অনুসন্ধান মুছুন",
+  "No destinations found": "কোনো গন্তব্য পাওয়া যায়নি",
+  "Try another keyword or reset your filters.": "অন্য কোনো শব্দ দিয়ে খুঁজুন অথবা ফিল্টার মুছে ফেলুন।",
+  "We are preparing destination guides for this division. Check back soon as the collection grows.": "এই বিভাগের ভ্রমণ নির্দেশিকা তৈরি করা হচ্ছে। নতুন গন্তব্য যোগ হলে আবার দেখে নিন।",
+  "FIELD NOTES": "ভ্রমণ নোট",
+  "PEOPLE & CULTURE": "মানুষ ও সংস্কৃতি",
+  "The rhythm of a river town": "নদীবন্দর শহরের জীবনের ছন্দ",
+  "Read The rhythm of a river town": "নদীবন্দর শহরের জীবনের ছন্দ পড়ুন",
+  "HIDDEN BANGLADESH": "অচেনা বাংলাদেশ",
+  "Beyond the tea gardens": "চা-বাগানের বাইরের গল্প",
+  "Read Beyond the tea gardens": "চা-বাগানের বাইরের গল্প পড়ুন",
+  "BACK TO TOP": "উপরে ফিরে যান",
+  "Journal": "জার্নাল",
+  "Search stories, places...": "গল্প বা জায়গা খুঁজুন...",
+  "Search journal stories": "জার্নালের গল্প খুঁজুন",
+  "KEEP EXPLORING": "ঘুরে দেখা চালিয়ে যান",
+  "All matches (up to 6)": "সব মিল পাওয়া জায়গা (সর্বোচ্চ ৬টি)",
+  "A few (3)": "কয়েকটি (৩টি)",
+  "A handful (5)": "কিছু জায়গা (৫টি)",
+  "YOUR STARTING POINT": "আপনার যাত্রার শুরু",
+  "Places to consider": "ঘুরে দেখার মতো জায়গা",
+  "SUGGESTIONS": "পরামর্শ",
+  "BACK TO DISCOVER": "আবিষ্কারে ফিরুন",
+  "Security verification is not configured yet. Please try again later.": "নিরাপত্তা যাচাই এখনো চালু করা হয়নি। অনুগ্রহ করে পরে আবার চেষ্টা করুন।",
+  "from My Places": "আমার পছন্দের জায়গা থেকে",
+  "View photo source": "ছবির মূল উৎস দেখুন",
 };
 
 export function translate(text: string, language: Language): string {
