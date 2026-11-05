@@ -156,7 +156,7 @@ export default function Home() {
             </div>
             <div className="filter-row">
               <label className="filter-control"><span>{t("REGION")}</span><select value={region} onChange={(event) => setRegion(event.target.value)} aria-label={`${t("Filter by region in")} ${t(division)} ${t("Division")}`}>{availableRegions.map((item) => <option key={item} value={item}>{t(item)}</option>)}</select><ChevronDown size={14} /></label>
-              <label className="filter-control"><span>{t("EXPERIENCE")}</span><select value={type} onChange={(event) => setType(event.target.value)} aria-label={t("Filter by experience")}>{destinationTypes.map((item) => <option key={item}>{t(item)}</option>)}</select><ChevronDown size={14} /></label>
+              <label className="filter-control"><span>{t("EXPERIENCE")}</span><select value={type} onChange={(event) => setType(event.target.value)} aria-label={t("Filter by experience")}>{destinationTypes.map((item) => <option key={item} value={item}>{t(item)}</option>)}</select><ChevronDown size={14} /></label>
               <label className="filter-control sort-control"><span>{t("SORT BY")}</span><select value={sort} onChange={(event) => setSort(event.target.value)} aria-label={t("Sort destinations")}><option value="featured">{t("Featured")}</option><option value="az">{t("Name: A–Z")}</option><option value="za">{t("Name: Z–A")}</option></select><ChevronDown size={14} /></label>
               <button className="reset-filters" onClick={resetFilters}><RotateCcw size={14} /> {t("Reset filters")}</button>
             </div>
