@@ -73,7 +73,7 @@ export default function TripPlannerPage() {
         <div className="trip-builder-heading"><div className="eyebrow"><span /> {t("THE TRIP BUILDER")}</div><h2>{t("A few choices.")}<br /><em>{t("A world to explore.")}</em></h2><p>{t("Start broad or narrow it down. You can change your choices any time.")}</p></div>
         <div className="trip-controls">
           <label><span>{t("WHERE IN BANGLADESH?")}</span><select value={division} onChange={e => setDivision(e.target.value)}>{divisions.map(item => <option key={item} value={item}>{t(item)}</option>)}</select></label>
-          <label><span>{t("WHAT FEELS RIGHT?")}</span><select value={experience} onChange={e => setExperience(e.target.value)}>{experiences.map(item => <option key={item}>{item}</option>)}</select></label>
+          <label><span>{t("WHAT FEELS RIGHT?")}</span><select value={experience} onChange={e => setExperience(e.target.value)}>{experiences.map(item => <option key={item} value={item}>{t(item)}</option>)}</select></label>
           <label><span>{t("HOW MANY IDEAS?")}</span><select value={suggestionSet} onChange={e => setSuggestionSet(e.target.value)}><option value="All matches (up to 6)">{t("All matches (up to 6)")}</option><option value="A few (3)">{t("A few (3)")}</option><option value="A handful (5)">{t("A handful (5)")}</option></select></label>
         </div>
         <div className="trip-results-heading"><div><span className="eyebrow"><span /> {t("YOUR STARTING POINT")}</span><h2><Sparkles size={19} /> {t("Places to consider")}</h2></div><span>{suggestions.length} {t("SUGGESTIONS")}</span></div>
