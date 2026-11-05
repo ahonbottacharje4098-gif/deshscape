@@ -387,6 +387,8 @@ export const messages: Record<string, string> = {
   "Suggested destinations:": "প্রস্তাবিত গন্তব্য:",
   "Experience": "অভিজ্ঞতা",
   "Leave this field empty": "এই ঘরটি খালি রাখুন",
+  "FIELD NOTE": "ভ্রমণ নোট",
+  "MIN READ": "মিনিটের পাঠ"
 };
 
 export function translate(text: string, language: Language): string {
