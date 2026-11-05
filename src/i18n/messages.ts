@@ -547,7 +547,7 @@ export const messages: Record<string, string> = {
   "A zamindar-era landmark": "জমিদারি আমলের নিদর্শন",
   "Mughal river defence": "মুঘল আমলের নদী প্রতিরক্ষা",
   "Gateway by the river": "নদীর পাশের প্রবেশদ্বার",
-  "Sultanate-era architecture": "সুলতানি আমলের স্থাপত্য"
+  "Sultanate-era architecture": "সুলতানি আমলের স্থাপত্য",
 
   // Bengali translations added after the interface coverage audit.
   "Search destinations": "গন্তব্য খুঁজুন",
