@@ -7,6 +7,7 @@ import { destinationImageUrl } from "@/lib/destinationImage";
 import ShareStory from "@/components/ShareStory";
 import ReadingProgress from "@/components/ReadingProgress";
 import BackToTop from "@/components/BackToTop";
+import AutoTranslate from "@/components/AutoTranslate";
 
 type Story = {
   slug: string;
