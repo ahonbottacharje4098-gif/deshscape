@@ -56,16 +56,16 @@ export default function MyPlacesPage() {
           <div className="my-places-grid">
             {savedPlaces.map((place) => (
               <article className="my-place-card" key={place.slug}>
-                <Link className="my-place-image" href={`/destinations/${place.slug}`} style={{ backgroundImage: `url(${destinationImageUrl(place.image, 1000)})` }} aria-label={`View ${place.name}`}>
+                <Link className="my-place-image" href={`/destinations/${place.slug}`} style={{ backgroundImage: `url(${destinationImageUrl(place.image, 1000)})` }} aria-label={`${t("View")} ${t(place.name)}`}>
                   <span>{t(place.tag)}</span>
                 </Link>
                 <div className="my-place-copy">
-                  <span className="my-place-location"><MapPin size={13} /> {place.region}</span>
-                  <h2>{place.name}</h2>
+                  <span className="my-place-location"><MapPin size={13} /> {t(place.region)}</span>
+                  <h2>{t(place.name)}</h2>
                   <p>{t(place.shortDescription)}</p>
                   <div className="my-place-actions">
                     <Link href={`/destinations/${place.slug}`}>{t("EXPLORE PLACE")} <ArrowUpRight size={15} /></Link>
-                    <button type="button" onClick={() => removePlace(place.slug)} aria-label={`Remove ${place.name} from My Places`}><Trash2 size={15} /> {t("REMOVE")}</button>
+                    <button type="button" onClick={() => removePlace(place.slug)} aria-label={`${t("Remove")} ${t(place.name)} ${t("from My Places")}`}><Trash2 size={15} /> {t("REMOVE")}</button>
                   </div>
                 </div>
               </article>
