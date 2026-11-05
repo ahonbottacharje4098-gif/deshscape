@@ -1096,6 +1096,7 @@ export const messages: Record<string, string> = {
   "Padma Bridge Jajira Viewpoint": "পদ্মা সেতুর জাজিরা প্রান্তের দর্শনীয় স্থান",
   "Shariatpur": "শরীয়তপুর",
 
+  "Follow photography and site rules.": "ছবি তোলা ও স্থানটির নিয়মকানুন মেনে চলুন।",
 };
 
 export function translate(text: string, language: Language): string {
