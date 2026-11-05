@@ -271,6 +271,20 @@ export const messages: Record<string, string> = {
   "A thoughtful visit is about more than taking photographs. Notice the changing shapes of the land, the quiet roads between settlements and the everyday life that continues around these working landscapes.": "সচেতন ভ্রমণ শুধু ছবি তোলার মধ্যে সীমাবদ্ধ নয়। ভূমির বদলে যাওয়া রেখা, জনপদের মাঝের নিরিবিলি পথ এবং এই কর্মমুখর ভূদৃশ্য ঘিরে চলতে থাকা দৈনন্দিন জীবন লক্ষ করুন।",
   "Give yourself time to pause, learn about the place and appreciate it without disturbing the people who live and work there. Choose public viewpoints and respect signs, private property and local instructions.": "একটু থামুন, জায়গাটি সম্পর্কে জানুন এবং সেখানে বসবাস ও কাজ করা মানুষদের বিরক্ত না করে সৌন্দর্য উপভোগ করুন। উন্মুক্ত দর্শনীয় স্থান বেছে নিন এবং সাইনবোর্ড, ব্যক্তিগত সম্পত্তি ও স্থানীয় নির্দেশনা মেনে চলুন।",
   "Weather and access can vary by season and location. Check local conditions before travelling, and leave the landscape as you found it.": "ঋতু ও অবস্থানভেদে আবহাওয়া এবং যাতায়াতের সুযোগ বদলাতে পারে। ভ্রমণের আগে স্থানীয় পরিস্থিতি যাচাই করুন এবং প্রকৃতিকে যেমন পেয়েছেন, তেমনই রেখে আসুন।"
+
+  "SAVE THIS PLACE": "এই জায়গাটি সংরক্ষণ করুন",
+  "SAVED TO MY PLACES": "আমার পছন্দের তালিকায় সংরক্ষিত",
+  "Remove this destination from saved places": "সংরক্ষিত জায়গা থেকে সরান",
+  "Save this destination": "এই গন্তব্যটি সংরক্ষণ করুন",
+  "WANT TO EXPLORE THIS PLACE?": "এই জায়গাটি ঘুরে দেখতে চান?",
+  "LINK COPIED": "লিংক কপি হয়েছে",
+  "COPY LINK": "লিংক কপি করুন",
+  "SHARE DESTINATION": "গন্তব্য শেয়ার করুন",
+  "ENJOYED THIS STORY?": "গল্পটি ভালো লেগেছে?",
+  "SHARE STORY": "গল্প শেয়ার করুন",
+  "Back to top": "উপরে ফিরে যান",
+  "BACK TO TOP": "উপরে ফিরে যান",
+  "Journal": "জার্নাল"
 };
 
 export function translate(text: string, language: Language): string {
