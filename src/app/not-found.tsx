@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowLeft, Compass } from "lucide-react";
+import AutoTranslate from "@/components/AutoTranslate";
 
 export default function NotFound() {
   return (
