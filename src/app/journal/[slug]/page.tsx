@@ -115,15 +115,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!story) return { title: "Story not found | Deshscape" };
   const canonicalUrl = `https://deshscape.vercel.app/journal/${story.slug}`;
   return {
-    title: `${story.title} | Deshscape Journal`,
+    title: `${story.title} — Deshscape Journal`,
     description: story.intro,
+    keywords: ["Bangladesh travel", "Deshscape Journal", story.category.toLowerCase(), story.location, story.title],
     alternates: { canonical: canonicalUrl },
     openGraph: {
       type: "article",
       url: canonicalUrl,
       title: `${story.title} | Deshscape Journal`,
       description: story.intro,
-      images: [{ url: story.image, alt: story.title }],
+      images: [{ url: story.image, alt: `${story.title} — ${story.location}, Bangladesh` }],
     },
     twitter: {
       card: "summary_large_image",
@@ -148,6 +149,8 @@ export default async function JournalStoryPage({ params }: Props) {
   const relatedPlaces = relatedSlugs
     .map((relatedSlug) => destinations.find((place) => place.slug === relatedSlug))
     .filter((place) => place !== undefined);
+  const articleWordCount = [story.intro, ...story.paragraphs].join(" ").trim().split(/\s+/).length;
+  const readingMinutes = Math.max(1, Math.ceil(articleWordCount / 200));
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -155,6 +158,8 @@ export default async function JournalStoryPage({ params }: Props) {
     description: story.intro,
     image: story.image,
     articleSection: story.category,
+    wordCount: articleWordCount,
+    inLanguage: "en",
     mainEntityOfPage: `https://deshscape.vercel.app/journal/${story.slug}`,
     author: { "@type": "Organization", name: "Deshscape" },
     publisher: { "@type": "Organization", name: "Deshscape" },
@@ -197,7 +202,7 @@ export default async function JournalStoryPage({ params }: Props) {
           <div className="eyebrow light"><span /> {story.category}</div>
           <span className="journal-article-number">FIELD NOTE {story.number}</span>
           <h1>{story.title}<span>.</span></h1>
-          <p><MapPin size={15} /> {story.location}, Bangladesh</p>
+          <p><MapPin size={15} /> {story.location}, Bangladesh <span className="journal-reading-time">· {readingMinutes} MIN READ</span></p>
         </div>
       </section>
 

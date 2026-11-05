@@ -719,3 +719,7 @@ button,input{font:inherit}
   border-radius:4px;
   box-shadow:0 3px 12px rgba(25,55,40,.12);
 }
+
+
+/* Journal article reading-time metadata */
+.journal-reading-time{color:#d2d9ce;font-size:9px;letter-spacing:1.2px;white-space:nowrap}
