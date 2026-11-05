@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Script from "next/script";
+import { useLanguage } from "@/components/LanguageProvider";
 
 declare global {
   interface Window {
@@ -25,6 +26,7 @@ type TurnstileWidgetProps = {
 };
 
 export default function TurnstileWidget({ siteKey, onVerify, onExpire }: TurnstileWidgetProps) {
+  const { t } = useLanguage();
   const containerRef = useRef<HTMLDivElement>(null);
   const widgetIdRef = useRef<string | null>(null);
 
@@ -56,7 +58,7 @@ export default function TurnstileWidget({ siteKey, onVerify, onExpire }: Turnsti
         strategy="afterInteractive"
         onLoad={renderWidget}
       />
-      <div ref={containerRef} aria-label="Security verification" />
+      <div ref={containerRef} aria-label={t("Security verification")} />
     </>
   );
 }
