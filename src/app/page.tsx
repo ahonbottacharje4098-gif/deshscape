@@ -195,7 +195,7 @@ export default function Home() {
       </section>
 
       <section className="stories-section section-wrap" id="stories">
-        <div className="section-heading"><div><div className="eyebrow"><span /> FIELD NOTES</div><h2>{t("Stories from")}<br /><em>{t("the road.")}</em></h2></div><a className="text-link heading-link" href="/journal">{t("Read our journal")} <ArrowUpRight size={16} /></a></div>
+        <div className="section-heading"><div><div className="eyebrow"><span /> {t("FIELD NOTES")}</div><h2>{t("Stories from")}<br /><em>{t("the road.")}</em></h2></div><a className="text-link heading-link" href="/journal">{t("Read our journal")} <ArrowUpRight size={16} /></a></div>
         <div className="story-row"><div className="story-number">01</div><div className="story-title"><span>{t("PEOPLE & CULTURE")}</span><h3>{t("The rhythm of a river town")}</h3></div><p>{t("Somewhere along the banks, life moves to a different rhythm. Discover the communities shaped by water.")}</p><a href="/journal/river-town-rhythm" aria-label={t("Read The rhythm of a river town")}><ArrowUpRight /></a></div>
         <div className="story-row"><div className="story-number">02</div><div className="story-title"><span>{t("HIDDEN BANGLADESH")}</span><h3>{t("Beyond the tea gardens")}</h3></div><p>{t("Follow the winding paths into the green heart of the northeast, where every turn reveals a new view.")}</p><a href="/journal/beyond-tea-gardens" aria-label={t("Read Beyond the tea gardens")}><ArrowUpRight /></a></div>
       </section>
