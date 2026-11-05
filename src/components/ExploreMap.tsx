@@ -8,7 +8,12 @@ import { allDestinations } from "@/data/destinations";
 import { destinationImageUrl } from "@/lib/destinationImage";
 import { useLanguage } from "@/components/LanguageProvider";
 
-function MapLoading() {\n  const { t } = useLanguage();\n  return <div className="real-map-loading">{t("Loading the map of Bangladesh…")}</div>;\n}\n\nconst BangladeshLeafletMap = dynamic(() => import("@/components/BangladeshLeafletMap"), {
+function MapLoading() {
+  const { t } = useLanguage();
+  return <div className="real-map-loading">{t("Loading the map of Bangladesh…")}</div>;
+}
+
+const BangladeshLeafletMap = dynamic(() => import("@/components/BangladeshLeafletMap"), {
   ssr: false,
   loading: () => <MapLoading />
 });
