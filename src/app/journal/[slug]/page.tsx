@@ -20,7 +20,7 @@ type Story = {
   note: string;
 };
 
-const stories: Story[] = [
+export const stories: Story[] = [
   {
     slug: "river-town-rhythm",
     number: "01",
@@ -104,6 +104,20 @@ const stories: Story[] = [
 ];
 
 type Props = { params: Promise<{ slug: string }> };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const story = stories.find((item) => item.slug === slug);
+  if (!story) return { title: "Story not found | Deshscape" };
+  const canonicalUrl = `https://deshscape.vercel.app/journal/${story.slug}`;
+  const description = story.intro.slice(0, 160);
+  return {
+    title: story.title,
+    description,
+    alternates: { canonical: canonicalUrl },
+    openGraph: { type: "article", url: canonicalUrl, title: story.title, description, images: [story.image] },
+  };
+}
 
 export function generateStaticParams() {
   return stories.map((story) => ({ slug: story.slug }));
