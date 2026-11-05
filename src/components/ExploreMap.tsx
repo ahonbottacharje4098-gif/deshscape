@@ -10,7 +10,7 @@ import { useLanguage } from "@/components/LanguageProvider";
 
 const BangladeshLeafletMap = dynamic(() => import("@/components/BangladeshLeafletMap"), {
   ssr: false,
-  loading: () => <div className="real-map-loading">{t("Loading the map of Bangladesh…")}</div>
+  loading: () => <div className="real-map-loading">Loading the map of Bangladesh…</div>
 });
 
 export default function ExploreMap() {\n  const { t } = useLanguage();
