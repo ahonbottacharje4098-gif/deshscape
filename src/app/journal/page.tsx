@@ -71,7 +71,7 @@ export default function JournalPage() {
   const showFeatured = query.length === 0 && category === "ALL";
   const filteredStories = stories.filter((story) => {
     const matchesCategory = category === "ALL" || story.category === category;
-    const matchesSearch = query.length === 0 || [story.title, story.location, story.description, story.category].some((value) => value.toLowerCase().includes(query));
+    const matchesSearch = query.length === 0 || [story.title, t(story.title), story.location, t(story.location), story.description, t(story.description), story.category, t(story.category)].some((value) => value.toLowerCase().includes(query));
     return matchesCategory && matchesSearch;
   });
   const visibleStories = showFeatured ? stories.slice(1) : filteredStories;
@@ -118,7 +118,7 @@ export default function JournalPage() {
               </Link>
               <div className="journal-featured-copy">
                 <div className="eyebrow"><span /> {t("FEATURED STORY")} · {t(featuredStory.category)}</div>
-                <h3>{featuredStory.title}</h3>
+                <h3>{t(featuredStory.title)}</h3>
                 <div className="journal-featured-meta"><span><MapPin size={13} /> {t(featuredStory.location)}</span><span><Clock3 size={13} /> {t(featuredStory.readingTime)}</span></div>
                 <p>{t(featuredStory.description)}</p>
                 <Link className="journal-read-link" href="/journal/river-town-rhythm">{t("READ FEATURED STORY")} <ArrowUpRight size={15} /></Link>
@@ -135,7 +135,7 @@ export default function JournalPage() {
                 placeholder={t("Search stories, places...")}
                 aria-label={t("Search journal stories")}
               />
-              {search && <button type="button" onClick={() => setSearch("")} aria-label="Clear search"><X size={16} /></button>}
+              {search && <button type="button" onClick={() => setSearch("")} aria-label={t("Clear search")}><X size={16} /></button>}
             </label>
             <div className="journal-filters" aria-label={t("Filter stories by category")}>
               {["ALL", "PEOPLE & CULTURE", "HIDDEN BANGLADESH", "ART & HERITAGE"].map((item) => (
@@ -155,7 +155,7 @@ export default function JournalPage() {
                   <Link className="journal-card-image" href={`/journal/${story.slug}`} aria-label={`Read ${t(story.title)}`} style={{ backgroundImage: `url(${story.image})` }} />
                   <div className="journal-card-copy">
                     <div className="eyebrow"><span /> {t(story.category)}</div>
-                    <h3 style={{ font: "30px/1.15 'Playfair Display',serif", color: "#183d32", margin: "17px 0 10px" }}>{story.title}</h3>
+                    <h3 style={{ font: "30px/1.15 'Playfair Display',serif", color: "#183d32", margin: "17px 0 10px" }}>{t(story.title)}</h3>
                     <div style={{ display: "flex", alignItems: "center", gap: 6, color: "#899387", fontSize: 10, marginBottom: 15 }}><MapPin size={13} /> {t(story.location)}<span style={{ marginLeft: 10, display: "inline-flex", alignItems: "center", gap: 5 }}><Clock3 size={12} /> {t(story.readingTime)}</span></div>
                     <p style={{ color: "#70776e", fontSize: 12, lineHeight: 1.9, margin: "0 0 18px" }}>{t(story.description)}</p>
                     <div style={{ color: "#9caa96", fontSize: 9, letterSpacing: 1.1, textTransform: "uppercase" }}>{t(story.note)}</div>
@@ -167,22 +167,22 @@ export default function JournalPage() {
           ) : (
             <div className="journal-empty">
               <Compass size={30} strokeWidth={1.2} />
-              <h3>No stories found</h3>
-              <p>Try another keyword or choose a different category.</p>
-              <button type="button" onClick={() => { setSearch(""); setCategory("ALL"); }}>Show all stories <ArrowUpRight size={15} /></button>
+              <h3>{t("No stories found")}</h3>
+              <p>{t("Try another keyword or choose a different category.")}</p>
+              <button type="button" onClick={() => { setSearch(""); setCategory("ALL"); }}>{t("Show all stories")} <ArrowUpRight size={15} /></button>
             </div>
           )}
-          <p style={{ color: "#7d847b", fontSize: 10, lineHeight: 1.8, marginTop: 22 }}>These are introductory editorial stories. Destination-specific travel details should always be checked locally before a visit.</p>
+          <p style={{ color: "#7d847b", fontSize: 10, lineHeight: 1.8, marginTop: 22 }}>{t("These are introductory editorial stories. Destination-specific travel details should always be checked locally before a visit.")}</p>
         </div>
       </section>
 
       <section className="section-wrap" style={{ paddingTop: 70, paddingBottom: 80 }}>
         <div className="planner-card">
           <div className="planner-text">
-            <div className="eyebrow light"><span /> KEEP EXPLORING</div>
-            <h2>Every place has<br />a <em>story.</em></h2>
-            <p>Find a destination and start planning your next discovery.</p>
-            <Link className="button button-light" href="/#destinations">Explore Bangladesh <ArrowUpRight size={17} /></Link>
+            <div className="eyebrow light"><span /> {t("KEEP EXPLORING")}</div>
+            <h2>{t("Every place has")}<br />a <em>{t("story.")}</em></h2>
+            <p>{t("Find a destination and start planning your next discovery.")}</p>
+            <Link className="button button-light" href="/#destinations">{t("Explore Bangladesh")} <ArrowUpRight size={17} /></Link>
           </div>
           <div className="planner-art"><div className="orbit orbit-one" /><div className="orbit orbit-two" /><div className="orbit-center"><Compass size={52} strokeWidth={1} /></div></div>
         </div>
@@ -192,7 +192,7 @@ export default function JournalPage() {
         <div className="footer-top">
           <Link className="brand footer-brand" href="/"><span className="brand-mark"><Compass size={22} /></span><span className="brand-name">deshscape<span>.</span><small>THE ART OF DISCOVERY</small></span></Link>
           <p>{t("Explore beyond the ordinary.")}<br />{t("Discover Bangladesh, one journey at a time.")}</p>
-          <Link className="back-top" href="#top">BACK TO TOP <ArrowUpRight size={15} /></Link>
+          <Link className="back-top" href="#top">{t("BACK TO TOP")} <ArrowUpRight size={15} /></Link>
         </div>
         <div className="footer-bottom"><span>{t("© 2026 DESHSCAPE. MADE FOR THE CURIOUS.")}</span><span>{t("INDEPENDENTLY INSPIRED BY BANGLADESH.")}</span></div>
       </footer>
