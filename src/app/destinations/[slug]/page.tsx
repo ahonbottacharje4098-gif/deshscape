@@ -70,6 +70,7 @@ export default async function DestinationPage({ params }: Props) {
   };
 
   return (
+    <AutoTranslate>
     <main className="detail-page">
       <script
         type="application/ld+json"
@@ -178,5 +179,6 @@ export default async function DestinationPage({ params }: Props) {
         <div className="footer-bottom"><span>© 2026 DESHSCAPE. MADE FOR THE CURIOUS.</span><span>INDEPENDENTLY INSPIRED BY BANGLADESH.</span></div>
       </footer>
     </main>
+    </AutoTranslate>
   );
 }
