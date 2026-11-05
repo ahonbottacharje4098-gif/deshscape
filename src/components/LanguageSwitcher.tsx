@@ -4,10 +4,10 @@ import { Languages } from "lucide-react";
 import { useLanguage } from "@/components/LanguageProvider";
 
 export default function LanguageSwitcher() {
-  const { language, setLanguage } = useLanguage();
+  const { language, setLanguage, t } = useLanguage();
 
   return (
-    <div className="language-switcher" role="group" aria-label="Choose website language">
+    <div className="language-switcher" role="group" aria-label={t("Choose website language")}>
       <Languages size={15} aria-hidden="true" />
       <button type="button" onClick={() => setLanguage("en")} aria-pressed={language === "en"}>EN</button>
       <span aria-hidden="true">|</span>
