@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Hind+Siliguri:wght@400;500;600;700&family=Anek+Bangla:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -724,7 +724,7 @@ button,input{font:inherit}
 /* Journal article reading-time metadata */
 .journal-reading-time{color:#d2d9ce;font-size:9px;letter-spacing:1.2px;white-space:nowrap}
 
-/* Bengali typography: keep the editorial serif for headings and use a clear UI sans for body copy. */
+/* Bengali typography: use Anek Bangla for expressive headings and Hind Siliguri for readable body copy. */
 html[lang="bn"] body{font-family:"Hind Siliguri","DM Sans",sans-serif}
 html[lang="bn"] h1,html[lang="bn"] h2,html[lang="bn"] h3,html[lang="bn"] h4{font-family:"Anek Bangla","Playfair Display",serif}
 
