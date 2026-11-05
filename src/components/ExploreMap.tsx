@@ -6,13 +6,14 @@ import Link from "next/link";
 import { ArrowUpRight, MapPin, LocateFixed, Search } from "lucide-react";
 import { allDestinations } from "@/data/destinations";
 import { destinationImageUrl } from "@/lib/destinationImage";
+import { useLanguage } from "@/components/LanguageProvider";
 
 const BangladeshLeafletMap = dynamic(() => import("@/components/BangladeshLeafletMap"), {
   ssr: false,
-  loading: () => <div className="real-map-loading">Loading the map of Bangladesh…</div>
+  loading: () => <div className="real-map-loading">{t("Loading the map of Bangladesh…")}</div>
 });
 
-export default function ExploreMap() {
+export default function ExploreMap() {\n  const { t } = useLanguage();
   const mappedPlaces = useMemo(() => allDestinations.filter((place) => place?.coordinates), []);
   const [activeSlug, setActiveSlug] = useState("lalbagh-fort");
   const [mapSearch, setMapSearch] = useState("");
@@ -25,21 +26,21 @@ export default function ExploreMap() {
     <section className="explore-map-section" id="map">
       <div className="section-wrap explore-map-heading">
         <div>
-          <div className="eyebrow"><span /> EXPLORE BY LOCATION</div>
-          <h2>Bangladesh, at<br /><em>a glance.</em></h2>
+          <div className="eyebrow"><span /> {t("EXPLORE BY LOCATION")}</div>
+          <h2>{t("Bangladesh, at")}<br /><em>{t("a glance.")}</em></h2>
         </div>
-        <p>Search destinations, explore the map and select a place to discover more.</p>
+        <p>{t("Search destinations, explore the map and select a place to discover more.")}</p>
       </div>
 
       <div className="explore-map-layout">
         <div className="real-map-frame">
           <BangladeshLeafletMap activeSlug={activeSlug} onSelect={setActiveSlug} />
-          <div className="real-map-caption">BANGLADESH · 8 ADMINISTRATIVE DIVISIONS</div>
+          <div className="real-map-caption">{t("BANGLADESH · 8 ADMINISTRATIVE DIVISIONS")}</div>
         </div>
 
         <aside className="map-place-panel">
-          <label className="map-search-label" htmlFor="map-destination-search"><Search size={15} /> FIND A PLACE</label>
-          <input id="map-destination-search" className="map-search-input" value={mapSearch} onChange={(event) => setMapSearch(event.target.value)} placeholder="Search place or district…" />
+          <label className="map-search-label" htmlFor="map-destination-search"><Search size={15} /> {t("FIND A PLACE")}</label>
+          <input id="map-destination-search" className="map-search-input" value={mapSearch} onChange={(event) => setMapSearch(event.target.value)} placeholder={t("Search place or district…")} />
           {mapSearch && (
             <div className="map-search-results">
               {searchResults.slice(0, 8).map((place) => (
@@ -47,25 +48,25 @@ export default function ExploreMap() {
                   <span>{place.name}</span><small>{place.district}</small>
                 </button>
               ))}
-              {searchResults.length === 0 && <p>No matching places found.</p>}
+              {searchResults.length === 0 && <p>{t("No matching places found.")}</p>}
             </div>
           )}
           {active ? (
             <>
-              <div className="map-panel-top"><span><LocateFixed size={14} /> SELECTED DESTINATION</span><span>{mappedPlaces.findIndex((item) => item.slug === activeSlug) + 1} / {mappedPlaces.length}</span></div>
+              <div className="map-panel-top"><span><LocateFixed size={14} /> {t("SELECTED DESTINATION")}</span><span>{mappedPlaces.findIndex((item) => item.slug === activeSlug) + 1} / {mappedPlaces.length}</span></div>
               <div className="map-place-image" style={{ backgroundImage: `url(${destinationImageUrl(active.image, 1000)})` }} />
               <div className="map-place-details">
-                <span className="map-place-region"><MapPin size={13} /> {active.district}, {active.region}</span>
+                <span className="map-place-region"><MapPin size={13} /> {t(active.district)}, {t(active.region)}</span>
                 <h3>{active.name}</h3>
-                <span className="map-place-type">{active.tag}</span>
-                <p>{active.shortDescription}</p>
-                <Link className="map-place-link" href={`/destinations/${active.slug}`}>Explore destination <ArrowUpRight size={16} /></Link>
+                <span className="map-place-type">{t(active.tag)}</span>
+                <p>{t(active.shortDescription)}</p>
+                <Link className="map-place-link" href={`/destinations/${active.slug}`}>{t("Explore destination")} <ArrowUpRight size={16} /></Link>
               </div>
             </>
           ) : (
             <div className="map-place-details">
-              <h3>Map destinations coming soon</h3>
-              <p>There are no mapped destinations available right now. Please check back later.</p>
+              <h3>{t("Map destinations coming soon")}</h3>
+              <p>{t("There are no mapped destinations available right now. Please check back later.")}</p>
             </div>
           )}
           <div className="map-place-switcher">
@@ -75,7 +76,7 @@ export default function ExploreMap() {
           </div>
         </aside>
       </div>
-      <div className="map-disclaimer section-wrap">Map imagery © Esri, Maxar, Earthstar Geographics and other contributors. Pins are approximate attraction-area markers, not turn-by-turn navigation. Verify exact locations and access locally.</div>
+      <div className="map-disclaimer section-wrap">{t("Map imagery © Esri, Maxar, Earthstar Geographics and other contributors. Pins are approximate attraction-area markers, not turn-by-turn navigation. Verify exact locations and access locally.")}</div>
     </section>
   );
 }
