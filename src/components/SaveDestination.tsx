@@ -2,12 +2,13 @@
 
 import { useEffect, useState } from "react";
 import { Bookmark, BookmarkCheck } from "lucide-react";
+import { useLanguage } from "@/components/LanguageProvider";
 
 const STORAGE_KEY = "deshscape-saved-destinations";
 
 type Props = { slug: string };
 
-export default function SaveDestination({ slug }: Props) {
+export default function SaveDestination({ slug }: Props) {\n  const { t } = useLanguage();
   const [saved, setSaved] = useState(false);
 
   useEffect(() => {
@@ -39,10 +40,10 @@ export default function SaveDestination({ slug }: Props) {
       className={saved ? "save-destination-button is-saved" : "save-destination-button"}
       onClick={toggleSaved}
       aria-pressed={saved}
-      aria-label={saved ? "Remove this destination from saved places" : "Save this destination"}
+      aria-label={saved ? t("Remove this destination from saved places") : t("Save this destination")}
     >
       {saved ? <BookmarkCheck size={16} /> : <Bookmark size={16} />}
-      {saved ? "SAVED TO MY PLACES" : "SAVE THIS PLACE"}
+      {saved ? t("SAVED TO MY PLACES") : t("SAVE THIS PLACE")}
     </button>
   );
 }
