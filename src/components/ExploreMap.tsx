@@ -8,9 +8,9 @@ import { allDestinations } from "@/data/destinations";
 import { destinationImageUrl } from "@/lib/destinationImage";
 import { useLanguage } from "@/components/LanguageProvider";
 
-const BangladeshLeafletMap = dynamic(() => import("@/components/BangladeshLeafletMap"), {
+function MapLoading() {\n  const { t } = useLanguage();\n  return <div className="real-map-loading">{t("Loading the map of Bangladesh…")}</div>;\n}\n\nconst BangladeshLeafletMap = dynamic(() => import("@/components/BangladeshLeafletMap"), {
   ssr: false,
-  loading: () => <div className="real-map-loading">Loading the map of Bangladesh…</div>
+  loading: () => <MapLoading />
 });
 
 export default function ExploreMap() {
@@ -20,7 +20,7 @@ export default function ExploreMap() {
   const [mapSearch, setMapSearch] = useState("");
   const active = mappedPlaces.find((place) => place.slug === activeSlug) ?? mappedPlaces[0];
   const searchResults = mappedPlaces.filter((place) =>
-    `${place.name} ${place.district} ${place.type}`.toLowerCase().includes(mapSearch.toLowerCase())
+    `${place.name} ${t(place.name)} ${place.district} ${t(place.district)} ${place.type} ${t(place.type)}`.toLowerCase().includes(mapSearch.toLowerCase())
   );
 
   return (
@@ -46,7 +46,7 @@ export default function ExploreMap() {
             <div className="map-search-results">
               {searchResults.slice(0, 8).map((place) => (
                 <button key={place.slug} type="button" onClick={() => { setActiveSlug(place.slug); setMapSearch(""); }}>
-                  <span>{place.name}</span><small>{place.district}</small>
+                  <span>{t(place.name)}</span><small>{t(place.district)}</small>
                 </button>
               ))}
               {searchResults.length === 0 && <p>{t("No matching places found.")}</p>}
@@ -58,7 +58,7 @@ export default function ExploreMap() {
               <div className="map-place-image" style={{ backgroundImage: `url(${destinationImageUrl(active.image, 1000)})` }} />
               <div className="map-place-details">
                 <span className="map-place-region"><MapPin size={13} /> {t(active.district)}, {t(active.region)}</span>
-                <h3>{active.name}</h3>
+                <h3>{t(active.name)}</h3>
                 <span className="map-place-type">{t(active.tag)}</span>
                 <p>{t(active.shortDescription)}</p>
                 <Link className="map-place-link" href={`/destinations/${active.slug}`}>{t("Explore destination")} <ArrowUpRight size={16} /></Link>
@@ -72,7 +72,7 @@ export default function ExploreMap() {
           )}
           <div className="map-place-switcher">
             {searchResults.slice(0, 10).map((place) => (
-              <button key={place.slug} type="button" className={activeSlug === place.slug ? "map-switch active" : "map-switch"} onClick={() => setActiveSlug(place.slug)}>{place.name}</button>
+              <button key={place.slug} type="button" className={activeSlug === place.slug ? "map-switch active" : "map-switch"} onClick={() => setActiveSlug(place.slug)}>{t(place.name)}</button>
             ))}
           </div>
         </aside>
