@@ -8,7 +8,8 @@ const STORAGE_KEY = "deshscape-saved-destinations";
 
 type Props = { slug: string };
 
-export default function SaveDestination({ slug }: Props) {\n  const { t } = useLanguage();
+export default function SaveDestination({ slug }: Props) {
+  const { t } = useLanguage();
   const [saved, setSaved] = useState(false);
 
   useEffect(() => {
