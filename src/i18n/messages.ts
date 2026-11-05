@@ -788,6 +788,9 @@ export const messages: Record<string, string> = {
   "Goalanda Ghat in Rajbari is a well-known river transport point at the Padma's edge, historically important as a gateway for river journeys and local trade.": "রাজবাড়ীর গোয়ালন্দ ঘাট পদ্মা নদীর তীরে অবস্থিত একটি পরিচিত নৌ-যোগাযোগকেন্দ্র। নদীপথে যাতায়াত ও স্থানীয় বাণিজ্যের প্রবেশদ্বার হিসেবে এর ঐতিহাসিক গুরুত্ব রয়েছে।",
   "A historic mosque in Delduar known for its distinctive brickwork and terracotta ornament.": "স্বতন্ত্র ইটের গাঁথুনি ও পোড়ামাটির অলংকরণের জন্য পরিচিত দেলদুয়ারের একটি ঐতিহাসিক মসজিদ।",
   "Atiya Mosque in Delduar, Tangail, is a notable historic mosque dating to the early seventeenth century. Its architectural features make it an important heritage landmark in the district.": "টাঙ্গাইলের দেলদুয়ারে অবস্থিত আতিয়া মসজিদ সপ্তদশ শতাব্দীর শুরুর দিকের একটি উল্লেখযোগ্য ঐতিহাসিক মসজিদ। এর স্থাপত্যশৈলী মসজিদটিকে জেলার গুরুত্বপূর্ণ ঐতিহ্যবাহী নিদর্শনে পরিণত করেছে।",
+  // Corrected Natore Rajbari copy.
+  "A historic palace complex connected with Rani Bhavani and Natore's zamindari heritage.": "রানি ভবানী ও নাটোরের জমিদারি ঐতিহ্যের সঙ্গে সম্পর্কিত একটি ঐতিহাসিক রাজপ্রাসাদ।",
+  "Connection with Rani Bhavani": "রানি ভবানীর স্মৃতির সঙ্গে সম্পর্ক",
 };
 
 export function translate(text: string, language: Language): string {
