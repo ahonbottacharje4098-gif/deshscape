@@ -590,6 +590,14 @@ export const messages: Record<string, string> = {
 
   "from My Places": "আমার পছন্দের জায়গা থেকে",
   "View photo source": "ছবির মূল উৎস দেখুন",
+
+  // Bengali destination copy: first five featured destinations.
+  "Mangrove forest and tidal waterways": "ম্যানগ্রোভ বন ও জোয়ার-ভাটার নদীপথ",
+  "Wildlife and birdwatching opportunities": "বন্যপ্রাণী দেখা ও পাখি পর্যবেক্ষণের সুযোগ",
+  "Guided nature and river experiences": "গাইডসহ প্রকৃতি ও নদীভ্রমণের অভিজ্ঞতা",
+  "Visit only through authorised routes and operators.": "শুধু অনুমোদিত পথ ও পরিচালনাকারীদের মাধ্যমেই ভ্রমণ করুন।",
+  "Follow forest department rules and your guide's instructions.": "বন বিভাগের নিয়ম এবং গাইডের নির্দেশনা মেনে চলুন।",
+  "Keep a respectful distance from wildlife and never leave waste behind.": "বন্যপ্রাণী থেকে নিরাপদ ও সম্মানজনক দূরত্ব বজায় রাখুন এবং কোথাও বর্জ্য ফেলে যাবেন না।",
 };
 
 export function translate(text: string, language: Language): string {
