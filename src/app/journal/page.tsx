@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { ArrowLeft, ArrowUpRight, Compass, MapPin, Search, X, Clock3 } from "lucide-react";
 
 const stories = [
@@ -76,7 +76,7 @@ export default function JournalPage() {
   const featuredStory = stories[0];
 
   return (
-    <main>
+    <main id="top">
       <header className="site-header">
         <Link className="brand" href="/" aria-label="Deshscape home">
           <span className="brand-mark"><Compass size={22} strokeWidth={1.7} /></span>
@@ -190,7 +190,7 @@ export default function JournalPage() {
         <div className="footer-top">
           <Link className="brand footer-brand" href="/"><span className="brand-mark"><Compass size={22} /></span><span className="brand-name">deshscape<span>.</span><small>THE ART OF DISCOVERY</small></span></Link>
           <p>Explore beyond the ordinary.<br />Discover Bangladesh, one journey at a time.</p>
-          <Link className="back-top" href="#">BACK TO TOP <ArrowUpRight size={15} /></Link>
+          <Link className="back-top" href="#top">BACK TO TOP <ArrowUpRight size={15} /></Link>
         </div>
         <div className="footer-bottom"><span>© 2026 DESHSCAPE. MADE FOR THE CURIOUS.</span><span>INDEPENDENTLY INSPIRED BY BANGLADESH.</span></div>
       </footer>
