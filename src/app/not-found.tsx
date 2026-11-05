@@ -4,6 +4,7 @@ import AutoTranslate from "@/components/AutoTranslate";
 
 export default function NotFound() {
   return (
+    <AutoTranslate>
     <main className="not-found-page">
       <Link className="brand not-found-brand" href="/" aria-label="Deshscape home">
         <span className="brand-mark"><Compass size={22} strokeWidth={1.7} /></span>
@@ -17,5 +18,6 @@ export default function NotFound() {
       </div>
       <span className="not-found-coordinate">BANGLADESH · 23° 41' N / 90° 21' E</span>
     </main>
+    </AutoTranslate>
   );
 }
