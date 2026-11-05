@@ -14,7 +14,7 @@ const stories = [
     description: "Along the Padma, the river shapes more than the landscape. It influences daily routines, local trade and the stories shared by people who live beside its changing waters.",
     image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1400&q=85",
     note: "A closer look at life beside the Padma",
-    readingTime: "4 MIN READ"
+    readingTime: "1 MIN READ"
   },
   {
     number: "02",
@@ -25,7 +25,7 @@ const stories = [
     description: "The green hills and winding paths of the northeast invite a slower kind of journey. Look beyond the familiar viewpoints and notice the small details that make this landscape special.",
     image: "https://images.unsplash.com/photo-1563911302283-d2bc129e7570?auto=format&fit=crop&w=1400&q=85",
     note: "A field note from the green northeast",
-    readingTime: "5 MIN READ"
+    readingTime: "1 MIN READ"
   },
   {
     number: "03",
@@ -36,7 +36,7 @@ const stories = [
     description: "Intricate terracotta panels turn a historic temple into an open-air gallery of craft, belief and everyday scenes from another time.",
     image: "https://images.unsplash.com/photo-1606293926075-69a00db7562f?auto=format&fit=crop&w=1400&q=85",
     note: "An architectural field note from the north",
-    readingTime: "4 MIN READ"
+    readingTime: "1 MIN READ"
   },
   {
     number: "04",
@@ -47,7 +47,7 @@ const stories = [
     description: "In the freshwater swamp forest, water and woodland meet. The experience changes with the season, light and level of the water.",
     image: "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1400&q=85",
     note: "A gentle introduction to a living wetland",
-    readingTime: "5 MIN READ"
+    readingTime: "1 MIN READ"
   },
   {
     number: "05",
@@ -58,7 +58,7 @@ const stories = [
     description: "The old palace complex offers a glimpse into the region's architectural past through its courtyards, façades and layered history.",
     image: "https://images.unsplash.com/photo-1590123732197-e707a7d1a2b2?auto=format&fit=crop&w=1400&q=85",
     note: "A heritage walk through historic courtyards",
-    readingTime: "4 MIN READ"
+    readingTime: "1 MIN READ"
   }
 ];
 
