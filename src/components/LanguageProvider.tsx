@@ -14,17 +14,20 @@ const LanguageContext = createContext<LanguageContextValue | null>(null);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguageState] = useState<Language>("en");
+  const [languageReady, setLanguageReady] = useState(false);
 
   useEffect(() => {
     const saved = window.localStorage.getItem("deshscape-language");
     if (saved === "bn" || saved === "en") setLanguageState(saved);
+    setLanguageReady(true);
   }, []);
 
   useEffect(() => {
+    if (!languageReady) return;
     document.documentElement.lang = language;
     document.documentElement.dataset.language = language;
     window.localStorage.setItem("deshscape-language", language);
-  }, [language]);
+  }, [language, languageReady]);
 
   const value = useMemo<LanguageContextValue>(() => ({
     language,
