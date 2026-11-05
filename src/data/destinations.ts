@@ -377,9 +377,9 @@ export const destinations: Destination[] = [
   {
     slug: "natore-rajbari", name: "Natore Rajbari", region: "Rajshahi Division", district: "Natore", type: "Heritage",
     coordinates: [24.4205, 88.988], image: "https://commons.wikimedia.org/wiki/Special:FilePath/Natore%20Rajbari.jpg?width=1400",
-    tag: "Royal history", shortDescription: "A historic palace complex connected with Rani Bh भवani and Natore's zamindari heritage.",
+    tag: "Royal history", shortDescription: "A historic palace complex connected with Rani Bhavani and Natore's zamindari heritage.",
     description: "Natore Rajbari is a historic palace complex associated with the Natore royal family and the region's zamindari history.",
-    highlights: ["Historic palace grounds", "Architecture and local history", "Connection with Rani Bh भवani"],
+    highlights: ["Historic palace grounds", "Architecture and local history", "Connection with Rani Bhavani"],
     travelNotes: ["Confirm which areas are open to visitors.", "Respect religious and heritage spaces.", "Follow local visitor instructions."]
   },
   {
