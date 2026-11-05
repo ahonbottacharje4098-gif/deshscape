@@ -2,10 +2,11 @@
 
 import { useState } from "react";
 import { Check, Copy, Share2 } from "lucide-react";
+import { useLanguage } from "@/components/LanguageProvider";
 
 type Props = { title: string };
 
-export default function ShareStory({ title }: Props) {
+export default function ShareStory({ title }: Props) {\n  const { t } = useLanguage();
   const [copied, setCopied] = useState(false);
 
   async function copyLink() {
@@ -32,14 +33,14 @@ export default function ShareStory({ title }: Props) {
 
   return (
     <div className="journal-share">
-      <span className="journal-share-label">ENJOYED THIS STORY?</span>
+      <span className="journal-share-label">{t("ENJOYED THIS STORY?")}</span>
       <div className="journal-share-actions">
         <button type="button" onClick={copyLink} className="journal-share-button">
           {copied ? <Check size={15} /> : <Copy size={15} />}
-          {copied ? "LINK COPIED" : "COPY LINK"}
+          {copied ? t("LINK COPIED") : t("COPY LINK")}
         </button>
         <button type="button" onClick={shareStory} className="journal-share-button journal-share-primary">
-          <Share2 size={15} /> SHARE STORY
+          <Share2 size={15} /> {t("SHARE STORY")}
         </button>
       </div>
     </div>
