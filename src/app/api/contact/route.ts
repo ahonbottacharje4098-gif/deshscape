@@ -11,6 +11,43 @@ type ContactPayload = {
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+const MAX_REQUEST_BYTES = 8 * 1024;
+
+class PayloadTooLargeError extends Error {}
+
+async function readContactPayload(request: Request): Promise<ContactPayload> {
+  const declaredLength = request.headers.get("content-length");
+  if (declaredLength && Number(declaredLength) > MAX_REQUEST_BYTES) {
+    throw new PayloadTooLargeError();
+  }
+
+  const reader = request.body?.getReader();
+  if (!reader) throw new SyntaxError("Missing request body");
+
+  const chunks: Uint8Array[] = [];
+  let totalBytes = 0;
+
+  while (true) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    totalBytes += value.byteLength;
+    if (totalBytes > MAX_REQUEST_BYTES) {
+      await reader.cancel();
+      throw new PayloadTooLargeError();
+    }
+    chunks.push(value);
+  }
+
+  const body = new Uint8Array(totalBytes);
+  let offset = 0;
+  for (const chunk of chunks) {
+    body.set(chunk, offset);
+    offset += chunk.byteLength;
+  }
+
+  return JSON.parse(new TextDecoder().decode(body)) as ContactPayload;
+}
+
 // Best-effort per-instance protection: 5 submissions per IP in a rolling 10-minute window.
 // For consistent limits across serverless instances, use a shared Redis-backed store.
 const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000;
@@ -50,7 +87,7 @@ function checkRateLimit(ip: string, now = Date.now()) {
 
 export async function POST(request: Request) {
   try {
-    const body = (await request.json()) as ContactPayload;
+    const body = await readContactPayload(request);
     const name = body.name?.trim() ?? "";
     const email = body.email?.trim() ?? "";
     const subject = body.subject?.trim() ?? "";
@@ -157,7 +194,13 @@ export async function POST(request: Request) {
     }
 
     return NextResponse.json({ ok: true });
-  } catch {
+  } catch (error) {
+    if (error instanceof PayloadTooLargeError) {
+      return NextResponse.json({ error: "Message request is too large." }, { status: 413 });
+    }
+    if (error instanceof SyntaxError) {
+      return NextResponse.json({ error: "Please submit a valid message." }, { status: 400 });
+    }
     return NextResponse.json({ error: "Something went wrong. Please try again." }, { status: 500 });
   }
 }
