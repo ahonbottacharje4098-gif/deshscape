@@ -67,7 +67,6 @@ export const messages: Record<string, string> = {
   "Let's plan a trip": "ভ্রমণ পরিকল্পনা করি",
   "FIND": "খুঁজুন",
   "WANDER": "ঘুরে বেড়ান",
-  "FIELD NOTES": "ভ্রমণ ডায়েরি",
   "Stories from": "পথের",
   "the road.": "গল্পগুলো।",
   "Read our journal": "আমাদের জার্নাল পড়ুন",
@@ -95,12 +94,6 @@ export const messages: Record<string, string> = {
   "WHERE IN BANGLADESH?": "বাংলাদেশের কোথায় যেতে চান?",
   "WHAT FEELS RIGHT?": "কেমন অভিজ্ঞতা চান?",
   "HOW MANY IDEAS?": "কতগুলো পরামর্শ চান?",
-  "All matches (up to 6)": "সব মিল (সর্বোচ্চ ৬টি)",
-  "A few (3)": "কয়েকটি (৩টি)",
-  "A handful (5)": "কিছু বেশি (৫টি)",
-  "YOUR STARTING POINT": "আপনার ভ্রমণের শুরু",
-  "Places to consider": "যে জায়গাগুলো দেখতে পারেন",
-  "SUGGESTIONS": "পরামর্শ",
   "Explore destination": "গন্তব্য ঘুরে দেখুন",
   "No matching places just yet": "এখনো মিলে এমন জায়গা পাওয়া যায়নি",
   "Try another division or choose “Any experience” to see more ideas.": "অন্য বিভাগ বেছে নিন অথবা আরও পরামর্শ পেতে “যেকোনো অভিজ্ঞতা” নির্বাচন করুন।",
@@ -150,7 +143,6 @@ export const messages: Record<string, string> = {
   "Send message": "বার্তা পাঠান",
   "Your message has been sent. Thank you for reaching out!": "আপনার বার্তা পাঠানো হয়েছে। যোগাযোগ করার জন্য ধন্যবাদ!",
   "Your message could not be sent. Please try again.": "বার্তাটি পাঠানো যায়নি। অনুগ্রহ করে আবার চেষ্টা করুন।",
-  "Security verification is not configured yet. Please try again later.": "নিরাপত্তা যাচাই এখনো প্রস্তুত নয়। অনুগ্রহ করে পরে চেষ্টা করুন।",
   "EXPLORE BANGLADESH": "বাংলাদেশ ঘুরে দেখুন",
   "THE DESHSCAPE JOURNAL": "দেশস্কেপ ভ্রমণ জার্নাল",
   "Travel is more than reaching a place. It is the people we meet, the landscapes we remember and the little discoveries along the way.": "ভ্রমণ মানে শুধু কোনো জায়গায় পৌঁছানো নয়। পথে দেখা মানুষ, মনে গেঁথে থাকা প্রকৃতি আর ছোট ছোট আবিষ্কারের গল্পই ভ্রমণকে পূর্ণ করে।",
@@ -388,7 +380,13 @@ export const messages: Record<string, string> = {
   "Check local weather and river conditions before travelling.": "ভ্রমণের আগে স্থানীয় আবহাওয়া ও নদীর অবস্থা যাচাই করুন।",
   "Avoid deep or fast-moving water and follow local safety advice.": "গভীর বা দ্রুত স্রোতের পানি এড়িয়ে চলুন এবং স্থানীয় নিরাপত্তা পরামর্শ মেনে চলুন।",
   "Wear footwear suitable for wet and uneven surfaces.": "ভেজা ও অসমতল পথে চলার উপযোগী জুতা পরুন।",
-  "Choose website language": "ওয়েবসাইটের ভাষা নির্বাচন করুন"
+  "Choose website language": "ওয়েবসাইটের ভাষা নির্বাচন করুন",
+
+  "My Deshscape trip ideas": "আমার Deshscape ভ্রমণ পরিকল্পনা",
+  "Suggestion set": "পরামর্শের সংখ্যা",
+  "Suggested destinations:": "প্রস্তাবিত গন্তব্য:",
+  "Experience": "অভিজ্ঞতা",
+  "Leave this field empty": "এই ঘরটি খালি রাখুন",
 };
 
 export function translate(text: string, language: Language): string {
