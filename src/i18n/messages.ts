@@ -1078,6 +1078,24 @@ export const messages: Record<string, string> = {
   "Ratargul Swamp Forest": "রাতারগুল জলাবন",
   "Into the wild": "বুনো প্রকৃতির মাঝে",
   "Bichanakandi": "বিছানাকান্দি",
+  "Lalbagh Fort": "লালবাগ কেল্লা",
+  "Heritage trail": "ঐতিহ্যের পথে",
+  "Ahsan Manzil": "আহসান মঞ্জিল",
+  "National Parliament House": "জাতীয় সংসদ ভবন",
+  "Bhawal National Park": "ভাওয়াল জাতীয় উদ্যান",
+  "Gazipur": "গাজীপুর",
+  "Nuhash Palli": "নুহাশ পল্লী",
+  "Nikli Haor": "নিকলী হাওর",
+  "Kishoreganj": "কিশোরগঞ্জ",
+  "Riverside escape": "নদীতীরের অবকাশ",
+  "Panam Nagar": "পানাম নগর",
+  "Narayanganj": "নারায়ণগঞ্জ",
+  "Sonargaon Folk Art and Craft Museum": "সোনারগাঁও লোকশিল্প ও কারুশিল্প জাদুঘর",
+  "Wari-Bateshwar": "উয়ারী-বটেশ্বর",
+  "Narsingdi": "নরসিংদী",
+  "Padma Bridge Jajira Viewpoint": "পদ্মা সেতুর জাজিরা প্রান্তের দর্শনীয় স্থান",
+  "Shariatpur": "শরীয়তপুর",
+
 };
 
 export function translate(text: string, language: Language): string {
