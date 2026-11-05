@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import { ArrowUp } from "lucide-react";
 import { useLanguage } from "@/components/LanguageProvider";
 
-export default function BackToTop() {\n  const { t } = useLanguage();
+export default function BackToTop() {
+  const { t } = useLanguage();
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
