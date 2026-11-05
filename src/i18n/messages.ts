@@ -1072,6 +1072,12 @@ export const messages: Record<string, string> = {
   "Follow river and weather safety guidance.": "নদী ও আবহাওয়াসংক্রান্ত নিরাপত্তা নির্দেশনা মেনে চলুন।",
   "Terracotta and brick details": "টেরাকোটা ও ইটের নকশার বৈশিষ্ট্য",
 
+  "Sajek Valley": "সাজেক ভ্যালি",
+  "Rangamati": "রাঙামাটি",
+  "Cox's Bazar": "কক্সবাজার",
+  "Ratargul Swamp Forest": "রাতারগুল জলাবন",
+  "Into the wild": "বুনো প্রকৃতির মাঝে",
+  "Bichanakandi": "বিছানাকান্দি",
 };
 
 export function translate(text: string, language: Language): string {
