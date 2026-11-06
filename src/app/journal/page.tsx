@@ -5,63 +5,7 @@ import { useState } from "react";
 import { ArrowLeft, ArrowUpRight, Compass, MapPin, Search, X, Clock3 } from "lucide-react";
 import { useLanguage } from "@/components/LanguageProvider";
 
-const stories = [
-  {
-    number: "01",
-    slug: "river-town-rhythm",
-    category: "PEOPLE & CULTURE",
-    title: "The rhythm of a river town",
-    location: "Goalanda, Rajbari",
-    description: "Along the Padma, the river shapes more than the landscape. It influences daily routines, local trade and the stories shared by people who live beside its changing waters.",
-    image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1400&q=85",
-    note: "A closer look at life beside the Padma",
-    readingTime: "1 MIN READ"
-  },
-  {
-    number: "02",
-    slug: "beyond-tea-gardens",
-    category: "HIDDEN BANGLADESH",
-    title: "Beyond the tea gardens",
-    location: "Sylhet",
-    description: "The green hills and winding paths of the northeast invite a slower kind of journey. Look beyond the familiar viewpoints and notice the small details that make this landscape special.",
-    image: "https://images.unsplash.com/photo-1563911302283-d2bc129e7570?auto=format&fit=crop&w=1400&q=85",
-    note: "A field note from the green northeast",
-    readingTime: "1 MIN READ"
-  },
-  {
-    number: "03",
-    slug: "stone-stories-of-kantajew",
-    category: "ART & HERITAGE",
-    title: "Stone stories of Kantajew",
-    location: "Dinajpur",
-    description: "Intricate terracotta panels turn a historic temple into an open-air gallery of craft, belief and everyday scenes from another time.",
-    image: "https://images.unsplash.com/photo-1606293926075-69a00db7562f?auto=format&fit=crop&w=1400&q=85",
-    note: "An architectural field note from the north",
-    readingTime: "1 MIN READ"
-  },
-  {
-    number: "04",
-    slug: "a-quiet-world-in-ratargul",
-    category: "HIDDEN BANGLADESH",
-    title: "A quiet world in Ratargul",
-    location: "Sylhet",
-    description: "In the freshwater swamp forest, water and woodland meet. The experience changes with the season, light and level of the water.",
-    image: "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1400&q=85",
-    note: "A gentle introduction to a living wetland",
-    readingTime: "1 MIN READ"
-  },
-  {
-    number: "05",
-    slug: "courtyards-and-memory-at-baliati",
-    category: "ART & HERITAGE",
-    title: "Courtyards and memory at Baliati",
-    location: "Manikganj",
-    description: "The old palace complex offers a glimpse into the region's architectural past through its courtyards, façades and layered history.",
-    image: "https://images.unsplash.com/photo-1590123732197-e707a7d1a2b2?auto=format&fit=crop&w=1400&q=85",
-    note: "A heritage walk through historic courtyards",
-    readingTime: "1 MIN READ"
-  }
-];
+import { journalStories as stories } from "@/data/journalStories";
 
 export default function JournalPage() {
   const { t } = useLanguage();
