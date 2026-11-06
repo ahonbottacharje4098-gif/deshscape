@@ -172,7 +172,7 @@ export default async function JournalStoryPage({ params }: Props) {
 
   return (
     <AutoTranslate>
-    <main className="journal-article-page">
+    <main id="main-content" tabIndex={-1} className="journal-article-page">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }}
