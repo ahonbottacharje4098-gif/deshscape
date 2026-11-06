@@ -30,7 +30,7 @@ export default function MyPlacesPage() {
       <header className="site-header my-places-header">
         <Link className="brand" href="/">
           <span className="brand-mark"><Compass size={22} strokeWidth={1.7} /></span>
-          <span className="brand-name">deshscape<span>.</span><small>THE ART OF DISCOVERY</small></span>
+          <span className="brand-name">deshscape<span>.</span><small>{t("THE ART OF DISCOVERY")}</small></span>
         </Link>
         <Link className="detail-back" href="/#destinations"><ArrowLeft size={15} /> {t("Discover places")}</Link>
       </header>
