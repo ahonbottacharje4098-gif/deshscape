@@ -5,7 +5,7 @@ import AutoTranslate from "@/components/AutoTranslate";
 export default function NotFound() {
   return (
     <AutoTranslate>
-    <main className="not-found-page">
+    <main id="main-content" tabIndex={-1} className="not-found-page">
       <Link className="brand not-found-brand" href="/" aria-label="Deshscape home">
         <span className="brand-mark"><Compass size={22} strokeWidth={1.7} /></span>
         <span className="brand-name">deshscape<span>.</span><small>THE ART OF DISCOVERY</small></span>
