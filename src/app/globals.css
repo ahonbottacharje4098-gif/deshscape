@@ -929,3 +929,21 @@ html[lang="bn"] .eyebrow { line-height: 1.6; }
   }
   .destination-card:after { display: none !important; }
 }
+
+
+/* Hero motion override: visible cinematic movement */
+@keyframes deshscape-hero-pan {
+  0% { transform: scale(1.02) translate3d(0, 0, 0); }
+  50% { transform: scale(1.12) translate3d(-1.2%, .4%, 0); }
+  100% { transform: scale(1.18) translate3d(-2%, -.5%, 0); }
+}
+.hero .hero-image {
+  animation: deshscape-hero-pan 9s ease-in-out infinite alternate !important;
+  transform-origin: center center;
+  backface-visibility: hidden;
+}
+@media (max-width: 650px) {
+  .hero .hero-image {
+    animation-duration: 12s !important;
+  }
+}
