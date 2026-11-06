@@ -3,6 +3,7 @@ import "leaflet/dist/leaflet.css";
 import "./globals.css";
 import { LanguageProvider } from "@/components/LanguageProvider";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
+import AutoTranslate from "@/components/AutoTranslate";
 
 const siteDescription =
   "Discover Bangladesh, one journey at a time. Explore destinations, culture, nature and travel stories from across the country.";
@@ -94,6 +95,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="en" suppressHydrationWarning>
       <body>
         <LanguageProvider>
+        <AutoTranslate><a className="skip-link" href="#main-content">Skip to main content</a></AutoTranslate>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(siteStructuredData) }}
