@@ -26,7 +26,7 @@ export default function JournalPage() {
       <header className="site-header">
         <Link className="brand" href="/" aria-label="Deshscape home">
           <span className="brand-mark"><Compass size={22} strokeWidth={1.7} /></span>
-          <span className="brand-name">deshscape<span>.</span><small>THE ART OF DISCOVERY</small></span>
+          <span className="brand-name">deshscape<span>.</span><small>{t("THE ART OF DISCOVERY")}</small></span>
         </Link>
         <nav className="main-nav">
           <Link className="nav-link" href="/">{t("Discover")}</Link>
