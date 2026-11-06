@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight, Compass, MapPin } from "lucide-react";
-import { destinations } from "@/data/destinations";
+import { allDestinations } from "@/data/destinations";
 import { destinationImageUrl } from "@/lib/destinationImage";
 import ShareStory from "@/components/ShareStory";
 import ReadingProgress from "@/components/ReadingProgress";
@@ -49,7 +49,7 @@ export default async function JournalStoryPage({ params }: Props) {
   if (!story) notFound();
 
   const relatedPlaces = story.relatedDestinationSlugs
-    .map((relatedSlug) => destinations.find((place) => place.slug === relatedSlug))
+    .map((relatedSlug) => allDestinations.find((place) => place.slug === relatedSlug))
     .filter((place) => place !== undefined);
   const articleWordCount = [story.intro, ...story.paragraphs].join(" ").trim().split(/\s+/).length;
   const readingMinutes = Math.max(1, Math.ceil(articleWordCount / 200));
