@@ -99,8 +99,9 @@ function checkRateLimit(ip: string, now = Date.now()) {
 }
 
 function getClientIp(request: Request): string {
-  const forwarded = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim();
-  return (request.headers.get("x-real-ip")?.trim() || forwarded || "unknown").slice(0, 128);
+  // Trust the platform-provided client IP only. Falling back to a client-controlled
+  // forwarded header would let callers rotate spoofed values to evade throttling.
+  return (request.headers.get("x-real-ip")?.trim() || "unknown").slice(0, 128);
 }
 
 function allowedTurnstileHostnames(): Set<string> {
