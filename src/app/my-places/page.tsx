@@ -6,8 +6,7 @@ import { ArrowLeft, ArrowUpRight, Bookmark, Compass, MapPin, Trash2 } from "luci
 import { allDestinations } from "@/data/destinations";
 import { destinationImageUrl } from "@/lib/destinationImage";
 import { useLanguage } from "@/components/LanguageProvider";
-
-const STORAGE_KEY = "deshscape-saved-destinations";
+import { readSavedDestinations, writeSavedDestinations } from "@/lib/savedDestinations";
 
 export default function MyPlacesPage() {
   const { t } = useLanguage();
@@ -15,19 +14,13 @@ export default function MyPlacesPage() {
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    try {
-      const stored = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
-      setSavedSlugs(Array.isArray(stored) ? stored.filter((item): item is string => typeof item === "string") : []);
-    } catch {
-      setSavedSlugs([]);
-    }
+    setSavedSlugs(readSavedDestinations());
     setReady(true);
   }, []);
 
   function removePlace(slug: string) {
     const next = savedSlugs.filter((item) => item !== slug);
-    setSavedSlugs(next);
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
+    if (writeSavedDestinations(next)) setSavedSlugs(next);
   }
 
   const savedPlaces = allDestinations.filter((place) => savedSlugs.includes(place.slug));
