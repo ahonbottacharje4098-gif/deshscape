@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import { ArrowRight, ArrowUpRight, Compass, Copy, MapPin, Sparkles } from "lucide-react";
 import { allDestinations } from "@/data/destinations";
 import { destinationImageUrl } from "@/lib/destinationImage";
+import FooterLegal from "@/components/FooterLegal";
 
 const divisions = ["Any division", "Dhaka", "Chattogram", "Sylhet", "Khulna", "Rajshahi", "Barishal", "Rangpur", "Mymensingh"];
 const experiences = ["Any experience", "Mountains", "Beaches", "Forests", "Rivers", "Nature", "Heritage"];
@@ -79,7 +80,7 @@ export default function TripPlannerPage() {
         <div className="trip-copy-panel"><div><span className="eyebrow"><span /> TAKE YOUR IDEAS WITH YOU</span><h3>Keep your shortlist handy.</h3><p>Copy your selected preferences and suggestions as a simple planning note.</p></div><button className="button button-dark" type="button" onClick={copyPlan}><Copy size={15} /> {copied ? "Copied to clipboard" : "Copy my trip ideas"}</button></div>
         <p className="trip-note">These are inspiration suggestions, not a confirmed itinerary or booking. Check local access, weather, transport and opening information before travelling.</p>
       </section>
-      <footer className="site-footer"><div className="footer-top"><a className="brand footer-brand" href="/"><span className="brand-mark"><Compass size={22} /></span><span className="brand-name">deshscape<span>.</span><small>THE ART OF DISCOVERY</small></span></a><p>Explore beyond the ordinary.<br />Discover Bangladesh, one journey at a time.</p><a className="back-top" href="#top">BACK TO TOP <ArrowUpRight size={15} /></a></div><div className="footer-bottom"><span>© 2026 DESHSCAPE. MADE FOR THE CURIOUS.</span><span>INDEPENDENTLY INSPIRED BY BANGLADESH.</span></div></footer>
+      <footer className="site-footer"><div className="footer-top"><a className="brand footer-brand" href="/"><span className="brand-mark"><Compass size={22} /></span><span className="brand-name">deshscape<span>.</span><small>THE ART OF DISCOVERY</small></span></a><p>Explore beyond the ordinary.<br />Discover Bangladesh, one journey at a time.</p><a className="back-top" href="#top">BACK TO TOP <ArrowUpRight size={15} /></a></div><div className="footer-bottom"><span>© 2026 DESHSCAPE. MADE FOR THE CURIOUS.</span><FooterLegal /><span>INDEPENDENTLY INSPIRED BY BANGLADESH.</span></div></footer>
     </main>
   );
 }

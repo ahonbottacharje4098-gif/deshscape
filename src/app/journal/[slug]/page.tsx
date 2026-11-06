@@ -9,6 +9,7 @@ import ReadingProgress from "@/components/ReadingProgress";
 import BackToTop from "@/components/BackToTop";
 
 import { stories } from "@/data/journalStories";
+import FooterLegal from "@/components/FooterLegal";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -152,7 +153,7 @@ export default async function JournalStoryPage({ params }: Props) {
           <p>Explore beyond the ordinary.<br />Discover Bangladesh, one journey at a time.</p>
           <Link className="back-top" href="/journal">BACK TO JOURNAL <ArrowUpRight size={15} /></Link>
         </div>
-        <div className="footer-bottom"><span>© 2026 DESHSCAPE. MADE FOR THE CURIOUS.</span><span>INDEPENDENTLY INSPIRED BY BANGLADESH.</span></div>
+        <div className="footer-bottom"><span>© 2026 DESHSCAPE. MADE FOR THE CURIOUS.</span><FooterLegal /><span>INDEPENDENTLY INSPIRED BY BANGLADESH.</span></div>
       </footer>
     </main>
   );

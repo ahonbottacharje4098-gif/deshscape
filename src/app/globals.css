@@ -727,3 +727,20 @@ button,input{font:inherit}
 .skip-link{position:fixed;top:12px;left:12px;z-index:1000;padding:12px 16px;background:var(--forest);color:#fff;border-radius:6px;transform:translateY(-160%);transition:transform .2s}
 .skip-link:focus{transform:translateY(0)}
 main:focus{outline:none}
+
+/* Legal pages and footer legal links */
+.footer-legal{display:inline-flex;gap:18px}
+.footer-legal a{color:#d8dfd4;font-size:8px;font-weight:700;letter-spacing:1.2px}
+.footer-legal a:hover{color:#fff}
+.my-places-footer .footer-legal a{color:var(--forest)}
+.legal-page{background:var(--paper);min-height:100vh;display:flex;flex-direction:column}
+.legal-header{height:82px;padding:0 6.2%;display:flex;align-items:center;justify-content:space-between}
+.legal-back{display:inline-flex;align-items:center;gap:8px;color:var(--forest);font-size:9px;letter-spacing:1.4px}
+.legal-body{width:min(760px,calc(100% - 40px));margin:0 auto;padding:48px 0 80px;flex:1;line-height:1.75;color:var(--ink)}
+.legal-eyebrow{font-size:9px;letter-spacing:2px;color:#a8794d;font-weight:700}
+.legal-body h1{font-size:clamp(34px,6vw,52px);line-height:1.1;margin:14px 0 8px;color:var(--forest)}
+.legal-updated{color:var(--muted);font-size:13px;margin:0 0 32px}
+.legal-body h2{font-size:20px;margin:34px 0 8px;color:var(--forest)}
+.legal-body p,.legal-body li{font-size:16px}
+.legal-body ul{padding-left:22px}
+.legal-body a{color:var(--forest);text-decoration:underline;text-underline-offset:3px}

@@ -9,6 +9,7 @@ import {
 import { allDestinations, destinationRegions, destinationTypes } from "@/data/destinations";
 import ExploreMap from "@/components/ExploreMap";
 import { destinationImageUrl } from "@/lib/destinationImage";
+import FooterLegal from "@/components/FooterLegal";
 
 const divisions = ["All divisions", "Dhaka", "Chattogram", "Rajshahi", "Khulna", "Barishal", "Sylhet", "Rangpur", "Mymensingh"] as const;
 
@@ -201,7 +202,7 @@ export default function Home() {
 
       <footer className="site-footer">
         <div className="footer-top"><a className="brand footer-brand" href="/"><span className="brand-mark"><Compass size={22} /></span><span className="brand-name">deshscape<span>.</span><small>THE ART OF DISCOVERY</small></span></a><p>Explore beyond the ordinary.<br />Discover Bangladesh, one journey at a time.</p><a className="back-top" href="#top">BACK TO TOP <ArrowUpRight size={15} /></a></div>
-        <div className="footer-bottom"><span>© 2026 DESHSCAPE. MADE FOR THE CURIOUS.</span><a className="footer-contact-link" href="/contact">CONTACT <ArrowUpRight size={14} /></a><span>INDEPENDENTLY INSPIRED BY BANGLADESH.</span></div>
+        <div className="footer-bottom"><span>© 2026 DESHSCAPE. MADE FOR THE CURIOUS.</span><FooterLegal /><a className="footer-contact-link" href="/contact">CONTACT <ArrowUpRight size={14} /></a><span>INDEPENDENTLY INSPIRED BY BANGLADESH.</span></div>
       </footer>
     </main>
   );

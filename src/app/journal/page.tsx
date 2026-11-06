@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { ArrowLeft, ArrowUpRight, Compass, MapPin, Search, X, Clock3 } from "lucide-react";
+import FooterLegal from "@/components/FooterLegal";
 
 const stories = [
   {
@@ -193,7 +194,7 @@ export default function JournalPage() {
           <p>Explore beyond the ordinary.<br />Discover Bangladesh, one journey at a time.</p>
           <Link className="back-top" href="#top">BACK TO TOP <ArrowUpRight size={15} /></Link>
         </div>
-        <div className="footer-bottom"><span>© 2026 DESHSCAPE. MADE FOR THE CURIOUS.</span><span>INDEPENDENTLY INSPIRED BY BANGLADESH.</span></div>
+        <div className="footer-bottom"><span>© 2026 DESHSCAPE. MADE FOR THE CURIOUS.</span><FooterLegal /><span>INDEPENDENTLY INSPIRED BY BANGLADESH.</span></div>
       </footer>
       <div style={{ position: "fixed", left: 18, bottom: 18, zIndex: 10 }}>
         <Link href="/" aria-label="Back to home" style={{ display: "grid", placeItems: "center", width: 42, height: 42, borderRadius: "50%", background: "#183d32", color: "#fff" }}><ArrowLeft size={18} /></Link>

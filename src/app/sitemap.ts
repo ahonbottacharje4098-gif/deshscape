@@ -17,11 +17,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
+  const legalRoutes = ["/privacy", "/affiliate-disclosure"].map((route) => ({
+    url: `${siteUrl}${route}`,
+    changeFrequency: "yearly" as const,
+    priority: 0.3,
+  }));
+
   const journalRoutes = stories.map((story) => ({
     url: `${siteUrl}/journal/${story.slug}`,
     changeFrequency: "monthly" as const,
     priority: 0.6,
   }));
 
-  return [...staticRoutes, ...destinationRoutes, ...journalRoutes];
+  return [...staticRoutes, ...destinationRoutes, ...journalRoutes, ...legalRoutes];
 }

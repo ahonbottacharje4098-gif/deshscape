@@ -7,6 +7,7 @@ import { destinationImageUrl } from "@/lib/destinationImage";
 import DestinationGallery from "@/components/DestinationGallery";
 import ShareDestination from "@/components/ShareDestination";
 import SaveDestination from "@/components/SaveDestination";
+import FooterLegal from "@/components/FooterLegal";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -174,7 +175,7 @@ export default async function DestinationPage({ params }: Props) {
 
       <footer className="site-footer detail-footer">
         <div className="footer-top"><Link className="brand footer-brand" href="/"><span className="brand-mark"><Compass size={22} /></span><span className="brand-name">deshscape<span>.</span><small>THE ART OF DISCOVERY</small></span></Link><p>Explore beyond the ordinary.<br />Discover Bangladesh, one journey at a time.</p><Link className="back-top" href="/#destinations">BACK TO DISCOVER <ArrowUpRight size={15} /></Link></div>
-        <div className="footer-bottom"><span>© 2026 DESHSCAPE. MADE FOR THE CURIOUS.</span><span>INDEPENDENTLY INSPIRED BY BANGLADESH.</span></div>
+        <div className="footer-bottom"><span>© 2026 DESHSCAPE. MADE FOR THE CURIOUS.</span><FooterLegal /><span>INDEPENDENTLY INSPIRED BY BANGLADESH.</span></div>
       </footer>
     </main>
   );

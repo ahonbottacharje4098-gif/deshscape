@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowLeft, ArrowUpRight, Bookmark, Compass, MapPin, Trash2 } from "lucide-react";
 import { allDestinations } from "@/data/destinations";
 import { destinationImageUrl } from "@/lib/destinationImage";
+import FooterLegal from "@/components/FooterLegal";
 
 const STORAGE_KEY = "deshscape-saved-destinations";
 
@@ -82,7 +83,7 @@ export default function MyPlacesPage() {
       </section>
 
       <footer className="site-footer my-places-footer">
-        <div className="footer-bottom"><span>© 2026 DESHSCAPE. MADE FOR THE CURIOUS.</span><Link href="/">BACK TO HOME <ArrowUpRight size={14} /></Link></div>
+        <div className="footer-bottom"><span>© 2026 DESHSCAPE. MADE FOR THE CURIOUS.</span><FooterLegal /><Link href="/">BACK TO HOME <ArrowUpRight size={14} /></Link></div>
       </footer>
     </main>
   );
