@@ -5,7 +5,7 @@ import { CircleMarker, GeoJSON, MapContainer, Popup, TileLayer, Tooltip, ZoomCon
 import Link from "next/link";
 import type { LatLngExpression } from "leaflet";
 import type { Feature, FeatureCollection, Geometry } from "geojson";
-import { destinations } from "@/data/destinations";
+import { allDestinations } from "@/data/destinations";
 import { useLanguage } from "@/components/LanguageProvider";
 
 type Props = {
@@ -51,7 +51,7 @@ function BangladeshMapViewport() {
 
 export default function BangladeshLeafletMap({ activeSlug, onSelect }: Props) {
   const { t } = useLanguage();
-  const places = destinations.filter((place) => place.coordinates);
+  const places = allDestinations.filter((place) => place.coordinates);
   const [divisionBoundaries, setDivisionBoundaries] = useState<FeatureCollection | Feature<Geometry> | null>(null);
 
   useEffect(() => {
