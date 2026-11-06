@@ -2,11 +2,11 @@
 
 import { useMemo, useState } from "react";
 import {
-  ArrowDown, ArrowRight, ArrowUpRight, Compass, MapPin, Menu, Search,
+  ArrowRight, ArrowUpRight, Compass, MapPin, Menu, Search,
   X, Mountain, Waves, Trees, Landmark,
   SlidersHorizontal, RotateCcw, ChevronDown
 } from "lucide-react";
-import { allDestinations, destinationRegions, destinationTypes } from "@/data/destinations";
+import { allDestinations, destinationTypes } from "@/data/destinations";
 import ExploreMap from "@/components/ExploreMap";
 import { destinationImageUrl } from "@/lib/destinationImage";
 import { useLanguage } from "@/components/LanguageProvider";
@@ -143,8 +143,8 @@ export default function Home() {
             <a className="text-link heading-link" href="#map">{t("Explore all destinations")} <ArrowUpRight size={16} /></a>
           </div>
 
-          <div className="division-tabs" role="tablist" aria-label={t("Explore by division")}>
-            {divisions.map((item) => <button type="button" role="tab" aria-selected={division === item} className={division === item ? "division-tab active" : "division-tab"} key={item} onClick={() => { setDivision(item); setRegion("All regions"); }}>{t(item)}</button>)}
+          <div className="division-tabs" role="group" aria-label={t("Explore by division")}>
+            {divisions.map((item) => <button type="button" aria-pressed={division === item} className={division === item ? "division-tab active" : "division-tab"} key={item} onClick={() => { setDivision(item); setRegion("All regions"); }}>{t(item)}</button>)}
           </div>
 
           <div className="advanced-search">
@@ -166,7 +166,13 @@ export default function Home() {
           <div className="destination-grid">
             {filtered.map((place, index) => (
               <a className={index === 0 && sort === "featured" ? "destination-card featured" : "destination-card"} href={`/destinations/${place.slug}`} key={place.slug} aria-label={`${t("Explore")} ${t(place.name)} ${t("in")} ${t(place.district)}`} title={`${t("Explore")} ${t(place.name)}`}>
-                <div className="destination-image" style={{ backgroundImage: `url(${destinationImageUrl(place.image, 1200)})` }} />
+                <img
+                  className="destination-image"
+                  src={destinationImageUrl(place.image, 1200)}
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
                 <div className="destination-overlay" />
                 <span className="destination-tag">{t(place.tag)}</span>
                 <div className="destination-info"><span><MapPin size={13} /> {t(place.region)}</span><h3>{t(place.name)}</h3><div className="card-bottom"><small>{t(place.type)}</small><i><ArrowUpRight size={17} /></i></div></div>

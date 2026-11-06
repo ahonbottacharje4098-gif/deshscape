@@ -35,12 +35,12 @@ export default function TripPlannerPage() {
   }, [division, experience, suggestionSet]);
 
   const tripSummary = [
-    "My Deshscape trip ideas",
-    `Division: ${division}`,
-    `Experience: ${experience}`,
-    `Suggestion set: ${suggestionSet}`,
+    t("My Deshscape trip ideas"),
+    `${t("Division")}: ${t(division)}`,
+    `${t("Experience")}: ${t(experience)}`,
+    `${t("Suggestion set")}: ${t(suggestionSet)}`,
     "",
-    "Suggested destinations:",
+    t("Suggested destinations:"),
     ...suggestions.map((place, index) => `${index + 1}. ${t(place.name)} — ${t(place.region)}`)
   ].join("\n");
 
@@ -56,6 +56,7 @@ export default function TripPlannerPage() {
 
   return (
     <main id="main-content" tabIndex={-1} className="trip-planner-page">
+      <span id="top" />
       <header className="site-header">
         <a className="brand" href="/" aria-label="Deshscape home"><span className="brand-mark"><Compass size={22} strokeWidth={1.7} /></span><span className="brand-name">deshscape<span>.</span><small>{t("THE ART OF DISCOVERY")}</small></span></a>
         <nav className="main-nav"><a className="nav-link" href="/">{t("Discover")}</a><a className="nav-link" href="/#destinations">{t("Destinations")}</a><a className="nav-link" href="/journal">{t("Journal")}</a></nav>

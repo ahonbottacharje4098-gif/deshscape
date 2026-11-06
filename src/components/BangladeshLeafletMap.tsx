@@ -142,7 +142,7 @@ export default function BangladeshLeafletMap({ activeSlug, onSelect }: Props) {
           >
             <Popup>
               <div className="leaflet-place-popup">
-                <strong>{place.name}</strong>
+                <strong>{t(place.name)}</strong>
                 <span>{t(place.district)}, {t("Bangladesh")}</span>
                 <Link href={`/destinations/${place.slug}`}>{t("Explore destination")} ↗</Link>
               </div>

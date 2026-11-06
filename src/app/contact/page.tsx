@@ -7,6 +7,19 @@ import { useLanguage } from "@/components/LanguageProvider";
 
 type SendState = "idle" | "sending" | "success" | "error";
 
+const contactErrorMessages: Record<string, string> = {
+  INVALID_CONTENT_TYPE: "Please submit a valid message.",
+  INVALID_PAYLOAD: "Please check the form and security verification.",
+  REQUEST_TOO_LARGE: "Message request is too large.",
+  RATE_LIMITED: "Too many messages sent. Please wait a few minutes before trying again.",
+  TURNSTILE_NOT_CONFIGURED: "Security verification is not configured yet. Please try again later.",
+  TURNSTILE_UNAVAILABLE: "Security verification is temporarily unavailable. Please try again later.",
+  TURNSTILE_FAILED: "Security verification failed. Please try again.",
+  EMAIL_NOT_CONFIGURED: "Email service is not configured yet. Please try again later.",
+  EMAIL_SEND_FAILED: "Your message could not be sent. Please try again.",
+  INTERNAL_ERROR: "Something went wrong. Please try again.",
+};
+
 const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
 export default function ContactPage() {
@@ -27,6 +40,7 @@ export default function ContactPage() {
     event.preventDefault();
     if (!ready || sendState === "sending") return;
 
+    let displayError = t("Your message could not be sent. Please try again.");
     setSendError("");
     setSendState("sending");
     try {
@@ -44,7 +58,11 @@ export default function ContactPage() {
       });
 
       const result = (await response.json().catch(() => ({}))) as { error?: string };
-      if (!response.ok) throw new Error(result.error || `Request failed (HTTP ${response.status})`);
+      if (!response.ok) {
+        const messageKey = result.error ? contactErrorMessages[result.error] : undefined;
+        displayError = t(messageKey || "Your message could not be sent. Please try again.");
+        throw new Error("CONTACT_SEND_FAILED");
+      }
       setSendState("success");
       setName("");
       setEmail("");
@@ -53,8 +71,8 @@ export default function ContactPage() {
       setWebsite("");
       setTurnstileToken("");
       setWidgetVersion((version) => version + 1);
-    } catch (error) {
-      setSendError(error instanceof Error ? error.message : "Please try again.");
+    } catch {
+      setSendError(displayError);
       setSendState("error");
       setTurnstileToken("");
       setWidgetVersion((version) => version + 1);

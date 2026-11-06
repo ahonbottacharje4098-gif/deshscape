@@ -66,7 +66,6 @@ export default async function DestinationPage({ params }: Props) {
         longitude: place.coordinates[1],
       },
     } : {}),
-    isAccessibleForFree: true,
   };
 
   return (
@@ -92,7 +91,7 @@ export default async function DestinationPage({ params }: Props) {
         <div className="detail-hero-image" style={{ backgroundImage: `url(${destinationImageUrl(place.image, 2200)})` }} />
         <div className="detail-hero-shade" />
         <div className="detail-hero-content">
-          <div className="eyebrow light"><span /> {place.tag.toUpperCase()}</div>
+          <div className="eyebrow light"><span /> {place.tag}</div>
           <div className="detail-location"><MapPin size={14} /> {place.region}</div>
           <h1>{place.name}<span>.</span></h1>
           <p>{place.shortDescription}</p>
