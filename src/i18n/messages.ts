@@ -1099,6 +1099,7 @@ export const messages: Record<string, string> = {
   "Follow photography and site rules.": "ছবি তোলা ও স্থানটির নিয়মকানুন মেনে চলুন।",
   "Article reading progress": "নিবন্ধ পড়ার অগ্রগতি",
   "Security verification": "নিরাপত্তা যাচাই",
+  "Skip to main content": "মূল কনটেন্টে চলে যান",
 };
 
 export function translate(text: string, language: Language): string {
