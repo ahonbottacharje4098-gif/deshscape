@@ -785,3 +785,8 @@ html[lang="bn"] .story-title h3{font-size:clamp(18px,2vw,23px)}
   html[lang="bn"] :is(.hero h1,.detail-hero h1,.contact-hero h1,.my-places-hero h1){font-size:clamp(36px,10vw,49px)}
   html[lang="bn"] :is(.intro h2,.section-heading h2,.category-heading h2,.map-copy h2,.planner-text h2,.contact-intro h2,.my-places-empty h2){font-size:clamp(28px,7.5vw,39px)}
 }
+
+/* Keyboard accessibility: reveal the skip link when it receives focus. */
+.skip-link{position:fixed;top:12px;left:12px;z-index:1000;padding:12px 16px;background:var(--forest);color:#fff;border-radius:6px;transform:translateY(-160%);transition:transform .2s}
+.skip-link:focus{transform:translateY(0)}
+main:focus{outline:none}
