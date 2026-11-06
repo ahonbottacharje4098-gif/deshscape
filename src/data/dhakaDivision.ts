@@ -20,7 +20,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       "Mughal-era fort architecture",
       "Terracotta and brick details",
       "A closer look at the district's heritage"
-    ]
+    ],
     "travelNotes": [
       "Confirm opening hours, access and local conditions before travelling.",
       "Respect local communities, religious sites and conservation rules.",
@@ -45,7 +45,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       "Historic residence and architecture",
       "Gardens and open grounds",
       "Local heritage and photography"
-    ]
+    ],
     "travelNotes": [
       "Confirm opening hours, access and local conditions before travelling.",
       "Respect local communities, religious sites and conservation rules.",
@@ -70,7 +70,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       "Modernist architecture",
       "Designed by Louis I. Kahn",
       "Distinctive geometric forms"
-    ]
+    ],
     "travelNotes": [
       "Confirm opening hours, access and local conditions before travelling.",
       "Respect local communities, religious sites and conservation rules.",
@@ -95,7 +95,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       "Green hill and woodland scenery",
       "Picnic and nature experiences",
       "Forest paths and shaded surroundings"
-    ]
+    ],
     "travelNotes": [
       "Confirm opening hours, access and local conditions before travelling.",
       "Respect local communities, religious sites and conservation rules.",
@@ -120,7 +120,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       "Creative countryside setting",
       "A literary connection to Humayun Ahmed",
       "Gardens and open-air spaces"
-    ]
+    ],
     "travelNotes": [
       "Confirm opening hours, access and local conditions before travelling.",
       "Respect local communities, religious sites and conservation rules.",
@@ -145,7 +145,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       "Seasonal wetland scenery",
       "Open-water views",
       "Boat journeys and rural landscapes"
-    ]
+    ],
     "travelNotes": [
       "Confirm opening hours, access and local conditions before travelling.",
       "Respect local communities, religious sites and conservation rules.",
@@ -170,7 +170,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       "Historic merchant mansions",
       "Preserved streetscape",
       "Sonargaon architectural heritage"
-    ]
+    ],
     "travelNotes": [
       "Confirm opening hours, access and local conditions before travelling.",
       "Respect local communities, religious sites and conservation rules.",
@@ -195,7 +195,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       "Folk art and craft collections",
       "Traditional craft displays",
       "Bangladesh's craft traditions"
-    ]
+    ],
     "travelNotes": [
       "Confirm opening hours, access and local conditions before travelling.",
       "Respect local communities, religious sites and conservation rules.",
@@ -220,7 +220,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       "Archaeological remains",
       "Early historic Bengal context",
       "Open-air heritage landscape"
-    ]
+    ],
     "travelNotes": [
       "Confirm opening hours, access and local conditions before travelling.",
       "Respect local communities, religious sites and conservation rules.",
@@ -245,7 +245,7 @@ export const dhakaDivisionDestinations: Destination[] = [
       "Padma River views",
       "Bridge architecture and scale",
       "Jajira-side riverfront landscape"
-    ]
+    ],
     "travelNotes": [
       "Confirm opening hours, access and local conditions before travelling.",
       "Respect local communities, religious sites and conservation rules.",
