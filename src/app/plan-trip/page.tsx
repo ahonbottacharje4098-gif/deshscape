@@ -55,7 +55,7 @@ export default function TripPlannerPage() {
   }
 
   return (
-    <main className="trip-planner-page">
+    <main id="main-content" tabIndex={-1} className="trip-planner-page">
       <header className="site-header">
         <a className="brand" href="/" aria-label="Deshscape home"><span className="brand-mark"><Compass size={22} strokeWidth={1.7} /></span><span className="brand-name">deshscape<span>.</span><small>{t("THE ART OF DISCOVERY")}</small></span></a>
         <nav className="main-nav"><a className="nav-link" href="/">{t("Discover")}</a><a className="nav-link" href="/#destinations">{t("Destinations")}</a><a className="nav-link" href="/journal">{t("Journal")}</a></nav>
