@@ -3,8 +3,7 @@
 import { useEffect, useState } from "react";
 import { Bookmark, BookmarkCheck } from "lucide-react";
 import { useLanguage } from "@/components/LanguageProvider";
-
-const STORAGE_KEY = "deshscape-saved-destinations";
+import { readSavedDestinations, writeSavedDestinations } from "@/lib/savedDestinations";
 
 type Props = { slug: string };
 
@@ -13,26 +12,15 @@ export default function SaveDestination({ slug }: Props) {
   const [saved, setSaved] = useState(false);
 
   useEffect(() => {
-    try {
-      const stored = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
-      setSaved(Array.isArray(stored) && stored.includes(slug));
-    } catch {
-      setSaved(false);
-    }
+    setSaved(readSavedDestinations().includes(slug));
   }, [slug]);
 
   function toggleSaved() {
-    try {
-      const stored = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
-      const current: string[] = Array.isArray(stored) ? stored.filter((item): item is string => typeof item === "string") : [];
-      const next = current.includes(slug)
-        ? current.filter((item) => item !== slug)
-        : [...current, slug];
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
-      setSaved(next.includes(slug));
-    } catch {
-      setSaved(false);
-    }
+    const current = readSavedDestinations();
+    const next = current.includes(slug)
+      ? current.filter((item) => item !== slug)
+      : [...current, slug];
+    if (writeSavedDestinations(next)) setSaved(next.includes(slug));
   }
 
   return (
