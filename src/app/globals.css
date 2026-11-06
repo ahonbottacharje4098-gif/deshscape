@@ -790,3 +790,8 @@ html[lang="bn"] .story-title h3{font-size:clamp(18px,2vw,23px)}
 .skip-link{position:fixed;top:12px;left:12px;z-index:1000;padding:12px 16px;background:var(--forest);color:#fff;border-radius:6px;transform:translateY(-160%);transition:transform .2s}
 .skip-link:focus{transform:translateY(0)}
 main:focus{outline:none}
+
+/* Keyboard accessibility: reveal the skip link when focused. */
+.skip-link{position:fixed;top:12px;left:12px;z-index:1000;padding:12px 16px;background:var(--forest);color:#fff;border-radius:6px;transform:translateY(-160%);transition:transform .2s}
+.skip-link:focus{transform:translateY(0)}
+main:focus{outline:none}
