@@ -81,7 +81,7 @@ export default function Home() {
   };
 
   return (
-    <main id="top">
+    <main id="main-content" tabIndex={-1}><span id="top" />
       <header className="site-header">
         <a className="brand" href="/" aria-label="Deshscape home">
           <span className="brand-mark"><Compass size={22} strokeWidth={1.7} /></span>
