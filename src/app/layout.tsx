@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import "leaflet/dist/leaflet.css";
 import "./globals.css";
+import { LanguageProvider } from "@/components/LanguageProvider";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
+import AutoTranslate from "@/components/AutoTranslate";
 
 const siteDescription =
   "Discover Bangladesh, one journey at a time. Explore destinations, culture, nature and travel stories from across the country.";
@@ -22,7 +25,7 @@ const siteStructuredData = {
       url: "https://deshscape.vercel.app/",
       description: siteDescription,
       publisher: { "@id": "https://deshscape.vercel.app/#organization" },
-      inLanguage: "en",
+      inLanguage: "en-BD",
     },
   ],
 };
@@ -53,7 +56,7 @@ export const metadata: Metadata = {
   creator: "Deshscape",
   publisher: "Deshscape",
   category: "travel",
-  referrer: "origin-when-cross-origin",
+  referrer: "strict-origin-when-cross-origin",
   formatDetection: {
     telephone: false,
     email: false,
@@ -61,7 +64,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "en_BD",
     siteName: "Deshscape",
     title: "Deshscape — Explore Beyond the Ordinary",
     description: siteDescription,
@@ -89,14 +92,17 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body>
-        <a className="skip-link" href="#main-content">Skip to main content</a>
+        <LanguageProvider>
+        <AutoTranslate><a className="skip-link" href="#main-content">Skip to main content</a></AutoTranslate>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(siteStructuredData) }}
         />
         {children}
+          <LanguageSwitcher />
+        </LanguageProvider>
       </body>
     </html>
   );

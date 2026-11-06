@@ -5,7 +5,8 @@ import { CircleMarker, GeoJSON, MapContainer, Popup, TileLayer, Tooltip, ZoomCon
 import Link from "next/link";
 import type { LatLngExpression } from "leaflet";
 import type { Feature, FeatureCollection, Geometry } from "geojson";
-import { destinations } from "@/data/destinations";
+import { allDestinations } from "@/data/destinations";
+import { useLanguage } from "@/components/LanguageProvider";
 
 type Props = {
   activeSlug: string;
@@ -49,7 +50,8 @@ function BangladeshMapViewport() {
 }
 
 export default function BangladeshLeafletMap({ activeSlug, onSelect }: Props) {
-  const places = destinations.filter((place) => place.coordinates);
+  const { t } = useLanguage();
+  const places = allDestinations.filter((place) => place.coordinates);
   const [divisionBoundaries, setDivisionBoundaries] = useState<FeatureCollection | Feature<Geometry> | null>(null);
 
   useEffect(() => {
@@ -82,7 +84,7 @@ export default function BangladeshLeafletMap({ activeSlug, onSelect }: Props) {
       scrollWheelZoom
       zoomControl={false}
       className="leaflet-bangladesh-map"
-      aria-label="Interactive map of the eight divisions of Bangladesh"
+      aria-label={t("Interactive map of the eight divisions of Bangladesh")}
     >
       <BangladeshMapViewport />
       <TileLayer
@@ -110,7 +112,7 @@ export default function BangladeshLeafletMap({ activeSlug, onSelect }: Props) {
             const properties = (feature.properties ?? {}) as DivisionProperties;
             const name = properties.adm1_en ?? properties.ADM1_EN ?? properties.name;
             if (name) {
-              layer.bindTooltip(name, {
+              layer.bindTooltip(t(name), {
                 permanent: true,
                 direction: "center",
                 className: "division-map-label",
@@ -140,9 +142,9 @@ export default function BangladeshLeafletMap({ activeSlug, onSelect }: Props) {
           >
             <Popup>
               <div className="leaflet-place-popup">
-                <strong>{place.name}</strong>
-                <span>{place.district}, Bangladesh</span>
-                <Link href={`/destinations/${place.slug}`}>Explore destination ↗</Link>
+                <strong>{t(place.name)}</strong>
+                <span>{t(place.district)}, {t("Bangladesh")}</span>
+                <Link href={`/destinations/${place.slug}`}>{t("Explore destination")} ↗</Link>
               </div>
             </Popup>
           </CircleMarker>

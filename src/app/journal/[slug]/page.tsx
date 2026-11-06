@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight, Compass, MapPin } from "lucide-react";
-import { destinations } from "@/data/destinations";
+import { allDestinations } from "@/data/destinations";
 import { destinationImageUrl } from "@/lib/destinationImage";
 import ShareStory from "@/components/ShareStory";
 import ReadingProgress from "@/components/ReadingProgress";
 import BackToTop from "@/components/BackToTop";
+import AutoTranslate from "@/components/AutoTranslate";
 
-import { stories } from "@/data/journalStories";
+import { journalStories as stories } from "@/data/journalStories";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -19,7 +20,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const story = stories.find((item) => item.slug === slug);
-  if (!story) return { title: "Story not found | Deshscape" };
+  if (!story) return { title: "Story not found" };
   const canonicalUrl = `https://deshscape.vercel.app/journal/${story.slug}`;
   return {
     title: `${story.title} — Deshscape Journal`,
@@ -47,14 +48,8 @@ export default async function JournalStoryPage({ params }: Props) {
   const story = stories.find((item) => item.slug === slug);
   if (!story) notFound();
 
-  const relatedSlugs = story.slug === "river-town-rhythm"
-    ? ["goalanda-ghat", "hardinge-bridge"]
-    : story.slug === "beyond-tea-gardens" ? ["jaflong", "ratargul-swamp-forest", "lalakhal"]
-    : story.slug === "stone-stories-of-kantajew" ? ["kantajew-temple", "tajhat-palace"]
-    : story.slug === "a-quiet-world-in-ratargul" ? ["ratargul-swamp-forest", "lalakhal", "jaflong"]
-    : ["baliati-palace", "idrakpur-fort"];
-  const relatedPlaces = relatedSlugs
-    .map((relatedSlug) => destinations.find((place) => place.slug === relatedSlug))
+  const relatedPlaces = story.relatedDestinationSlugs
+    .map((relatedSlug) => allDestinations.find((place) => place.slug === relatedSlug))
     .filter((place) => place !== undefined);
   const articleWordCount = [story.intro, ...story.paragraphs].join(" ").trim().split(/\s+/).length;
   const readingMinutes = Math.max(1, Math.ceil(articleWordCount / 200));
@@ -77,6 +72,7 @@ export default async function JournalStoryPage({ params }: Props) {
   };
 
   return (
+    <AutoTranslate>
     <main id="main-content" tabIndex={-1} className="journal-article-page">
       <script
         type="application/ld+json"
@@ -107,9 +103,9 @@ export default async function JournalStoryPage({ params }: Props) {
         <div className="journal-article-hero-copy">
           <Link className="journal-back-link" href="/journal"><ArrowLeft size={14} /> BACK TO JOURNAL</Link>
           <div className="eyebrow light"><span /> {story.category}</div>
-          <span className="journal-article-number">FIELD NOTE {story.number}</span>
+          <span className="journal-article-number">{"FIELD NOTE"} {story.number}</span>
           <h1>{story.title}<span>.</span></h1>
-          <p><MapPin size={15} /> {story.location}, Bangladesh <span className="journal-reading-time">· {readingMinutes} MIN READ</span></p>
+          <p><MapPin size={15} /> {story.location}, Bangladesh <span className="journal-reading-time">· {readingMinutes} {"MIN READ"}</span></p>
         </div>
       </section>
 
@@ -155,5 +151,6 @@ export default async function JournalStoryPage({ params }: Props) {
         <div className="footer-bottom"><span>© 2026 DESHSCAPE. MADE FOR THE CURIOUS.</span><span>INDEPENDENTLY INSPIRED BY BANGLADESH.</span></div>
       </footer>
     </main>
+    </AutoTranslate>
   );
 }

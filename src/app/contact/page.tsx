@@ -3,12 +3,27 @@
 import { useState } from "react";
 import { ArrowLeft, ArrowUpRight, Check, Compass, LoaderCircle, Mail, MessageCircle } from "lucide-react";
 import TurnstileWidget from "@/components/TurnstileWidget";
+import { useLanguage } from "@/components/LanguageProvider";
 
 type SendState = "idle" | "sending" | "success" | "error";
+
+const contactErrorMessages: Record<string, string> = {
+  INVALID_CONTENT_TYPE: "Please submit a valid message.",
+  INVALID_PAYLOAD: "Please check the form and security verification.",
+  REQUEST_TOO_LARGE: "Message request is too large.",
+  RATE_LIMITED: "Too many messages sent. Please wait a few minutes before trying again.",
+  TURNSTILE_NOT_CONFIGURED: "Security verification is not configured yet. Please try again later.",
+  TURNSTILE_UNAVAILABLE: "Security verification is temporarily unavailable. Please try again later.",
+  TURNSTILE_FAILED: "Security verification failed. Please try again.",
+  EMAIL_NOT_CONFIGURED: "Email service is not configured yet. Please try again later.",
+  EMAIL_SEND_FAILED: "Your message could not be sent. Please try again.",
+  INTERNAL_ERROR: "Something went wrong. Please try again.",
+};
 
 const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
 export default function ContactPage() {
+  const { t } = useLanguage();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
@@ -25,6 +40,7 @@ export default function ContactPage() {
     event.preventDefault();
     if (!ready || sendState === "sending") return;
 
+    let displayError = t("Your message could not be sent. Please try again.");
     setSendError("");
     setSendState("sending");
     try {
@@ -42,7 +58,11 @@ export default function ContactPage() {
       });
 
       const result = (await response.json().catch(() => ({}))) as { error?: string };
-      if (!response.ok) throw new Error(result.error || `Request failed (HTTP ${response.status})`);
+      if (!response.ok) {
+        const messageKey = result.error ? contactErrorMessages[result.error] : undefined;
+        displayError = t(messageKey || "Your message could not be sent. Please try again.");
+        throw new Error("CONTACT_SEND_FAILED");
+      }
       setSendState("success");
       setName("");
       setEmail("");
@@ -51,8 +71,8 @@ export default function ContactPage() {
       setWebsite("");
       setTurnstileToken("");
       setWidgetVersion((version) => version + 1);
-    } catch (error) {
-      setSendError(error instanceof Error ? error.message : "Please try again.");
+    } catch {
+      setSendError(displayError);
       setSendState("error");
       setTurnstileToken("");
       setWidgetVersion((version) => version + 1);
@@ -64,33 +84,33 @@ export default function ContactPage() {
       <header className="contact-header">
         <a className="brand" href="/" aria-label="Deshscape home">
           <span className="brand-mark"><Compass size={22} strokeWidth={1.7} /></span>
-          <span className="brand-name">deshscape<span>.</span><small>THE ART OF DISCOVERY</small></span>
+          <span className="brand-name">deshscape<span>.</span><small>{t("THE ART OF DISCOVERY")}</small></span>
         </a>
-        <a className="contact-home-link" href="/"><ArrowLeft size={15} /> BACK TO DISCOVER</a>
+        <a className="contact-home-link" href="/"><ArrowLeft size={15} /> {t("BACK TO DISCOVER")}</a>
       </header>
 
       <section className="contact-hero">
-        <div className="eyebrow light"><span /> LET'S CONNECT</div>
-        <h1>Every great journey<br />starts with a <em>hello.</em></h1>
-        <p>Have a destination suggestion, a story to share, or an idea for Deshscape? We'd love to hear what you have in mind.</p>
+        <div className="eyebrow light"><span /> {t("LET'S CONNECT")}</div>
+        <h1>{t("Every great journey")}<br />{t("starts with a")} <em>{t("hello.")}</em></h1>
+        <p>{t("Have a destination suggestion, a story to share, or an idea for Deshscape? We'd love to hear what you have in mind.")}</p>
         <div className="contact-hero-mark"><MessageCircle size={58} strokeWidth={1} /></div>
       </section>
 
       <section className="contact-content">
         <div className="contact-intro">
-          <div className="eyebrow"><span /> WRITE TO US</div>
-          <h2>Start a<br /><em>conversation.</em></h2>
-          <p>Share your thoughts with the Deshscape team. Fill in the form and send your message directly.</p>
-          <div className="contact-note"><Mail size={18} /><span><strong>Your message goes to the site owner.</strong><small>Please avoid including passwords, payment details, or other sensitive information.</small></span></div>
+          <div className="eyebrow"><span /> {t("WRITE TO US")}</div>
+          <h2>{t("Start a")}<br /><em>{t("conversation.")}</em></h2>
+          <p>{t("Share your thoughts with the Deshscape team. Fill in the form and send your message directly.")}</p>
+          <div className="contact-note"><Mail size={18} /><span><strong>{t("Your message goes to the site owner.")}</strong><small>{t("Please avoid including passwords, payment details, or other sensitive information.")}</small></span></div>
         </div>
 
         <form className="contact-form" onSubmit={sendMessage}>
-          <label>Your name<input value={name} onChange={(event) => setName(event.target.value)} placeholder="How should we call you?" maxLength={80} autoComplete="name" required /></label>
-          <label>Email address<input type="email" value={email} onChange={(event) => setEmail(event.target.value)} placeholder="you@example.com" maxLength={254} autoComplete="email" required /></label>
-          <label>Subject<input value={subject} onChange={(event) => setSubject(event.target.value)} placeholder="What's on your mind?" maxLength={120} required /></label>
-          <label>Your message<textarea value={message} onChange={(event) => setMessage(event.target.value)} placeholder="Tell us a little more..." rows={6} maxLength={4000} required /></label>
+          <label>{t("Your name")}<input value={name} onChange={(event) => setName(event.target.value)} placeholder={t("How should we call you?")} maxLength={80} autoComplete="name" required /></label>
+          <label>{t("Email address")}<input type="email" value={email} onChange={(event) => setEmail(event.target.value)} placeholder="you@example.com" maxLength={254} autoComplete="email" required /></label>
+          <label>{t("Subject")}<input value={subject} onChange={(event) => setSubject(event.target.value)} placeholder={t("What's on your mind?")} maxLength={120} required /></label>
+          <label>{t("Your message")}<textarea value={message} onChange={(event) => setMessage(event.target.value)} placeholder={t("Tell us a little more...")} rows={6} maxLength={4000} required /></label>
           <div aria-hidden="true" style={{ position: "absolute", left: "-10000px", width: 1, height: 1, overflow: "hidden" }}>
-            <label>Leave this field empty<input name="website" tabIndex={-1} autoComplete="off" value={website} onChange={(event) => setWebsite(event.target.value)} /></label>
+            <label>{t("Leave this field empty")}<input name="website" tabIndex={-1} autoComplete="off" value={website} onChange={(event) => setWebsite(event.target.value)} /></label>
           </div>
           {turnstileSiteKey ? (
             <div className="contact-verification">
@@ -102,15 +122,15 @@ export default function ContactPage() {
               />
             </div>
           ) : (
-            <p className="contact-error" role="alert">Security verification is not configured yet. Please try again later.</p>
+            <p className="contact-error" role="alert">{t("Security verification is not configured yet. Please try again later.")}</p>
           )}
-          <div className="contact-form-bottom"><span>All fields are required</span><button className="button button-dark" type="submit" disabled={!ready || sendState === "sending"}>{sendState === "sending" ? "Sending..." : "Send message"}{sendState === "sending" ? <LoaderCircle size={16} className="contact-spinner" /> : <ArrowUpRight size={16} />}</button></div>
-          {sendState === "success" && <p className="contact-success" role="status"><Check size={15} /> Your message has been sent. Thank you for reaching out!</p>}
-          {sendState === "error" && <p className="contact-error" role="alert">{sendError || "Your message could not be sent. Please try again."}</p>}
+          <div className="contact-form-bottom"><span>{t("All fields are required")}</span><button className="button button-dark" type="submit" disabled={!ready || sendState === "sending"}>{sendState === "sending" ? t("Sending...") : t("Send message")}{sendState === "sending" ? <LoaderCircle size={16} className="contact-spinner" /> : <ArrowUpRight size={16} />}</button></div>
+          {sendState === "success" && <p className="contact-success" role="status"><Check size={15} /> {t("Your message has been sent. Thank you for reaching out!")}</p>}
+          {sendState === "error" && <p className="contact-error" role="alert">{sendError || t("Your message could not be sent. Please try again.")}</p>}
         </form>
       </section>
 
-      <footer className="contact-footer"><span>© 2026 DESHSCAPE. MADE FOR THE CURIOUS.</span><a href="/">EXPLORE BANGLADESH <ArrowUpRight size={14} /></a></footer>
+      <footer className="contact-footer"><span>{t("© 2026 DESHSCAPE. MADE FOR THE CURIOUS.")}</span><a href="/">{t("EXPLORE BANGLADESH")} <ArrowUpRight size={14} /></a></footer>
     </main>
   );
 }

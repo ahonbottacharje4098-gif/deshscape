@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { allDestinations } from "@/data/destinations";
-import { stories } from "@/data/journalStories";
+import { journalStories } from "@/data/journalStories";
 
 const siteUrl = "https://deshscape.vercel.app";
 
@@ -17,7 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  const journalRoutes = stories.map((story) => ({
+  const journalRoutes = journalStories.map((story) => ({
     url: `${siteUrl}/journal/${story.slug}`,
     changeFrequency: "monthly" as const,
     priority: 0.6,

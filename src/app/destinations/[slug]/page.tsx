@@ -7,6 +7,7 @@ import { destinationImageUrl } from "@/lib/destinationImage";
 import DestinationGallery from "@/components/DestinationGallery";
 import ShareDestination from "@/components/ShareDestination";
 import SaveDestination from "@/components/SaveDestination";
+import AutoTranslate from "@/components/AutoTranslate";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -17,10 +18,10 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const place = allDestinations.find((item) => item.slug === slug);
-  if (!place) return { title: "Destination not found | Deshscape" };
+  if (!place) return { title: "Destination not found" };
   const canonicalUrl = `https://deshscape.vercel.app/destinations/${place.slug}`;
   return {
-    title: `${place.name} | Deshscape`,
+    title: place.name,
     description: place.shortDescription,
     alternates: { canonical: canonicalUrl },
     openGraph: {
@@ -65,10 +66,10 @@ export default async function DestinationPage({ params }: Props) {
         longitude: place.coordinates[1],
       },
     } : {}),
-    isAccessibleForFree: true,
   };
 
   return (
+    <AutoTranslate>
     <main id="main-content" tabIndex={-1} className="detail-page">
       <script
         type="application/ld+json"
@@ -90,7 +91,7 @@ export default async function DestinationPage({ params }: Props) {
         <div className="detail-hero-image" style={{ backgroundImage: `url(${destinationImageUrl(place.image, 2200)})` }} />
         <div className="detail-hero-shade" />
         <div className="detail-hero-content">
-          <div className="eyebrow light"><span /> {place.tag.toUpperCase()}</div>
+          <div className="eyebrow light"><span /> {place.tag}</div>
           <div className="detail-location"><MapPin size={14} /> {place.region}</div>
           <h1>{place.name}<span>.</span></h1>
           <p>{place.shortDescription}</p>
@@ -177,5 +178,6 @@ export default async function DestinationPage({ params }: Props) {
         <div className="footer-bottom"><span>© 2026 DESHSCAPE. MADE FOR THE CURIOUS.</span><span>INDEPENDENTLY INSPIRED BY BANGLADESH.</span></div>
       </footer>
     </main>
+    </AutoTranslate>
   );
 }

@@ -2,8 +2,10 @@
 
 import { useEffect, useState } from "react";
 import { ArrowUp } from "lucide-react";
+import { useLanguage } from "@/components/LanguageProvider";
 
 export default function BackToTop() {
+  const { t } = useLanguage();
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -19,11 +21,14 @@ export default function BackToTop() {
     <button
       className="back-to-top-button"
       type="button"
-      aria-label="Back to top"
-      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      aria-label={t("Back to top")}
+      onClick={() => {
+        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+      }}
     >
       <ArrowUp size={17} strokeWidth={1.8} />
-      <span>BACK TO TOP</span>
+      <span>{t("BACK TO TOP")}</span>
     </button>
   );
 }

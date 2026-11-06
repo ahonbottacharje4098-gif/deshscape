@@ -1,18 +1,24 @@
-export type Story = {
+export type JournalStory = {
   slug: string;
   number: string;
   category: string;
   title: string;
   location: string;
   image: string;
+  description: string;
   intro: string;
   paragraphs: string[];
   note: string;
+  readingTime: string;
+  relatedDestinationSlugs: string[];
 };
 
-export const stories: Story[] = [
+export const journalStories: JournalStory[] = [
   {
     slug: "river-town-rhythm",
+    description: "Along the Padma, the river shapes more than the landscape. It influences daily routines, local trade and the stories shared by people who live beside its changing waters.",
+    readingTime: "1 MIN READ",
+    relatedDestinationSlugs: ["goalanda-ghat","hardinge-bridge"],
     number: "01",
     category: "PEOPLE & CULTURE",
     title: "The rhythm of a river town",
@@ -29,6 +35,9 @@ export const stories: Story[] = [
   },
   {
     slug: "beyond-tea-gardens",
+    description: "The green hills and winding paths of the northeast invite a slower kind of journey. Look beyond the familiar viewpoints and notice the small details that make this landscape special.",
+    readingTime: "1 MIN READ",
+    relatedDestinationSlugs: ["jaflong","ratargul-swamp-forest","lalakhal"],
     number: "02",
     category: "HIDDEN BANGLADESH",
     title: "Beyond the tea gardens",
@@ -45,6 +54,9 @@ export const stories: Story[] = [
   }  ,
   {
     slug: "stone-stories-of-kantajew",
+    description: "Intricate terracotta panels turn a historic temple into an open-air gallery of craft, belief and everyday scenes from another time.",
+    readingTime: "1 MIN READ",
+    relatedDestinationSlugs: ["kantajew-temple","tajhat-palace"],
     number: "03",
     category: "ART & HERITAGE",
     title: "Stone stories of Kantajew",
@@ -61,6 +73,9 @@ export const stories: Story[] = [
   },
   {
     slug: "a-quiet-world-in-ratargul",
+    description: "In the freshwater swamp forest, water and woodland meet. The experience changes with the season, light and level of the water.",
+    readingTime: "1 MIN READ",
+    relatedDestinationSlugs: ["ratargul-swamp-forest","lalakhal","jaflong"],
     number: "04",
     category: "HIDDEN BANGLADESH",
     title: "A quiet world in Ratargul",
@@ -77,6 +92,9 @@ export const stories: Story[] = [
   },
   {
     slug: "courtyards-and-memory-at-baliati",
+    description: "The old palace complex offers a glimpse into the region's architectural past through its courtyards, façades and layered history.",
+    readingTime: "1 MIN READ",
+    relatedDestinationSlugs: ["baliati-palace","idrakpur-fort"],
     number: "05",
     category: "ART & HERITAGE",
     title: "Courtyards and memory at Baliati",
