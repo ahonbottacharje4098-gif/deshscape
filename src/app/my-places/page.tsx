@@ -33,7 +33,7 @@ export default function MyPlacesPage() {
   const savedPlaces = allDestinations.filter((place) => savedSlugs.includes(place.slug));
 
   return (
-    <main className="my-places-page">
+    <main id="main-content" tabIndex={-1} className="my-places-page">
       <header className="site-header my-places-header">
         <Link className="brand" href="/">
           <span className="brand-mark"><Compass size={22} strokeWidth={1.7} /></span>
