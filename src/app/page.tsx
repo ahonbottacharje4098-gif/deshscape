@@ -50,6 +50,34 @@ export default function Home() {
     return () => window.removeEventListener("keydown", closeOnEscape);
   }, [menuOpen]);
 
+  useEffect(() => {
+    const targets = document.querySelectorAll<HTMLElement>(
+      ".intro, .section-heading, .advanced-search, .destination-card, .category-item, .map-feature, .planner-card, .story-row, .site-footer"
+    );
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    targets.forEach((element) => element.classList.add("reveal-on-scroll"));
+    if (reduceMotion || !("IntersectionObserver" in window)) {
+      targets.forEach((element) => element.classList.add("is-visible"));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.08, rootMargin: "0px 0px -36px 0px" }
+    );
+
+    targets.forEach((element) => observer.observe(element));
+    return () => observer.disconnect();
+  }, []);
+
   const availableRegions = useMemo(() => {
     const regions = allDestinations
       .filter((place) => division === "All divisions" || divisionFor(place) === division)
