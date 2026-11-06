@@ -1100,18 +1100,12 @@ export const messages: Record<string, string> = {
   "Article reading progress": "নিবন্ধ পড়ার অগ্রগতি",
   "Security verification": "নিরাপত্তা যাচাই",
   "Skip to main content": "মূল কনটেন্টে চলে যান",
-  "My Deshscape trip ideas": "আমার Deshscape ভ্রমণ পরিকল্পনা",
-  "Division": "বিভাগ",
-  "Experience": "অভিজ্ঞতা",
-  "Suggestion set": "পরামর্শের সংখ্যা",
-  "Suggested destinations:": "প্রস্তাবিত গন্তব্যসমূহ:",
   "Please submit a valid message.": "অনুগ্রহ করে সঠিকভাবে বার্তাটি পাঠান।",
   "Message request is too large.": "বার্তাটি নির্ধারিত সীমার চেয়ে বড়।",
   "Too many messages sent. Please wait a few minutes before trying again.": "অনেকবার বার্তা পাঠানোর চেষ্টা হয়েছে। কয়েক মিনিট অপেক্ষা করে আবার চেষ্টা করুন।",
   "Security verification is temporarily unavailable. Please try again later.": "নিরাপত্তা যাচাই সাময়িকভাবে কাজ করছে না। পরে আবার চেষ্টা করুন।",
   "Security verification failed. Please try again.": "নিরাপত্তা যাচাই সম্পন্ন হয়নি। আবার চেষ্টা করুন।",
   "Email service is not configured yet. Please try again later.": "ইমেইল সেবা এখনো প্রস্তুত নয়। পরে আবার চেষ্টা করুন।",
-  "Your message could not be sent. Please try again.": "আপনার বার্তাটি পাঠানো যায়নি। অনুগ্রহ করে আবার চেষ্টা করুন।",
   "Something went wrong. Please try again.": "কিছু একটা সমস্যা হয়েছে। অনুগ্রহ করে আবার চেষ্টা করুন।",
 };
 
