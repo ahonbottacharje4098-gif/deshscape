@@ -62,7 +62,7 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="contact-page">
+    <main id="main-content" tabIndex={-1} className="contact-page">
       <header className="contact-header">
         <a className="brand" href="/" aria-label="Deshscape home">
           <span className="brand-mark"><Compass size={22} strokeWidth={1.7} /></span>
