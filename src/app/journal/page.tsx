@@ -99,7 +99,7 @@ export default function JournalPage() {
                   <Link className="journal-card-image" href={`/journal/${story.slug}`} aria-label={`Read ${t(story.title)}`} style={{ backgroundImage: `url(${story.image})` }} />
                   <div className="journal-card-copy">
                     <div className="eyebrow"><span /> {t(story.category)}</div>
-                    <h3 style={{ font: "30px/1.15 'Playfair Display',serif", color: "#183d32", margin: "17px 0 10px" }}>{t(story.title)}</h3>
+                    <h3 className="journal-card-title">{t(story.title)}</h3>
                     <div style={{ display: "flex", alignItems: "center", gap: 6, color: "#899387", fontSize: 10, marginBottom: 15 }}><MapPin size={13} /> {t(story.location)}<span style={{ marginLeft: 10, display: "inline-flex", alignItems: "center", gap: 5 }}><Clock3 size={12} /> {t(story.readingTime)}</span></div>
                     <p style={{ color: "#70776e", fontSize: 12, lineHeight: 1.9, margin: "0 0 18px" }}>{t(story.description)}</p>
                     <div style={{ color: "#9caa96", fontSize: 9, letterSpacing: 1.1, textTransform: "uppercase" }}>{t(story.note)}</div>

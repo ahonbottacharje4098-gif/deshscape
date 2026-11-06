@@ -22,7 +22,10 @@ export default function BackToTop() {
       className="back-to-top-button"
       type="button"
       aria-label={t("Back to top")}
-      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      onClick={() => {
+        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+      }}
     >
       <ArrowUp size={17} strokeWidth={1.8} />
       <span>{t("BACK TO TOP")}</span>

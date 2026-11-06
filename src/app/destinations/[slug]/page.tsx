@@ -18,10 +18,10 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const place = allDestinations.find((item) => item.slug === slug);
-  if (!place) return { title: "Destination not found | Deshscape" };
+  if (!place) return { title: "Destination not found" };
   const canonicalUrl = `https://deshscape.vercel.app/destinations/${place.slug}`;
   return {
-    title: `${place.name} | Deshscape`,
+    title: place.name,
     description: place.shortDescription,
     alternates: { canonical: canonicalUrl },
     openGraph: {

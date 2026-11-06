@@ -23,7 +23,7 @@ export default function ShareStory({ title }: Props) {
   async function shareStory() {
     if (navigator.share) {
       try {
-        await navigator.share({ title: title + " | Deshscape", text: "Read this story on Deshscape.", url: window.location.href });
+        await navigator.share({ title: `${t(title)} | Deshscape`, text: t("Read this story on Deshscape."), url: window.location.href });
       } catch {
         // The visitor may dismiss the native share sheet.
       }

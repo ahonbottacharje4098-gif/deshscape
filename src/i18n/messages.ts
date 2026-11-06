@@ -1100,6 +1100,8 @@ export const messages: Record<string, string> = {
   "Article reading progress": "নিবন্ধ পড়ার অগ্রগতি",
   "Security verification": "নিরাপত্তা যাচাই",
   "Skip to main content": "মূল কনটেন্টে চলে যান",
+  "Discover this destination on Deshscape.": "Deshscape-এ এই গন্তব্যটি ঘুরে দেখুন।",
+  "Read this story on Deshscape.": "Deshscape-এ এই গল্পটি পড়ুন।",
   "Please submit a valid message.": "অনুগ্রহ করে সঠিকভাবে বার্তাটি পাঠান।",
   "Message request is too large.": "বার্তাটি নির্ধারিত সীমার চেয়ে বড়।",
   "Too many messages sent. Please wait a few minutes before trying again.": "অনেকবার বার্তা পাঠানোর চেষ্টা হয়েছে। কয়েক মিনিট অপেক্ষা করে আবার চেষ্টা করুন।",

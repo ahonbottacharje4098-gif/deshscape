@@ -20,7 +20,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const story = stories.find((item) => item.slug === slug);
-  if (!story) return { title: "Story not found | Deshscape" };
+  if (!story) return { title: "Story not found" };
   const canonicalUrl = `https://deshscape.vercel.app/journal/${story.slug}`;
   return {
     title: `${story.title} — Deshscape Journal`,

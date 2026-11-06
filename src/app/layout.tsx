@@ -25,7 +25,7 @@ const siteStructuredData = {
       url: "https://deshscape.vercel.app/",
       description: siteDescription,
       publisher: { "@id": "https://deshscape.vercel.app/#organization" },
-      inLanguage: "en",
+      inLanguage: "en-BD",
     },
   ],
 };
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
   creator: "Deshscape",
   publisher: "Deshscape",
   category: "travel",
-  referrer: "origin-when-cross-origin",
+  referrer: "strict-origin-when-cross-origin",
   formatDetection: {
     telephone: false,
     email: false,
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "en_BD",
     siteName: "Deshscape",
     title: "Deshscape — Explore Beyond the Ordinary",
     description: siteDescription,

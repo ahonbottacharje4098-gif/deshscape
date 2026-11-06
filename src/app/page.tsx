@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   ArrowRight, ArrowUpRight, Compass, MapPin, Menu, Search,
   X, Mountain, Waves, Trees, Landmark,
@@ -41,6 +41,15 @@ export default function Home() {
   const [sort, setSort] = useState("featured");
   const [menuOpen, setMenuOpen] = useState(false);
 
+  useEffect(() => {
+    if (!menuOpen) return;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setMenuOpen(false);
+    };
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, [menuOpen]);
+
   const availableRegions = useMemo(() => {
     const regions = allDestinations
       .filter((place) => division === "All divisions" || divisionFor(place) === division)
@@ -77,7 +86,8 @@ export default function Home() {
     setType(label);
     setRegion("All regions");
     setQuery("");
-    document.getElementById("destinations")?.scrollIntoView({ behavior: "smooth" });
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    document.getElementById("destinations")?.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" });
   };
 
   return (
@@ -87,7 +97,7 @@ export default function Home() {
           <span className="brand-mark"><Compass size={22} strokeWidth={1.7} /></span>
           <span className="brand-name">deshscape<span>.</span><small>{t("THE ART OF DISCOVERY")}</small></span>
         </a>
-        <nav className={menuOpen ? "main-nav open" : "main-nav"}>
+        <nav id="primary-navigation" className={menuOpen ? "main-nav open" : "main-nav"}>
           <a className="nav-link active" href="#top" onClick={() => setMenuOpen(false)}>{t("Discover")}</a>
           <a className="nav-link" href="#destinations" onClick={() => setMenuOpen(false)}>{t("Destinations")}</a>
           <a className="nav-link" href="#map" onClick={() => setMenuOpen(false)}>{t("Explore map")}</a>
@@ -96,7 +106,7 @@ export default function Home() {
         </nav>
         <div className="header-actions">
           <a className="plan-link" href="/plan-trip">{t("Plan a trip")} <ArrowUpRight size={15} /></a>
-          <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label={t("Toggle menu")} aria-expanded={menuOpen}>
+          <button type="button" className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label={t("Toggle menu")} aria-expanded={menuOpen} aria-controls="primary-navigation">
             {menuOpen ? <X /> : <Menu />}
           </button>
         </div>

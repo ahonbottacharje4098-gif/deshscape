@@ -24,8 +24,8 @@ export default function ShareDestination({ title }: Props) {
     if (navigator.share) {
       try {
         await navigator.share({
-          title: title + " | Deshscape",
-          text: "Discover " + title + " on Deshscape.",
+          title: `${t(title)} | Deshscape`,
+          text: t("Discover this destination on Deshscape."),
           url: window.location.href,
         });
       } catch {

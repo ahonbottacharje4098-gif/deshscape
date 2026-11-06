@@ -17,6 +17,10 @@ export default function DestinationGallery({ image, title }: Props) {
   const closeButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
+    setPhotos([{ url: image }]);
+    setActiveIndex(0);
+    setIsOpen(false);
+    setIsLoading(true);
     const controller = new AbortController();
 
     async function loadPhotos() {
