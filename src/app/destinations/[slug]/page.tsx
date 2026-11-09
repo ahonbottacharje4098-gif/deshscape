@@ -11,6 +11,21 @@ import AutoTranslate from "@/components/AutoTranslate";
 
 type Props = { params: Promise<{ slug: string }> };
 
+function distanceBetween(
+  first: [number, number],
+  second: [number, number]
+): number {
+  const radians = (degrees: number) => (degrees * Math.PI) / 180;
+  const [lat1, lon1] = first.map(radians);
+  const [lat2, lon2] = second.map(radians);
+  const latitudeDelta = lat2 - lat1;
+  const longitudeDelta = lon2 - lon1;
+  const haversine =
+    Math.sin(latitudeDelta / 2) ** 2 +
+    Math.cos(lat1) * Math.cos(lat2) * Math.sin(longitudeDelta / 2) ** 2;
+  return 6371 * 2 * Math.atan2(Math.sqrt(haversine), Math.sqrt(1 - haversine));
+}
+
 export function generateStaticParams() {
   return allDestinations.map((place) => ({ slug: place.slug }));
 }
@@ -45,7 +60,17 @@ export default async function DestinationPage({ params }: Props) {
   const place = allDestinations.find((item) => item.slug === slug);
   if (!place) notFound();
 
-  const related = allDestinations.filter((item) => item.slug !== place.slug && item.type === place.type).slice(0, 2);
+  const related = place.coordinates
+    ? allDestinations
+        .filter((item) => item.slug !== place.slug && item.coordinates)
+        .sort((first, second) =>
+          distanceBetween(place.coordinates!, first.coordinates!) -
+          distanceBetween(place.coordinates!, second.coordinates!)
+        )
+        .slice(0, 2)
+    : allDestinations
+        .filter((item) => item.slug !== place.slug && item.type === place.type)
+        .slice(0, 2);
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "TouristAttraction",
