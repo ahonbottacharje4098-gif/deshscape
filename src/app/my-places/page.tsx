@@ -6,7 +6,11 @@ import { ArrowLeft, ArrowUpRight, Bookmark, Compass, MapPin, Trash2 } from "luci
 import { allDestinations } from "@/data/destinations";
 import { destinationImageUrl } from "@/lib/destinationImage";
 import { useLanguage } from "@/components/LanguageProvider";
-import { readSavedDestinations, writeSavedDestinations } from "@/lib/savedDestinations";
+import {
+  readSavedDestinations,
+  SAVED_DESTINATIONS_EVENT,
+  writeSavedDestinations,
+} from "@/lib/savedDestinations";
 
 export default function MyPlacesPage() {
   const { t } = useLanguage();
@@ -14,13 +18,20 @@ export default function MyPlacesPage() {
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    setSavedSlugs(readSavedDestinations());
+    const syncSavedPlaces = () => setSavedSlugs(readSavedDestinations());
+    syncSavedPlaces();
     setReady(true);
+    window.addEventListener(SAVED_DESTINATIONS_EVENT, syncSavedPlaces);
+    window.addEventListener("storage", syncSavedPlaces);
+    return () => {
+      window.removeEventListener(SAVED_DESTINATIONS_EVENT, syncSavedPlaces);
+      window.removeEventListener("storage", syncSavedPlaces);
+    };
   }, []);
 
   function removePlace(slug: string) {
     const next = savedSlugs.filter((item) => item !== slug);
-    if (writeSavedDestinations(next)) setSavedSlugs(next);
+    writeSavedDestinations(next);
   }
 
   const savedPlaces = allDestinations.filter((place) => savedSlugs.includes(place.slug));
