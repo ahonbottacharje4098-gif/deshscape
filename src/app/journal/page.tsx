@@ -34,7 +34,7 @@ export default function JournalPage() {
           <Link className="nav-link active" href="/journal">{t("Journal")}</Link>
         </nav>
         <div className="header-actions">
-          <Link className="plan-link" href="/#planner">{t("Plan a trip")} <ArrowUpRight size={15} /></Link>
+          <Link className="plan-link" href="/plan-trip">{t("Plan a trip")} <ArrowUpRight size={15} /></Link>
         </div>
       </header>
 
