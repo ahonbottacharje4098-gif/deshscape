@@ -15,7 +15,8 @@ export default function JournalPage() {
   const showFeatured = query.length === 0 && category === "ALL";
   const filteredStories = stories.filter((story) => {
     const matchesCategory = category === "ALL" || story.category === category;
-    const matchesSearch = query.length === 0 || [story.title, t(story.title), story.location, t(story.location), story.description, t(story.description), story.category, t(story.category)].some((value) => value.toLowerCase().includes(query));
+    const searchableText = [story.title, t(story.title), story.location, t(story.location), story.description, t(story.description), story.intro, t(story.intro), story.note, t(story.note), story.category, t(story.category), ...story.paragraphs, ...story.paragraphs.map((paragraph) => t(paragraph))];
+    const matchesSearch = query.length === 0 || searchableText.some((value) => value.toLowerCase().includes(query));
     return matchesCategory && matchesSearch;
   });
   const visibleStories = showFeatured ? stories.slice(1) : filteredStories;
