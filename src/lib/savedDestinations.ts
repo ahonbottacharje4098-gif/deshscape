@@ -1,4 +1,5 @@
 const STORAGE_KEY = "deshscape-saved-destinations";
+export const SAVED_DESTINATIONS_EVENT = "deshscape:saved-destinations-changed";
 
 /**
  * Read saved destination slugs safely in the browser.
@@ -15,11 +16,13 @@ export function readSavedDestinations(): string[] {
 }
 
 /**
- * Persist saved destination slugs. Returns false when browser storage is unavailable.
+ * Persist saved destination slugs and notify same-tab listeners.
+ * The browser's native storage event synchronizes other open tabs.
  */
 export function writeSavedDestinations(slugs: string[]): boolean {
   try {
     window.localStorage.setItem(STORAGE_KEY, JSON.stringify([...new Set(slugs)]));
+    window.dispatchEvent(new Event(SAVED_DESTINATIONS_EVENT));
     return true;
   } catch {
     return false;
