@@ -984,3 +984,6 @@ html[lang="bn"] .eyebrow { line-height: 1.6; }
   .trip-day-number{font-size:8px}
   .trip-selection-hint{font-size:10px}
 }
+
+.map-boundary-notice{max-width:230px;padding:9px 11px;background:#fbfaf6;color:#53675a;border:1px solid #d8ded5;font-size:10px;line-height:1.5;box-shadow:0 2px 12px #183d3214}
+@media(prefers-reduced-motion:reduce){.hero .hero-image{animation:none!important;transform:none!important}}
