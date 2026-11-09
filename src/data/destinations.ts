@@ -45,7 +45,7 @@ export const destinations: Destination[] = [
   {
     slug: "ratargul-swamp-forest",
     name: "Ratargul Swamp Forest",
-    region: "Chattogram Division",
+    region: "Sylhet Division",
     district: "Sylhet",
     type: "Forests",
     coordinates: [25.0137, 91.927],
@@ -73,7 +73,7 @@ export const destinations: Destination[] = [
   {
     slug: "sundarbans",
     name: "Sundarbans",
-    region: "Sylhet Division",
+    region: "Khulna Division",
     district: "Khulna",
     type: "Forests",
     coordinates: [21.7758, 89.2319],
@@ -87,7 +87,7 @@ export const destinations: Destination[] = [
   {
     slug: "jaflong",
     name: "Jaflong",
-    region: "Khulna Division",
+    region: "Sylhet Division",
     district: "Sylhet",
     type: "Nature",
     coordinates: [25.163, 92.018],
@@ -198,7 +198,7 @@ export const destinations: Destination[] = [
   },
 
   {
-    slug: "patenga-beach", name: "Patenga Beach", region: "Sylhet Division", district: "Chattogram", type: "Beaches",
+    slug: "patenga-beach", name: "Patenga Beach", region: "Chattogram Division", district: "Chattogram", type: "Beaches",
     coordinates: [22.2354, 91.7911], image: "https://commons.wikimedia.org/wiki/Special:FilePath/Patenga%20sea%20beach%20001.jpg?width=1400",
     tag: "Where river meets sea", shortDescription: "A lively shoreline where the Karnaphuli meets the Bay of Bengal.",
     description: "Patenga Beach is a well-known coastal spot near the mouth of the Karnaphuli River, with broad sea views and a lively waterfront.",
@@ -270,7 +270,7 @@ export const destinations: Destination[] = [
     travelNotes: ["Use recognised landing points.", "Follow boat safety guidance.", "Keep riverbanks clean."]
   },
 {
-    slug: "sixty-dome-mosque", name: "Sixty Dome Mosque", region: "Chattogram Division", district: "Bagerhat", type: "Heritage",
+    slug: "sixty-dome-mosque", name: "Sixty Dome Mosque", region: "Khulna Division", district: "Bagerhat", type: "Heritage",
     coordinates: [22.6746, 89.735], image: "https://commons.wikimedia.org/wiki/Special:FilePath/Sixty%20Dome%20Mosque%20Bagerhat.jpg?width=1400",
     tag: "UNESCO heritage", shortDescription: "A remarkable 15th-century mosque and landmark of the historic Mosque City of Bagerhat.",
     description: "The Sixty Dome Mosque, also known as Shat Gombuj Masjid, is a celebrated historic mosque in Bagerhat associated with Khan Jahan Ali and the UNESCO-listed Historic Mosque City.",
@@ -343,7 +343,7 @@ export const destinations: Destination[] = [
   },
 
   {
-    slug: "puthia-temple-complex", name: "Puthia Temple Complex", region: "Khulna Division", district: "Rajshahi", type: "Heritage",
+    slug: "puthia-temple-complex", name: "Puthia Temple Complex", region: "Rajshahi Division", district: "Rajshahi", type: "Heritage",
     coordinates: [24.3667, 88.8333], image: "https://commons.wikimedia.org/wiki/Special:FilePath/Puthia%20Rajbari.jpg?width=1400",
     tag: "Palaces and temples", shortDescription: "A remarkable collection of historic temples and the grand Puthia Rajbari.",
     description: "The Puthia Temple Complex in Rajshahi is known for its collection of historic Hindu temples and palatial buildings, reflecting the region's rich architectural heritage.",
@@ -408,7 +408,7 @@ export const destinations: Destination[] = [
   },
 
   {
-    slug: "oxford-mission-church", name: "Oxford Mission Church", region: "Rajshahi Division", district: "Barishal", type: "Heritage",
+    slug: "oxford-mission-church", name: "Oxford Mission Church", region: "Barishal Division", district: "Barishal", type: "Heritage",
     coordinates: [22.701, 90.369], image: "https://commons.wikimedia.org/wiki/Special:FilePath/Oxford%20Mission%20Church%20Barisal.jpg?width=1400",
     tag: "Architectural landmark", shortDescription: "A distinctive historic church known for its striking red-brick architecture and peaceful grounds.",
     description: "The Oxford Mission Church, also known as Epiphany Church, is a landmark in Barishal city. Its distinctive architecture and long history make it an important part of the city's heritage.",
@@ -457,7 +457,7 @@ export const destinations: Destination[] = [
   }
   ,
   {
-    slug: "tajhat-palace", name: "Tajhat Palace", region: "Barishal Division", district: "Rangpur", type: "Heritage",
+    slug: "tajhat-palace", name: "Tajhat Palace", region: "Rangpur Division", district: "Rangpur", type: "Heritage",
     coordinates: [25.725, 89.275], image: "https://commons.wikimedia.org/wiki/Special:FilePath/Tajhat%20Palace%20Rangpur.jpg?width=1400",
     tag: "A royal chapter", shortDescription: "A graceful historic palace known for its grand staircase and elegant architecture.",
     description: "Tajhat Palace in Rangpur is a landmark of the region's architectural heritage. Its distinctive façade, broad grounds and museum make it a memorable cultural stop.",
@@ -522,7 +522,7 @@ export const destinations: Destination[] = [
   }
   ,
   {
-    slug: "shoshi-lodge", name: "Shoshi Lodge", region: "Rangpur Division", district: "Mymensingh", type: "Heritage",
+    slug: "shoshi-lodge", name: "Shoshi Lodge", region: "Mymensingh Division", district: "Mymensingh", type: "Heritage",
     coordinates: [24.753, 90.407], image: "https://trippainter.com/wp-content/uploads/2021/01/shoshi-lodge-1.jpg",
     tag: "A royal-era landmark", shortDescription: "A historic residence in Mymensingh known for its distinctive architecture and gardens.",
     description: "Shoshi Lodge, also known as Mymensingh Rajbari, is a notable historic landmark in the city. Its architecture and grounds offer a glimpse into the region's past.",
@@ -556,7 +556,7 @@ export const destinations: Destination[] = [
 
   ,
   {
-    slug: "jasimuddin-house", name: "Jasimuddin House", region: "Mymensingh Division", district: "Faridpur", type: "Heritage",
+    slug: "jasimuddin-house", name: "Jasimuddin House", region: "Dhaka Division", district: "Faridpur", type: "Heritage",
     coordinates: [23.607, 89.842], image: "https://vromonprio.com/images/thumbnails/kabi-jasimuddins-house.webp",
     tag: "Poetry and rural memory", shortDescription: "The ancestral home of Palli Kabi Jasimuddin, one of Bengal's celebrated rural poets.",
     description: "Jasimuddin House, also known as Palli Kabi Jasimuddin's residence, is a cultural landmark in Faridpur associated with the poet's life and literary legacy. Confirm visitor access locally before planning a visit.",
