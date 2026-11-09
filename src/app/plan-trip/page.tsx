@@ -13,8 +13,7 @@ const MAX_TRIP_DAYS = 5;
 
 function belongsToDivision(region: string, division: string) {
   if (division === "Any division") return true;
-  if (division === "Chattogram") return /Chattogram|Cox's Bazar|Rangamati/i.test(region);
-  return region.toLowerCase().includes(division.toLowerCase());
+  return region === `${division} Division`;
 }
 
 type StoredTripDraft = {
