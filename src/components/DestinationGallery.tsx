@@ -15,7 +15,7 @@ function cleanMetadata(value?: string): string | undefined {
     .replace(/&#39;|&apos;/g, "'")
     .replace(/&lt;/g, "<")
     .replace(/&gt;/g, ">")
-    .replace(/\\s+/g, " ")
+    .replace(/\s+/g, " ")
     .trim();
   return cleaned || undefined;
 }
