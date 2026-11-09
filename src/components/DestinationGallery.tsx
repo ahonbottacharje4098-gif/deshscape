@@ -4,7 +4,21 @@ import { useEffect, useRef, useState } from "react";
 import { Expand, X, Image as ImageIcon, ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
 import { useLanguage } from "@/components/LanguageProvider";
 
-type GalleryPhoto = { url: string; sourceUrl?: string };
+type GalleryPhoto = { url: string; sourceUrl?: string; credit?: string; license?: string };
+
+function cleanMetadata(value?: string): string | undefined {
+  if (!value) return undefined;
+  const cleaned = value
+    .replace(/<[^>]*>/g, " ")
+    .replace(/&amp;/g, "&")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;|&apos;/g, "'")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/\\s+/g, " ")
+    .trim();
+  return cleaned || undefined;
+}
 type Props = { image: string; title: string };
 
 export default function DestinationGallery({ image, title }: Props) {
@@ -32,7 +46,7 @@ export default function DestinationGallery({ image, title }: Props) {
           gsrnamespace: "6",
           gsrlimit: "30",
           prop: "imageinfo",
-          iiprop: "url",
+          iiprop: "url|extmetadata",
           iiurlwidth: "1600",
           format: "json",
           origin: "*"
@@ -40,11 +54,11 @@ export default function DestinationGallery({ image, title }: Props) {
         const response = await fetch(`https://commons.wikimedia.org/w/api.php?${params.toString()}`, { signal: controller.signal });
         if (!response.ok) throw new Error("Photo search unavailable");
         const data = await response.json();
-        const pages = Object.values(data.query?.pages ?? []) as Array<{ imageinfo?: Array<{ thumburl?: string; url?: string; descriptionurl?: string; mime?: string }> }>;
+        const pages = Object.values(data.query?.pages ?? []) as Array<{ imageinfo?: Array<{ thumburl?: string; url?: string; descriptionurl?: string; mime?: string; extmetadata?: { Artist?: { value?: string }; Credit?: { value?: string }; LicenseShortName?: { value?: string } } }> }>;
         const found = pages
           .map((page) => page.imageinfo?.[0])
           .filter((info): info is NonNullable<typeof info> => Boolean(info && (!info.mime || info.mime.startsWith("image/"))))
-          .map((info) => ({ url: info.thumburl || info.url || "", sourceUrl: info.descriptionurl }))
+          .map((info) => ({ url: info.thumburl || info.url || "", sourceUrl: info.descriptionurl, credit: cleanMetadata(info.extmetadata?.Artist?.value || info.extmetadata?.Credit?.value), license: cleanMetadata(info.extmetadata?.LicenseShortName?.value) }))
           .filter((photo) => photo.url && photo.url !== image)
           .filter((photo, index, all) => all.findIndex((item) => item.url === photo.url) === index)
           .slice(0, 5);
@@ -138,7 +152,7 @@ export default function DestinationGallery({ image, title }: Props) {
                 />
                 <span className="gallery-photo-action"><Expand size={14} /> {t("VIEW PHOTO")}</span>
               </button>
-              {photo.sourceUrl && <a className="gallery-photo-source" href={photo.sourceUrl} target="_blank" rel="noopener noreferrer" aria-label={t("View photo source")}><ExternalLink size={13} /></a>}
+              {photo.sourceUrl && <a className="gallery-photo-source" href={photo.sourceUrl} target="_blank" rel="noopener noreferrer" aria-label={t("View photo source and license")}><ExternalLink size={13} /> <span>{photo.credit || t("Photo source")}{photo.license ? ` · ${photo.license}` : ""}</span></a>}
             </div>
           ))}
         </div>
@@ -152,7 +166,7 @@ export default function DestinationGallery({ image, title }: Props) {
           <img src={photos[activeIndex].url} alt={`${t(title)} — ${t("photo")} ${activeIndex + 1}`} onClick={(event) => event.stopPropagation()} />
           {photos.length > 1 && <button type="button" className="gallery-nav gallery-nav-next" onClick={(event) => { event.stopPropagation(); showNext(); }} aria-label={t("Next photo")}><ChevronRight size={28} /></button>}
           <span className="gallery-lightbox-caption">{t(title)} · {String(activeIndex + 1).padStart(2, "0")} / {String(photos.length).padStart(2, "0")}</span>
-          {photos[activeIndex].sourceUrl && <a className="gallery-lightbox-source" href={photos[activeIndex].sourceUrl} target="_blank" rel="noopener noreferrer" onClick={(event) => event.stopPropagation()}>{t("PHOTO SOURCE")} <ExternalLink size={12} /></a>}
+          {photos[activeIndex].sourceUrl && <a className="gallery-lightbox-source" href={photos[activeIndex].sourceUrl} target="_blank" rel="noopener noreferrer" onClick={(event) => event.stopPropagation()}>{t("PHOTO SOURCE")}{photos[activeIndex].credit ? ` · ${photos[activeIndex].credit}` : ""}{photos[activeIndex].license ? ` · ${photos[activeIndex].license}` : ""} <ExternalLink size={12} /></a>}
         </div>
       )}
     </>
