@@ -1172,14 +1172,7 @@ export const messages: Record<string, string> = {
 
   // Normalized administrative regions and corrected destination name
   "Gajni Recreation Centre": "গজনী অবকাশ কেন্দ্র",
-  "Dhaka Division": "ঢাকা বিভাগ",
-  "Chattogram Division": "চট্টগ্রাম বিভাগ",
-  "Sylhet Division": "সিলেট বিভাগ",
-  "Khulna Division": "খুলনা বিভাগ",
-  "Rajshahi Division": "রাজশাহী বিভাগ",
-  "Barishal Division": "বরিশাল বিভাগ",
-  "Rangpur Division": "রংপুর বিভাগ",
-  "Mymensingh Division": "ময়মনসিংহ বিভাগ",
+  "2 MIN READ": "২ মিনিটে পড়ুন",
 };
 
 export function translate(text: string, language: Language): string {
