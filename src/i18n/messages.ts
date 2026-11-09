@@ -1159,6 +1159,7 @@ export const messages: Record<string, string> = {
   "My day-by-day plan:": "আমার দিনভিত্তিক পরিকল্পনা:",
   "No destinations selected yet.": "এখনো কোনো গন্তব্য নির্বাচন করা হয়নি।",
   "Planning note: Suggestions are inspiration, not confirmed bookings or route guidance.": "পরিকল্পনা নোট: পরামর্শগুলো ভ্রমণের অনুপ্রেরণা, নিশ্চিত বুকিং বা পথনির্দেশ নয়।",
+  "Division outlines are unavailable; destination pins still work.": "বিভাগের সীমানার রেখা পাওয়া যাচ্ছে না; তবে গন্তব্যের চিহ্নগুলো কাজ করছে।",
 };
 
 export function translate(text: string, language: Language): string {
