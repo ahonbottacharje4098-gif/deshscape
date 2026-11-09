@@ -1160,6 +1160,15 @@ export const messages: Record<string, string> = {
   "No destinations selected yet.": "এখনো কোনো গন্তব্য নির্বাচন করা হয়নি।",
   "Planning note: Suggestions are inspiration, not confirmed bookings or route guidance.": "পরিকল্পনা নোট: পরামর্শগুলো ভ্রমণের অনুপ্রেরণা, নিশ্চিত বুকিং বা পথনির্দেশ নয়।",
   "Division outlines are unavailable; destination pins still work.": "বিভাগের সীমানার রেখা পাওয়া যাচ্ছে না; তবে গন্তব্যের চিহ্নগুলো কাজ করছে।",
+
+  // Distinct destination card taglines
+  "Poetry and rural memory": "কবিতা ও গ্রামীণ স্মৃতি",
+  "A place of national remembrance": "জাতীয় স্মৃতির স্থান",
+  "Lakeside pause in Madaripur": "মাদারীপুরের লেকপাড়ে অবকাশ",
+  "Courtyards of a historic estate": "ঐতিহাসিক জমিদারবাড়ির প্রাঙ্গণ",
+  "A riverside Mughal fort": "নদীতীরের মুঘল দুর্গ",
+  "Stories beside the Padma": "পদ্মার তীরের গল্প",
+  "A landmark of Sultanate design": "সুলতানি স্থাপত্যের নিদর্শন",
 };
 
 export function translate(text: string, language: Language): string {
