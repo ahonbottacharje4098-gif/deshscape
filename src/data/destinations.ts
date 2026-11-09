@@ -17,7 +17,7 @@ export const destinations: Destination[] = [
   {
     slug: "sajek-valley",
     name: "Sajek Valley",
-    region: "Rangamati, Chattogram",
+    region: "Chattogram Division",
     district: "Rangamati",
     type: "Mountains",
     coordinates: [23.635, 92.49],
