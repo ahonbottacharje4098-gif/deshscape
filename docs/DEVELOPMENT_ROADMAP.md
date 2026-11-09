@@ -61,3 +61,25 @@ Baseline audited against `main` at `09d665d000450d3efc4b5a403fb1275d43a6b632` on
 3. Saved-place synchronization across tabs and same-tab components.
 4. Focused CSS polish for new planner controls and accessible interaction states.
 5. Re-run static checks and preview build; record any checks that could not be run.
+
+
+## Follow-up audit — 2026-11-09
+
+### Newly reported issues addressed in the current development batch
+- Normalized all 64 destination `region` values to one of the eight administrative division labels. The Trip Planner now matches the normalized `<Division> Division` values directly.
+- Added Bengali labels for all normalized division values and destination taglines.
+- Added dedicated Open Graph and Twitter metadata for `/plan-trip`, including a first-party social-cover asset at `/bangladesh-social-cover.svg`.
+- Replaced the site-wide and Journal article social-preview image URLs with the first-party asset so share cards no longer depend on Unsplash availability.
+- Corrected the Journal landing-page Plan a trip link to `/plan-trip`; article links already point there.
+- Expanded each of the five Journal stories from four to six paragraphs and updated the displayed reading-time label to two minutes. Article pages calculate reading time from word count.
+- Replaced the mixed-language Gajni destination name with “Gajni Recreation Centre”. Reviewed Dhaka Division destination taglines and retained distinct, place-specific wording.
+- Expanded Journal search to include story intros, notes and article paragraphs, in addition to titles, locations, descriptions and categories.
+
+### Review notes and verification status
+- Source-level check: 64 destination records now use only the eight division-format values; no district/combined-region labels remain.
+- Source-level check: the Plan a Trip metadata defines Open Graph image, Twitter title/description and Twitter image; the referenced asset is stored in `public/`.
+- Source-level check: the Journal landing and article Plan a trip links both resolve to `/plan-trip`.
+- Source-level check: all five Journal stories now contain six paragraphs and use a two-minute reading label.
+- Language switcher persists the selected `en`/`bn` language in localStorage; Journal search checks both source text and available translated strings. Browser-level EN/BN interaction testing is still required.
+- A production build, automated UI tests and full desktop/mobile browser interaction checks have not yet been run for this follow-up batch. Do not merge until those checks pass.
+- The social cover is an original locally hosted illustrated graphic, not a documentary photograph. Journal hero/gallery images remain separate editorial image assets and should retain appropriate source/licence review.
