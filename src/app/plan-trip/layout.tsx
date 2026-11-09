@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 const description = "Create a shortlist of Bangladesh destinations by division and experience, then copy your trip ideas.";
 
 export const metadata: Metadata = {
-  title: "Plan a trip across Bangladesh | Deshscape",
+  title: "Plan a trip across Bangladesh",
   description,
   alternates: { canonical: "/plan-trip" },
   openGraph: {
