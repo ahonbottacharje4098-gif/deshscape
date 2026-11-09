@@ -1169,6 +1169,17 @@ export const messages: Record<string, string> = {
   "A riverside Mughal fort": "নদীতীরের মুঘল দুর্গ",
   "Stories beside the Padma": "পদ্মার তীরের গল্প",
   "A landmark of Sultanate design": "সুলতানি স্থাপত্যের নিদর্শন",
+
+  // Normalized administrative regions and corrected destination name
+  "Gajni Recreation Centre": "গজনী অবকাশ কেন্দ্র",
+  "Dhaka Division": "ঢাকা বিভাগ",
+  "Chattogram Division": "চট্টগ্রাম বিভাগ",
+  "Sylhet Division": "সিলেট বিভাগ",
+  "Khulna Division": "খুলনা বিভাগ",
+  "Rajshahi Division": "রাজশাহী বিভাগ",
+  "Barishal Division": "বরিশাল বিভাগ",
+  "Rangpur Division": "রংপুর বিভাগ",
+  "Mymensingh Division": "ময়মনসিংহ বিভাগ",
 };
 
 export function translate(text: string, language: Language): string {
