@@ -590,6 +590,8 @@ export const messages: Record<string, string> = {
 
   "from My Places": "আমার পছন্দের জায়গা থেকে",
   "View photo source": "ছবির মূল উৎস দেখুন",
+  "View photo source and license": "ছবির উৎস ও লাইসেন্স দেখুন",
+  "Photo source": "ছবির উৎস",
 
   // Bengali destination copy: first five featured destinations.
   "Mangrove forest and tidal waterways": "ম্যানগ্রোভ বন ও জোয়ার-ভাটার নদীপথ",
