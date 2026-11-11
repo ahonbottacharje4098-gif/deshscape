@@ -11,6 +11,21 @@ import AutoTranslate from "@/components/AutoTranslate";
 
 type Props = { params: Promise<{ slug: string }> };
 
+function distanceBetween(
+  first: [number, number],
+  second: [number, number]
+): number {
+  const radians = (degrees: number) => (degrees * Math.PI) / 180;
+  const [lat1, lon1] = first.map(radians);
+  const [lat2, lon2] = second.map(radians);
+  const latitudeDelta = lat2 - lat1;
+  const longitudeDelta = lon2 - lon1;
+  const haversine =
+    Math.sin(latitudeDelta / 2) ** 2 +
+    Math.cos(lat1) * Math.cos(lat2) * Math.sin(longitudeDelta / 2) ** 2;
+  return 6371 * 2 * Math.atan2(Math.sqrt(haversine), Math.sqrt(1 - haversine));
+}
+
 export function generateStaticParams() {
   return allDestinations.map((place) => ({ slug: place.slug }));
 }
@@ -45,7 +60,17 @@ export default async function DestinationPage({ params }: Props) {
   const place = allDestinations.find((item) => item.slug === slug);
   if (!place) notFound();
 
-  const related = allDestinations.filter((item) => item.slug !== place.slug && item.type === place.type).slice(0, 2);
+  const related = place.coordinates
+    ? allDestinations
+        .filter((item) => item.slug !== place.slug && item.coordinates)
+        .sort((first, second) =>
+          distanceBetween(place.coordinates!, first.coordinates!) -
+          distanceBetween(place.coordinates!, second.coordinates!)
+        )
+        .slice(0, 2)
+    : allDestinations
+        .filter((item) => item.slug !== place.slug && item.type === place.type)
+        .slice(0, 2);
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "TouristAttraction",
@@ -175,7 +200,7 @@ export default async function DestinationPage({ params }: Props) {
 
       <footer className="site-footer detail-footer">
         <div className="footer-top"><Link className="brand footer-brand" href="/"><span className="brand-mark"><Compass size={22} /></span><span className="brand-name">deshscape<span>.</span><small>THE ART OF DISCOVERY</small></span></Link><p>Explore beyond the ordinary.<br />Discover Bangladesh, one journey at a time.</p><Link className="back-top" href="/#destinations">BACK TO DISCOVER <ArrowUpRight size={15} /></Link></div>
-        <div className="footer-bottom"><span>© 2026 DESHSCAPE. MADE FOR THE CURIOUS.</span><span>INDEPENDENTLY INSPIRED BY BANGLADESH.</span></div>
+        <div className="footer-bottom"><span>© 2026 DESHSCAPE. MADE FOR THE CURIOUS.</span><span>INDEPENDENTLY INSPIRED BY BANGLADESH.</span><span className="footer-credit">Made by Badhan</span></div>
       </footer>
     </main>
     </AutoTranslate>

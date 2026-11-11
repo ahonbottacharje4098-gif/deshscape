@@ -32,13 +32,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: canonicalUrl,
       title: `${story.title} | Deshscape Journal`,
       description: story.intro,
-      images: [{ url: story.image, alt: `${story.title} — ${story.location}, Bangladesh` }],
+      images: [{ url: "/bangladesh-social-cover.svg", alt: `${story.title} — Deshscape Journal` }],
     },
     twitter: {
       card: "summary_large_image",
       title: `${story.title} | Deshscape Journal`,
       description: story.intro,
-      images: [story.image],
+      images: ["/bangladesh-social-cover.svg"],
     },
   };
 }
@@ -58,7 +58,7 @@ export default async function JournalStoryPage({ params }: Props) {
     "@type": "Article",
     headline: story.title,
     description: story.intro,
-    image: story.image,
+    image: "https://deshscape.vercel.app/bangladesh-social-cover.svg",
     articleSection: story.category,
     wordCount: articleWordCount,
     inLanguage: "en",
@@ -148,7 +148,7 @@ export default async function JournalStoryPage({ params }: Props) {
           <p>Explore beyond the ordinary.<br />Discover Bangladesh, one journey at a time.</p>
           <Link className="back-top" href="/journal">BACK TO JOURNAL <ArrowUpRight size={15} /></Link>
         </div>
-        <div className="footer-bottom"><span>© 2026 DESHSCAPE. MADE FOR THE CURIOUS.</span><span>INDEPENDENTLY INSPIRED BY BANGLADESH.</span></div>
+        <div className="footer-bottom"><span>© 2026 DESHSCAPE. MADE FOR THE CURIOUS.</span><span>INDEPENDENTLY INSPIRED BY BANGLADESH.</span><span className="footer-credit">Made by Badhan</span></div>
       </footer>
     </main>
     </AutoTranslate>

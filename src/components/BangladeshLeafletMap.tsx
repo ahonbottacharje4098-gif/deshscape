@@ -53,6 +53,7 @@ export default function BangladeshLeafletMap({ activeSlug, onSelect }: Props) {
   const { t } = useLanguage();
   const places = allDestinations.filter((place) => place.coordinates);
   const [divisionBoundaries, setDivisionBoundaries] = useState<FeatureCollection | Feature<Geometry> | null>(null);
+  const [boundaryUnavailable, setBoundaryUnavailable] = useState(false);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -68,6 +69,7 @@ export default function BangladeshLeafletMap({ activeSlug, onSelect }: Props) {
       .then((data: FeatureCollection | Feature<Geometry>) => setDivisionBoundaries(data))
       .catch((error: unknown) => {
         if (error instanceof Error && error.name !== "AbortError") {
+          setBoundaryUnavailable(true);
           console.error("Bangladesh division map:", error);
         }
       });
@@ -87,6 +89,13 @@ export default function BangladeshLeafletMap({ activeSlug, onSelect }: Props) {
       aria-label={t("Interactive map of the eight divisions of Bangladesh")}
     >
       <BangladeshMapViewport />
+      {boundaryUnavailable && (
+        <div className="leaflet-top leaflet-left">
+          <div className="leaflet-control map-boundary-notice" role="status">
+            {t("Division outlines are unavailable; destination pins still work.")}
+          </div>
+        </div>
+      )}
       <TileLayer
         attribution='Tiles &copy; <a href="https://www.esri.com/">Esri</a> — Sources: Esri, USGS, NOAA'
         url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"

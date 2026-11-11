@@ -6,6 +6,7 @@ export const messages: Record<string, string> = {
   "Explore map": "মানচিত্রে ঘুরুন",
   "Stories": "ভ্রমণ গল্প",
   "Plan a trip": "ভ্রমণ পরিকল্পনা",
+  "My Places": "আমার পছন্দের জায়গা",
   "A DIFFERENT SIDE OF BANGLADESH": "বাংলাদেশের এক অন্য রূপ",
   "Find your": "খুঁজে নিন আপনার",
   "somewhere.": "স্বপ্নের গন্তব্য।",
@@ -590,6 +591,8 @@ export const messages: Record<string, string> = {
 
   "from My Places": "আমার পছন্দের জায়গা থেকে",
   "View photo source": "ছবির মূল উৎস দেখুন",
+  "View photo source and license": "ছবির উৎস ও লাইসেন্স দেখুন",
+  "Photo source": "ছবির উৎস",
 
   // Bengali destination copy: first five featured destinations.
   "Mangrove forest and tidal waterways": "ম্যানগ্রোভ বন ও জোয়ার-ভাটার নদীপথ",
@@ -1141,6 +1144,38 @@ export const messages: Record<string, string> = {
   "Padma River views": "পদ্মা নদীর দৃশ্য",
   "Bridge architecture and scale": "সেতুর স্থাপত্য ও বিশালতা",
   "Jajira-side riverfront landscape": "জাজিরা প্রান্তের নদীতীরের দৃশ্য",
+
+  "HOW MANY DAYS?": "কত দিনের ভ্রমণ?",
+  "days": "দিন",
+  "Choose up to one destination for each day. Your draft is saved in this browser.": "প্রতিদিনের জন্য একটি করে গন্তব্য বেছে নিন। আপনার খসড়া এই ব্রাউজারে সংরক্ষিত থাকবে।",
+  "selected": "নির্বাচিত",
+  "Added to plan": "পরিকল্পনায় যোগ হয়েছে",
+  "Add to plan": "পরিকল্পনায় যোগ করুন",
+  "YOUR PERSONAL ITINERARY": "আপনার ব্যক্তিগত ভ্রমণসূচি",
+  "Your day-by-day plan": "দিনভিত্তিক ভ্রমণ পরিকল্পনা",
+  "Day": "দিন",
+  "Clear plan": "পরিকল্পনা মুছুন",
+  "Select destinations above to build your day-by-day shortlist.": "দিনভিত্তিক তালিকা তৈরি করতে ওপর থেকে গন্তব্য নির্বাচন করুন।",
+  "This is a flexible shortlist, not a route-optimized schedule. Check distances, local transport, weather and access before travelling.": "এটি একটি নমনীয় পছন্দের তালিকা, যাতায়াতের পথ অনুযায়ী সাজানো সময়সূচি নয়। ভ্রমণের আগে দূরত্ব, স্থানীয় পরিবহন, আবহাওয়া ও প্রবেশের সুযোগ যাচাই করুন।",
+  "My Deshscape trip plan": "আমার Deshscape ভ্রমণ পরিকল্পনা",
+  "Trip duration": "ভ্রমণের সময়কাল",
+  "My day-by-day plan:": "আমার দিনভিত্তিক পরিকল্পনা:",
+  "No destinations selected yet.": "এখনো কোনো গন্তব্য নির্বাচন করা হয়নি।",
+  "Planning note: Suggestions are inspiration, not confirmed bookings or route guidance.": "পরিকল্পনা নোট: পরামর্শগুলো ভ্রমণের অনুপ্রেরণা, নিশ্চিত বুকিং বা পথনির্দেশ নয়।",
+  "Division outlines are unavailable; destination pins still work.": "বিভাগের সীমানার রেখা পাওয়া যাচ্ছে না; তবে গন্তব্যের চিহ্নগুলো কাজ করছে।",
+
+  // Distinct destination card taglines
+  "Poetry and rural memory": "কবিতা ও গ্রামীণ স্মৃতি",
+  "A place of national remembrance": "জাতীয় স্মৃতির স্থান",
+  "Lakeside pause in Madaripur": "মাদারীপুরের লেকপাড়ে অবকাশ",
+  "Courtyards of a historic estate": "ঐতিহাসিক জমিদারবাড়ির প্রাঙ্গণ",
+  "A riverside Mughal fort": "নদীতীরের মুঘল দুর্গ",
+  "Stories beside the Padma": "পদ্মার তীরের গল্প",
+  "A landmark of Sultanate design": "সুলতানি স্থাপত্যের নিদর্শন",
+
+  // Normalized administrative regions and corrected destination name
+  "Gajni Recreation Centre": "গজনী অবকাশ কেন্দ্র",
+  "2 MIN READ": "২ মিনিটে পড়ুন",
 };
 
 export function translate(text: string, language: Language): string {

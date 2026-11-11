@@ -17,7 +17,7 @@ export const destinations: Destination[] = [
   {
     slug: "sajek-valley",
     name: "Sajek Valley",
-    region: "Rangamati, Chattogram",
+    region: "Chattogram Division",
     district: "Rangamati",
     type: "Mountains",
     coordinates: [23.635, 92.49],
@@ -31,7 +31,7 @@ export const destinations: Destination[] = [
   {
     slug: "cox-s-bazar",
     name: "Cox's Bazar",
-    region: "Cox's Bazar, Chattogram",
+    region: "Chattogram Division",
     district: "Cox's Bazar",
     type: "Beaches",
     coordinates: [21.4143, 91.9832],
@@ -45,7 +45,7 @@ export const destinations: Destination[] = [
   {
     slug: "ratargul-swamp-forest",
     name: "Ratargul Swamp Forest",
-    region: "Sylhet",
+    region: "Sylhet Division",
     district: "Sylhet",
     type: "Forests",
     coordinates: [25.0137, 91.927],
@@ -59,7 +59,7 @@ export const destinations: Destination[] = [
   {
     slug: "bichanakandi",
     name: "Bichanakandi",
-    region: "Sylhet",
+    region: "Sylhet Division",
     district: "Sylhet",
     type: "Rivers",
     coordinates: [25.177, 91.858],
@@ -73,7 +73,7 @@ export const destinations: Destination[] = [
   {
     slug: "sundarbans",
     name: "Sundarbans",
-    region: "Khulna",
+    region: "Khulna Division",
     district: "Khulna",
     type: "Forests",
     coordinates: [21.7758, 89.2319],
@@ -87,7 +87,7 @@ export const destinations: Destination[] = [
   {
     slug: "jaflong",
     name: "Jaflong",
-    region: "Sylhet",
+    region: "Sylhet Division",
     district: "Sylhet",
     type: "Nature",
     coordinates: [25.163, 92.018],
@@ -101,7 +101,7 @@ export const destinations: Destination[] = [
 {
     slug: "lalakhal",
     name: "Lalakhal",
-    region: "Sylhet",
+    region: "Sylhet Division",
     district: "Sylhet",
     type: "Rivers",
     coordinates: [25.107, 92.179],
@@ -538,10 +538,10 @@ export const destinations: Destination[] = [
     travelNotes: ["Check local access and road conditions before travelling.", "Stay on permitted paths and respect forest areas.", "Carry out all litter."]
   },
   {
-    slug: "gajni-obokash-kendra", name: "Gajni অবকাশ কেন্দ্র", region: "Mymensingh Division", district: "Sherpur", type: "Nature",
+    slug: "gajni-obokash-kendra", name: "Gajni Recreation Centre", region: "Mymensingh Division", district: "Sherpur", type: "Nature",
     coordinates: [25.18, 90.02], image: "https://www.risingbd.com/media/imgAll/384971058.jpg",
     tag: "A forest-side escape", shortDescription: "A popular nature destination set among the green hills and forests of Sherpur.",
-    description: "Gajni অবকাশ কেন্দ্র in Jhenaigati, Sherpur, is a well-known recreation area surrounded by the green landscape of the Garo Hills region.",
+    description: "Gajni Recreation Centre in Jhenaigati, Sherpur, is a well-known recreation area surrounded by the green landscape of the Garo Hills region.",
     highlights: ["Green hill and forest surroundings", "Scenic viewpoints", "Family-friendly outdoor recreation"],
     travelNotes: ["Check current access and facilities locally.", "Use designated visitor areas.", "Respect local communities and keep the surroundings clean."]
   },
@@ -558,7 +558,7 @@ export const destinations: Destination[] = [
   {
     slug: "jasimuddin-house", name: "Jasimuddin House", region: "Dhaka Division", district: "Faridpur", type: "Heritage",
     coordinates: [23.607, 89.842], image: "https://vromonprio.com/images/thumbnails/kabi-jasimuddins-house.webp",
-    tag: "Literary heritage", shortDescription: "The ancestral home of Palli Kabi Jasimuddin, one of Bengal's celebrated rural poets.",
+    tag: "Poetry and rural memory", shortDescription: "The ancestral home of Palli Kabi Jasimuddin, one of Bengal's celebrated rural poets.",
     description: "Jasimuddin House, also known as Palli Kabi Jasimuddin's residence, is a cultural landmark in Faridpur associated with the poet's life and literary legacy. Confirm visitor access locally before planning a visit.",
     highlights: ["Life and work of Palli Kabi Jasimuddin", "Rural literary heritage", "A cultural stop in Faridpur"],
     travelNotes: ["Confirm opening and visitor access locally.", "Respect the residence and surrounding community.", "Avoid touching or moving historic objects."]
@@ -566,7 +566,7 @@ export const destinations: Destination[] = [
   {
     slug: "tungipara-mausoleum", name: "Bangabandhu Mausoleum Complex", region: "Dhaka Division", district: "Gopalganj", type: "Heritage",
     coordinates: [22.899, 89.900], image: "https://upload.wikimedia.org/wikipedia/commons/7/79/Tomb_of_Sheikh_Mujibur_Rahman%2C_Tungipara.jpg",
-    tag: "National history", shortDescription: "A memorial complex in Tungipara commemorating the life of Sheikh Mujibur Rahman.",
+    tag: "A place of national remembrance", shortDescription: "A memorial complex in Tungipara commemorating the life of Sheikh Mujibur Rahman.",
     description: "The Bangabandhu Mausoleum Complex in Tungipara, Gopalganj, is a significant national memorial and place of historical remembrance. Visitors should observe the site's rules and maintain a respectful atmosphere.",
     highlights: ["National memorial complex", "Historical exhibits and grounds", "A significant place in Bangladesh's history"],
     travelNotes: ["Maintain a respectful atmosphere.", "Follow visitor and photography rules.", "Check public access arrangements before travelling."]
@@ -574,7 +574,7 @@ export const destinations: Destination[] = [
   {
     slug: "shakuni-lake", name: "Shakuni Lake", region: "Dhaka Division", district: "Madaripur", type: "Nature",
     coordinates: [23.164, 90.198], image: "https://vitti.com.bd/media/images/8_byymeV5.2e16d0ba.fill-400x400_lglp11u.jpg",
-    tag: "A calm urban escape", shortDescription: "A well-known lake and public recreation spot in Madaripur town.",
+    tag: "Lakeside pause in Madaripur", shortDescription: "A well-known lake and public recreation spot in Madaripur town.",
     description: "Shakuni Lake is a familiar urban landmark in Madaripur, with waterside views and a public promenade atmosphere. It offers a simple local stop for a relaxed visit.",
     highlights: ["Lake and waterside scenery", "Town recreation area", "Evening walks and photography"],
     travelNotes: ["Use public access areas and follow local guidance.", "Keep the lakeside clean.", "Supervise children near the water."]
@@ -582,7 +582,7 @@ export const destinations: Destination[] = [
   {
     slug: "baliati-palace", name: "Baliati Palace", region: "Dhaka Division", district: "Manikganj", type: "Heritage",
     coordinates: [23.858, 89.976], image: "https://upload.wikimedia.org/wikipedia/commons/5/54/Baliati_palace_02.jpg",
-    tag: "A zamindar-era landmark", shortDescription: "An expansive historic palace complex known for its courtyards and ornate architecture.",
+    tag: "Courtyards of a historic estate", shortDescription: "An expansive historic palace complex known for its courtyards and ornate architecture.",
     description: "Baliati Palace in Saturia, Manikganj, is a major heritage site featuring several historic buildings and courtyards associated with the Baliati zamindar family.",
     highlights: ["Historic palace buildings", "Architectural details and courtyards", "Museum and heritage grounds"],
     travelNotes: ["Check museum opening hours before travelling.", "Stay on visitor paths and protect historic surfaces.", "Follow photography and site rules."]
@@ -590,7 +590,7 @@ export const destinations: Destination[] = [
   {
     slug: "idrakpur-fort", name: "Idrakpur Fort", region: "Dhaka Division", district: "Munshiganj", type: "Heritage",
     coordinates: [23.542, 90.530], image: "https://dailyasianage.com/library/152545669817699410988_f1d5e9dc26_b.jpg",
-    tag: "Mughal river defence", shortDescription: "A historic Mughal-era fort built to defend the river routes around Dhaka.",
+    tag: "A riverside Mughal fort", shortDescription: "A historic Mughal-era fort built to defend the river routes around Dhaka.",
     description: "Idrakpur Fort in Munshiganj town is a seventeenth-century Mughal-era river fort traditionally associated with the defence of the region's waterways.",
     highlights: ["Mughal-era fort architecture", "Historic river-defence heritage", "A key landmark in Munshiganj"],
     travelNotes: ["Follow site access and visitor rules.", "Do not climb or damage historic structures.", "Respect nearby residents and public spaces."]
@@ -598,7 +598,7 @@ export const destinations: Destination[] = [
   {
     slug: "goalanda-ghat", name: "Goalanda Ghat", region: "Dhaka Division", district: "Rajbari", type: "Rivers",
     coordinates: [23.783, 89.770], image: "https://commons.wikimedia.org/wiki/Special:FilePath/Desi%20Boat%20-%20River%20Padma%20-%20Rajbari-Dhaka%202015-05-29%201404.JPG?width=1400",
-    tag: "Gateway by the river", shortDescription: "A historic river landing associated with journeys across the Padma River.",
+    tag: "Stories beside the Padma", shortDescription: "A historic river landing associated with journeys across the Padma River.",
     description: "Goalanda Ghat in Rajbari is a well-known river transport point at the Padma's edge, historically important as a gateway for river journeys and local trade.",
     highlights: ["Padma riverfront views", "Historic river transport heritage", "Local river culture"],
     travelNotes: ["Stay within designated public areas.", "Keep clear of ferry and boat operations.", "Follow river and weather safety guidance."]
@@ -606,7 +606,7 @@ export const destinations: Destination[] = [
   {
     slug: "atiya-mosque", name: "Atiya Mosque", region: "Dhaka Division", district: "Tangail", type: "Heritage",
     coordinates: [24.248, 89.916], image: "https://ecdn.dhakatribune.net/contents/cache/images/800x450x1/uploads/dten/2016/12/111-22.jpg",
-    tag: "Sultanate-era architecture", shortDescription: "A historic mosque in Delduar known for its distinctive brickwork and terracotta ornament.",
+    tag: "A landmark of Sultanate design", shortDescription: "A historic mosque in Delduar known for its distinctive brickwork and terracotta ornament.",
     description: "Atiya Mosque in Delduar, Tangail, is a notable historic mosque dating to the early seventeenth century. Its architectural features make it an important heritage landmark in the district.",
     highlights: ["Historic mosque architecture", "Terracotta and brick details", "Religious and cultural heritage"],
     travelNotes: ["Dress respectfully and observe prayer times.", "Follow local visitor guidance.", "Avoid touching or damaging historic surfaces."]

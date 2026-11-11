@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<defs><linearGradient id="sky" x2="0" y2="1"><stop stop-color="#d9e9df"/><stop offset="1" stop-color="#f5e9d5"/></linearGradient><linearGradient id="river" x2="0" y2="1"><stop stop-color="#8bb9ae"/><stop offset="1" stop-color="#315f59"/></linearGradient></defs>
+<rect width="1200" height="630" fill="url(#sky)"/>
+<circle cx="930" cy="145" r="66" fill="#e4b96f" opacity=".9"/>
+<path d="M0 330 160 210 285 305 420 170 590 320 735 205 890 315 1040 190 1200 300V630H0Z" fill="#6f967d"/>
+<path d="M0 385 175 300 310 375 470 260 635 390 790 285 960 390 1115 275 1200 320V630H0Z" fill="#3d705e"/>
+<path d="M0 440Q230 370 420 440T820 430T1200 420V630H0Z" fill="url(#river)"/>
+<path d="M0 500Q230 430 420 505T820 490T1200 480" fill="none" stroke="#d5e7d7" stroke-width="8" opacity=".75"/>
+<g fill="#234d40"><path d="M100 410l28-85 28 85zM135 410l32-100 32 100zM1020 390l30-90 30 90zM1060 390l35-110 35 110z"/></g>
+<rect x="64" y="62" width="490" height="500" rx="26" fill="#102f29" opacity=".92"/>
+<text x="108" y="142" fill="#d7c39b" font-family="Georgia,serif" font-size="22" letter-spacing="5">THE DESHSCAPE JOURNAL</text>
+<text x="108" y="245" fill="#fffaf0" font-family="Georgia,serif" font-size="68">Plan a trip</text>
+<text x="108" y="322" fill="#fffaf0" font-family="Georgia,serif" font-size="68">across</text>
+<text x="108" y="399" fill="#d9c49b" font-family="Georgia,serif" font-size="68">Bangladesh.</text>
+<path d="M108 440h100" stroke="#d9c49b" stroke-width="3"/>
+<text x="108" y="493" fill="#e2eee5" font-family="Arial,sans-serif" font-size="23">Find your somewhere.</text>
+<text x="108" y="535" fill="#b7cfc1" font-family="Arial,sans-serif" font-size="17" letter-spacing="3">DESHSCAPE.COM</text>
+</svg>

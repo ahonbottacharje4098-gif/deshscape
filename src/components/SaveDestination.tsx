@@ -3,7 +3,11 @@
 import { useEffect, useState } from "react";
 import { Bookmark, BookmarkCheck } from "lucide-react";
 import { useLanguage } from "@/components/LanguageProvider";
-import { readSavedDestinations, writeSavedDestinations } from "@/lib/savedDestinations";
+import {
+  readSavedDestinations,
+  SAVED_DESTINATIONS_EVENT,
+  writeSavedDestinations,
+} from "@/lib/savedDestinations";
 
 type Props = { slug: string };
 
@@ -12,7 +16,14 @@ export default function SaveDestination({ slug }: Props) {
   const [saved, setSaved] = useState(false);
 
   useEffect(() => {
-    setSaved(readSavedDestinations().includes(slug));
+    const syncSavedState = () => setSaved(readSavedDestinations().includes(slug));
+    syncSavedState();
+    window.addEventListener(SAVED_DESTINATIONS_EVENT, syncSavedState);
+    window.addEventListener("storage", syncSavedState);
+    return () => {
+      window.removeEventListener(SAVED_DESTINATIONS_EVENT, syncSavedState);
+      window.removeEventListener("storage", syncSavedState);
+    };
   }, [slug]);
 
   function toggleSaved() {
@@ -20,7 +31,7 @@ export default function SaveDestination({ slug }: Props) {
     const next = current.includes(slug)
       ? current.filter((item) => item !== slug)
       : [...current, slug];
-    if (writeSavedDestinations(next)) setSaved(next.includes(slug));
+    writeSavedDestinations(next);
   }
 
   return (
