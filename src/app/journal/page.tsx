@@ -139,7 +139,7 @@ export default function JournalPage() {
           <p>{t("Explore beyond the ordinary.")}<br />{t("Discover Bangladesh, one journey at a time.")}</p>
           <Link className="back-top" href="#top">{t("BACK TO TOP")} <ArrowUpRight size={15} /></Link>
         </div>
-        <div className="footer-bottom"><span>{t("© 2026 DESHSCAPE. MADE FOR THE CURIOUS.")}</span><span>{t("INDEPENDENTLY INSPIRED BY BANGLADESH.")}</span></div>
+        <div className="footer-bottom"><span>{t("© 2026 DESHSCAPE. MADE FOR THE CURIOUS.")}</span><span>{t("INDEPENDENTLY INSPIRED BY BANGLADESH.")}</span><span className="footer-credit">Made by Badhan</span></div>
       </footer>
       <div style={{ position: "fixed", left: 18, bottom: 18, zIndex: 10 }}>
         <Link href="/" aria-label="Back to home" style={{ display: "grid", placeItems: "center", width: 42, height: 42, borderRadius: "50%", background: "#183d32", color: "#fff" }}><ArrowLeft size={18} /></Link>
