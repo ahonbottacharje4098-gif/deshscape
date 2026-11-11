@@ -987,3 +987,8 @@ html[lang="bn"] .eyebrow { line-height: 1.6; }
 
 .map-boundary-notice{max-width:230px;padding:9px 11px;background:#fbfaf6;color:#53675a;border:1px solid #d8ded5;font-size:10px;line-height:1.5;box-shadow:0 2px 12px #183d3214}
 @media(prefers-reduced-motion:reduce){.hero .hero-image{animation:none!important;transform:none!important}}
+
+
+/* Small creator credit shared by every page footer */
+.footer-credit{display:inline-flex;align-items:center;gap:5px;color:#a2aa9e;font-size:9px;font-weight:600;letter-spacing:1.15px;text-transform:uppercase;white-space:nowrap}
+@media(max-width:700px){.footer-credit{font-size:8px;letter-spacing:.9px}}
