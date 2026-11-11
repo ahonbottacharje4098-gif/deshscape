@@ -88,7 +88,7 @@ export default function MyPlacesPage() {
       </section>
 
       <footer className="site-footer my-places-footer">
-        <div className="footer-bottom"><span>{t("© 2026 DESHSCAPE. MADE FOR THE CURIOUS.")}</span><Link href="/">{t("BACK TO HOME")} <ArrowUpRight size={14} /></Link></div>
+        <div className="footer-bottom"><span>{t("© 2026 DESHSCAPE. MADE FOR THE CURIOUS.")}</span><Link href="/">{t("BACK TO HOME")} <ArrowUpRight size={14} /></Link><span className="footer-credit">Made by Badhan</span></div>
       </footer>
     </main>
   );
