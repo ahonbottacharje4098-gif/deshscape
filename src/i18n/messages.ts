@@ -6,6 +6,7 @@ export const messages: Record<string, string> = {
   "Explore map": "মানচিত্রে ঘুরুন",
   "Stories": "ভ্রমণ গল্প",
   "Plan a trip": "ভ্রমণ পরিকল্পনা",
+  "My Places": "আমার পছন্দের জায়গা",
   "A DIFFERENT SIDE OF BANGLADESH": "বাংলাদেশের এক অন্য রূপ",
   "Find your": "খুঁজে নিন আপনার",
   "somewhere.": "স্বপ্নের গন্তব্য।",
