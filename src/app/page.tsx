@@ -130,6 +130,7 @@ export default function Home() {
           <a className="nav-link" href="#destinations" onClick={() => setMenuOpen(false)}>{t("Destinations")}</a>
           <a className="nav-link" href="#map" onClick={() => setMenuOpen(false)}>{t("Explore map")}</a>
           <a className="nav-link" href="#stories" onClick={() => setMenuOpen(false)}>{t("Stories")}</a>
+          <a className="nav-link" href="/my-places" onClick={() => setMenuOpen(false)}>{t("My Places")}</a>
           <a className="nav-link mobile-only" href="/plan-trip" onClick={() => setMenuOpen(false)}>{t("Plan a trip")}</a>
         </nav>
         <div className="header-actions">
