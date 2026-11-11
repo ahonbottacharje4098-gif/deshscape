@@ -130,7 +130,7 @@ export default function ContactPage() {
         </form>
       </section>
 
-      <footer className="contact-footer"><span>{t("© 2026 DESHSCAPE. MADE FOR THE CURIOUS.")}</span><a href="/">{t("EXPLORE BANGLADESH")} <ArrowUpRight size={14} /></a></footer>
+      <footer className="contact-footer"><span>{t("© 2026 DESHSCAPE. MADE FOR THE CURIOUS.")}</span><a href="/">{t("EXPLORE BANGLADESH")} <ArrowUpRight size={14} /></a><span className="footer-credit">Made by Badhan</span></footer>
     </main>
   );
 }
