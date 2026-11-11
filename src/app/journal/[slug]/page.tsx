@@ -148,7 +148,7 @@ export default async function JournalStoryPage({ params }: Props) {
           <p>Explore beyond the ordinary.<br />Discover Bangladesh, one journey at a time.</p>
           <Link className="back-top" href="/journal">BACK TO JOURNAL <ArrowUpRight size={15} /></Link>
         </div>
-        <div className="footer-bottom"><span>© 2026 DESHSCAPE. MADE FOR THE CURIOUS.</span><span>INDEPENDENTLY INSPIRED BY BANGLADESH.</span></div>
+        <div className="footer-bottom"><span>© 2026 DESHSCAPE. MADE FOR THE CURIOUS.</span><span>INDEPENDENTLY INSPIRED BY BANGLADESH.</span><span className="footer-credit">Made by Badhan</span></div>
       </footer>
     </main>
     </AutoTranslate>
